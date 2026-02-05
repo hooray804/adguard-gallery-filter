@@ -1,0 +1,27 @@
+! Title: 애드가드 갤러리 DNS 필터
+! Version: 2025.01.29
+! Description: Adguard DNS 필터의 오차단을 해제하고 누락된 광고와 트래커를 차단합니다.
+! Homepage: https://gallog.dcinside.com/cent8649
+
+
+! Disable incorrect blocking
+||ad-creative.pstatic.net^$badfilter
+||adshnk.com^$badfilter
+||adtouch.adbrix.io^$badfilter
+||api.mumuglobal.com^$badfilter
+||dadispapi.gmarket.co.kr^$badfilter
+||sdk.airbridge.io^$badfilter
+||searchad-phinf.pstatic.net^$badfilter
+||store-api.mumuglobal.com^$badfilter
+||tivan.naver.com^$badfilter
+||tnkfactory.com^$badfilter
+
+! Ads
+||get*ads-*-du.a.run.app^
+||kamp.kakao.com^
+||shortformstats.kakao.com^
+||thumb.kakaocdn.net^
+||veta.naver.com^
+
+! It's a toss ad domain but blocking it causes a black screen in the tossinvest's attendance check event.
+||trillion.toss.im^
