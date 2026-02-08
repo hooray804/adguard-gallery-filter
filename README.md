@@ -12,5 +12,5 @@ It supports advanced blocking syntax for Adguard, uBlock Origin, and Brave Brows
 
 This project is a fork of [Zziniswell/Adguard-gallery-filter](https://github.com/Zziniswell/Adguard-gallery-filter)
 
-본 프로젝트는 Apache License 2.0을 따릅니다. 원본 프로젝트의 저작권은 [https://github.com/Zziniswell]에게 있으며, 수정된 부분에 대한 권리는 해당 부분의 기여자에게 있습니다. 자세한 내용은 LICENSE 파일을 확인하세요.
+본 프로젝트는 Apache License 2.0을 따릅니다. 원본 프로젝트의 저작권은 https://github.com/Zziniswell 에게 있으며, 수정된 부분에 대한 권리는 해당 부분의 기여자에게 있습니다. 자세한 내용은 LICENSE 파일을 확인하세요.
 현재 기준으로 원본 제작자의 repository 관련 문제 해결 전까지 제공 예정입니다.
