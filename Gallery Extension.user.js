@@ -10,8 +10,8 @@
 // @grant        unsafeWindow
 // @icon         https://www.google.com/s2/favicons?domain=fmkorea.com
 // @homepage     https://gall.dcinside.com/mgallery/board/view/?id=adguard&no=2348
-// @downloadURL  https://github.com/Zziniswell/Adguard-gallery-filter/raw/refs/heads/main/Gallery%20Extension.user.js
-// @updateURL    https://github.com/Zziniswell/Adguard-gallery-filter/raw/refs/heads/main/Gallery%20Extension.user.js
+// @downloadURL  https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/Gallery%20Extension.user.js
+// @updateURL    https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/Gallery%20Extension.user.js
 // ==/UserScript==
 
 (function() {
