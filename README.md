@@ -9,3 +9,6 @@ Adguard, uBlock Origin, Brave Browser의 고급 차단 문법을 지원합니다
 This filter and userscript were created to complement the shortcomings of existing Korean filters for Adguard and uBlock Origin, and to provide more comprehensive ad blocking coverage.
 
 It supports advanced blocking syntax for Adguard, uBlock Origin, and Brave Browser.
+
+현재 원제작자 https://github.com/Zziniswell/Adguard-gallery-filter 관련 문제 해결 전까지 제공 예정입니다.
+본 코드의 개발자는 https://github.com/Zziniswell 입니다.
