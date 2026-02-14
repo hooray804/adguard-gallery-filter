@@ -10,7 +10,6 @@ This filter and userscript were created to complement the shortcomings of existi
 
 It supports advanced blocking syntax for Adguard, uBlock Origin, and Brave Browser.
 
-This project is a fork of [Zziniswell/Adguard-gallery-filter](https://github.com/Zziniswell/Adguard-gallery-filter)
+This project is a fork of [Zziniswell/Adguard-gallery-filter](https://github.com/Zziniswell/Adguard-gallery-filter) 본 프로젝트는 Apache License 2.0을 따릅니다. 원본 프로젝트의 저작권은 https://github.com/Zziniswell 에게 있으며, 수정된 부분에 대한 권리는 해당 부분의 기여자에게 있습니다. 자세한 내용은 LICENSE 파일을 확인하세요.
 
-본 프로젝트는 Apache License 2.0을 따릅니다. 원본 프로젝트의 저작권은 https://github.com/Zziniswell 에게 있으며, 수정된 부분에 대한 권리는 해당 부분의 기여자에게 있습니다. 자세한 내용은 LICENSE 파일을 확인하세요.
-현재 기준으로 원본 제작자의 repository 관련 문제 해결 전까지 제공 예정입니다.
+[GitHub Issues](https://github.com/hooray804/adguard-gallery-filter/issues) 등을 통해 버그를 제보하거나 기여하실 수 있습니다.
