@@ -78,7 +78,6 @@ m.dcinside.com#$##notice_list > li:has(.ct):not(:has(.ntc-line-pink.round)) { di
 m.fmkorea.com##script ~ div.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):matches-css(padding: /[0-5]px/):remove()
 m.fmkorea.com##section.fmWidgetStyle2019.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):matches-css(padding: /[0-5]px/):remove()
 m.gmarket.co.kr##.box__ad-banner
-m.naver.com###sb-kh-shortents-wrap
 m.naver.com##.chf_feed_wrap > .type_square.cc_clip_list
 m.naver.com##script#MM_search_disaster ~*
 m.ppomppu.co.kr##div[style^='text-align:center;']
@@ -92,6 +91,7 @@ mlbpark.donga.com$$li:has-text(/엠팍제휴팀|폰판기/)
 mule.co.kr##[class*='-ad-']
 namu.wiki#$#div[class][id]:empty { display: none !important; }
 namu.wiki#$#div[class][id]:has(> iframe[id*='google_ads_iframe_']) { display: none !important; }
+naver.com###sb-kh-shortents-wrap
 nexon.com,gg,ps,xyz,loawa.com#@#[target='_blank']:has([src*='/banner/'])
 pay.naver.com##div[class^='BottomAds_article']
 ppomppu.co.kr##.bottom > div[style]
