@@ -80,6 +80,7 @@ m.gmarket.co.kr##.box__ad-banner
 m.naver.com###sb-kh-shortents-wrap
 m.naver.com##.chf_feed_wrap > .type_square.cc_clip_list
 m.naver.com##script#MM_search_disaster ~*
+m.daum.net###trendKeywordsContainer
 m.ppomppu.co.kr##div[style^='text-align:center;']
 m.ruliweb.com##tr:has(.nbp_container)
 m.wowtv.co.kr##.container > div[style]
