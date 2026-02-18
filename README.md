@@ -8,10 +8,13 @@ Adguard, uBlock Origin, Brave Browser의 고급 차단 문법을 지원합니다
 
 https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt
 
-유저스크립트
+에펨코리아 유저스크립트
 
 https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/Gallery%20Extension.user.js
 
+디시인사이드 유저스크립트
+
+https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js
 
 DNS
 
