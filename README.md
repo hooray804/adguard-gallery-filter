@@ -1,30 +1,61 @@
 # Adguard Gallery Filter for Korean
 
-이 필터와 유저스크립트는 기존의 Adguard와 uBlock Origin의 한국어 필터의 부족한 점을 보완하고 보다 광고에 완벽하게 대응하기 위해 만들어졌습니다.
+이 필터와 유저스크립트는 기존 Adguard와 uBlock Origin 한국어 필터의 부족한 점을 보완하고, 광고 및 커뮤니티 이용 환경을 개선하기 위해 제작되었습니다.
 
-Adguard, uBlock Origin, Brave Browser의 고급 차단 문법을 지원합니다.
+Adguard, uBlock Origin, Brave Browser의 고급 차단 문법을 모두 지원합니다.
 
-필터
+---
+
+## 🔗 필터 및 스크립트 (Quick Links)
+
+### 🛡️ 광고 차단 필터
+* **Adguard/uBlock용 필터**
 
 https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt
 
-에펨코리아 유저스크립트
-
-https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/Gallery%20Extension.user.js
-
-디시인사이드 유저스크립트
-
-https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js
-
-DNS
+* **DNS 필터**
 
 https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/DNS.txt
 
+### 🛠️ 유저스크립트 (Userscripts)
+* **에펨코리아 익스텐션 (Gallery Extension)**
 
-This filter and userscript were created to complement the shortcomings of existing Korean filters for Adguard and uBlock Origin, and to provide more comprehensive ad blocking coverage.
+https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/Gallery%20Extension.user.js
 
-It supports advanced blocking syntax for Adguard, uBlock Origin, and Brave Browser.
+* **디시인사이드 엑스퍼트 익스텐션 (DC Expert)**
 
-This project is a fork of [Zziniswell/Adguard-gallery-filter](https://github.com/Zziniswell/Adguard-gallery-filter). 본 프로젝트는 Apache License 2.0을 따릅니다. 원본 프로젝트의 저작권은 https://github.com/Zziniswell 에게 있으며, 수정된 부분에 대한 권리는 해당 부분의 기여자에게 있습니다. 자세한 내용은 LICENSE 파일을 확인하세요.
+https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js
 
-[GitHub Issues](https://github.com/hooray804/adguard-gallery-filter/issues) 등을 통해 버그를 제보하거나 기여하실 수 있습니다.
+---
+
+### 에펨코리아 갤러리 익스텐션
+* **광고 및 제휴 제거**: 파워링크 제거 및 핫딜 제휴 링크를 일반 링크로 강제 복구
+* **댓글 이미지 임베딩**: 댓글에 있는 이미지/동영상 링크를 클릭 없이 바로 표시
+* **커스텀 차단 시스템**: 유저 차단 및 키워드 차단(게시물/댓글) 기능 제공 (데이터 내보내기/불러오기 지원)
+* **UI 최적화**: 공지사항, 검색 어시스턴트, 최근 방문 목록 등 불필요한 요소 제거
+
+### 디시인사이드 엑스퍼트
+* **무한 스크롤**: 페이지 번호를 누를 필요 없이 하단 도달 시 자동 로드
+* **미리보기 썸네일**: 리스트에서 본문의 첫 번째 이미지를 즉시 확인
+* **비추천수 표시**: 게시글 목록에서 추천수와 함께 비추천수 실시간 표시
+* **실시간 베스트 갤러리 예외 처리**: 실시간 베스트 페이지 자동 제외
+
+---
+
+## 📄 라이선스 및 저작권 (License)
+
+This project is a fork of [Zziniswell/Adguard-gallery-filter](https://github.com/Zziniswell/Adguard-gallery-filter).
+
+본 프로젝트는 **Apache License 2.0**을 따릅니다.
+* 원본 프로젝트의 저작권은 [Zziniswell](https://github.com/Zziniswell)에게 있습니다.
+* 수정 및 추가된 부분에 대한 권리는 해당 기여자에게 있습니다.
+* 자세한 내용은 리포지토리 내 `LICENSE` 파일을 확인하세요.
+
+---
+
+## 🤝 기여 및 버그 제보 (Contribution)
+
+이용 중 발생한 버그나 개선 제안은 [GitHub Issues](https://github.com/hooray804/adguard-gallery-filter/issues)를 통해 제보해 주시기 바랍니다. 여러분의 기여가 더 쾌적한 커뮤니티 환경을 만듭니다.
+
+---
+Copyright 2026 All Contributors. Licensed under the Apache License, Version 2.0.
