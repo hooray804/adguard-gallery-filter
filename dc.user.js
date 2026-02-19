@@ -11,6 +11,7 @@
 // @grant        GM_getValue
 // @run-at       document-end
 // @license      Apache-2.0
+// @homepage     https://github.com/hooray804/adguard-gallery-filter
 // @supportURL   https://github.com/hooray804/adguard-gallery-filter/issues
 // @downloadURL  https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js
 // @updateURL    https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js
