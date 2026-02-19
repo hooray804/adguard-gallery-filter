@@ -351,7 +351,7 @@
 
         const applyDOM = (imgUrl, dislikeCount, userInfo) => {
             const isDefaultIcon = imgUrl && (imgUrl.includes('dcinside_icon.png') || imgUrl.includes('no_img'));
-            if (imgUrl && !isDefaultIcon && (li.querySelector('.sp-lst-img'))) {
+            if (imgUrl && !isDefaultIcon && (li.querySelector('.sp-lst-img, .sp-lst-recoimg'))) {
                 img.src = imgUrl;
                 img.style.visibility = 'visible';
                 img.style.backgroundColor = '#f2f2f2';
