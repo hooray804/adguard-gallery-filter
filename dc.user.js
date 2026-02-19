@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      1.1.2
+// @version      1.1.3
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -84,6 +84,13 @@
             request.onerror = () => reject(request.error);
         });
     };
+
+            const processInBatches = async (items, batchSize = 5) => {
+               for (let i = 0; i < items.length; i += batchSize) {
+                   const batch = Array.from(items).slice(i, i + batchSize);
+                   await Promise.all(batch.map(item => processListItem(item)));
+               }
+           };
 
     const getData = (id) => GM_getValue('dc_user_' + id, { memo: "" });
     const setData = (id, data) => GM_setValue('dc_user_' + id, data);
@@ -428,7 +435,6 @@
             };
 
             await dbPut(saveData).catch(() => {});
-            await new Promise(resolve => setTimeout(resolve, 100));
         } catch (e) {
             if (img) img.remove();
         }
@@ -463,10 +469,7 @@
 
                 newPosts.forEach(post => listContainer.appendChild(post));
                 nextPage++;
-                
-                for (const post of newPosts) {
-                    await processListItem(post);
-                }
+                await processInBatches(newPosts, 5); 
             }
         } catch (e) {
             loadingBar.remove();
@@ -488,11 +491,9 @@
     if (listContainer) {
         (async () => {
             const items = listContainer.querySelectorAll('li:not(.notice):not(.click_ad)');
-            for (const li of items) {
-                await processListItem(li);
-            }
+            await processInBatches(items, 5);
         })();
-        
+
         window.addEventListener('scroll', handleScroll);
         
         const params = new URLSearchParams(window.location.search);
