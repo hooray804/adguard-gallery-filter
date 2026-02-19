@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      1.1.8
+// @version      1.1.9
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -86,15 +86,16 @@
         });
     };
 
-            const processInBatches = async (items, batchSize = 3) => {
-               for (let i = 0; i < items.length; i += batchSize) {
-                   const batch = Array.from(items).slice(i, i + batchSize);
-                   await Promise.all(batch.map(item => processListItem(item)));
-                    if (i + batchSize < items.length) {
-                        await new Promise(resolve => setTimeout(resolve, 500));
-                        }
-               }
-           };
+    const processInBatches = async (items, batchSize = 5) => {
+        const itemList = Array.from(items).filter(li => !li.dataset.processed && !li.classList.contains('notice'));
+        for (let i = 0; i < itemList.length; i += batchSize) {
+            const batch = itemList.slice(i, i + batchSize);
+            await Promise.all(batch.map(item => processListItem(item)));
+            if (i + batchSize < itemList.length) {
+                await new Promise(resolve => setTimeout(resolve, 500));
+            }
+        }
+    };
 
     const getData = (id) => GM_getValue('dc_user_' + id, { memo: "" });
     const setData = (id, data) => GM_setValue('dc_user_' + id, data);
@@ -462,7 +463,7 @@
             const parser = new DOMParser();
             const doc = parser.parseFromString(text, 'text/html');
 
-            const newPosts = doc.querySelectorAll('ul.gall-detail-lst > li:not(.notice):not(.click_ad)');
+            const newPosts = Array.from(doc.querySelectorAll('ul.gall-detail-lst > li:not(.notice):not(.click_ad)'));
             loadingBar.remove();
 
             if (newPosts.length > 0) {
@@ -473,7 +474,8 @@
 
                 newPosts.forEach(post => listContainer.appendChild(post));
                 nextPage++;
-                await processInBatches(newPosts, 5); 
+                // 무한 스크롤로 추가된 항목들은 즉시 배치 처리
+                processInBatches(newPosts, 5); 
             }
         } catch (e) {
             loadingBar.remove();
@@ -493,19 +495,24 @@
     observer.observe(document.body, { childList: true, subtree: true });
 
     if (listContainer) {
-        const processExisting = async () => {
-            const items = Array.from(listContainer.querySelectorAll('li:not(.notice):not(.click_ad):not([data-processed])'));
-            if (items.length > 0) {
-                await processInBatches(items, 5);
+        // 1. 초기 로드 시점의 게시물들을 한꺼번에 묶어서 배치 실행
+        const existingItems = Array.from(listContainer.querySelectorAll('li:not(.notice):not(.click_ad):not([data-processed])'));
+        if (existingItems.length > 0) {
+            processInBatches(existingItems, 5);
+        }
+
+        // 2. 이후 실시간으로 추가되는 노드들(브라우저 파싱 중인 노드들) 감시
+        const listObserver = new MutationObserver((mutations) => {
+            const addedItems = [];
+            for (const mutation of mutations) {
+                for (const node of mutation.addedNodes) {
+                    if (node.tagName === 'LI' && !node.classList.contains('notice') && !node.classList.contains('click_ad') && !node.dataset.processed) {
+                        addedItems.push(node);
+                    }
+                }
             }
-        };
-
-        processExisting();
-
-        const listObserver = new MutationObserver(async (mutations) => {
-            const hasNewItems = mutations.some(m => Array.from(m.addedNodes).some(node => node.tagName === 'LI'));
-            if (hasNewItems) {
-                await processExisting();
+            if (addedItems.length > 0) {
+                processInBatches(addedItems, 5);
             }
         });
 
