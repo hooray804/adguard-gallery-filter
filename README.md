@@ -22,7 +22,7 @@ https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/ma
 
 https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/Gallery%20Extension.user.js
 
-* **디시인사이드 엑스퍼트 익스텐션 (DC Expert)**
+* **디시인사이드 엑스퍼트 익스텐션 (Dcinside Expert Extension)**
 
 https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js
 
@@ -34,12 +34,17 @@ https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/ma
 * **커스텀 차단 시스템**: 유저 차단 및 키워드 차단(게시물/댓글) 기능 제공 (데이터 내보내기/불러오기 지원)
 * **UI 최적화**: 공지사항, 검색 어시스턴트, 최근 방문 목록 등 불필요한 요소 제거
 
+https://gall.dcinside.com/mgallery/board/view/?id=adguard&no=7935
+https://gall.dcinside.com/mgallery/board/view/?id=adguard&no=2348
+
 ### 디시인사이드 엑스퍼트
 * **무한 스크롤**: 페이지 번호를 누를 필요 없이 하단 도달 시 자동 로드
 * **미리보기 썸네일**: 리스트에서 본문의 첫 번째 이미지를 즉시 확인
 * **비추천수 표시**: 게시글 목록에서 추천수와 함께 비추천수 실시간 표시
 * **이용자 메모**: 모바일 웹에서도 지원(현재 백업 기능이 없어서 웹사이트 데이터 삭제 시 삭제됩니다.)
 * **주의 사항**: 본 스크립트는 기능 구현을 위해 게시글을 백그라운드에서 접속하므로 셀룰러 데이터 사용량이 증가할 수 있습니다. 모든 메모와 캐시 데이터는 브라우저 내부에만 저장되어 브라우저 데이터 삭제 시 데이터가 복구되지 않음에 유의하시기 바랍니다. 또한 다크 모드는 지원되지 않습니다.
+
+https://gall.dcinside.com/mgallery/board/view/?id=adguard&no=8115
 
 ---
 
