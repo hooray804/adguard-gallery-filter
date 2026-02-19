@@ -90,7 +90,7 @@
                    const batch = Array.from(items).slice(i, i + batchSize);
                    await Promise.all(batch.map(item => processListItem(item)));
                     if (i + batchSize < items.length) {
-                        await new Promise(resolve => setTimeout(resolve, 1));
+                        await new Promise(resolve => setTimeout(resolve, 50));
                         }
                }
            };
