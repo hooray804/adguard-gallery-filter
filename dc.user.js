@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      1.0.1
+// @version      1.1.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -19,11 +19,10 @@
 (function() {
     'use strict';
 
-    // 0. IndexedDB Helper
     const DB_NAME = 'dc_expert_db';
     const DB_VERSION = 1;
     const STORE_NAME = 'post_cache';
-    const CACHE_EXPIRE_TIME = 24 * 60 * 60 * 1000;
+    const CACHE_EXPIRE_TIME = 60 * 60 * 1000;
 
     let dbInstance = null;
 
@@ -86,7 +85,6 @@
         });
     };
 
-    // 1. 공통 유저 메모 관리 로직 (GM_storage 전환)
     const getData = (id) => GM_getValue('dc_user_' + id, { memo: "" });
     const setData = (id, data) => GM_setValue('dc_user_' + id, data);
 
@@ -144,9 +142,7 @@
         return null;
     }
 
-    // 2. 게시글 뷰(본문/댓글) 메모 로직
     function processPostView() {
-        // 1. 본문 작성자 처리
         const authorBox = document.querySelector('.gallview-tit-box');
         if (authorBox && !authorBox.dataset.memoApplied) {
             const userInfo = parseUserFromElement(authorBox);
@@ -172,7 +168,6 @@
             }
         }
 
-        // 2. 댓글 및 대댓글 처리
         const commentList = document.querySelectorAll('.all-comment-lst li[id^="comment_cnt_"]');
         commentList.forEach(li => {
             if (li.dataset.memoApplied) return;
@@ -217,12 +212,10 @@
         });
     }
 
-    // 3. 리스트 미리보기 & 무한스크롤 & 캐싱
     let isFetching = false;
     let nextPage = 2;
     const listContainer = document.querySelector('ul.gall-detail-lst');
 
-    // CSS 스타일 정의
     const style = document.createElement('style');
     style.innerHTML = `
         ul.gall-detail-lst .gall-detail-lnktb {
@@ -305,6 +298,17 @@
             background: #eee;
             margin: 0 10px;
         }
+        @media (prefers-color-scheme: dark) {
+            ul.gall-detail-lst .gall-detail-lnktb { background: #121212 !important; }
+            ul.gall-detail-lst .gall-detail-lnktb .lt .subject-add { color: #e1e1e1 !important; }
+            .custom-comment-count { color: #bbbbbb !important; }
+            ul.gall-detail-lst .gall-detail-lnktb .lt .ginfo li { color: #888 !important; }
+            .dc-preview-thumb { background-color: #121212 !important; }
+            .dislike-cnt { color: #888 !important; }
+            .page-divider { color: #444; }
+            .page-divider::before, .page-divider::after { background: #2a2a2a; }
+            .custom-memo-area b { color: #66b0ff !important; }
+        }
     `;
     document.head.appendChild(style);
 
@@ -343,7 +347,7 @@
         try {
             const stored = await dbGet(url);
             if (stored) {
-                if (now - stored.time < 60000) {
+                if (now - stored.time < 90000) {
                     cachedData = stored;
                 }
             }
@@ -391,41 +395,43 @@
             return;
         }
 
-        fetch(url)
-            .then(response => response.text())
-            .then(html => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, "text/html");
+        try {
+            const response = await fetch(url);
+            const html = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, "text/html");
 
-                let imgUrl = null;
-                const metaImg = doc.querySelector('meta[property="og:image"]');
-                if (metaImg) imgUrl = metaImg.content;
-                if (!imgUrl || imgUrl.includes('dcinside_icon.png')) {
-                    const bodyImg = doc.querySelector('.writing_view_box img, .thum-txtin img');
-                    if (bodyImg) imgUrl = bodyImg.getAttribute('data-original') || bodyImg.src;
-                }
+            let imgUrl = null;
+            const metaImg = doc.querySelector('meta[property="og:image"]');
+            if (metaImg) imgUrl = metaImg.content;
+            if (!imgUrl || imgUrl.includes('dcinside_icon.png')) {
+                const bodyImg = doc.querySelector('.writing_view_box img, .thum-txtin img');
+                if (bodyImg) imgUrl = bodyImg.getAttribute('data-original') || bodyImg.src;
+            }
 
-                let dislikeCount = null;
-                const nonRecoEl = doc.querySelector('#nonrecomm_btn');
-                if (nonRecoEl) {
-                    dislikeCount = nonRecoEl.innerText.replace(/[^0-9]/g, '');
-                }
+            let dislikeCount = null;
+            const nonRecoEl = doc.querySelector('#nonrecomm_btn');
+            if (nonRecoEl) {
+                dislikeCount = nonRecoEl.innerText.replace(/[^0-9]/g, '');
+            }
 
-                const userInfo = parseUserFromElement(doc.querySelector('.gallview-tit-box'));
+            const userInfo = parseUserFromElement(doc.querySelector('.gallview-tit-box'));
 
-                applyDOM(imgUrl, dislikeCount, userInfo);
+            applyDOM(imgUrl, dislikeCount, userInfo);
 
-                const saveData = {
-                    url: url,
-                    time: Date.now(),
-                    imgUrl: imgUrl,
-                    dislikeCount: dislikeCount,
-                    userInfo: userInfo
-                };
+            const saveData = {
+                url: url,
+                time: Date.now(),
+                imgUrl: imgUrl,
+                dislikeCount: dislikeCount,
+                userInfo: userInfo
+            };
 
-                dbPut(saveData).catch(() => {});
-            })
-            .catch(() => { if (img) img.remove(); });
+            await dbPut(saveData).catch(() => {});
+            await new Promise(resolve => setTimeout(resolve, 500));
+        } catch (e) {
+            if (img) img.remove();
+        }
     };
 
     const loadMore = async () => {
@@ -455,11 +461,12 @@
                 divider.innerText = `PAGE ${nextPage}`;
                 listContainer.appendChild(divider);
 
-                newPosts.forEach(post => {
-                    listContainer.appendChild(post);
-                    processListItem(post);
-                });
+                newPosts.forEach(post => listContainer.appendChild(post));
                 nextPage++;
+                
+                for (const post of newPosts) {
+                    await processListItem(post);
+                }
             }
         } catch (e) {
             loadingBar.remove();
@@ -474,13 +481,18 @@
         }
     };
 
-    // 4. 초기화 및 실행
     processPostView();
     const observer = new MutationObserver(processPostView);
     observer.observe(document.body, { childList: true, subtree: true });
 
     if (listContainer) {
-        listContainer.querySelectorAll('li:not(.notice):not(.click_ad)').forEach(li => processListItem(li));
+        (async () => {
+            const items = listContainer.querySelectorAll('li:not(.notice):not(.click_ad)');
+            for (const li of items) {
+                await processListItem(li);
+            }
+        })();
+        
         window.addEventListener('scroll', handleScroll);
         
         const params = new URLSearchParams(window.location.search);
