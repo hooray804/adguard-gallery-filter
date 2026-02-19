@@ -492,13 +492,25 @@
     observer.observe(document.body, { childList: true, subtree: true });
 
     if (listContainer) {
-        (async () => {
-            const items = listContainer.querySelectorAll('li:not(.notice):not(.click_ad)');
-            await processInBatches(items, 5);
-        })();
+        const processExisting = async () => {
+            const items = Array.from(listContainer.querySelectorAll('li:not(.notice):not(.click_ad):not([data-processed])'));
+            if (items.length > 0) {
+                await processInBatches(items, 5);
+            }
+        };
+
+        processExisting();
+
+        const listObserver = new MutationObserver(async (mutations) => {
+            const hasNewItems = mutations.some(m => Array.from(m.addedNodes).some(node => node.tagName === 'LI'));
+            if (hasNewItems) {
+                await processExisting();
+            }
+        });
+
+        listObserver.observe(listContainer, { childList: true });
 
         window.addEventListener('scroll', handleScroll);
-        
         const params = new URLSearchParams(window.location.search);
         if (params.has('page')) nextPage = parseInt(params.get('page')) + 1;
     }
