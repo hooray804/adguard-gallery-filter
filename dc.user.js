@@ -85,10 +85,12 @@
         });
     };
 
-            const processInBatches = async (items, batchSize = 5) => {
+            const processInBatches = async (items, batchSize = 3) => {
                for (let i = 0; i < items.length; i += batchSize) {
                    const batch = Array.from(items).slice(i, i + batchSize);
                    await Promise.all(batch.map(item => processListItem(item)));
+                    if (i + batchSize < items.length) {
+                        await new Promise(resolve => setTimeout(resolve, 500));
                }
            };
 
