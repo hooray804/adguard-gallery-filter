@@ -91,6 +91,7 @@
                    await Promise.all(batch.map(item => processListItem(item)));
                     if (i + batchSize < items.length) {
                         await new Promise(resolve => setTimeout(resolve, 500));
+                        }
                }
            };
 
