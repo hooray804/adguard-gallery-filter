@@ -135,7 +135,7 @@
             container.style.margin = '15px 0';
             
             const label = document.createElement('label');
-            label.innerText = '게시글 캐시 시간 (초, 최대 86400, 짧을수록 페이지 로딩이 빨라지나 비추천 수 새로고침이 느려집니다.): ';
+            label.innerText = '게시글 캐시 시간 (초, 최대 86400, 짧을수록 페이지 로딩이 빨라지나 비추천 수 새로고침 간격이 느려집니다.): ';
             label.style.fontSize = '16px';
             
             const input = document.createElement('input');
@@ -172,7 +172,7 @@
             container.style.paddingTop = '15px';
 
             const title = document.createElement('h3');
-            title.innerText = '유저 메모 관리';
+            title.innerText = '유저 메모 백업';
             title.style.fontSize = '16px';
             container.appendChild(title);
 
@@ -248,7 +248,7 @@
         info.style.marginTop = '20px';
         info.style.color = '#888';
         info.style.fontSize = '13px';
-        info.innerText = '설정 변경 후 디시인사이드 갤러리 페이지를 새로고침하면 적용됩니다.';
+        info.innerText = '설정 변경 후 디시인사이드 갤러리 페이지를 새로고침하면 적용됩니다. 메모 가져오기 시 기존 메모는 유지되며, 중복된 유저가 있다면 덮어쓰여 집니다.';
         document.body.appendChild(info);
 
         return;
