@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      1.1.13
+// @version      1.1.14
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -129,7 +129,7 @@
         // 설정 항목 추가
         document.body.appendChild(createToggle('무한 스크롤 사용', 'autoScroll'));
         document.body.appendChild(createToggle('이미지 미리보기 사용', 'showImage'));
-        document.body.appendChild(createToggle('데이터 절약 (게시글 리스트에서 메모, 섬네일과 비추천 로드/표시 안 함)', 'disableFetch'));
+        document.body.appendChild(createToggle('데이터 절약 (게시글 리스트에서 섬네일, 비추천, 메모 표시 안 됨)', 'disableFetch'));
 
         const info = document.createElement('p');
         info.style.marginTop = '20px';
