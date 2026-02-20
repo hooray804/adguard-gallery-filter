@@ -135,7 +135,7 @@
             container.style.margin = '15px 0';
             
             const label = document.createElement('label');
-            label.innerText = '게시글 캐시 시간 (초, 최대 86400, 짧을수록 페이지 로딩이 빨라지나 비추천 수 새로고침 간격이 느려집니다.): ';
+            label.innerText = '게시글 캐시 시간 (초, 최대 86400, 길수록 페이지 로딩이 빨라지나 비추천 수 새로고침 간격이 느려집니다.): ';
             label.style.fontSize = '16px';
             
             const input = document.createElement('input');
