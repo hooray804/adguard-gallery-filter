@@ -147,7 +147,7 @@
     const DB_NAME = 'dc_expert_db';
     const DB_VERSION = 1;
     const STORE_NAME = 'post_cache';
-    const CACHE_EXPIRE_TIME = 60 * 60 * 1000; // 1시간
+    const CACHE_EXPIRE_TIME = 24 * 60 * 60 * 1000; // 24시간
 
     let dbInstance = null;
 
