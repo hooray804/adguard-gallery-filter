@@ -225,7 +225,7 @@
         document.body.appendChild(createToggle('무한 스크롤 사용', 'autoScroll'));
         document.body.appendChild(createToggle('이미지 미리보기 사용', 'showImage'));
         document.body.appendChild(createToggle('본문 미리보기 (3줄 모드)', 'postPreview'));
-        document.body.appendChild(createToggle('데이터 절약 (섬네일, 미리보기, 비추, 메모 표시 안 됨)', 'disableFetch'));
+        document.body.appendChild(createToggle('데이터 절약 (섬네일, 본문, 비추, 메모 표시 안 됨)', 'disableFetch'));
         document.body.appendChild(createNumberInput());
         document.body.appendChild(createMemoTools());
 
