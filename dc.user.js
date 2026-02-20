@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      1.1.11
+// @version      1.1.12
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
 // @match        https://m.dcinside.com/mini/*
+// @match        https://m.dcinside.com/dcscript
 // @exclude      https://m.dcinside.com/board/dcbest*
 // @grant        GM_setValue
 // @grant        GM_getValue
@@ -20,10 +21,133 @@
 (function() {
     'use strict';
 
+    // 기본 설정 불러오기
+    const settings = GM_getValue('dc_expert_settings', { 
+        autoScroll: true, 
+        showImage: true, 
+        disableFetch: false 
+    });
+
+    // -----------------------------------------------------------
+    // 1. 설정 페이지 로직 (https://m.dcinside.com/dcscript)
+    // -----------------------------------------------------------
+    if (window.location.href.includes('m.dcinside.com/dcscript')) {
+        document.body.innerHTML = '';
+        document.body.style.padding = '20px';
+        document.body.style.fontFamily = 'sans-serif';
+        document.body.style.backgroundColor = '#ffffff';
+        
+        // 다크 모드 감지
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.style.backgroundColor = '#121212';
+            document.body.style.color = '#ffffff';
+        }
+
+        const title = document.createElement('h2');
+        title.innerText = 'Dcinside Expert Extension 설정';
+        document.body.appendChild(title);
+
+        // 토글 버튼 생성 헬퍼 함수
+        const createToggle = (labelText, key) => {
+            const label = document.createElement('label');
+            label.style.display = 'flex';
+            label.style.alignItems = 'center';
+            label.style.margin = '15px 0';
+            label.style.fontSize = '16px';
+            label.style.cursor = 'pointer';
+            
+            // 이벤트 버블링 방지
+            label.addEventListener('click', (e) => e.stopPropagation());
+            label.addEventListener('touchstart', (e) => e.stopPropagation());
+            
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.style.marginRight = '10px';
+            checkbox.style.width = '20px';
+            checkbox.style.height = '20px';
+            checkbox.style.accentColor = '#3b5998';
+            
+            // 상태 텍스트 (ON/OFF) 표시용 요소
+            const statusText = document.createElement('span');
+            statusText.style.fontWeight = 'bold';
+            statusText.style.marginLeft = '5px';
+            statusText.style.marginRight = '10px';
+            statusText.style.minWidth = '45px';
+
+            // 데이터 절약 모드 시 이미지 미리보기 강제 비활성화 로직
+            const isDataSaverActive = settings.disableFetch;
+            const isForcedOff = (key === 'showImage' && isDataSaverActive);
+
+            if (isForcedOff) {
+                checkbox.checked = false;
+                checkbox.disabled = true;
+            } else {
+                checkbox.checked = settings[key];
+            }
+
+            // 상태 텍스트 업데이트 함수
+            const updateStatusText = () => {
+                if (isForcedOff) {
+                    statusText.innerText = '[OFF]';
+                    statusText.style.color = '#d9534f'; // 붉은색
+                } else {
+                    if (checkbox.checked) {
+                        statusText.innerText = '[ON]';
+                        statusText.style.color = '#3b5998'; // 파란색
+                    } else {
+                        statusText.innerText = '[OFF]';
+                        statusText.style.color = '#999'; // 회색
+                    }
+                }
+            };
+            updateStatusText();
+
+            // 체크박스 변경 이벤트
+            checkbox.onchange = (e) => {
+                settings[key] = e.target.checked;
+                GM_setValue('dc_expert_settings', settings);
+                updateStatusText();
+            };
+            
+            label.appendChild(checkbox);
+            label.appendChild(statusText);
+            label.appendChild(document.createTextNode(labelText));
+
+            // 데이터 절약 모드로 인해 비활성화된 경우 추가 문구
+            if (isForcedOff) {
+                const warnMsg = document.createElement('span');
+                warnMsg.innerText = ' (데이터 절약 모드 사용 중)';
+                warnMsg.style.fontSize = '13px';
+                warnMsg.style.color = '#d9534f';
+                warnMsg.style.marginLeft = '5px';
+                label.appendChild(warnMsg);
+            }
+
+            return label;
+        };
+
+        // 설정 항목 추가
+        document.body.appendChild(createToggle('무한 스크롤 사용', 'autoScroll'));
+        document.body.appendChild(createToggle('이미지 미리보기 사용', 'showImage'));
+        document.body.appendChild(createToggle('데이터 절약 모드 (미리보기/비추천 로드 X)', 'disableFetch'));
+
+        const info = document.createElement('p');
+        info.style.marginTop = '20px';
+        info.style.color = '#888';
+        info.style.fontSize = '13px';
+        info.innerText = '설정 변경 후 디시인사이드 갤러리 페이지를 새로고침하면 적용됩니다.';
+        document.body.appendChild(info);
+
+        return;
+    }
+
+    // -----------------------------------------------------------
+    // 2. IndexedDB 캐시 관리 (비추천수, 이미지 URL 저장)
+    // -----------------------------------------------------------
     const DB_NAME = 'dc_expert_db';
-    const DB_VERSION = 1;
+    const DB_VERSION = 2;
     const STORE_NAME = 'post_cache';
-    const CACHE_EXPIRE_TIME = 60 * 60 * 1000;
+    const CACHE_EXPIRE_TIME = 60 * 60 * 1000; // 1시간
 
     let dbInstance = null;
 
@@ -34,10 +158,11 @@
             
             request.onupgradeneeded = (e) => {
                 const db = e.target.result;
-                if (!db.objectStoreNames.contains(STORE_NAME)) {
-                    const store = db.createObjectStore(STORE_NAME, { keyPath: 'url' });
-                    store.createIndex('time', 'time', { unique: false });
+                if (db.objectStoreNames.contains(STORE_NAME)) {
+                    db.deleteObjectStore(STORE_NAME);
                 }
+                const store = db.createObjectStore(STORE_NAME, { keyPath: 'url' });
+                store.createIndex('time', 'time', { unique: false });
             };
 
             request.onsuccess = (e) => {
@@ -86,15 +211,18 @@
         });
     };
 
-            const processInBatches = async (items, batchSize = 3) => {
-               for (let i = 0; i < items.length; i += batchSize) {
-                   const batch = Array.from(items).slice(i, i + batchSize);
-                   await Promise.all(batch.map(item => processListItem(item)));
-                    if (i + batchSize < items.length) {
-                        await new Promise(resolve => setTimeout(resolve, 50));
-                        }
-               }
-           };
+    // -----------------------------------------------------------
+    // 3. 유저 메모 기능 및 UI 헬퍼
+    // -----------------------------------------------------------
+    const processInBatches = async (items, batchSize = 3) => {
+        for (let i = 0; i < items.length; i += batchSize) {
+            const batch = Array.from(items).slice(i, i + batchSize);
+            await Promise.all(batch.map(item => processListItem(item)));
+            if (i + batchSize < items.length) {
+                await new Promise(resolve => setTimeout(resolve, 50));
+            }
+        }
+    };
 
     const getData = (id) => GM_getValue('dc_user_' + id, { memo: "" });
     const setData = (id, data) => GM_setValue('dc_user_' + id, data);
@@ -153,7 +281,9 @@
         return null;
     }
 
+    // 게시글 본문 및 댓글의 유저 메모 처리
     function processPostView() {
+        // 본문 작성자 처리
         const authorBox = document.querySelector('.gallview-tit-box');
         if (authorBox && !authorBox.dataset.memoApplied) {
             const userInfo = parseUserFromElement(authorBox);
@@ -179,6 +309,7 @@
             }
         }
 
+        // 댓글 작성자 처리
         const commentList = document.querySelectorAll('.all-comment-lst li[id^="comment_cnt_"]');
         commentList.forEach(li => {
             if (li.dataset.memoApplied) return;
@@ -223,10 +354,14 @@
         });
     }
 
+    // -----------------------------------------------------------
+    // 4. 리스트 처리 및 무한 스크롤 로직
+    // -----------------------------------------------------------
     let isFetching = false;
     let nextPage = 2;
     const listContainer = document.querySelector('ul.gall-detail-lst');
 
+    // CSS 스타일 주입
     const style = document.createElement('style');
     style.innerHTML = `
         ul.gall-detail-lst .gall-detail-lnktb {
@@ -323,6 +458,7 @@
     `;
     document.head.appendChild(style);
 
+    // 개별 게시글 항목 처리 (썸네일, 비추천, 메모)
     const processListItem = async (li) => {
         if (li.dataset.processed) return;
         li.dataset.processed = "true";
@@ -336,6 +472,7 @@
 
         if (!linkElement || !lnkTable) return;
 
+        // 댓글 수 이동 UI 수정
         if (rtElement && subjectAdd) {
             const ctSpan = rtElement.querySelector('.ct');
             if (ctSpan && ctSpan.innerText.trim() !== '') {
@@ -347,34 +484,45 @@
             rtElement.remove();
         }
 
-        const img = document.createElement('img');
-        img.className = 'dc-preview-thumb';
-        lnkTable.prepend(img);
+        // 데이터 절약 모드 시 추가 fetch 중단
+        if (settings.disableFetch) return;
+
+        let img = null;
+        if (settings.showImage) {
+            img = document.createElement('img');
+            img.className = 'dc-preview-thumb';
+            lnkTable.prepend(img);
+        }
 
         const url = linkElement.href;
         const now = Date.now();
         let cachedData = null;
 
+        // DB 캐시 확인
         try {
             const stored = await dbGet(url);
             if (stored) {
-                if (now - stored.time < 90000) {
+                if (now - stored.time < 90000) { // 캐시 유효기간 체크
                     cachedData = stored;
                 }
             }
         } catch(e) {}
 
         const applyDOM = (imgUrl, dislikeCount, userInfo) => {
-            const isDefaultIcon = imgUrl && (imgUrl.includes('dcinside_icon.png') || imgUrl.includes('no_img'));
-            if (imgUrl && !isDefaultIcon && (li.querySelector('.sp-lst-img, .sp-lst-recoimg'))) {
-                img.src = imgUrl;
-                img.style.visibility = 'visible';
-                img.style.backgroundColor = '#f2f2f2';
-            } else {
-                img.style.visibility = 'hidden';
-                img.style.backgroundColor = 'transparent';
+            // 이미지 미리보기 적용
+            if (settings.showImage && img) {
+                const isDefaultIcon = imgUrl && (imgUrl.includes('dcinside_icon.png') || imgUrl.includes('no_img'));
+                if (imgUrl && !isDefaultIcon && (li.querySelector('.sp-lst-img, .sp-lst-recoimg'))) {
+                    img.src = imgUrl;
+                    img.style.visibility = 'visible';
+                    img.style.backgroundColor = '#f2f2f2';
+                } else {
+                    img.style.visibility = 'hidden';
+                    img.style.backgroundColor = 'transparent';
+                }
             }
 
+            // 비추천 수 적용
             if (dislikeCount !== null) {
                 const ginfoLis = li.querySelectorAll('.ginfo li');
                 ginfoLis.forEach(infoLi => {
@@ -387,6 +535,7 @@
                 });
             }
 
+            // 유저 메모 적용
             if (userInfo && userInfo.userId) {
                 const ginfoLis = li.querySelectorAll('.ginfo li');
                 for (let infoLi of ginfoLis) {
@@ -406,6 +555,7 @@
             return;
         }
 
+        // 데이터 가져오기 (Fetch)
         try {
             const response = await fetch(url);
             const html = await response.text();
@@ -444,6 +594,7 @@
         }
     };
 
+    // 다음 페이지 로드
     const loadMore = async () => {
         if (isFetching) return;
         isFetching = true;
@@ -488,20 +639,25 @@
         }
     };
 
-    processPostView();
-    const observer = new MutationObserver(processPostView);
-    observer.observe(document.body, { childList: true, subtree: true });
+    // 메인 실행 로직
+    if (!window.location.href.includes('m.dcinside.com/dcscript')) {
+        processPostView();
+        const observer = new MutationObserver(processPostView);
+        observer.observe(document.body, { childList: true, subtree: true });
 
-    if (listContainer) {
-        (async () => {
-            const items = listContainer.querySelectorAll('li:not(.notice):not(.click_ad)');
-            await processInBatches(items, 5);
-        })();
+        if (listContainer) {
+            (async () => {
+                const items = listContainer.querySelectorAll('li:not(.notice):not(.click_ad)');
+                await processInBatches(items, 5);
+            })();
 
-        window.addEventListener('scroll', handleScroll);
-        
-        const params = new URLSearchParams(window.location.search);
-        if (params.has('page')) nextPage = parseInt(params.get('page')) + 1;
+            if (settings.autoScroll) {
+                window.addEventListener('scroll', handleScroll);
+            }
+            
+            const params = new URLSearchParams(window.location.search);
+            if (params.has('page')) nextPage = parseInt(params.get('page')) + 1;
+        }
     }
 
 })();
