@@ -233,7 +233,7 @@
         info.style.marginTop = '20px';
         info.style.color = '#888';
         info.style.fontSize = '13px';
-        info.innerText = '설정 변경 후 디시인사이드 갤러리 페이지를 새로고침하면 적용됩니다.';
+        info.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 길수록 페이지 로딩이 빨라지나 비추천 수 새로고침 간격이 느려집니다.';
         document.body.appendChild(info);
 
         return;
