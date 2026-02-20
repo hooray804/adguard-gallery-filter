@@ -258,7 +258,7 @@
     // 2. IndexedDB 캐시 관리 (비추천수, 이미지 URL 저장)
     // -----------------------------------------------------------
     const DB_NAME = 'dc_expert_db';
-    const DB_VERSION = 1;
+    const DB_VERSION = 2;
     const STORE_NAME = 'post_cache';
     const CACHE_EXPIRE_TIME = 24 * 60 * 60 * 1000; // 최대 24시간까지 보관
 
