@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      1.2.0
+// @version      1.3.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -10,6 +10,7 @@
 // @exclude      https://m.dcinside.com/board/dcbest*
 // @grant        GM_setValue
 // @grant        GM_getValue
+// @grant        GM_listValues
 // @run-at       document-end
 // @license      Apache-2.0
 // @homepage     https://github.com/hooray804/adguard-gallery-filter
@@ -25,7 +26,8 @@
     const settings = GM_getValue('dc_expert_settings', { 
         autoScroll: true, 
         showImage: true, 
-        disableFetch: false 
+        disableFetch: false,
+        cacheDuration: 90000 
     });
 
     // -----------------------------------------------------------
@@ -107,6 +109,7 @@
                 settings[key] = e.target.checked;
                 GM_setValue('dc_expert_settings', settings);
                 updateStatusText();
+                if (key === 'disableFetch') location.reload();
             };
             
             label.appendChild(checkbox);
@@ -126,10 +129,120 @@
             return label;
         };
 
+        // 캐시 시간 설정 입력 헬퍼 함수
+        const createNumberInput = () => {
+            const container = document.createElement('div');
+            container.style.margin = '15px 0';
+            
+            const label = document.createElement('label');
+            label.innerText = '캐시 유지 시간 (초, 최대 86400): ';
+            label.style.fontSize = '16px';
+            
+            const input = document.createElement('input');
+            input.type = 'number';
+            input.style.marginLeft = '10px';
+            input.style.padding = '5px';
+            input.style.width = '80px';
+            input.min = 1;
+            input.max = 86400;
+            
+            const currentSec = (settings.cacheDuration || 90000) / 1000;
+            input.value = currentSec;
+
+            input.onchange = (e) => {
+                let val = parseInt(e.target.value);
+                if (isNaN(val) || val < 1) val = 1;
+                if (val > 86400) val = 86400;
+                
+                settings.cacheDuration = val * 1000;
+                GM_setValue('dc_expert_settings', settings);
+                input.value = val;
+            };
+
+            container.appendChild(label);
+            container.appendChild(input);
+            return container;
+        };
+
+        // 메모 내보내기/가져오기 헬퍼 함수
+        const createMemoTools = () => {
+            const container = document.createElement('div');
+            container.style.margin = '20px 0';
+            container.style.borderTop = '1px solid #ddd';
+            container.style.paddingTop = '15px';
+
+            const title = document.createElement('h3');
+            title.innerText = '유저 메모 관리';
+            title.style.fontSize = '16px';
+            container.appendChild(title);
+
+            const btnStyle = 'padding: 8px 15px; margin-right: 10px; cursor: pointer; border: 1px solid #ccc; background: #f8f8f8; border-radius: 4px;';
+
+            // 내보내기
+            const exportBtn = document.createElement('button');
+            exportBtn.innerText = '메모 내보내기 (JSON)';
+            exportBtn.style.cssText = btnStyle;
+            exportBtn.onclick = () => {
+                const keys = GM_listValues();
+                const data = {};
+                keys.forEach(key => {
+                    if (key.startsWith('dc_user_')) {
+                        data[key] = GM_getValue(key);
+                    }
+                });
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `dc_memos_${new Date().toISOString().slice(0,10)}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+            };
+
+            // 가져오기
+            const importInput = document.createElement('input');
+            importInput.type = 'file';
+            importInput.accept = '.json';
+            importInput.style.display = 'none';
+            importInput.onchange = (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = (evt) => {
+                    try {
+                        const imported = JSON.parse(evt.target.result);
+                        let count = 0;
+                        for (const key in imported) {
+                            if (key.startsWith('dc_user_')) {
+                                GM_setValue(key, imported[key]);
+                                count++;
+                            }
+                        }
+                        alert(`${count}개의 메모를 성공적으로 가져왔습니다.`);
+                    } catch (err) {
+                        alert('파일 형식이 올바르지 않습니다.');
+                    }
+                };
+                reader.readAsText(file);
+            };
+
+            const importBtn = document.createElement('button');
+            importBtn.innerText = '메모 가져오기';
+            importBtn.style.cssText = btnStyle;
+            importBtn.onclick = () => importInput.click();
+
+            container.appendChild(exportBtn);
+            container.appendChild(importBtn);
+            container.appendChild(importInput);
+            return container;
+        };
+
         // 설정 항목 추가
         document.body.appendChild(createToggle('무한 스크롤 사용', 'autoScroll'));
         document.body.appendChild(createToggle('이미지 미리보기 사용', 'showImage'));
         document.body.appendChild(createToggle('데이터 절약 (게시글 리스트에서 섬네일, 비추천, 메모 표시 안 됨)', 'disableFetch'));
+        document.body.appendChild(createNumberInput());
+        document.body.appendChild(createMemoTools());
 
         const info = document.createElement('p');
         info.style.marginTop = '20px';
@@ -147,7 +260,7 @@
     const DB_NAME = 'dc_expert_db';
     const DB_VERSION = 1;
     const STORE_NAME = 'post_cache';
-    const CACHE_EXPIRE_TIME = 24 * 60 * 60 * 1000; // 24시간
+    const CACHE_EXPIRE_TIME = 24 * 60 * 60 * 1000; // 최대 24시간까지 보관
 
     let dbInstance = null;
 
@@ -502,7 +615,7 @@
         try {
             const stored = await dbGet(url);
             if (stored) {
-                if (now - stored.time < 90000) { // 캐시 유효기간 체크
+                if (now - stored.time < (settings.cacheDuration || 90000)) { // 캐시 유효기간 체크
                     cachedData = stored;
                 }
             }
