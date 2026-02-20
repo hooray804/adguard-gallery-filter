@@ -180,7 +180,7 @@
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = `dc_memos_${new Date().toISOString().slice(0,20)}.json`;
+                a.download = `dc_memos_${new Date().toISOString().slice(0,25)}.json`;
                 a.click();
                 URL.revokeObjectURL(url);
             };
@@ -732,7 +732,7 @@
             let content = null;
             const txtBody = doc.querySelector('.thum-txtin') || doc.querySelector('.writing_view_box');
             if (txtBody) {
-                content = txtBody.innerText.replace(/\s+/g, ' ').trim().substring(0, 20);
+                content = txtBody.innerText.replace(/\s+/g, ' ').trim().substring(0, 25);
             }
 
             const userInfo = parseUserFromElement(doc.querySelector('.gallview-tit-box'));
