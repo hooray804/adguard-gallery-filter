@@ -27,7 +27,7 @@
         autoScroll: true, 
         showImage: true, 
         disableFetch: false,
-        cacheDuration: 90000 
+        cacheDuration: 120000 
     });
 
     // -----------------------------------------------------------
@@ -135,7 +135,7 @@
             container.style.margin = '15px 0';
             
             const label = document.createElement('label');
-            label.innerText = '캐시 유지 시간 (초, 최대 86400): ';
+            label.innerText = '게시글 캐시 시간 (초, 최대 86400, 짧을수록 페이지 로딩이 빨라지나 비추천 수 새로고침이 느려집니다.): ';
             label.style.fontSize = '16px';
             
             const input = document.createElement('input');
@@ -146,7 +146,7 @@
             input.min = 1;
             input.max = 86400;
             
-            const currentSec = (settings.cacheDuration || 90000) / 1000;
+            const currentSec = (settings.cacheDuration || 120000) / 1000;
             input.value = currentSec;
 
             input.onchange = (e) => {
@@ -573,7 +573,7 @@
     `;
     document.head.appendChild(style);
 
-    // 개별 게시글 항목 처리 (썸네일, 비추천, 메모)
+    // 개별 게시글 항목 처리 (섬네일, 비추천, 메모)
     const processListItem = async (li) => {
         if (li.dataset.processed) return;
         li.dataset.processed = "true";
@@ -617,7 +617,7 @@
         try {
             const stored = await dbGet(url);
             if (stored) {
-                if (now - stored.time < (settings.cacheDuration || 90000)) { // 캐시 유효기간 체크
+                if (now - stored.time < (settings.cacheDuration || 120000)) { // 캐시 유효기간 체크
                     cachedData = stored;
                 }
             }
