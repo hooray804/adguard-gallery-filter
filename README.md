@@ -43,6 +43,7 @@ https://gall.dcinside.com/mgallery/board/view/?id=adguard&no=2348
 * **비추천수 표시**: 게시글 목록에서 추천수와 함께 비추천수 표시
 * **이용자 메모**: 모바일 웹에서도 지원
 * **주의 사항**: 본 스크립트는 기능 구현을 위해 게시글을 백그라운드에서 접속하므로 셀룰러 데이터 사용량이 증가할 수 있습니다. 모든 메모와 캐시 데이터는 브라우저 내부에만 저장되어 브라우저 데이터 삭제 시 데이터가 복구되지 않음에 유의하시기 바랍니다. 또한 다크 모드는 기기 자체 다크 모드 상태와 연동됩니다.
+* **설정 URL**: https://m.dcinside.com/dcscript
 
 https://gall.dcinside.com/mgallery/board/view/?id=adguard&no=8115
 
