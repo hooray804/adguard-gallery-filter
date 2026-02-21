@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      1.4.2
+// @version      1.4.3
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
 // @match        https://m.dcinside.com/mini/*
-// @match        https://m.dcinside.com/dcscript
+// @match        https://m.dcinside.com/dcscrip*
 // @exclude      https://m.dcinside.com/board/dcbest*
 // @grant        GM_setValue
 // @grant        GM_getValue
@@ -30,7 +30,7 @@
         cacheDuration: 120000 
     });
 
-    if (window.location.href.includes('m.dcinside.com/dcscript')) {
+    if (window.location.href.includes('m.dcinside.com/dcscrip')) {
         document.body.innerHTML = '';
         document.body.style.padding = '20px';
         document.body.style.fontFamily = 'sans-serif';
@@ -798,7 +798,7 @@
         }
     };
 
-    if (!window.location.href.includes('m.dcinside.com/dcscript')) {
+    if (!window.location.href.includes('m.dcinside.com/dcscrip')) {
         processPostView();
         const observer = new MutationObserver(processPostView);
         observer.observe(document.body, { childList: true, subtree: true });
