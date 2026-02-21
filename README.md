@@ -56,7 +56,7 @@ This project is a fork of [Zziniswell/Adguard-gallery-filter](https://github.com
 본 프로젝트는 **Apache License 2.0**을 따릅니다.
 * 원본 프로젝트의 저작권은 [Zziniswell](https://github.com/Zziniswell)에게 있습니다.
 * 수정 및 추가된 부분에 대한 권리는 해당 기여자에게 있습니다.
-* 자세한 내용은 리포지토리 내 `LICENSE` 파일을 확인하세요.
+* 자세한 내용은 `LICENSE` 파일을 확인하세요.
 
 ---
 
