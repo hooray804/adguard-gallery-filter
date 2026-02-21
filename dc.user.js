@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      1.4.3
+// @version      1.5.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -233,7 +233,7 @@
         info.style.marginTop = '20px';
         info.style.color = '#888';
         info.style.fontSize = '13px';
-        info.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 캐시 시간이 길수록 페이지 로딩이 빨라지나 비추천 수 새로고침 간격이 느려집니다.';
+        info.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 캐시 시간이 길수록 페이지 로딩이 빨라지나 비추천 수 실시간 반영이 지연됩니다. 모든 메모는 브라우저 내부에만 저장되어 브라우저 데이터 삭제 시 데이터가 복구되지 않으므로 설정을 통해 정기적으로 백업하시기 바랍니다.';
         document.body.appendChild(info);
 
         return;
