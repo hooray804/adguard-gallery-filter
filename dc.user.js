@@ -634,7 +634,7 @@
         const applyDOM = (imgUrl, dislikeCount, userInfo, content) => {
             if (settings.showImage && img) {
                 const isDefaultIcon = imgUrl && (imgUrl.includes('dcinside_icon.png') || imgUrl.includes('no_img'));
-                if (imgUrl && !isDefaultIcon && (li.querySelector('.sp-lst-img, .sp-lst-recoimg, sp-lst-best, sp-lst-bestlight'))) {
+                if (imgUrl && !isDefaultIcon && (li.querySelector('.sp-lst-img, .sp-lst-recoimg, .sp-lst-best, .sp-lst-bestlight'))) {
                     img.src = imgUrl;
                     img.style.visibility = 'visible';
                     img.style.backgroundColor = '#f2f2f2';
