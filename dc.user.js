@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      1.5.1
+// @version      1.6.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -634,7 +634,7 @@
         const applyDOM = (imgUrl, dislikeCount, userInfo, content) => {
             if (settings.showImage && img) {
                 const isDefaultIcon = imgUrl && (imgUrl.includes('dcinside_icon.png') || imgUrl.includes('no_img'));
-                if (imgUrl && !isDefaultIcon && (li.querySelector('.sp-lst-img, .sp-lst-recoimg'))) {
+                if (imgUrl && !isDefaultIcon && (li.querySelector('.sp-lst-img, .sp-lst-recoimg, sp-lst-best, sp-lst-bestlight'))) {
                     img.src = imgUrl;
                     img.style.visibility = 'visible';
                     img.style.backgroundColor = '#f2f2f2';
