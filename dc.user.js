@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      1.6.1
+// @version      1.7.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -22,13 +22,27 @@
 (function() {
     'use strict';
 
-    const settings = GM_getValue('dc_expert_settings', { 
+    const CONFIG_VERSION = 1;
+    let settings = GM_getValue('dc_expert_settings', { 
         autoScroll: true, 
         showImage: true, 
         disableFetch: false,
         postPreview: false,
-        cacheDuration: 120000 
+        cacheDuration: 180000,
+        version: CONFIG_VERSION
     });
+
+    if (settings.version !== CONFIG_VERSION) {
+        settings = { 
+            autoScroll: true, 
+            showImage: true, 
+            disableFetch: false,
+            postPreview: false,
+            cacheDuration: 180000,
+            version: CONFIG_VERSION
+        };
+        GM_setValue('dc_expert_settings', settings);
+    }
 
     if (window.location.href.includes('m.dcinside.com/dcscrip')) {
         document.body.innerHTML = '';
@@ -134,7 +148,7 @@
             input.min = 1;
             input.max = 86400;
             
-            const currentSec = (settings.cacheDuration || 120000) / 1000;
+            const currentSec = (settings.cacheDuration || 180000) / 1000;
             input.value = currentSec;
 
             input.onchange = (e) => {
@@ -233,7 +247,7 @@
         info.style.marginTop = '20px';
         info.style.color = '#888';
         info.style.fontSize = '13px';
-        info.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 캐시 시간이 길수록 페이지 로딩이 빨라지나 비추천 수 실시간 반영이 지연됩니다. 모든 메모는 브라우저 내부에만 저장되어 브라우저 데이터 삭제 시 복구되지 않으므로 설정을 통해 정기적으로 백업하시기 바랍니다.';
+        info.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 캐시 시간이 길수록 페이지 로딩이 빨라지나 비추천 수 실시간 반영이 지연됩니다. 모든 메모는 브라우저 내부에만 저장되어 브라우저 데이터 삭제 시 복구되지 않으므로 설정을 통해 정기적으로 백업하시기 바랍니다. 스크립트 개선을 위해 1.7.0 버전에서 설정을 초기화했습니다. 원하시는 맞춤 설정을 다시 적용해주세요.';
         document.body.appendChild(info);
 
         return;
@@ -625,7 +639,7 @@
         try {
             const stored = await dbGet(url);
             if (stored) {
-                if (now - stored.time < (settings.cacheDuration || 120000)) {
+                if (now - stored.time < (settings.cacheDuration || 180000)) {
                     cachedData = stored;
                 }
             }
