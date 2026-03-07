@@ -1,13 +1,16 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      1.7.0
+// @version      2.0.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
 // @match        https://m.dcinside.com/mini/*
 // @match        https://m.dcinside.com/dcscrip*
 // @exclude      https://m.dcinside.com/board/dcbest*
+// @grant        GM.setValue
+// @grant        GM.getValue
+// @grant        GM.listValues
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_listValues
@@ -19,11 +22,65 @@
 // @updateURL    https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js
 // ==/UserScript==
 
-(function() {
+(async function() {
     'use strict';
 
+    let new_available;
+
+    async function initMigration() {
+        const isNewApiSupported = typeof GM !== 'undefined' && typeof GM.getValue === 'function';
+        if (isNewApiSupported) {
+            new_available = 'true';
+            let isMigrated = await GM.getValue('dc_expert_migrated', false);
+            if (!isMigrated) {
+                if (typeof GM_listValues === 'function' && typeof GM_getValue === 'function') {
+                    try {
+                        const keys = GM_listValues();
+                        for (const key of keys) {
+                            const val = GM_getValue(key);
+                            if (val !== undefined) {
+                                await GM.setValue(key, val);
+                            }
+                        }
+                    } catch (e) {
+                        console.error('Migration failed:', e);
+                    }
+                }
+                await GM.setValue('dc_expert_migrated', true);
+            }
+        } else {
+            new_available = 'false';
+        }
+    }
+
+    const GM_API = {
+        getValue: async (key, defaultValue) => {
+            if (new_available === 'true') {
+                return await GM.getValue(key, defaultValue);
+            } else {
+                return typeof GM_getValue === 'function' ? GM_getValue(key, defaultValue) : defaultValue;
+            }
+        },
+        setValue: async (key, value) => {
+            if (new_available === 'true') {
+                await GM.setValue(key, value);
+            } else {
+                if (typeof GM_setValue === 'function') GM_setValue(key, value);
+            }
+        },
+        listValues: async () => {
+            if (new_available === 'true') {
+                return await GM.listValues();
+            } else {
+                return typeof GM_listValues === 'function' ? GM_listValues() : [];
+            }
+        }
+    };
+
+    await initMigration();
+
     const CONFIG_VERSION = 1;
-    let settings = GM_getValue('dc_expert_settings', { 
+    let settings = await GM_API.getValue('dc_expert_settings', { 
         autoScroll: true, 
         showImage: true, 
         disableFetch: false,
@@ -41,7 +98,7 @@
             cacheDuration: 180000,
             version: CONFIG_VERSION
         };
-        GM_setValue('dc_expert_settings', settings);
+        await GM_API.setValue('dc_expert_settings', settings);
     }
 
     if (window.location.href.includes('m.dcinside.com/dcscrip')) {
@@ -109,9 +166,9 @@
             };
             updateStatusText();
 
-            checkbox.onchange = (e) => {
+            checkbox.onchange = async (e) => {
                 settings[key] = e.target.checked;
-                GM_setValue('dc_expert_settings', settings);
+                await GM_API.setValue('dc_expert_settings', settings);
                 updateStatusText();
                 if (key === 'disableFetch') location.reload();
             };
@@ -151,13 +208,13 @@
             const currentSec = (settings.cacheDuration || 180000) / 1000;
             input.value = currentSec;
 
-            input.onchange = (e) => {
+            input.onchange = async (e) => {
                 let val = parseInt(e.target.value);
                 if (isNaN(val) || val < 1) val = 1;
                 if (val > 86400) val = 86400;
                 
                 settings.cacheDuration = val * 1000;
-                GM_setValue('dc_expert_settings', settings);
+                await GM_API.setValue('dc_expert_settings', settings);
                 input.value = val;
             };
 
@@ -182,14 +239,14 @@
             const exportBtn = document.createElement('button');
             exportBtn.innerText = '메모 내보내기 (JSON)';
             exportBtn.style.cssText = btnStyle;
-            exportBtn.onclick = () => {
-                const keys = GM_listValues();
+            exportBtn.onclick = async () => {
+                const keys = await GM_API.listValues();
                 const data = {};
-                keys.forEach(key => {
+                for (const key of keys) {
                     if (key.startsWith('dc_user_')) {
-                        data[key] = GM_getValue(key);
+                        data[key] = await GM_API.getValue(key);
                     }
-                });
+                }
                 const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
@@ -207,13 +264,13 @@
                 const file = e.target.files[0];
                 if (!file) return;
                 const reader = new FileReader();
-                reader.onload = (evt) => {
+                reader.onload = async (evt) => {
                     try {
                         const imported = JSON.parse(evt.target.result);
                         let count = 0;
                         for (const key in imported) {
                             if (key.startsWith('dc_user_')) {
-                                GM_setValue(key, imported[key]);
+                                await GM_API.setValue(key, imported[key]);
                                 count++;
                             }
                         }
@@ -322,31 +379,37 @@
         });
     };
 
-    const processInBatches = async (items, batchSize = 3) => {
+    const processInBatches = async (items, batchSize = 4) => {
         for (let i = 0; i < items.length; i += batchSize) {
             const batch = Array.from(items).slice(i, i + batchSize);
             await Promise.all(batch.map(item => processListItem(item)));
-            if (i + batchSize < items.length) {
-                await new Promise(resolve => setTimeout(resolve, 50));
+            if (i + batchSize < items.length && !settings.disableFetch) {
+                await new Promise(resolve => setTimeout(resolve, 100));
             }
         }
     };
 
-    const getData = (id) => GM_getValue('dc_user_' + id, { memo: "" });
-    const setData = (id, data) => GM_setValue('dc_user_' + id, data);
+    const getData = async (id) => await GM_API.getValue('dc_user_' + id, { memo: "" });
+    const setData = async (id, data) => await GM_API.setValue('dc_user_' + id, data);
 
-    window.openUserEditor = function(id, nickname) {
-        const data = getData(id);
+    window.openUserEditor = async function(id, nickname, container) {
+        const data = await getData(id);
         const newMemo = prompt(`[${nickname}] 메모 입력 (비우면 삭제):`, data.memo);
 
         if (newMemo !== null) {
-            setData(id, { memo: newMemo });
-            location.reload();
+            await setData(id, { memo: newMemo });
+            if (container) {
+                if (newMemo) {
+                    container.innerHTML = `<b style="color:#007bff; font-size:0.8em;">[${newMemo}]</b>`;
+                } else {
+                    container.innerHTML = `<small style="color:#ccc; font-size:0.7em;">[📝]</small>`;
+                }
+            }
         }
     };
 
-    function createUI(id, nickname) {
-        const data = getData(id);
+    async function createUI(id, nickname) {
+        const data = await getData(id);
         const container = document.createElement('span');
         container.className = 'custom-memo-area';
         container.style.marginLeft = "4px";
@@ -361,10 +424,10 @@
             container.innerHTML = `<small style="color:#ccc; font-size:0.7em;">[📝]</small>`;
         }
 
-        container.onclick = (e) => {
+        container.onclick = async (e) => {
             e.preventDefault();
             e.stopPropagation();
-            window.openUserEditor(id, nickname);
+            await window.openUserEditor(id, nickname, container);
         };
         return container;
     }
@@ -389,11 +452,12 @@
         return null;
     }
 
-    function processPostView() {
+    async function processPostView() {
         const authorBox = document.querySelector('.gallview-tit-box');
         if (authorBox && !authorBox.dataset.memoApplied) {
             const userInfo = parseUserFromElement(authorBox);
             if (userInfo) {
+                authorBox.dataset.memoApplied = true;
                 const nickLi = authorBox.querySelector('.ginfo2 li:first-child');
                 
                 if (nickLi.childNodes.length > 0 && nickLi.childNodes[0].nodeType === 3) {
@@ -407,16 +471,15 @@
                     nickLi.style.maxWidth = "100%";
                     
                     nickLi.replaceChild(textSpan, textNode);
-                    nickLi.appendChild(createUI(userInfo.userId, userInfo.nickname));
+                    nickLi.appendChild(await createUI(userInfo.userId, userInfo.nickname));
                 } else {
-                    nickLi.appendChild(createUI(userInfo.userId, userInfo.nickname));
+                    nickLi.appendChild(await createUI(userInfo.userId, userInfo.nickname));
                 }
-                authorBox.dataset.memoApplied = true;
             }
         }
 
         const commentList = document.querySelectorAll('.all-comment-lst li[id^="comment_cnt_"]');
-        commentList.forEach(li => {
+        commentList.forEach(async li => {
             if (li.dataset.memoApplied) return;
 
             const nickAnchor = li.querySelector('a.nick');
@@ -435,6 +498,7 @@
             }
 
             if (userId) {
+                li.dataset.memoApplied = true;
                 const nickname = nickAnchor.childNodes[0].textContent.trim();
                 
                 if (nickAnchor.childNodes.length > 0 && nickAnchor.childNodes[0].nodeType === 3) {
@@ -449,12 +513,10 @@
                     nickAnchor.style.verticalAlign = "bottom";
                     
                     nickAnchor.replaceChild(textSpan, textNode);
-                    nickAnchor.appendChild(createUI(userId, nickname));
+                    nickAnchor.appendChild(await createUI(userId, nickname));
                 } else {
-                    nickAnchor.appendChild(createUI(userId, nickname));
+                    nickAnchor.appendChild(await createUI(userId, nickname));
                 }
-                
-                li.dataset.memoApplied = true;
             }
         });
     }
@@ -645,7 +707,7 @@
             }
         } catch(e) {}
 
-        const applyDOM = (imgUrl, dislikeCount, userInfo, content) => {
+        const applyDOM = async (imgUrl, dislikeCount, userInfo, content) => {
             if (settings.showImage && img) {
                 const isDefaultIcon = imgUrl && (imgUrl.includes('dcinside_icon.png') || imgUrl.includes('no_img'));
                 if (imgUrl && !isDefaultIcon && (li.querySelector('.sp-lst-img, .sp-lst-recoimg, .sp-lst-best, .sp-lst-bestlight'))) {
@@ -676,7 +738,7 @@
                     const text = infoLi.innerText.trim();
                     if (text === userInfo.nickname || text.startsWith(userInfo.nickname.split('(')[0])) {
                         if (!infoLi.querySelector('.custom-memo-area')) {
-                            infoLi.appendChild(createUI(userInfo.userId, userInfo.nickname));
+                            infoLi.appendChild(await createUI(userInfo.userId, userInfo.nickname));
                         }
                         break;
                     }
@@ -719,7 +781,7 @@
         };
 
         if (cachedData) {
-            applyDOM(cachedData.imgUrl, cachedData.dislikeCount, cachedData.userInfo, cachedData.content);
+            await applyDOM(cachedData.imgUrl, cachedData.dislikeCount, cachedData.userInfo, cachedData.content);
             return;
         }
 
@@ -751,7 +813,7 @@
 
             const userInfo = parseUserFromElement(doc.querySelector('.gallview-tit-box'));
 
-            applyDOM(imgUrl, dislikeCount, userInfo, content);
+            await applyDOM(imgUrl, dislikeCount, userInfo, content);
 
             const saveData = {
                 url: url,
