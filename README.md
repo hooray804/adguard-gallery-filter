@@ -1,15 +1,15 @@
-# Adguard Gallery Filter for Korean
+# AdGuard Gallery Filter for Korean
 
-이 필터와 유저스크립트는 기존 Adguard와 uBlock Origin 한국어 필터의 부족한 점을 보완하고, 광고 및 커뮤니티 이용 환경을 개선하기 위해 제작되었습니다.
+본 애드가드 갤러리 필터와 유저스크립트는 AdGuard와 uBlock Origin 한국어 필터의 부족한 점을 보완하고, 광고 및 커뮤니티 이용 환경을 개선하기 위해 제작되었습니다.
 
-Adguard, uBlock Origin, Brave Browser의 고급 차단 문법을 모두 지원합니다.
+AdGuard, uBlock Origin, Brave Browser의 고급 차단 문법을 모두 지원합니다.
 
 ---
 
 ## 필터 및 스크립트
 
 ### 광고 차단 필터
-* **Adguard/uBlock용 필터**
+* **AdGuard/uBlock용 필터**
 
 https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt
 
