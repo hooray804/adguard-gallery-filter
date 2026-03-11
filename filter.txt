@@ -3,10 +3,10 @@
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
+
 ! Ads
 ##.ad-view
 ##.banner_m
-##.coupang-box
 ##.happy-under-player-mobile
 ##.textwidget
 ##[alt$='광고']
@@ -41,7 +41,6 @@ booktoki469.com,booktoki470.com,manatoki469.net,manatoki470.net,newtoki469.com,n
 chimhaha.net##[id^='slot']
 chimhaha.net##div[style='margin-top: 50px; ']
 chimhaha.net,seoul.co.kr,mule.co.kr##[class*='Ad']
-damoang.net##.gap-1.flex-col.flex
 danawa.com,m.cafe.naver.com##[class^='banner']
 dcinside.com###moveOverlay, #gaejukimg
 dcinside.com##li[id^='comment_']:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.1 !important;)
@@ -60,6 +59,7 @@ instiz.net##div[style*='min-height:250px;']
 inven.co.kr,mt.co.kr##[class$='ads']
 inven.co.kr,wowtv.co.kr,damoang.net##[class*='-banner']
 k-hentai.org##.my-3.container
+kissjav.*##+js(nowoif, !kissjav.com)
 kone.gg##.flex.justify-center.py-3
 m.bobaedream.co.kr##div[style$='height:50px;']
 m.cafe.daum.net##[class*='_banner']
@@ -113,13 +113,13 @@ torrentpi150.com##.h20 +.widget-box
 torrentpi150.com##div.col-sm-12 > .widget-box > .basic-post-gallery
 windowsforum.kr,seoul.co.kr,xportsnews.com##.ad
 wowtv.co.kr,cafe.naver.com##[class*='Banner']
-xportsnews.com$$div[class="ad mobile"]
+zod.kr##div:has(> [rel='sponsored'])
 ||get*ads-*-du.a.run.app^
 ||ader.naver.com/*?c=m_$all
 ||dvdprime.com/file/*/banner
 ||clink.kakao.com/sp/$all,reason=수익링크
 ||kamp.kakao.com^$app=com.kakao.talk
-||link.coupang.com/re/AFFHOME?lptag=*&amp;subid=pointlink$all,reason=펨코수익링크
+||link.coupang.com/re/AFFHOME?lptag=*&amp;subid=pointlink$all,reason=수익링크
 ||shortformstats.kakao.com^$app=com.kakao.talk
 ||t*kor*.com/images/
 ||thumb.kakaocdn.net^$app=com.kakao.talk
@@ -133,7 +133,7 @@ xportsnews.com$$div[class="ad mobile"]
 
 ! Minor distractions
 arca.live##.d-lg-none.topbar-area
-damoang.net##.mb-6 ~.mb-4
+damoang.net##.mb-6 ~.mb-4:not(.sm\:hidden)
 gall.dcinside.com##.dc_all
 gall.dcinside.com##.dcmedia.content_box
 gall.dcinside.com##.r_dcmedia
@@ -160,8 +160,6 @@ namu.wiki##div[class]:matches-css(position: sticky)
 ! Anti-adblock
 @@||piku.co.kr^$generichide
 aagag.com#$#.la { position: absolute !important; left: -3000px !important; width: 60px !important; height: 20px !important; }
-algumon.com##+js(nostif, blocked, 1500)
-kissjav.*###guard-overlay:remove()
 kissjav.*##+js(rmnt, script, /contextmenu|ghost|localStorage|video\-ad\-overlay/i)
 m.fmkorea.com##+js(set, _make_power_link_identifier, noopFunc)
 ||maxmovie.com/_next/static/chunks/framework.aa400efa16f23e2b0cfe.js
@@ -189,7 +187,7 @@ $@$link[rel="manifest"]
 @@||sofrano.com^$stealth=dpi
 @@||termeden.com^$stealth=dpi
 @@||tivan.naver.com^$app=com.nhn.android.search
-@@||wcs.naver.net^$domain=seorinexpress.com|naver.com
+@@||wcs.naver.net^$domain=seorinexpress.com
 etoland.co.kr#$#div.hit_latest_ad { display: grid !important; }
 m.fmkorea.com#@$?#*.bd.bd_mobile:not(:has(#bd_capture ~ #comment)):has(form[action="./"]:matches-css(height: auto)) { remove: true; }
 m.gmarket.co.kr#@#.ReactVirtualized__Grid__innerScrollContainer .box__banner-wrap > .box__banner--today
@@ -227,4 +225,6 @@ m.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview-tit-box:has
 m.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview-tit-box:not(:has(span.sp-icon)) > div > ul.ginfo2', 'li', 'alt="imgtoggle"', 'PC')
 dcinside.com#%#(function(){'use strict';const u=location.href,h=location.hostname;let dcbest=!1;if(h==='m.dcinside.com'){const m=u.match(/^https:\/\/m\.dcinside\.com\/(board|mini|person)\/([^\/]+)\/\d+/);dcbest=!!(m&&m[2]==='dcbest');}else if(h==='gall.dcinside.com'){const p=new URLSearchParams(location.search);dcbest=p.get('id')==='dcbest'&&p.has('no');}else return;let s;if(h==='gall.dcinside.com')s='button.img_comment_toggle,.btn_imgcmtopen,.img_comment';else if(h==='m.dcinside.com')s='button.btn-imgcomment,.img-comment';else return;const e=document.createElement('style');e.textContent=`${s}{display:none!important;}`;if(!dcbest)document.head.appendChild(e);document.addEventListener('DOMContentLoaded',()=>{const t=document.querySelector('[alt="imgtoggle"]');if(t)t.style.cursor='pointer',t.addEventListener('click',()=>{e.disabled=!e.disabled;if(!e.parentNode&&!e.disabled)document.head.appendChild(e);});});})();
 m.youtube.com#%#setInterval(function(){var ts=document.querySelectorAll(".slim-owner-subscribe-button");for(var i=0;i<ts.length;i++){var t=ts[i];if(t.offsetParent!==null&&!t.parentElement.querySelector(".pip-btn")){var b=document.createElement("div");b.className="pip-btn";b.innerText="PiP";b.tabIndex=0;b.style.cssText="display:flex;align-items:center;justify-content:center;background-color:#f2f2f2;border-radius:18px;height:36px;padding:0 16px;margin-right:8px;font-family:Roboto,Arial,sans-serif;font-size:14px;font-weight:500;color:#0f0f0f;cursor:pointer;outline:none;user-select:none;transition:background-color 0.2s";b.onmouseover=function(){this.style.backgroundColor="#e5e5e5"};b.onmouseout=function(){this.style.backgroundColor="#f2f2f2"};b.onclick=function(e){e.preventDefault();e.stopPropagation();var v=document.querySelector("video");if(v){v.removeAttribute("disablepictureinpicture");document.pictureInPictureElement?document.exitPictureInPicture():v.requestPictureInPicture()}};b.onfocus=b.onmouseenter=function(){if(window._pipT)return;window._pipT=1;var p=document.createElement("div");p.innerText="By Gallery Filter";p.style.cssText="position:fixed;z-index:9999;padding:4px 8px;background:rgba(255,255,255,0.8);border:1px solid rgba(0,0,0,0.2);border-radius:4px;box-shadow:0 2px 5px rgba(0,0,0,0.1);backdrop-filter:blur(3px);font-size:11px;font-family:sans-serif;color:black;pointer-events:none;opacity:1;transition:opacity 0.5s ease-out;";var r=this.getBoundingClientRect();p.style.top=(r.top-30)+"px";p.style.left=(r.left+r.width/2)+"px";p.style.transform="translateX(-50%)";document.body.appendChild(p);setTimeout(function(){p.style.opacity="0";setTimeout(function(){p.remove()},500)},1500)};t.parentElement.insertBefore(b,t)}}},1000);
+
+
 !  =============== END (Maginot Line) =============== !
