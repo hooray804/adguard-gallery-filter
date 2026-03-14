@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      2.0.0
+// @version      3.0.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -79,25 +79,22 @@
 
     await initMigration();
 
-    const CONFIG_VERSION = 1;
-    let settings = await GM_API.getValue('dc_expert_settings', { 
-        autoScroll: true, 
-        showImage: true, 
+    const CONFIG_VERSION = 2;
+    const DEFAULT_SETTINGS = {
+        autoScroll: true,
+        showImage: true,
         disableFetch: false,
         postPreview: false,
         cacheDuration: 180000,
+        showIdCode: false,
+        batchDelay: 100,
         version: CONFIG_VERSION
-    });
+    };
+
+    let settings = await GM_API.getValue('dc_expert_settings', DEFAULT_SETTINGS);
 
     if (settings.version !== CONFIG_VERSION) {
-        settings = { 
-            autoScroll: true, 
-            showImage: true, 
-            disableFetch: false,
-            postPreview: false,
-            cacheDuration: 180000,
-            version: CONFIG_VERSION
-        };
+        settings = { ...DEFAULT_SETTINGS };
         await GM_API.setValue('dc_expert_settings', settings);
     }
 
@@ -106,7 +103,7 @@
         document.body.style.padding = '20px';
         document.body.style.fontFamily = 'sans-serif';
         document.body.style.backgroundColor = '#ffffff';
-        
+
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.body.style.backgroundColor = '#121212';
             document.body.style.color = '#ffffff';
@@ -123,17 +120,17 @@
             label.style.margin = '15px 0';
             label.style.fontSize = '16px';
             label.style.cursor = 'pointer';
-            
+
             label.addEventListener('click', (e) => e.stopPropagation());
             label.addEventListener('touchstart', (e) => e.stopPropagation());
-            
+
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.style.marginRight = '10px';
             checkbox.style.width = '20px';
             checkbox.style.height = '20px';
             checkbox.style.accentColor = '#3b5998';
-            
+
             const statusText = document.createElement('span');
             statusText.style.fontWeight = 'bold';
             statusText.style.marginLeft = '5px';
@@ -141,7 +138,7 @@
             statusText.style.minWidth = '45px';
 
             const isDataSaverActive = settings.disableFetch;
-            const isForcedOff = ((key === 'showImage' || key === 'postPreview') && isDataSaverActive);
+            const isForcedOff = ((key === 'showImage' || key === 'postPreview' || key === 'showIdCode') && isDataSaverActive);
 
             if (isForcedOff) {
                 checkbox.checked = false;
@@ -172,7 +169,7 @@
                 updateStatusText();
                 if (key === 'disableFetch') location.reload();
             };
-            
+
             label.appendChild(checkbox);
             label.appendChild(statusText);
             label.appendChild(document.createTextNode(labelText));
@@ -192,11 +189,11 @@
         const createNumberInput = () => {
             const container = document.createElement('div');
             container.style.margin = '15px 0';
-            
+
             const label = document.createElement('label');
             label.innerText = '게시글 캐시 시간 (초, 최대 86400): ';
             label.style.fontSize = '16px';
-            
+
             const input = document.createElement('input');
             input.type = 'number';
             input.style.marginLeft = '10px';
@@ -204,7 +201,7 @@
             input.style.width = '80px';
             input.min = 1;
             input.max = 86400;
-            
+
             const currentSec = (settings.cacheDuration || 180000) / 1000;
             input.value = currentSec;
 
@@ -212,8 +209,39 @@
                 let val = parseInt(e.target.value);
                 if (isNaN(val) || val < 1) val = 1;
                 if (val > 86400) val = 86400;
-                
+
                 settings.cacheDuration = val * 1000;
+                await GM_API.setValue('dc_expert_settings', settings);
+                input.value = val;
+            };
+
+            container.appendChild(label);
+            container.appendChild(input);
+            return container;
+        };
+
+        const createDelayInput = () => {
+            const container = document.createElement('div');
+            container.style.margin = '15px 0';
+
+            const label = document.createElement('label');
+            label.innerText = '배치 처리 지연 시간 (ms): ';
+            label.style.fontSize = '16px';
+
+            const input = document.createElement('input');
+            input.type = 'number';
+            input.style.marginLeft = '10px';
+            input.style.padding = '5px';
+            input.style.width = '80px';
+            input.min = 0;
+
+            input.value = settings.batchDelay;
+
+            input.onchange = async (e) => {
+                let val = parseInt(e.target.value);
+                if (isNaN(val) || val < 0) val = 0;
+
+                settings.batchDelay = val;
                 await GM_API.setValue('dc_expert_settings', settings);
                 input.value = val;
             };
@@ -251,7 +279,7 @@
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = `dc_memos_${new Date().toISOString().slice(0,25)}.json`;
+                a.download = `dc_memos_${new Date().toISOString().slice(0, 25)}.json`;
                 a.click();
                 URL.revokeObjectURL(url);
             };
@@ -296,15 +324,17 @@
         document.body.appendChild(createToggle('무한 스크롤 사용', 'autoScroll'));
         document.body.appendChild(createToggle('이미지 미리보기 사용', 'showImage'));
         document.body.appendChild(createToggle('본문 미리보기 (3줄 모드)', 'postPreview'));
+        document.body.appendChild(createToggle('식별 코드 미리보기 (메모와 함께 표시)', 'showIdCode'));
         document.body.appendChild(createToggle('데이터 절약 (섬네일, 본문, 비추, 메모 표시 안 됨)', 'disableFetch'));
         document.body.appendChild(createNumberInput());
+        document.body.appendChild(createDelayInput());
         document.body.appendChild(createMemoTools());
 
         const info = document.createElement('p');
         info.style.marginTop = '20px';
         info.style.color = '#888';
         info.style.fontSize = '13px';
-        info.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 캐시 시간이 길수록 페이지 로딩이 빨라지나 비추천 수 실시간 반영이 지연됩니다. 모든 메모는 브라우저 내부에만 저장되어 브라우저 데이터 삭제 시 복구되지 않으므로 설정을 통해 정기적으로 백업하시기 바랍니다. 스크립트 개선을 위해 1.7.0 버전에서 설정을 초기화했습니다. 원하시는 맞춤 설정을 다시 적용해주세요.';
+        info.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 캐시 시간이 길수록 페이지 로딩이 빨라지나 비추천 수 실시간 반영이 지연됩니다. 모든 메모는 브라우저 내부에만 저장되어 브라우저 데이터 삭제 시 복구되지 않으므로 설정을 통해 정기적으로 백업하시기 바랍니다. 스크립트 개선을 위해 3.0.0 버전에서 설정을 초기화했습니다. 원하시는 맞춤 설정을 다시 적용해주세요. 현재 디시인사이드 측의 Rate Limit 등의 알 수 없는 문제로 기능이 제대로 작동하지 않을 수 있습니다.';
         document.body.appendChild(info);
 
         return;
@@ -321,7 +351,7 @@
         return new Promise((resolve, reject) => {
             if (dbInstance) return resolve(dbInstance);
             const request = indexedDB.open(DB_NAME, DB_VERSION);
-            
+
             request.onupgradeneeded = (e) => {
                 const db = e.target.result;
                 if (db.objectStoreNames.contains(STORE_NAME)) {
@@ -346,7 +376,7 @@
         const transaction = db.transaction([STORE_NAME], 'readwrite');
         const store = transaction.objectStore(STORE_NAME);
         const index = store.index('time');
-        
+
         const cutOffDate = Date.now() - CACHE_EXPIRE_TIME;
         const range = IDBKeyRange.upperBound(cutOffDate);
 
@@ -384,7 +414,9 @@
             const batch = Array.from(items).slice(i, i + batchSize);
             await Promise.all(batch.map(item => processListItem(item)));
             if (i + batchSize < items.length && !settings.disableFetch) {
-                await new Promise(resolve => setTimeout(resolve, 100));
+                if (settings.batchDelay > 0) {
+                    await new Promise(resolve => setTimeout(resolve, settings.batchDelay));
+                }
             }
         }
     };
@@ -392,15 +424,33 @@
     const getData = async (id) => await GM_API.getValue('dc_user_' + id, { memo: "" });
     const setData = async (id, data) => await GM_API.setValue('dc_user_' + id, data);
 
-    window.openUserEditor = async function(id, nickname, container) {
+    window.openUserEditor = async function(id, nickname, container, isIp) {
         const data = await getData(id);
-        const newMemo = prompt(`[${nickname}] 메모 입력 (비우면 삭제):`, data.memo);
+        const displayName = isIp ? nickname : `${nickname}(${id})`;
+        const newMemo = prompt(`[${displayName}] 메모 입력 (비우면 삭제):`, data.memo);
 
         if (newMemo !== null) {
             await setData(id, { memo: newMemo });
             if (container) {
+                let displayText = "";
+                let hasText = false;
+
                 if (newMemo) {
-                    container.innerHTML = `<b style="color:#007bff; font-size:0.8em;">[${newMemo}]</b>`;
+                    if (settings.showIdCode && !isIp) {
+                        displayText = `${id}: ${newMemo}`;
+                    } else {
+                        displayText = newMemo;
+                    }
+                    hasText = true;
+                } else {
+                    if (settings.showIdCode && !isIp) {
+                        displayText = id;
+                        hasText = true;
+                    }
+                }
+
+                if (hasText) {
+                    container.innerHTML = `<b style="color:#007bff; font-size:0.8em;">[${displayText}]</b>`;
                 } else {
                     container.innerHTML = `<small style="color:#ccc; font-size:0.7em;">[📝]</small>`;
                 }
@@ -408,7 +458,7 @@
         }
     };
 
-    async function createUI(id, nickname) {
+    async function createUI(id, nickname, isIp) {
         const data = await getData(id);
         const container = document.createElement('span');
         container.className = 'custom-memo-area';
@@ -418,8 +468,25 @@
         container.style.verticalAlign = "middle";
         container.style.flexShrink = "0";
 
+        let displayText = "";
+        let hasText = false;
+
         if (data.memo) {
-            container.innerHTML = `<b style="color:#007bff; font-size:0.8em;">[${data.memo}]</b>`;
+            if (settings.showIdCode && !isIp) {
+                displayText = `${id}: ${data.memo}`;
+            } else {
+                displayText = data.memo;
+            }
+            hasText = true;
+        } else {
+            if (settings.showIdCode && !isIp) {
+                displayText = id;
+                hasText = true;
+            }
+        }
+
+        if (hasText) {
+            container.innerHTML = `<b style="color:#007bff; font-size:0.8em;">[${displayText}]</b>`;
         } else {
             container.innerHTML = `<small style="color:#ccc; font-size:0.7em;">[📝]</small>`;
         }
@@ -427,7 +494,7 @@
         container.onclick = async (e) => {
             e.preventDefault();
             e.stopPropagation();
-            await window.openUserEditor(id, nickname, container);
+            await window.openUserEditor(id, nickname, container, isIp);
         };
         return container;
     }
@@ -440,14 +507,16 @@
         if (nickLi) {
             let userId = "";
             let nickname = nickLi.innerText.trim();
+            let isIp = false;
 
             if (gallogBtn) {
                 userId = gallogBtn.getAttribute('href').split('/').pop();
             } else {
                 const ipMatch = nickname.match(/\(([^)]+)\)/);
                 userId = ipMatch ? ipMatch[1] : nickname;
+                isIp = true;
             }
-            return { userId, nickname };
+            return { userId, nickname, isIp };
         }
         return null;
     }
@@ -459,21 +528,21 @@
             if (userInfo) {
                 authorBox.dataset.memoApplied = true;
                 const nickLi = authorBox.querySelector('.ginfo2 li:first-child');
-                
+
                 if (nickLi.childNodes.length > 0 && nickLi.childNodes[0].nodeType === 3) {
                     const textNode = nickLi.childNodes[0];
                     const textSpan = document.createElement('span');
                     textSpan.textContent = textNode.textContent;
                     textSpan.style.cssText = "overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 0 1 auto;";
-                    
+
                     nickLi.style.display = "inline-flex";
                     nickLi.style.alignItems = "center";
                     nickLi.style.maxWidth = "100%";
-                    
+
                     nickLi.replaceChild(textSpan, textNode);
-                    nickLi.appendChild(await createUI(userInfo.userId, userInfo.nickname));
+                    nickLi.appendChild(await createUI(userInfo.userId, userInfo.nickname, userInfo.isIp));
                 } else {
-                    nickLi.appendChild(await createUI(userInfo.userId, userInfo.nickname));
+                    nickLi.appendChild(await createUI(userInfo.userId, userInfo.nickname, userInfo.isIp));
                 }
             }
         }
@@ -486,6 +555,7 @@
             if (!nickAnchor) return;
 
             let userId = "";
+            let isIp = false;
             const infoSpan = li.querySelector('.blockCommentId');
             const ipSpan = li.querySelector('.ip');
 
@@ -495,27 +565,28 @@
                 userId = nickAnchor.href.split('/').pop();
             } else if (ipSpan) {
                 userId = ipSpan.innerText.trim().replace(/[()]/g, '');
+                isIp = true;
             }
 
             if (userId) {
                 li.dataset.memoApplied = true;
                 const nickname = nickAnchor.childNodes[0].textContent.trim();
-                
+
                 if (nickAnchor.childNodes.length > 0 && nickAnchor.childNodes[0].nodeType === 3) {
                     const textNode = nickAnchor.childNodes[0];
                     const textSpan = document.createElement('span');
                     textSpan.textContent = textNode.textContent;
                     textSpan.style.cssText = "overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 0 1 auto; pointer-events: none;";
-                    
+
                     nickAnchor.style.display = "inline-flex";
                     nickAnchor.style.alignItems = "center";
                     nickAnchor.style.maxWidth = "100%";
                     nickAnchor.style.verticalAlign = "bottom";
-                    
+
                     nickAnchor.replaceChild(textSpan, textNode);
-                    nickAnchor.appendChild(await createUI(userId, nickname));
+                    nickAnchor.appendChild(await createUI(userId, nickname, isIp));
                 } else {
-                    nickAnchor.appendChild(await createUI(userId, nickname));
+                    nickAnchor.appendChild(await createUI(userId, nickname, isIp));
                 }
             }
         });
@@ -531,7 +602,6 @@
             height: auto !important;
             overflow: visible !important;
         }
-
         ul.gall-detail-lst .gall-detail-lnktb {
             display: flex !important;
             align-items: center !important;
@@ -541,7 +611,6 @@
             box-sizing: border-box !important;
             background: #fff !important;
         }
-        
         ul.gall-detail-lst .gall-detail-lnktb .lt {
             flex: 1 1 auto !important;
             min-width: 0 !important;
@@ -551,7 +620,6 @@
             padding: 0 !important;
             height: auto !important;
         }
-        
         ul.gall-detail-lst .gall-detail-lnktb .lt .subject-add {
             display: flex !important;
             align-items: center !important;
@@ -559,14 +627,12 @@
             font-size: 14px !important;
             line-height: 1.4 !important;
         }
-        
         ul.gall-detail-lst .gall-detail-lnktb .lt .subject-add .subjectin {
             white-space: nowrap !important;
             overflow: hidden !important;
             text-overflow: ellipsis !important;
             flex: 0 1 auto !important;
         }
-        
         .custom-comment-count {
             color: #222222 !important;
             font-weight: bold !important;
@@ -575,21 +641,18 @@
             flex: 0 0 auto !important;
             margin-top: 0px !important;
         }
-        
         ul.gall-detail-lst .gall-detail-lnktb .lt .ginfo {
             display: flex !important;
             margin-top: 2px !important;
             padding: 0 !important;
             flex-wrap: nowrap !important;
         }
-        
         ul.gall-detail-lst .gall-detail-lnktb .lt .ginfo li {
             font-size: 12px !important;
             margin-right: 2px !important;
             color: #888 !important;
             white-space: nowrap !important;
         }
-        
         .dc-preview-thumb {
             flex: 0 0 45px !important;
             width: 45px !important;
@@ -601,15 +664,12 @@
             background-color: transparent !important;
             visibility: hidden;
         }
-        
         ul.gall-detail-lst .gall-detail-lnktb .rt { display: none !important; }
-        
         .dislike-cnt {
             color: #888 !important;
             font-size: 12px !important;
             margin-left: 3px !important;
         }
-        
         .preview-line {
             display: block;
             margin-top: 2px;
@@ -621,13 +681,11 @@
             width: 100%;
             line-height: 1.2 !important;
         }
-        
         .preview-recomm {
             color: #888;
             margin-right: 4px;
             font-size: 12px;
         }
-        
         .page-divider {
             display: flex;
             align-items: center;
@@ -636,7 +694,6 @@
             font-size: 11px;
             font-weight: normal;
         }
-        
         .page-divider::before, .page-divider::after {
             content: "";
             flex: 1;
@@ -644,7 +701,6 @@
             background: #eee;
             margin: 0 10px;
         }
-        
         @media (prefers-color-scheme: dark) {
             ul.gall-detail-lst .gall-detail-lnktb { background: #121212 !important; }
             ul.gall-detail-lst .gall-detail-lnktb .lt .subject-add { color: #e1e1e1 !important; }
@@ -738,7 +794,7 @@
                     const text = infoLi.innerText.trim();
                     if (text === userInfo.nickname || text.startsWith(userInfo.nickname.split('(')[0])) {
                         if (!infoLi.querySelector('.custom-memo-area')) {
-                            infoLi.appendChild(await createUI(userInfo.userId, userInfo.nickname));
+                            infoLi.appendChild(await createUI(userInfo.userId, userInfo.nickname, userInfo.isIp));
                         }
                         break;
                     }
@@ -762,10 +818,10 @@
 
                     const previewDiv = document.createElement('div');
                     previewDiv.className = 'preview-line';
-                    
+
                     let innerHtml = "";
                     if (recText) innerHtml += `<span class="preview-recomm">${recText}</span>`;
-                    
+
                     if (dislikeCount !== null) {
                          innerHtml += `<span class="preview-recomm">비추 ${dislikeCount}</span> `;
                     }
@@ -773,7 +829,7 @@
                     if (content) {
                         innerHtml += `<span style="margin-left:2px;">${content}</span>`;
                     }
-                    
+
                     previewDiv.innerHTML = innerHtml;
                     ltDiv.appendChild(previewDiv);
                 }
@@ -807,8 +863,10 @@
 
             let content = null;
             const txtBody = doc.querySelector('.thum-txtin') || doc.querySelector('.writing_view_box');
+
             if (txtBody) {
-                content = txtBody.innerText.replace(/\s+/g, ' ').trim().substring(0, 25);
+                txtBody.querySelectorAll('script, style, .adv-groupno, #auto_picture_area').forEach(el => el.remove());
+                content = txtBody.textContent.replace(/\s+/g, ' ').trim().substring(0, 25);
             }
 
             const userInfo = parseUserFromElement(doc.querySelector('.gallview-tit-box'));
@@ -859,7 +917,7 @@
 
                 newPosts.forEach(post => listContainer.appendChild(post));
                 nextPage++;
-                await processInBatches(newPosts, 5); 
+                await processInBatches(newPosts, 5);
             }
         } catch (e) {
             loadingBar.remove();
@@ -888,7 +946,7 @@
             if (settings.autoScroll) {
                 window.addEventListener('scroll', handleScroll);
             }
-            
+
             const params = new URLSearchParams(window.location.search);
             if (params.has('page')) nextPage = parseInt(params.get('page')) + 1;
         }
