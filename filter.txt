@@ -117,6 +117,8 @@ zod.kr##div:has(> [rel='sponsored'])
 ||get*ads-*-du.a.run.app^
 ||ader.naver.com/*?c=m_$all
 ||dvdprime.com/file/*/banner
+||excavatenearbywand.com^$script,domain=tw.nimi.wiki
+||kikjzaackos.in^$script,domain=tw.nimi.wiki
 ||clink.kakao.com/sp/$all,reason=수익링크
 ||kamp.kakao.com^$app=com.kakao.talk
 ||link.coupang.com/re/AFFHOME?lptag=*&amp;subid=pointlink$all,reason=수익링크
