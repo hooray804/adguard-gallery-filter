@@ -18,6 +18,7 @@
 ##iframe[src*='digitalcamp.co.kr']
 ##iframe[src*='targetpush.co.kr']
 *##[target='_blank']:has([src*='/banner/'])
+*$script,third-party,domain=nimi.wiki
 *tcid=$all
 [$domain=/^hoohootv[0-9]*\.[a-z]{2,}/]###img_row_container
 [$domain=/^tvmon[0-9]*\.[a-z]{2,}/]##.banner_wrap2
@@ -117,8 +118,6 @@ zod.kr##div:has(> [rel='sponsored'])
 ||get*ads-*-du.a.run.app^
 ||ader.naver.com/*?c=m_$all
 ||dvdprime.com/file/*/banner
-||excavatenearbywand.com^$script,domain=nimi.wiki
-||kikjzaackos.in^$script,domain=nimi.wiki
 ||clink.kakao.com/sp/$all,reason=수익링크
 ||kamp.kakao.com^$app=com.kakao.talk
 ||link.coupang.com/re/AFFHOME?lptag=*&amp;subid=pointlink$all,reason=수익링크
