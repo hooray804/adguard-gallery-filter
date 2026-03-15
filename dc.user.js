@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      3.0.1
+// @version      3.1.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -79,15 +79,15 @@
 
     await initMigration();
 
-    const CONFIG_VERSION = 2;
+    const CONFIG_VERSION = 3;
     const DEFAULT_SETTINGS = {
         autoScroll: true,
         showImage: true,
         disableFetch: false,
         postPreview: false,
-        cacheDuration: 180000,
+        cacheDuration: 21600000,
         showIdCode: false,
-        batchDelay: 100,
+        batchDelay: 150,
         version: CONFIG_VERSION
     };
 
@@ -202,7 +202,7 @@
             input.min = 1;
             input.max = 86400;
 
-            const currentSec = (settings.cacheDuration || 180000) / 1000;
+            const currentSec = (settings.cacheDuration || 21600000) / 1000;
             input.value = currentSec;
 
             input.onchange = async (e) => {
@@ -334,7 +334,7 @@
         info.style.marginTop = '20px';
         info.style.color = '#888';
         info.style.fontSize = '13px';
-        info.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 캐시 시간이 길수록 페이지 로딩이 빨라지나 비추천 수 실시간 반영이 지연됩니다. 배치 처리 지연 시간이 길수록 IP 기반의 Rate Limit 빈도가 줄어 비어있는 미리보기 등의 비율이 감소하지만, 게시글 목록에서 미리보기 등의 로딩 시간이 길어집니다. 모든 메모는 브라우저 내부에만 저장되어 브라우저 데이터 삭제 시 복구되지 않으므로 설정을 통해 정기적으로 백업하시기 바랍니다. 스크립트 개선을 위해 3.0.0 버전에서 설정을 초기화했습니다. 원하시는 맞춤 설정을 다시 적용해주세요. 현재 디시인사이드 측의 Rate Limit 등의 알 수 없는 문제로 기능이 제대로 작동하지 않을 수 있습니다.';
+        info.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 캐시 시간이 길수록 페이지 로딩이 빨라지나 비추천 수 실시간 반영이 지연됩니다. 배치 처리 지연 시간이 길수록 IP 기반의 Rate Limit 빈도가 줄어 비어있는 미리보기 등의 비율이 감소하지만, 게시글 목록에서 미리보기 등의 로딩 시간이 길어집니다. 모든 메모는 브라우저 내부에만 저장되어 브라우저 데이터 삭제 시 복구되지 않으므로 설정을 통해 정기적으로 백업하시기 바랍니다. 스크립트 개선을 위해 3.1.0 버전에서 설정을 초기화했습니다. 원하시는 맞춤 설정을 다시 적용해주세요. 현재 디시인사이드 측의 Rate Limit 등의 알 수 없는 문제로 기능이 제대로 작동하지 않을 수 있습니다.';
         document.body.appendChild(info);
 
         return;
@@ -409,14 +409,49 @@
         });
     };
 
-    const processInBatches = async (items, batchSize = 4) => {
-        for (let i = 0; i < items.length; i += batchSize) {
-            const batch = Array.from(items).slice(i, i + batchSize);
-            await Promise.all(batch.map(item => processListItem(item)));
-            if (i + batchSize < items.length && !settings.disableFetch) {
-                if (settings.batchDelay > 0) {
-                    await new Promise(resolve => setTimeout(resolve, settings.batchDelay));
-                }
+    let globalRateLimitLock = null;
+
+    const safeFetch = async (url) => {
+        if (globalRateLimitLock) await globalRateLimitLock;
+
+        const response = await fetch(url);
+        const text = await response.text();
+
+        if (text.includes('너무 많은 요청으로') && text.includes('penalty-box')) {
+            if (!globalRateLimitLock) {
+                globalRateLimitLock = new Promise(resolve => setTimeout(resolve, 5000)).then(() => {
+                    globalRateLimitLock = null;
+                });
+            }
+            await globalRateLimitLock;
+            
+            throw new Error('Rate limit exceeded');
+        }
+        
+        return text;
+    };
+
+    let isProcessingBatch = false;
+    let itemQueue = [];
+
+    const enqueueItems = (items) => {
+        itemQueue.push(...Array.from(items));
+        if (!isProcessingBatch) {
+            isProcessingBatch = true;
+            processQueue().catch(console.error).finally(() => {
+                isProcessingBatch = false;
+            });
+        }
+    };
+
+    const processQueue = async () => {
+        while (itemQueue.length > 0) {
+            const batch = itemQueue.splice(0, 3);
+            const fetchResults = await Promise.all(batch.map(item => processListItem(item)));
+            const didFetchAny = fetchResults.includes(true);
+
+            if (!settings.disableFetch && didFetchAny && settings.batchDelay > 0) {
+                await new Promise(resolve => setTimeout(resolve, settings.batchDelay));
             }
         }
     };
@@ -717,39 +752,49 @@
     `;
     document.head.appendChild(style);
 
+    const injectPlaceholder = (items) => {
+        items.forEach(li => {
+            if (li.classList.contains('adv-inner') || li.classList.contains('click_ad')) return;
+
+            const rtElement = li.querySelector('a.rt');
+            const subjectAdd = li.querySelector('.subject-add');
+            
+            if (rtElement && subjectAdd) {
+                const ctSpan = rtElement.querySelector('.ct');
+                if (ctSpan && ctSpan.innerText.trim() !== '') {
+                    const commentCount = document.createElement('span');
+                    commentCount.className = 'custom-comment-count';
+                    commentCount.innerText = `[${ctSpan.innerText.trim()}]`;
+                    subjectAdd.appendChild(commentCount);
+                }
+                rtElement.remove();
+            }
+
+            if (!settings.showImage) return;
+
+            const lnkTable = li.querySelector('.gall-detail-lnktb');
+            if (lnkTable && !lnkTable.querySelector('.dc-preview-thumb')) {
+                const img = document.createElement('img');
+                img.className = 'dc-preview-thumb';
+                lnkTable.prepend(img);
+            }
+        });
+    };
+
     const processListItem = async (li) => {
-        if (li.dataset.processed) return;
+        if (li.dataset.processed) return false;
         li.dataset.processed = "true";
 
-        if (li.classList.contains('adv-inner') || li.classList.contains('click_ad')) return;
+        if (li.classList.contains('adv-inner') || li.classList.contains('click_ad')) return false;
 
         const linkElement = li.querySelector('a.lt');
-        const rtElement = li.querySelector('a.rt');
         const lnkTable = li.querySelector('.gall-detail-lnktb');
-        const subjectAdd = li.querySelector('.subject-add');
 
-        if (!linkElement || !lnkTable) return;
+        if (!linkElement || !lnkTable) return false;
 
-        if (rtElement && subjectAdd) {
-            const ctSpan = rtElement.querySelector('.ct');
-            if (ctSpan && ctSpan.innerText.trim() !== '') {
-                const commentCount = document.createElement('span');
-                commentCount.className = 'custom-comment-count';
-                commentCount.innerText = `[${ctSpan.innerText.trim()}]`;
-                subjectAdd.appendChild(commentCount);
-            }
-            rtElement.remove();
-        }
+        if (settings.disableFetch) return false;
 
-        if (settings.disableFetch) return;
-
-        let img = null;
-        if (settings.showImage) {
-            img = document.createElement('img');
-            img.className = 'dc-preview-thumb';
-            lnkTable.prepend(img);
-        }
-
+        let img = lnkTable.querySelector('.dc-preview-thumb');
         const url = linkElement.href;
         const now = Date.now();
         let cachedData = null;
@@ -757,7 +802,7 @@
         try {
             const stored = await dbGet(url);
             if (stored) {
-                if (now - stored.time < (settings.cacheDuration || 180000)) {
+                if (now - stored.time < (settings.cacheDuration || 21600000)) {
                     cachedData = stored;
                 }
             }
@@ -838,12 +883,12 @@
 
         if (cachedData) {
             await applyDOM(cachedData.imgUrl, cachedData.dislikeCount, cachedData.userInfo, cachedData.content);
-            return;
+            return false;
         }
 
         try {
-            const response = await fetch(url);
-            const html = await response.text();
+            const html = await safeFetch(url);
+
             const parser = new DOMParser();
             const doc = parser.parseFromString(html, "text/html");
 
@@ -883,8 +928,9 @@
             };
 
             await dbPut(saveData).catch(() => {});
+            return true;
         } catch (e) {
-            if (img) img.remove();
+            return false;
         }
     };
 
@@ -901,8 +947,8 @@
             const url = new URL(window.location.href);
             url.searchParams.set('page', nextPage);
 
-            const response = await fetch(url.href);
-            const text = await response.text();
+            const text = await safeFetch(url.href);
+
             const parser = new DOMParser();
             const doc = parser.parseFromString(text, 'text/html');
 
@@ -917,10 +963,13 @@
 
                 newPosts.forEach(post => listContainer.appendChild(post));
                 nextPage++;
-                await processInBatches(newPosts, 5);
+                
+                injectPlaceholder(newPosts);
+                enqueueItems(newPosts);
             }
         } catch (e) {
             loadingBar.remove();
+            await new Promise(resolve => setTimeout(resolve, 5000));
         } finally {
             isFetching = false;
         }
@@ -938,10 +987,9 @@
         observer.observe(document.body, { childList: true, subtree: true });
 
         if (listContainer) {
-            (async () => {
-                const items = listContainer.querySelectorAll('li:not(.notice):not(.click_ad)');
-                await processInBatches(items, 5);
-            })();
+            const items = listContainer.querySelectorAll('li:not(.notice):not(.click_ad)');
+            injectPlaceholder(items);
+            enqueueItems(items);
 
             if (settings.autoScroll) {
                 window.addEventListener('scroll', handleScroll);
