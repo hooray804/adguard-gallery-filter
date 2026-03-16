@@ -160,6 +160,7 @@ namu.wiki##div[class]:matches-css(position: sticky)
 ! Anti-adblock
 @@||piku.co.kr^$generichide
 aagag.com#$#.la { position: absolute !important; left: -3000px !important; width: 60px !important; height: 20px !important; }
+aagag.com##+js(set-cookie, ab, 0)
 algumon.com##+js(nostif, blocked, 1500)
 kissjav.*##+js(rmnt, script, /contextmenu|ghost|localStorage|video\-ad\-overlay/i)
 m.fmkorea.com##+js(set, _make_power_link_identifier, noopFunc)
