@@ -113,6 +113,7 @@ torrentpi150.com##div.col-sm-12 > .widget-box > .basic-post-gallery
 windowsforum.kr,seoul.co.kr,xportsnews.com##.ad
 wowtv.co.kr,cafe.naver.com##[class*='Banner']
 zod.kr##div:has(> [rel='sponsored'])
+||*nestads.daum.net^
 ||get*ads-*-du.a.run.app^
 ||ader.naver.com/*?c=m_$all
 ||dvdprime.com/file/*/banner
