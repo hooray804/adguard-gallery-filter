@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      3.1.0
+// @version      3.1.1
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -26,6 +26,8 @@
     'use strict';
 
     let new_available;
+
+    const escapeHtml = (text) => String(text).replace(/[&<>"']/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
 
     async function initMigration() {
         const isNewApiSupported = typeof GM !== 'undefined' && typeof GM.getValue === 'function';
@@ -485,7 +487,7 @@
                 }
 
                 if (hasText) {
-                    container.innerHTML = `<b style="color:#007bff; font-size:0.8em;">[${displayText}]</b>`;
+                    container.innerHTML = `<b style="color:#007bff; font-size:0.8em;">[${escapeHtml(displayText)}]</b>`;
                 } else {
                     container.innerHTML = `<small style="color:#ccc; font-size:0.7em;">[📝]</small>`;
                 }
@@ -521,7 +523,7 @@
         }
 
         if (hasText) {
-            container.innerHTML = `<b style="color:#007bff; font-size:0.8em;">[${displayText}]</b>`;
+            container.innerHTML = `<b style="color:#007bff; font-size:0.8em;">[${escapeHtml(displayText)}]</b>`;
         } else {
             container.innerHTML = `<small style="color:#ccc; font-size:0.7em;">[📝]</small>`;
         }
@@ -872,7 +874,7 @@
                     }
 
                     if (content) {
-                        innerHtml += `<span style="margin-left:2px;">${content}</span>`;
+                        innerHtml += `<span style="margin-left:2px;">${escapeHtml(content)}</span>`;
                     }
 
                     previewDiv.innerHTML = innerHtml;
