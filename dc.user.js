@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      3.1.1
+// @version      3.1.2
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -25,53 +25,53 @@
 (async function() {
     'use strict';
 
-    let new_available;
+    let a;
 
-    const escapeHtml = (text) => String(text).replace(/[&<>"']/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+    const b = (c) => String(c).replace(/[&<>"']/g, (d) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[d]));
 
-    async function initMigration() {
-        const isNewApiSupported = typeof GM !== 'undefined' && typeof GM.getValue === 'function';
-        if (isNewApiSupported) {
-            new_available = 'true';
-            let isMigrated = await GM.getValue('dc_expert_migrated', false);
-            if (!isMigrated) {
+    async function e() {
+        const f = typeof GM !== 'undefined' && typeof GM.getValue === 'function';
+        if (f) {
+            a = 'true';
+            let g = await GM.getValue('dc_expert_migrated', false);
+            if (!g) {
                 if (typeof GM_listValues === 'function' && typeof GM_getValue === 'function') {
                     try {
-                        const keys = GM_listValues();
-                        for (const key of keys) {
-                            const val = GM_getValue(key);
-                            if (val !== undefined) {
-                                await GM.setValue(key, val);
+                        const h = GM_listValues();
+                        for (const i of h) {
+                            const j = GM_getValue(i);
+                            if (j !== undefined) {
+                                await GM.setValue(i, j);
                             }
                         }
-                    } catch (e) {
-                        console.error('Migration failed:', e);
+                    } catch (k) {
+                        console.error('Migration failed:', k);
                     }
                 }
                 await GM.setValue('dc_expert_migrated', true);
             }
         } else {
-            new_available = 'false';
+            a = 'false';
         }
     }
 
-    const GM_API = {
-        getValue: async (key, defaultValue) => {
-            if (new_available === 'true') {
-                return await GM.getValue(key, defaultValue);
+    const l = {
+        getValue: async (m, n) => {
+            if (a === 'true') {
+                return await GM.getValue(m, n);
             } else {
-                return typeof GM_getValue === 'function' ? GM_getValue(key, defaultValue) : defaultValue;
+                return typeof GM_getValue === 'function' ? GM_getValue(m, n) : n;
             }
         },
-        setValue: async (key, value) => {
-            if (new_available === 'true') {
-                await GM.setValue(key, value);
+        setValue: async (m, n) => {
+            if (a === 'true') {
+                await GM.setValue(m, n);
             } else {
-                if (typeof GM_setValue === 'function') GM_setValue(key, value);
+                if (typeof GM_setValue === 'function') GM_setValue(m, n);
             }
         },
         listValues: async () => {
-            if (new_available === 'true') {
+            if (a === 'true') {
                 return await GM.listValues();
             } else {
                 return typeof GM_listValues === 'function' ? GM_listValues() : [];
@@ -79,10 +79,10 @@
         }
     };
 
-    await initMigration();
+    await e();
 
-    const CONFIG_VERSION = 3;
-    const DEFAULT_SETTINGS = {
+    const o = 3;
+    const p = {
         autoScroll: true,
         showImage: true,
         disableFetch: false,
@@ -90,14 +90,14 @@
         cacheDuration: 21600000,
         showIdCode: false,
         batchDelay: 150,
-        version: CONFIG_VERSION
+        version: o
     };
 
-    let settings = await GM_API.getValue('dc_expert_settings', DEFAULT_SETTINGS);
+    let q = await l.getValue('dc_expert_settings', p);
 
-    if (settings.version !== CONFIG_VERSION) {
-        settings = { ...DEFAULT_SETTINGS };
-        await GM_API.setValue('dc_expert_settings', settings);
+    if (q.version !== o) {
+        q = { ...p };
+        await l.setValue('dc_expert_settings', q);
     }
 
     if (window.location.href.includes('m.dcinside.com/dcscrip')) {
@@ -111,633 +111,545 @@
             document.body.style.color = '#ffffff';
         }
 
-        const title = document.createElement('h2');
-        title.innerText = 'Dcinside Expert Extension 설정';
-        document.body.appendChild(title);
+        const r = document.createElement('h2');
+        r.innerText = 'Dcinside Expert Extension 설정';
+        document.body.appendChild(r);
 
-        const createToggle = (labelText, key) => {
-            const label = document.createElement('label');
-            label.style.display = 'flex';
-            label.style.alignItems = 'center';
-            label.style.margin = '15px 0';
-            label.style.fontSize = '16px';
-            label.style.cursor = 'pointer';
+        const s = (t, u) => {
+            const v = document.createElement('label');
+            v.style.display = 'flex';
+            v.style.alignItems = 'center';
+            v.style.margin = '15px 0';
+            v.style.fontSize = '16px';
+            v.style.cursor = 'pointer';
 
-            label.addEventListener('click', (e) => e.stopPropagation());
-            label.addEventListener('touchstart', (e) => e.stopPropagation());
+            v.addEventListener('click', (w) => w.stopPropagation());
+            v.addEventListener('touchstart', (w) => w.stopPropagation());
 
-            const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.style.marginRight = '10px';
-            checkbox.style.width = '20px';
-            checkbox.style.height = '20px';
-            checkbox.style.accentColor = '#3b5998';
+            const x = document.createElement('input');
+            x.type = 'checkbox';
+            x.style.marginRight = '10px';
+            x.style.width = '20px';
+            x.style.height = '20px';
+            x.style.accentColor = '#3b5998';
 
-            const statusText = document.createElement('span');
-            statusText.style.fontWeight = 'bold';
-            statusText.style.marginLeft = '5px';
-            statusText.style.marginRight = '10px';
-            statusText.style.minWidth = '45px';
+            const y = document.createElement('span');
+            y.style.fontWeight = 'bold';
+            y.style.marginLeft = '5px';
+            y.style.marginRight = '10px';
+            y.style.minWidth = '45px';
 
-            const isDataSaverActive = settings.disableFetch;
-            const isForcedOff = ((key === 'showImage' || key === 'postPreview' || key === 'showIdCode') && isDataSaverActive);
+            const z = q.disableFetch;
+            const A = ((u === 'showImage' || u === 'postPreview' || u === 'showIdCode') && z);
 
-            if (isForcedOff) {
-                checkbox.checked = false;
-                checkbox.disabled = true;
+            if (A) {
+                x.checked = false;
+                x.disabled = true;
             } else {
-                checkbox.checked = settings[key];
+                x.checked = q[u];
             }
 
-            const updateStatusText = () => {
-                if (isForcedOff) {
-                    statusText.innerText = '[OFF]';
-                    statusText.style.color = '#d9534f';
+            const B = () => {
+                if (A) {
+                    y.innerText = '[OFF]';
+                    y.style.color = '#d9534f';
                 } else {
-                    if (checkbox.checked) {
-                        statusText.innerText = '[ON]';
-                        statusText.style.color = '#3b5998';
+                    if (x.checked) {
+                        y.innerText = '[ON]';
+                        y.style.color = '#3b5998';
                     } else {
-                        statusText.innerText = '[OFF]';
-                        statusText.style.color = '#999';
+                        y.innerText = '[OFF]';
+                        y.style.color = '#999';
                     }
                 }
             };
-            updateStatusText();
+            B();
 
-            checkbox.onchange = async (e) => {
-                settings[key] = e.target.checked;
-                await GM_API.setValue('dc_expert_settings', settings);
-                updateStatusText();
-                if (key === 'disableFetch') location.reload();
+            x.onchange = async (C) => {
+                q[u] = C.target.checked;
+                await l.setValue('dc_expert_settings', q);
+                B();
+                if (u === 'disableFetch') location.reload();
             };
 
-            label.appendChild(checkbox);
-            label.appendChild(statusText);
-            label.appendChild(document.createTextNode(labelText));
+            v.appendChild(x);
+            v.appendChild(y);
+            v.appendChild(document.createTextNode(t));
 
-            if (isForcedOff) {
-                const warnMsg = document.createElement('span');
-                warnMsg.innerText = ' (데이터 절약 모드 사용 중)';
-                warnMsg.style.fontSize = '13px';
-                warnMsg.style.color = '#d9534f';
-                warnMsg.style.marginLeft = '5px';
-                label.appendChild(warnMsg);
+            if (A) {
+                const D = document.createElement('span');
+                D.innerText = ' (데이터 절약 모드 사용 중)';
+                D.style.fontSize = '13px';
+                D.style.color = '#d9534f';
+                D.style.marginLeft = '5px';
+                v.appendChild(D);
             }
 
-            return label;
+            return v;
         };
 
-        const createNumberInput = () => {
-            const container = document.createElement('div');
-            container.style.margin = '15px 0';
+        const E = () => {
+            const F = document.createElement('div');
+            F.style.margin = '15px 0';
 
-            const label = document.createElement('label');
-            label.innerText = '게시글 캐시 시간 (초, 최대 86400): ';
-            label.style.fontSize = '16px';
+            const G = document.createElement('label');
+            G.innerText = '게시글 캐시 시간 (초, 최대 86400): ';
+            G.style.fontSize = '16px';
 
-            const input = document.createElement('input');
-            input.type = 'number';
-            input.style.marginLeft = '10px';
-            input.style.padding = '5px';
-            input.style.width = '80px';
-            input.min = 1;
-            input.max = 86400;
+            const H = document.createElement('input');
+            H.type = 'number';
+            H.style.marginLeft = '10px';
+            H.style.padding = '5px';
+            H.style.width = '80px';
+            H.min = 1;
+            H.max = 86400;
 
-            const currentSec = (settings.cacheDuration || 21600000) / 1000;
-            input.value = currentSec;
+            const I = (q.cacheDuration || 21600000) / 1000;
+            H.value = I;
 
-            input.onchange = async (e) => {
-                let val = parseInt(e.target.value);
-                if (isNaN(val) || val < 1) val = 1;
-                if (val > 86400) val = 86400;
+            H.onchange = async (J) => {
+                let K = parseInt(J.target.value);
+                if (isNaN(K) || K < 1) K = 1;
+                if (K > 86400) K = 86400;
 
-                settings.cacheDuration = val * 1000;
-                await GM_API.setValue('dc_expert_settings', settings);
-                input.value = val;
+                q.cacheDuration = K * 1000;
+                await l.setValue('dc_expert_settings', q);
+                H.value = K;
             };
 
-            container.appendChild(label);
-            container.appendChild(input);
-            return container;
+            F.appendChild(G);
+            F.appendChild(H);
+            return F;
         };
 
-        const createDelayInput = () => {
-            const container = document.createElement('div');
-            container.style.margin = '15px 0';
+        const L = () => {
+            const M = document.createElement('div');
+            M.style.margin = '15px 0';
 
-            const label = document.createElement('label');
-            label.innerText = '배치 처리 지연 시간 (ms): ';
-            label.style.fontSize = '16px';
+            const N = document.createElement('label');
+            N.innerText = '배치 처리 지연 시간 (ms): ';
+            N.style.fontSize = '16px';
 
-            const input = document.createElement('input');
-            input.type = 'number';
-            input.style.marginLeft = '10px';
-            input.style.padding = '5px';
-            input.style.width = '80px';
-            input.min = 0;
+            const O = document.createElement('input');
+            O.type = 'number';
+            O.style.marginLeft = '10px';
+            O.style.padding = '5px';
+            O.style.width = '80px';
+            O.min = 0;
 
-            input.value = settings.batchDelay;
+            O.value = q.batchDelay;
 
-            input.onchange = async (e) => {
-                let val = parseInt(e.target.value);
-                if (isNaN(val) || val < 0) val = 0;
+            O.onchange = async (P) => {
+                let Q = parseInt(P.target.value);
+                if (isNaN(Q) || Q < 0) Q = 0;
 
-                settings.batchDelay = val;
-                await GM_API.setValue('dc_expert_settings', settings);
-                input.value = val;
+                q.batchDelay = Q;
+                await l.setValue('dc_expert_settings', q);
+                O.value = Q;
             };
 
-            container.appendChild(label);
-            container.appendChild(input);
-            return container;
+            M.appendChild(N);
+            M.appendChild(O);
+            return M;
         };
 
-        const createMemoTools = () => {
-            const container = document.createElement('div');
-            container.style.margin = '20px 0';
-            container.style.borderTop = '1px solid #ddd';
-            container.style.paddingTop = '15px';
+        const R = () => {
+            const S = document.createElement('div');
+            S.style.margin = '20px 0';
+            S.style.borderTop = '1px solid #ddd';
+            S.style.paddingTop = '15px';
 
-            const title = document.createElement('h3');
-            title.innerText = '유저 메모 백업';
-            title.style.fontSize = '16px';
-            container.appendChild(title);
+            const T = document.createElement('h3');
+            T.innerText = '유저 메모 백업';
+            T.style.fontSize = '16px';
+            S.appendChild(T);
 
-            const btnStyle = 'padding: 8px 15px; margin-right: 10px; cursor: pointer; border: 1px solid #ccc; background: #f8f8f8; border-radius: 4px;';
+            const U = 'padding: 8px 15px; margin-right: 10px; cursor: pointer; border: 1px solid #ccc; background: #f8f8f8; border-radius: 4px;';
 
-            const exportBtn = document.createElement('button');
-            exportBtn.innerText = '메모 내보내기 (JSON)';
-            exportBtn.style.cssText = btnStyle;
-            exportBtn.onclick = async () => {
-                const keys = await GM_API.listValues();
-                const data = {};
-                for (const key of keys) {
-                    if (key.startsWith('dc_user_')) {
-                        data[key] = await GM_API.getValue(key);
+            const V = document.createElement('button');
+            V.innerText = '메모 내보내기 (JSON)';
+            V.style.cssText = U;
+            V.onclick = async () => {
+                const W = await l.listValues();
+                const X = {};
+                for (const Y of W) {
+                    if (Y.startsWith('dc_user_')) {
+                        X[Y] = await l.getValue(Y);
                     }
                 }
-                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `dc_memos_${new Date().toISOString().slice(0, 25)}.json`;
-                a.click();
-                URL.revokeObjectURL(url);
+                const Z = new Blob([JSON.stringify(X, null, 2)], { type: 'application/json' });
+                const aa = URL.createObjectURL(Z);
+                const ab = document.createElement('a');
+                ab.href = aa;
+                ab.download = `dc_memos_${new Date().toISOString().slice(0, 25)}.json`;
+                ab.click();
+                URL.revokeObjectURL(aa);
             };
 
-            const importInput = document.createElement('input');
-            importInput.type = 'file';
-            importInput.accept = '.json';
-            importInput.style.display = 'none';
-            importInput.onchange = (e) => {
-                const file = e.target.files[0];
-                if (!file) return;
-                const reader = new FileReader();
-                reader.onload = async (evt) => {
+            const ac = document.createElement('input');
+            ac.type = 'file';
+            ac.accept = '.json';
+            ac.style.display = 'none';
+            ac.onchange = (ad) => {
+                const ae = ad.target.files[0];
+                if (!ae) return;
+                const af = new FileReader();
+                af.onload = async (ag) => {
                     try {
-                        const imported = JSON.parse(evt.target.result);
-                        let count = 0;
-                        for (const key in imported) {
-                            if (key.startsWith('dc_user_')) {
-                                await GM_API.setValue(key, imported[key]);
-                                count++;
+                        const ah = JSON.parse(ag.target.result);
+                        let ai = 0;
+                        for (const aj in ah) {
+                            if (aj.startsWith('dc_user_')) {
+                                await l.setValue(aj, ah[aj]);
+                                ai++;
                             }
                         }
-                        alert(`${count}개의 메모를 성공적으로 가져왔습니다.`);
-                    } catch (err) {
+                        alert(`${ai}개의 메모를 성공적으로 가져왔습니다.`);
+                    } catch (ak) {
                         alert('파일 형식이 올바르지 않습니다.');
                     }
                 };
-                reader.readAsText(file);
+                af.readAsText(ae);
             };
 
-            const importBtn = document.createElement('button');
-            importBtn.innerText = '메모 가져오기';
-            importBtn.style.cssText = btnStyle;
-            importBtn.onclick = () => importInput.click();
+            const al = document.createElement('button');
+            al.innerText = '메모 가져오기';
+            al.style.cssText = U;
+            al.onclick = () => ac.click();
 
-            container.appendChild(exportBtn);
-            container.appendChild(importBtn);
-            container.appendChild(importInput);
-            return container;
+            S.appendChild(V);
+            S.appendChild(al);
+            S.appendChild(ac);
+            return S;
         };
 
-        document.body.appendChild(createToggle('무한 스크롤 사용', 'autoScroll'));
-        document.body.appendChild(createToggle('이미지 미리보기 사용', 'showImage'));
-        document.body.appendChild(createToggle('본문 미리보기 (3줄 모드)', 'postPreview'));
-        document.body.appendChild(createToggle('식별 코드 미리보기 (메모와 함께 표시)', 'showIdCode'));
-        document.body.appendChild(createToggle('데이터 절약 (섬네일, 본문, 비추, 메모 표시 안 됨)', 'disableFetch'));
-        document.body.appendChild(createNumberInput());
-        document.body.appendChild(createDelayInput());
-        document.body.appendChild(createMemoTools());
+        document.body.appendChild(s('무한 스크롤 사용', 'autoScroll'));
+        document.body.appendChild(s('이미지 미리보기 사용', 'showImage'));
+        document.body.appendChild(s('본문 미리보기 (3줄 모드)', 'postPreview'));
+        document.body.appendChild(s('식별 코드 미리보기 (메모와 함께 표시)', 'showIdCode'));
+        document.body.appendChild(s('데이터 절약 (섬네일, 본문, 비추, 메모 표시 안 됨)', 'disableFetch'));
+        document.body.appendChild(E());
+        document.body.appendChild(L());
+        document.body.appendChild(R());
 
-        const info = document.createElement('p');
-        info.style.marginTop = '20px';
-        info.style.color = '#888';
-        info.style.fontSize = '13px';
-        info.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 캐시 시간이 길수록 페이지 로딩이 빨라지나 비추천 수 실시간 반영이 지연됩니다. 배치 처리 지연 시간이 길수록 IP 기반의 Rate Limit 빈도가 줄어 비어있는 미리보기 등의 비율이 감소하지만, 게시글 목록에서 미리보기 등의 로딩 시간이 길어집니다. 모든 메모는 브라우저 내부에만 저장되어 브라우저 데이터 삭제 시 복구되지 않으므로 설정을 통해 정기적으로 백업하시기 바랍니다. 스크립트 개선을 위해 3.1.0 버전에서 설정을 초기화했습니다. 원하시는 맞춤 설정을 다시 적용해주세요. 현재 디시인사이드 측의 Rate Limit 등의 알 수 없는 문제로 기능이 제대로 작동하지 않을 수 있습니다.';
-        document.body.appendChild(info);
+        const am = document.createElement('p');
+        am.style.marginTop = '20px';
+        am.style.color = '#888';
+        am.style.fontSize = '13px';
+        am.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 캐시 시간이 길수록 페이지 로딩이 빨라지나 비추천 수 실시간 반영이 지연됩니다. 배치 처리 지연 시간이 길수록 IP 기반의 Rate Limit 빈도가 줄어 비어있는 미리보기 등의 비율이 감소하지만, 게시글 목록에서 미리보기 등의 로딩 시간이 길어집니다. 모든 메모는 브라우저 내부에만 저장되어 브라우저 데이터 삭제 시 복구되지 않으므로 설정을 통해 정기적으로 백업하시기 바랍니다. 스크립트 개선을 위해 3.1.0 버전에서 설정을 초기화했습니다. 원하시는 맞춤 설정을 다시 적용해주세요. 현재 디시인사이드 측의 Rate Limit 등의 알 수 없는 문제로 기능이 제대로 작동하지 않을 수 있습니다.';
+        document.body.appendChild(am);
 
         return;
     }
 
-    const DB_NAME = 'dc_expert_db';
-    const DB_VERSION = 3;
-    const STORE_NAME = 'post_cache';
-    const CACHE_EXPIRE_TIME = 24 * 60 * 60 * 1000;
+    const an = 'dc_expert_db';
+    const ao = 3;
+    const ap = 'post_cache';
+    const aq = 24 * 60 * 60 * 1000;
 
-    let dbInstance = null;
+    let ar = null;
 
-    const getDB = () => {
-        return new Promise((resolve, reject) => {
-            if (dbInstance) return resolve(dbInstance);
-            const request = indexedDB.open(DB_NAME, DB_VERSION);
+    const as = () => {
+        return new Promise((at, au) => {
+            if (ar) return at(ar);
+            const av = indexedDB.open(an, ao);
 
-            request.onupgradeneeded = (e) => {
-                const db = e.target.result;
-                if (db.objectStoreNames.contains(STORE_NAME)) {
-                    db.deleteObjectStore(STORE_NAME);
+            av.onupgradeneeded = (aw) => {
+                const ax = aw.target.result;
+                if (ax.objectStoreNames.contains(ap)) {
+                    ax.deleteObjectStore(ap);
                 }
-                const store = db.createObjectStore(STORE_NAME, { keyPath: 'url' });
-                store.createIndex('time', 'time', { unique: false });
+                const ay = ax.createObjectStore(ap, { keyPath: 'url' });
+                ay.createIndex('time', 'time', { unique: false });
             };
 
-            request.onsuccess = (e) => {
-                dbInstance = e.target.result;
+            av.onsuccess = (aw) => {
+                ar = aw.target.result;
                 if (Math.random() < 0.05) {
-                    cleanupOldCache(dbInstance);
+                    az(ar);
                 }
-                resolve(dbInstance);
+                at(ar);
             };
-            request.onerror = (e) => reject(e);
+            av.onerror = (aw) => au(aw);
         });
     };
 
-    const cleanupOldCache = (db) => {
-        const transaction = db.transaction([STORE_NAME], 'readwrite');
-        const store = transaction.objectStore(STORE_NAME);
-        const index = store.index('time');
+    const az = (aA) => {
+        const aB = aA.transaction([ap], 'readwrite');
+        const aC = aB.objectStore(ap);
+        const aD = aC.index('time');
 
-        const cutOffDate = Date.now() - CACHE_EXPIRE_TIME;
-        const range = IDBKeyRange.upperBound(cutOffDate);
+        const aE = Date.now() - aq;
+        const aF = IDBKeyRange.upperBound(aE);
 
-        index.openCursor(range).onsuccess = (event) => {
-            const cursor = event.target.result;
-            if (cursor) {
-                store.delete(cursor.primaryKey);
-                cursor.continue();
+        aD.openCursor(aF).onsuccess = (aG) => {
+            const aH = aG.target.result;
+            if (aH) {
+                aC.delete(aH.primaryKey);
+                aH.continue();
             }
         };
     };
 
-    const dbGet = async (url) => {
-        const db = await getDB();
-        return new Promise((resolve, reject) => {
-            const transaction = db.transaction([STORE_NAME], 'readonly');
-            const request = transaction.objectStore(STORE_NAME).get(url);
-            request.onsuccess = () => resolve(request.result);
-            request.onerror = () => reject(request.error);
+    const aI = async (aJ) => {
+        const aK = await as();
+        return new Promise((aL, aM) => {
+            const aN = aK.transaction([ap], 'readonly');
+            const aO = aN.objectStore(ap).get(aJ);
+            aO.onsuccess = () => aL(aO.result);
+            aO.onerror = () => aM(aO.error);
         });
     };
 
-    const dbPut = async (data) => {
-        const db = await getDB();
-        return new Promise((resolve, reject) => {
-            const transaction = db.transaction([STORE_NAME], 'readwrite');
-            const request = transaction.objectStore(STORE_NAME).put(data);
-            request.onsuccess = () => resolve(request.result);
-            request.onerror = () => reject(request.error);
+    const aP = async (aQ) => {
+        const aR = await as();
+        return new Promise((aS, aT) => {
+            const aU = aR.transaction([ap], 'readwrite');
+            const aV = aU.objectStore(ap).put(aQ);
+            aV.onsuccess = () => aS(aV.result);
+            aV.onerror = () => aT(aV.error);
         });
     };
 
-    let globalRateLimitLock = null;
+    let aW = null;
 
-    const safeFetch = async (url) => {
-        if (globalRateLimitLock) await globalRateLimitLock;
+    const aX = async (aY) => {
+        if (aW) await aW;
 
-        const response = await fetch(url);
-        const text = await response.text();
+        const aZ = await fetch(aY);
+        const ba = await aZ.text();
 
-        if (text.includes('너무 많은 요청으로') && text.includes('penalty-box')) {
-            if (!globalRateLimitLock) {
-                globalRateLimitLock = new Promise(resolve => setTimeout(resolve, 5000)).then(() => {
-                    globalRateLimitLock = null;
+        if (ba.includes('너무 많은 요청으로') && ba.includes('penalty-box')) {
+            if (!aW) {
+                aW = new Promise(bb => setTimeout(bb, 5000)).then(() => {
+                    aW = null;
                 });
             }
-            await globalRateLimitLock;
+            await aW;
             
             throw new Error('Rate limit exceeded');
         }
         
-        return text;
+        return ba;
     };
 
-    let isProcessingBatch = false;
-    let itemQueue = [];
+    let bc = false;
+    let bd = [];
 
-    const enqueueItems = (items) => {
-        itemQueue.push(...Array.from(items));
-        if (!isProcessingBatch) {
-            isProcessingBatch = true;
-            processQueue().catch(console.error).finally(() => {
-                isProcessingBatch = false;
+    const be = (bf) => {
+        bd.push(...Array.from(bf));
+        if (!bc) {
+            bc = true;
+            bg().catch(console.error).finally(() => {
+                bc = false;
             });
         }
     };
 
-    const processQueue = async () => {
-        while (itemQueue.length > 0) {
-            const batch = itemQueue.splice(0, 3);
-            const fetchResults = await Promise.all(batch.map(item => processListItem(item)));
-            const didFetchAny = fetchResults.includes(true);
+    const bg = async () => {
+        while (bd.length > 0) {
+            const bh = bd.splice(0, 3);
+            const bi = await Promise.all(bh.map(bj => bk(bj)));
+            const bl = bi.includes(true);
 
-            if (!settings.disableFetch && didFetchAny && settings.batchDelay > 0) {
-                await new Promise(resolve => setTimeout(resolve, settings.batchDelay));
+            if (!q.disableFetch && bl && q.batchDelay > 0) {
+                await new Promise(bm => setTimeout(bm, q.batchDelay));
             }
         }
     };
 
-    const getData = async (id) => await GM_API.getValue('dc_user_' + id, { memo: "" });
-    const setData = async (id, data) => await GM_API.setValue('dc_user_' + id, data);
+    const bn = async (bo) => await l.getValue('dc_user_' + bo, { memo: "" });
+    const bp = async (bq, br) => await l.setValue('dc_user_' + bq, br);
 
-    window.openUserEditor = async function(id, nickname, container, isIp) {
-        const data = await getData(id);
-        const displayName = isIp ? nickname : `${nickname}(${id})`;
-        const newMemo = prompt(`[${displayName}] 메모 입력 (비우면 삭제):`, data.memo);
+    window.openUserEditor = async function(bs, bt, bu, bv) {
+        const bw = await bn(bs);
+        const bx = bv ? bt : `${bt}(${bs})`;
+        const by = prompt(`[${bx}] 메모 입력 (비우면 삭제):`, bw.memo);
 
-        if (newMemo !== null) {
-            await setData(id, { memo: newMemo });
-            if (container) {
-                let displayText = "";
-                let hasText = false;
+        if (by !== null) {
+            await bp(bs, { memo: by });
+            if (bu) {
+                let bz = "";
+                let bA = false;
 
-                if (newMemo) {
-                    if (settings.showIdCode && !isIp) {
-                        displayText = `${id}: ${newMemo}`;
+                if (by) {
+                    if (q.showIdCode && !bv) {
+                        bz = `${bs}: ${by}`;
                     } else {
-                        displayText = newMemo;
+                        bz = by;
                     }
-                    hasText = true;
+                    bA = true;
                 } else {
-                    if (settings.showIdCode && !isIp) {
-                        displayText = id;
-                        hasText = true;
+                    if (q.showIdCode && !bv) {
+                        bz = bs;
+                        bA = true;
                     }
                 }
 
-                if (hasText) {
-                    container.innerHTML = `<b style="color:#007bff; font-size:0.8em;">[${escapeHtml(displayText)}]</b>`;
+                if (bA) {
+                    bu.innerHTML = `<b style="color:#007bff; font-size:0.8em;">[${b(bz)}]</b>`;
                 } else {
-                    container.innerHTML = `<small style="color:#ccc; font-size:0.7em;">[📝]</small>`;
+                    bu.innerHTML = `<small style="color:#ccc; font-size:0.7em;">[📝]</small>`;
                 }
             }
         }
     };
 
-    async function createUI(id, nickname, isIp) {
-        const data = await getData(id);
-        const container = document.createElement('span');
-        container.className = 'custom-memo-area';
-        container.style.marginLeft = "4px";
-        container.style.cursor = "pointer";
-        container.style.display = "inline-block";
-        container.style.verticalAlign = "middle";
-        container.style.flexShrink = "0";
+    async function bB(bC, bD, bE) {
+        const bF = await bn(bC);
+        const bG = document.createElement('span');
+        bG.className = 'custom-memo-area';
+        bG.style.marginLeft = "4px";
+        bG.style.cursor = "pointer";
+        bG.style.display = "inline-block";
+        bG.style.verticalAlign = "middle";
+        bG.style.flexShrink = "0";
 
-        let displayText = "";
-        let hasText = false;
+        let bH = "";
+        let bI = false;
 
-        if (data.memo) {
-            if (settings.showIdCode && !isIp) {
-                displayText = `${id}: ${data.memo}`;
+        if (bF.memo) {
+            if (q.showIdCode && !bE) {
+                bH = `${bC}: ${bF.memo}`;
             } else {
-                displayText = data.memo;
+                bH = bF.memo;
             }
-            hasText = true;
+            bI = true;
         } else {
-            if (settings.showIdCode && !isIp) {
-                displayText = id;
-                hasText = true;
+            if (q.showIdCode && !bE) {
+                bH = bC;
+                bI = true;
             }
         }
 
-        if (hasText) {
-            container.innerHTML = `<b style="color:#007bff; font-size:0.8em;">[${escapeHtml(displayText)}]</b>`;
+        if (bI) {
+            bG.innerHTML = `<b style="color:#007bff; font-size:0.8em;">[${b(bH)}]</b>`;
         } else {
-            container.innerHTML = `<small style="color:#ccc; font-size:0.7em;">[📝]</small>`;
+            bG.innerHTML = `<small style="color:#ccc; font-size:0.7em;">[📝]</small>`;
         }
 
-        container.onclick = async (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            await window.openUserEditor(id, nickname, container, isIp);
+        bG.onclick = async (bJ) => {
+            bJ.preventDefault();
+            bJ.stopPropagation();
+            await window.openUserEditor(bC, bD, bG, bE);
         };
-        return container;
+        return bG;
     }
 
-    function parseUserFromElement(authorBox) {
-        if (!authorBox) return null;
-        const nickLi = authorBox.querySelector('.ginfo2 li:first-child');
-        const gallogBtn = authorBox.querySelector('.rt a.btn-line-gray');
+    function bK(bL) {
+        if (!bL) return null;
+        const bM = bL.querySelector('.ginfo2 li:first-child');
+        const bN = bL.querySelector('.rt a.btn-line-gray');
 
-        if (nickLi) {
-            let userId = "";
-            let nickname = nickLi.innerText.trim();
-            let isIp = false;
+        if (bM) {
+            let bO = "";
+            let bP = bM.innerText.trim();
+            let bQ = false;
 
-            if (gallogBtn) {
-                userId = gallogBtn.getAttribute('href').split('/').pop();
+            if (bN) {
+                bO = bN.getAttribute('href').split('/').pop();
             } else {
-                const ipMatch = nickname.match(/\(([^)]+)\)/);
-                userId = ipMatch ? ipMatch[1] : nickname;
-                isIp = true;
+                const bR = bP.match(/\(([^)]+)\)/);
+                bO = bR ? bR[1] : bP;
+                bQ = true;
             }
-            return { userId, nickname, isIp };
+            return { userId: bO, nickname: bP, isIp: bQ };
         }
         return null;
     }
 
-    async function processPostView() {
-        const authorBox = document.querySelector('.gallview-tit-box');
-        if (authorBox && !authorBox.dataset.memoApplied) {
-            const userInfo = parseUserFromElement(authorBox);
-            if (userInfo) {
-                authorBox.dataset.memoApplied = true;
-                const nickLi = authorBox.querySelector('.ginfo2 li:first-child');
+    async function bS() {
+        const bT = document.querySelector('.gallview-tit-box');
+        if (bT && !bT.dataset.memoApplied) {
+            const bU = bK(bT);
+            if (bU) {
+                bT.dataset.memoApplied = true;
+                const bV = bT.querySelector('.ginfo2 li:first-child');
 
-                if (nickLi.childNodes.length > 0 && nickLi.childNodes[0].nodeType === 3) {
-                    const textNode = nickLi.childNodes[0];
-                    const textSpan = document.createElement('span');
-                    textSpan.textContent = textNode.textContent;
-                    textSpan.style.cssText = "overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 0 1 auto;";
+                if (bV.childNodes.length > 0 && bV.childNodes[0].nodeType === 3) {
+                    const bW = bV.childNodes[0];
+                    const bX = document.createElement('span');
+                    bX.textContent = bW.textContent;
+                    bX.style.cssText = "overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 0 1 auto;";
 
-                    nickLi.style.display = "inline-flex";
-                    nickLi.style.alignItems = "center";
-                    nickLi.style.maxWidth = "100%";
+                    bV.style.display = "inline-flex";
+                    bV.style.alignItems = "center";
+                    bV.style.maxWidth = "100%";
 
-                    nickLi.replaceChild(textSpan, textNode);
-                    nickLi.appendChild(await createUI(userInfo.userId, userInfo.nickname, userInfo.isIp));
+                    bV.replaceChild(bX, bW);
+                    bV.appendChild(await bB(bU.userId, bU.nickname, bU.isIp));
                 } else {
-                    nickLi.appendChild(await createUI(userInfo.userId, userInfo.nickname, userInfo.isIp));
+                    bV.appendChild(await bB(bU.userId, bU.nickname, bU.isIp));
                 }
             }
         }
 
-        const commentList = document.querySelectorAll('.all-comment-lst li[id^="comment_cnt_"]');
-        commentList.forEach(async li => {
-            if (li.dataset.memoApplied) return;
+        const bY = document.querySelectorAll('.all-comment-lst li[id^="comment_cnt_"]');
+        bY.forEach(async bZ => {
+            if (bZ.dataset.memoApplied) return;
 
-            const nickAnchor = li.querySelector('a.nick');
-            if (!nickAnchor) return;
+            const ca = bZ.querySelector('a.nick');
+            if (!ca) return;
 
-            let userId = "";
-            let isIp = false;
-            const infoSpan = li.querySelector('.blockCommentId');
-            const ipSpan = li.querySelector('.ip');
+            let cb = "";
+            let cc = false;
+            const cd = bZ.querySelector('.blockCommentId');
+            const ce = bZ.querySelector('.ip');
 
-            if (infoSpan && infoSpan.getAttribute('data-info')) {
-                userId = infoSpan.getAttribute('data-info');
-            } else if (nickAnchor.href && nickAnchor.href.includes('gallog/')) {
-                userId = nickAnchor.href.split('/').pop();
-            } else if (ipSpan) {
-                userId = ipSpan.innerText.trim().replace(/[()]/g, '');
-                isIp = true;
+            if (cd && cd.getAttribute('data-info')) {
+                cb = cd.getAttribute('data-info');
+            } else if (ca.href && ca.href.includes('gallog/')) {
+                cb = ca.href.split('/').pop();
+            } else if (ce) {
+                cb = ce.innerText.trim().replace(/[()]/g, '');
+                cc = true;
             }
 
-            if (userId) {
-                li.dataset.memoApplied = true;
-                const nickname = nickAnchor.childNodes[0].textContent.trim();
+            if (cb) {
+                bZ.dataset.memoApplied = true;
+                const cf = ca.childNodes[0].textContent.trim();
 
-                if (nickAnchor.childNodes.length > 0 && nickAnchor.childNodes[0].nodeType === 3) {
-                    const textNode = nickAnchor.childNodes[0];
-                    const textSpan = document.createElement('span');
-                    textSpan.textContent = textNode.textContent;
-                    textSpan.style.cssText = "overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 0 1 auto; pointer-events: none;";
+                if (ca.childNodes.length > 0 && ca.childNodes[0].nodeType === 3) {
+                    const cg = ca.childNodes[0];
+                    const ch = document.createElement('span');
+                    ch.textContent = cg.textContent;
+                    ch.style.cssText = "overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 0 1 auto; pointer-events: none;";
 
-                    nickAnchor.style.display = "inline-flex";
-                    nickAnchor.style.alignItems = "center";
-                    nickAnchor.style.maxWidth = "100%";
-                    nickAnchor.style.verticalAlign = "bottom";
+                    ca.style.display = "inline-flex";
+                    ca.style.alignItems = "center";
+                    ca.style.maxWidth = "100%";
+                    ca.style.verticalAlign = "bottom";
 
-                    nickAnchor.replaceChild(textSpan, textNode);
-                    nickAnchor.appendChild(await createUI(userId, nickname, isIp));
+                    ca.replaceChild(ch, cg);
+                    ca.appendChild(await bB(cb, cf, cc));
                 } else {
-                    nickAnchor.appendChild(await createUI(userId, nickname, isIp));
+                    ca.appendChild(await bB(cb, cf, cc));
                 }
             }
         });
     }
 
-    let isFetching = false;
-    let nextPage = 2;
-    const listContainer = document.querySelector('ul.gall-detail-lst');
+    let ci = false;
+    let cj = 2;
+    const ck = document.querySelector('ul.gall-detail-lst');
 
-    const style = document.createElement('style');
-    style.innerHTML = `
-        ul.gall-detail-lst > li {
-            height: auto !important;
-            overflow: visible !important;
-        }
-        ul.gall-detail-lst .gall-detail-lnktb {
-            display: flex !important;
-            align-items: center !important;
-            padding: 5px 10px !important;
-            width: 100% !important;
-            height: auto !important;
-            box-sizing: border-box !important;
-            background: #fff !important;
-        }
-        ul.gall-detail-lst .gall-detail-lnktb .lt {
-            flex: 1 1 auto !important;
-            min-width: 0 !important;
-            display: flex !important;
-            flex-direction: column !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            height: auto !important;
-        }
-        ul.gall-detail-lst .gall-detail-lnktb .lt .subject-add {
-            display: flex !important;
-            align-items: center !important;
-            width: 100% !important;
-            font-size: 14px !important;
-            line-height: 1.4 !important;
-        }
-        ul.gall-detail-lst .gall-detail-lnktb .lt .subject-add .subjectin {
-            white-space: nowrap !important;
-            overflow: hidden !important;
-            text-overflow: ellipsis !important;
-            flex: 0 1 auto !important;
-        }
-        .custom-comment-count {
-            color: #222222 !important;
-            font-weight: bold !important;
-            font-size: 13px !important;
-            margin-left: 4px !important;
-            flex: 0 0 auto !important;
-            margin-top: 0px !important;
-        }
-        ul.gall-detail-lst .gall-detail-lnktb .lt .ginfo {
-            display: flex !important;
-            margin-top: 2px !important;
-            padding: 0 !important;
-            flex-wrap: nowrap !important;
-        }
-        ul.gall-detail-lst .gall-detail-lnktb .lt .ginfo li {
-            font-size: 12px !important;
-            margin-right: 2px !important;
-            color: #888 !important;
-            white-space: nowrap !important;
-        }
-        .dc-preview-thumb {
-            flex: 0 0 45px !important;
-            width: 45px !important;
-            height: 45px !important;
-            border-radius: 4px !important;
-            object-fit: cover !important;
-            margin-left: 4px !important;
-            margin-right: 8px !important;
-            background-color: transparent !important;
-            visibility: hidden;
-        }
+    const cl = document.createElement('style');
+    cl.innerHTML = `
+        ul.gall-detail-lst > li { height: auto !important; overflow: visible !important; }
+        ul.gall-detail-lst .gall-detail-lnktb { display: flex !important; align-items: center !important; padding: 5px 10px !important; width: 100% !important; height: auto !important; box-sizing: border-box !important; background: #fff !important; }
+        ul.gall-detail-lst .gall-detail-lnktb .lt { flex: 1 1 auto !important; min-width: 0 !important; display: flex !important; flex-direction: column !important; margin: 0 !important; padding: 0 !important; height: auto !important; }
+        ul.gall-detail-lst .gall-detail-lnktb .lt .subject-add { display: flex !important; align-items: center !important; width: 100% !important; font-size: 14px !important; line-height: 1.4 !important; }
+        ul.gall-detail-lst .gall-detail-lnktb .lt .subject-add .subjectin { white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; flex: 0 1 auto !important; }
+        .custom-comment-count { color: #222222 !important; font-weight: bold !important; font-size: 13px !important; margin-left: 4px !important; flex: 0 0 auto !important; margin-top: 0px !important; }
+        ul.gall-detail-lst .gall-detail-lnktb .lt .ginfo { display: flex !important; margin-top: 2px !important; padding: 0 !important; flex-wrap: nowrap !important; }
+        ul.gall-detail-lst .gall-detail-lnktb .lt .ginfo li { font-size: 12px !important; margin-right: 2px !important; color: #888 !important; white-space: nowrap !important; }
+        .dc-preview-thumb { flex: 0 0 45px !important; width: 45px !important; height: 45px !important; border-radius: 4px !important; object-fit: cover !important; margin-left: 4px !important; margin-right: 8px !important; background-color: transparent !important; visibility: hidden; }
         ul.gall-detail-lst .gall-detail-lnktb .rt { display: none !important; }
-        .dislike-cnt {
-            color: #888 !important;
-            font-size: 12px !important;
-            margin-left: 3px !important;
-        }
-        .preview-line {
-            display: block;
-            margin-top: 2px;
-            font-size: 12px;
-            color: #666;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            width: 100%;
-            line-height: 1.2 !important;
-        }
-        .preview-recomm {
-            color: #888;
-            margin-right: 4px;
-            font-size: 12px;
-        }
-        .page-divider {
-            display: flex;
-            align-items: center;
-            margin: 15px 0;
-            color: #ccc;
-            font-size: 11px;
-            font-weight: normal;
-        }
-        .page-divider::before, .page-divider::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: #eee;
-            margin: 0 10px;
-        }
+        .dislike-cnt { color: #888 !important; font-size: 12px !important; margin-left: 3px !important; }
+        .preview-line { display: block; margin-top: 2px; font-size: 12px; color: #666; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%; line-height: 1.2 !important; }
+        .preview-recomm { color: #888; margin-right: 4px; font-size: 12px; }
+        .page-divider { display: flex; align-items: center; margin: 15px 0; color: #ccc; font-size: 11px; font-weight: normal; }
+        .page-divider::before, .page-divider::after { content: ""; flex: 1; height: 1px; background: #eee; margin: 0 10px; }
         @media (prefers-color-scheme: dark) {
             ul.gall-detail-lst .gall-detail-lnktb { background: #121212 !important; }
             ul.gall-detail-lst .gall-detail-lnktb .lt .subject-add { color: #e1e1e1 !important; }
@@ -752,253 +664,253 @@
             .preview-recomm { color: #888; }
         }
     `;
-    document.head.appendChild(style);
+    document.head.appendChild(cl);
 
-    const injectPlaceholder = (items) => {
-        items.forEach(li => {
-            if (li.classList.contains('adv-inner') || li.classList.contains('click_ad')) return;
+    const cm = (cn) => {
+        cn.forEach(co => {
+            if (co.classList.contains('adv-inner') || co.classList.contains('click_ad')) return;
 
-            const rtElement = li.querySelector('a.rt');
-            const subjectAdd = li.querySelector('.subject-add');
+            const cp = co.querySelector('a.rt');
+            const cq = co.querySelector('.subject-add');
             
-            if (rtElement && subjectAdd) {
-                const ctSpan = rtElement.querySelector('.ct');
-                if (ctSpan && ctSpan.innerText.trim() !== '') {
-                    const commentCount = document.createElement('span');
-                    commentCount.className = 'custom-comment-count';
-                    commentCount.innerText = `[${ctSpan.innerText.trim()}]`;
-                    subjectAdd.appendChild(commentCount);
+            if (cp && cq) {
+                const cr = cp.querySelector('.ct');
+                if (cr && cr.innerText.trim() !== '') {
+                    const cs = document.createElement('span');
+                    cs.className = 'custom-comment-count';
+                    cs.innerText = `[${cr.innerText.trim()}]`;
+                    cq.appendChild(cs);
                 }
-                rtElement.remove();
+                cp.remove();
             }
 
-            if (!settings.showImage) return;
+            if (!q.showImage) return;
 
-            const lnkTable = li.querySelector('.gall-detail-lnktb');
-            if (lnkTable && !lnkTable.querySelector('.dc-preview-thumb')) {
-                const img = document.createElement('img');
-                img.className = 'dc-preview-thumb';
-                lnkTable.prepend(img);
+            const ct = co.querySelector('.gall-detail-lnktb');
+            if (ct && !ct.querySelector('.dc-preview-thumb')) {
+                const cu = document.createElement('img');
+                cu.className = 'dc-preview-thumb';
+                ct.prepend(cu);
             }
         });
     };
 
-    const processListItem = async (li) => {
-        if (li.dataset.processed) return false;
-        li.dataset.processed = "true";
+    const bk = async (cv) => {
+        if (cv.dataset.processed) return false;
+        cv.dataset.processed = "true";
 
-        if (li.classList.contains('adv-inner') || li.classList.contains('click_ad')) return false;
+        if (cv.classList.contains('adv-inner') || cv.classList.contains('click_ad')) return false;
 
-        const linkElement = li.querySelector('a.lt');
-        const lnkTable = li.querySelector('.gall-detail-lnktb');
+        const cw = cv.querySelector('a.lt');
+        const cx = cv.querySelector('.gall-detail-lnktb');
 
-        if (!linkElement || !lnkTable) return false;
+        if (!cw || !cx) return false;
 
-        if (settings.disableFetch) return false;
+        if (q.disableFetch) return false;
 
-        let img = lnkTable.querySelector('.dc-preview-thumb');
-        const url = linkElement.href;
-        const now = Date.now();
-        let cachedData = null;
+        let cy = cx.querySelector('.dc-preview-thumb');
+        const cz = cw.href;
+        const cA = Date.now();
+        let cB = null;
 
         try {
-            const stored = await dbGet(url);
-            if (stored) {
-                if (now - stored.time < (settings.cacheDuration || 21600000)) {
-                    cachedData = stored;
+            const cC = await aI(cz);
+            if (cC) {
+                if (cA - cC.time < (q.cacheDuration || 21600000)) {
+                    cB = cC;
                 }
             }
-        } catch(e) {}
+        } catch(cD) {}
 
-        const applyDOM = async (imgUrl, dislikeCount, userInfo, content) => {
-            if (settings.showImage && img) {
-                const isDefaultIcon = imgUrl && (imgUrl.includes('dcinside_icon.png') || imgUrl.includes('no_img'));
-                if (imgUrl && !isDefaultIcon && (li.querySelector('.sp-lst-img, .sp-lst-recoimg, .sp-lst-best, .sp-lst-bestlight'))) {
-                    img.src = imgUrl;
-                    img.style.visibility = 'visible';
-                    img.style.backgroundColor = '#f2f2f2';
+        const cE = async (cF, cG, cH, cI) => {
+            if (q.showImage && cy) {
+                const cJ = cF && (cF.includes('dcinside_icon.png') || cF.includes('no_img'));
+                if (cF && !cJ && (cv.querySelector('.sp-lst-img, .sp-lst-recoimg, .sp-lst-best, .sp-lst-bestlight'))) {
+                    cy.src = cF;
+                    cy.style.visibility = 'visible';
+                    cy.style.backgroundColor = '#f2f2f2';
                 } else {
-                    img.style.visibility = 'hidden';
-                    img.style.backgroundColor = 'transparent';
+                    cy.style.visibility = 'hidden';
+                    cy.style.backgroundColor = 'transparent';
                 }
             }
 
-            if (dislikeCount !== null && !settings.postPreview) {
-                const ginfoLis = li.querySelectorAll('.ginfo li');
-                ginfoLis.forEach(infoLi => {
-                    if (infoLi.textContent.includes('추천') && !infoLi.querySelector('.dislike-cnt')) {
-                        const dislikeSpan = document.createElement('span');
-                        dislikeSpan.className = 'dislike-cnt';
-                        dislikeSpan.innerText = `비추 ${dislikeCount}`;
-                        infoLi.appendChild(dislikeSpan);
+            if (cG !== null && !q.postPreview) {
+                const cK = cv.querySelectorAll('.ginfo li');
+                cK.forEach(cL => {
+                    if (cL.textContent.includes('추천') && !cL.querySelector('.dislike-cnt')) {
+                        const cM = document.createElement('span');
+                        cM.className = 'dislike-cnt';
+                        cM.innerText = `비추 ${cG}`;
+                        cL.appendChild(cM);
                     }
                 });
             }
 
-            if (userInfo && userInfo.userId) {
-                const ginfoLis = li.querySelectorAll('.ginfo li');
-                for (let infoLi of ginfoLis) {
-                    const text = infoLi.innerText.trim();
-                    if (text === userInfo.nickname || text.startsWith(userInfo.nickname.split('(')[0])) {
-                        if (!infoLi.querySelector('.custom-memo-area')) {
-                            infoLi.appendChild(await createUI(userInfo.userId, userInfo.nickname, userInfo.isIp));
+            if (cH && cH.userId) {
+                const cN = cv.querySelectorAll('.ginfo li');
+                for (let cO of cN) {
+                    const cP = cO.innerText.trim();
+                    if (cP === cH.nickname || cP.startsWith(cH.nickname.split('(')[0])) {
+                        if (!cO.querySelector('.custom-memo-area')) {
+                            cO.appendChild(await bB(cH.userId, cH.nickname, cH.isIp));
                         }
                         break;
                     }
                 }
             }
 
-            if (settings.postPreview) {
-                const ltDiv = li.querySelector('.gall-detail-lnktb .lt');
-                if (ltDiv && !li.querySelector('.preview-line')) {
-                    let recText = "";
-                    const ginfo = li.querySelector('.ginfo');
-                    if (ginfo) {
-                        const lis = ginfo.querySelectorAll('li');
-                        lis.forEach(l => {
-                            if (l.innerText.includes('추천')) {
-                                recText = l.innerText.trim();
-                                l.style.display = 'none';
+            if (q.postPreview) {
+                const cQ = cv.querySelector('.gall-detail-lnktb .lt');
+                if (cQ && !cv.querySelector('.preview-line')) {
+                    let cR = "";
+                    const cS = cv.querySelector('.ginfo');
+                    if (cS) {
+                        const cT = cS.querySelectorAll('li');
+                        cT.forEach(cU => {
+                            if (cU.innerText.includes('추천')) {
+                                cR = cU.innerText.trim();
+                                cU.style.display = 'none';
                             }
                         });
                     }
 
-                    const previewDiv = document.createElement('div');
-                    previewDiv.className = 'preview-line';
+                    const cV = document.createElement('div');
+                    cV.className = 'preview-line';
 
-                    let innerHtml = "";
-                    if (recText) innerHtml += `<span class="preview-recomm">${recText}</span>`;
+                    let cW = "";
+                    if (cR) cW += `<span class="preview-recomm">${cR}</span>`;
 
-                    if (dislikeCount !== null) {
-                         innerHtml += `<span class="preview-recomm">비추 ${dislikeCount}</span> `;
+                    if (cG !== null) {
+                         cW += `<span class="preview-recomm">비추 ${cG}</span> `;
                     }
 
-                    if (content) {
-                        innerHtml += `<span style="margin-left:2px;">${escapeHtml(content)}</span>`;
+                    if (cI) {
+                        cW += `<span style="margin-left:2px;">${b(cI)}</span>`;
                     }
 
-                    previewDiv.innerHTML = innerHtml;
-                    ltDiv.appendChild(previewDiv);
+                    cV.innerHTML = cW;
+                    cQ.appendChild(cV);
                 }
             }
         };
 
-        if (cachedData) {
-            await applyDOM(cachedData.imgUrl, cachedData.dislikeCount, cachedData.userInfo, cachedData.content);
+        if (cB) {
+            await cE(cB.imgUrl, cB.dislikeCount, cB.userInfo, cB.content);
             return false;
         }
 
         try {
-            const html = await safeFetch(url);
+            const cX = await aX(cz);
 
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, "text/html");
+            const cY = new DOMParser();
+            const cZ = cY.parseFromString(cX, "text/html");
 
-            let imgUrl = null;
-            const metaImg = doc.querySelector('meta[property="og:image"]');
-            if (metaImg) imgUrl = metaImg.content;
-            if (!imgUrl || imgUrl.includes('dcinside_icon.png')) {
-                const bodyImg = doc.querySelector('.writing_view_box img, .thum-txtin img');
-                if (bodyImg) imgUrl = bodyImg.getAttribute('data-original') || bodyImg.src;
+            let da = null;
+            const db = cZ.querySelector('meta[property="og:image"]');
+            if (db) da = db.content;
+            if (!da || da.includes('dcinside_icon.png')) {
+                const dc = cZ.querySelector('.writing_view_box img, .thum-txtin img');
+                if (dc) da = dc.getAttribute('data-original') || dc.src;
             }
 
-            let dislikeCount = null;
-            const nonRecoEl = doc.querySelector('#nonrecomm_btn');
-            if (nonRecoEl) {
-                dislikeCount = nonRecoEl.innerText.replace(/[^0-9]/g, '');
+            let dd = null;
+            const de = cZ.querySelector('#nonrecomm_btn');
+            if (de) {
+                dd = de.innerText.replace(/[^0-9]/g, '');
             }
 
-            let content = null;
-            const txtBody = doc.querySelector('.thum-txtin') || doc.querySelector('.writing_view_box');
+            let df = null;
+            const dg = cZ.querySelector('.thum-txtin') || cZ.querySelector('.writing_view_box');
 
-            if (txtBody) {
-                txtBody.querySelectorAll('script, style, .adv-groupno, #auto_picture_area').forEach(el => el.remove());
-                content = txtBody.textContent.replace(/\s+/g, ' ').trim().substring(0, 25);
+            if (dg) {
+                dg.querySelectorAll('script, style, .adv-groupno, #auto_picture_area').forEach(dh => dh.remove());
+                df = dg.textContent.replace(/\s+/g, ' ').trim().substring(0, 25);
             }
 
-            const userInfo = parseUserFromElement(doc.querySelector('.gallview-tit-box'));
+            const di = bK(cZ.querySelector('.gallview-tit-box'));
 
-            await applyDOM(imgUrl, dislikeCount, userInfo, content);
+            await cE(da, dd, di, df);
 
-            const saveData = {
-                url: url,
+            const dj = {
+                url: cz,
                 time: Date.now(),
-                imgUrl: imgUrl,
-                dislikeCount: dislikeCount,
-                userInfo: userInfo,
-                content: content
+                imgUrl: da,
+                dislikeCount: dd,
+                userInfo: di,
+                content: df
             };
 
-            await dbPut(saveData).catch(() => {});
+            await aP(dj).catch(() => {});
             return true;
-        } catch (e) {
+        } catch (dk) {
             return false;
         }
     };
 
-    const loadMore = async () => {
-        if (isFetching) return;
-        isFetching = true;
+    const dl = async () => {
+        if (ci) return;
+        ci = true;
 
-        const loadingBar = document.createElement('li');
-        loadingBar.style.cssText = "text-align:center; padding:10px; color:#ccc; font-size:12px;";
-        loadingBar.innerText = "Loading...";
-        listContainer.appendChild(loadingBar);
+        const dm = document.createElement('li');
+        dm.style.cssText = "text-align:center; padding:10px; color:#ccc; font-size:12px;";
+        dm.innerText = "Loading...";
+        ck.appendChild(dm);
 
         try {
-            const url = new URL(window.location.href);
-            url.searchParams.set('page', nextPage);
+            const dn = new URL(window.location.href);
+            dn.searchParams.set('page', cj);
 
-            const text = await safeFetch(url.href);
+            const dp = await aX(dn.href);
 
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(text, 'text/html');
+            const dq = new DOMParser();
+            const dr = dq.parseFromString(dp, 'text/html');
 
-            const newPosts = doc.querySelectorAll('ul.gall-detail-lst > li:not(.notice):not(.click_ad)');
-            loadingBar.remove();
+            const ds = dr.querySelectorAll('ul.gall-detail-lst > li:not(.notice):not(.click_ad)');
+            dm.remove();
 
-            if (newPosts.length > 0) {
-                const divider = document.createElement('li');
-                divider.className = 'page-divider';
-                divider.innerText = `PAGE ${nextPage}`;
-                listContainer.appendChild(divider);
+            if (ds.length > 0) {
+                const dt = document.createElement('li');
+                dt.className = 'page-divider';
+                dt.innerText = `PAGE ${cj}`;
+                ck.appendChild(dt);
 
-                newPosts.forEach(post => listContainer.appendChild(post));
-                nextPage++;
+                ds.forEach(du => ck.appendChild(du));
+                cj++;
                 
-                injectPlaceholder(newPosts);
-                enqueueItems(newPosts);
+                cm(ds);
+                be(ds);
             }
-        } catch (e) {
-            loadingBar.remove();
-            await new Promise(resolve => setTimeout(resolve, 5000));
+        } catch (dv) {
+            dm.remove();
+            await new Promise(dw => setTimeout(dw, 5000));
         } finally {
-            isFetching = false;
+            ci = false;
         }
     };
 
-    const handleScroll = () => {
+    const dx = () => {
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 700) {
-            loadMore();
+            dl();
         }
     };
 
     if (!window.location.href.includes('m.dcinside.com/dcscrip')) {
-        processPostView();
-        const observer = new MutationObserver(processPostView);
-        observer.observe(document.body, { childList: true, subtree: true });
+        bS();
+        const dy = new MutationObserver(bS);
+        dy.observe(document.body, { childList: true, subtree: true });
 
-        if (listContainer) {
-            const items = listContainer.querySelectorAll('li:not(.notice):not(.click_ad)');
-            injectPlaceholder(items);
-            enqueueItems(items);
+        if (ck) {
+            const dz = ck.querySelectorAll('li:not(.notice):not(.click_ad)');
+            cm(dz);
+            be(dz);
 
-            if (settings.autoScroll) {
-                window.addEventListener('scroll', handleScroll);
+            if (q.autoScroll) {
+                window.addEventListener('scroll', dx);
             }
 
-            const params = new URLSearchParams(window.location.search);
-            if (params.has('page')) nextPage = parseInt(params.get('page')) + 1;
+            const dA = new URLSearchParams(window.location.search);
+            if (dA.has('page')) cj = parseInt(dA.get('page')) + 1;
         }
     }
 
