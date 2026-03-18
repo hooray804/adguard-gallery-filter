@@ -253,7 +253,7 @@ www.google.*##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".watch/"])
 www.google.*##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".works/"])
 www.google.*##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".wtf/"])
 www.google.*##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".yachts/"])
-! If you use fr (or hu) TLD website then add www.google.*#@#.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".fr/"])
+! Allow specific TLDs (e.g., .fr) by adding an exception rule www.google.*#@#.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".fr/"])
 
 ! Etc
 dmm.co.jp#%#//scriptlet('trusted-set-cookie-reload', 'ckcy_remedied_check', 'ec_mrnhbtk', '1year', '/', '.dmm.co.jp')
