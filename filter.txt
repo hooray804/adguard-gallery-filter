@@ -218,6 +218,7 @@ www.google.*##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".best/"], a[hre
 www.google.*##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".bond/"])
 www.google.*##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".boutique/"])
 www.google.*##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".buzz/"])
+www.google.*##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".cam/"])
 www.google.*##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".cards/"], a[href*=".casa/"], a[href*=".cfd/"])
 www.google.*##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".click/"])
 www.google.*##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".coupons/"])
