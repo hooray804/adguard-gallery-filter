@@ -4,8 +4,8 @@
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
 
-! Maybe it will work well
-!#include search/spam.txt
+! It does not working on iOS. I'm working on the issue.
+!#include /search/spam.txt
 
 ! Ads
 ##.ad-view
