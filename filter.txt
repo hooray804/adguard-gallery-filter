@@ -5,7 +5,7 @@
 
 
 ! It does not working on iOS. I'm working on the issue.
-!#include /search/spam.txt
+!#include search/spam.txt
 
 ! Ads
 ##.ad-view
