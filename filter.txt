@@ -7,7 +7,6 @@
 !#include https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/search/spam.txt
 !#endif
 
-
 ! Ads
 ##.ad-view
 ##.banner_m
