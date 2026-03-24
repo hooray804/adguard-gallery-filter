@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      3.1.3
+// @version      4.0.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -317,8 +317,47 @@
             al.style.cssText = U;
             al.onclick = () => ac.click();
 
+            const amBtn = document.createElement('button');
+            amBtn.innerText = '공식으로 마이그레이션';
+            amBtn.style.cssText = U;
+            amBtn.onclick = async () => {
+                const amW = await l.listValues();
+                const amV = [];
+                const amM = [];
+                const amC = [];
+                for (const amY of amW) {
+                    if (amY.startsWith('dc_user_')) {
+                        const amId = amY.substring(8);
+                        const amDat = await l.getValue(amY);
+                        if (amDat && amDat.memo) {
+                            amV.push(amId);
+                            amM.push(amDat.memo);
+                            amC.push("");
+                        }
+                    }
+                }
+                const amExp = {
+                    userMemoList: [{ galleryId: "", memo: amM, value: amV, color: amC }],
+                    appSettingList: [{ key: "settings", value: [] }],
+                    unique: "dcinside",
+                    version: 4
+                };
+                const amJ = JSON.stringify(amExp);
+                const amB64 = btoa(unescape(encodeURIComponent(amJ)));
+                const amBlb = new Blob([amB64], { type: 'text/plain' });
+                const amUrl = URL.createObjectURL(amBlb);
+                const amA = document.createElement('a');
+                amA.href = amUrl;
+                const amD = new Date();
+                const amP = n => n.toString().padStart(2, '0');
+                amA.download = `dcbackup_M_${amD.getFullYear()}${amP(amD.getMonth()+1)}${amP(amD.getDate())}_${amP(amD.getHours())}${amP(amD.getMinutes())}${amP(amD.getSeconds())}.txt`;
+                amA.click();
+                URL.revokeObjectURL(amUrl);
+            };
+
             S.appendChild(V);
             S.appendChild(al);
+            S.appendChild(amBtn);
             S.appendChild(ac);
             return S;
         };
