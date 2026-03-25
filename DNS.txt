@@ -1,12 +1,11 @@
 ! Title: 애드가드 갤러리 DNS 필터
-! Version: 2026.03.03
-! Description: Adguard DNS 필터의 오차단을 해제하고 누락된 광고와 트래커를 차단합니다.
+! Version: 2026.03.25
+! Description: Adguard DNS 필터의 오차단을 해제하고 누락된 광고를 차단합니다.
 ! Homepage: https://gallog.dcinside.com/cent8649
 
 
 ! Disable incorrect blocking
 @@||a*.smlog.co.kr^
-@@||contents.adpopcorn.com^
 ||ad-creative.pstatic.net^$badfilter
 ||adshnk.com^$badfilter
 ||adtouch.adbrix.io^$badfilter
@@ -18,11 +17,11 @@
 ||store-api.mumuglobal.com^$badfilter
 ||tivan.naver.com^$badfilter
 ||tnkfactory.com^$badfilter
-||trillion.toss.im^
 
 ! Ads
 ||get*ads-*-du.a.run.app^
 ||kamp.kakao.com^
 ||shortformstats.kakao.com^
 ||thumb.kakaocdn.net^
+||trillion.toss.im^
 ||veta.naver.com^
