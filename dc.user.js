@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      4.0.0
+// @version      4.1.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -355,10 +355,18 @@
                 URL.revokeObjectURL(amUrl);
             };
 
+            const amDesc = document.createElement('div');
+            amDesc.style.marginTop = '15px';
+            amDesc.style.fontSize = '13px';
+            amDesc.style.color = '#888';
+            amDesc.style.lineHeight = '1.5';
+            amDesc.innerHTML = '참고: <a href="https://m.dcinside.com/board/know/428" target="_blank" style="color:#3b5998; text-decoration:underline;">https://m.dcinside.com/board/know/428</a><br><a href="https://m.dcinside.com/userMemo/board/adguard" target="_blank" style="color:#3b5998; text-decoration:underline;">https://m.dcinside.com/userMemo/board/adguard</a><br>위 링크에서 이용자 메모 백업 / 복원 바로가기 후 다운로드 한 파일을 복원하면됩니다.';
+
             S.appendChild(V);
             S.appendChild(al);
             S.appendChild(amBtn);
             S.appendChild(ac);
+            S.appendChild(amDesc);
             return S;
         };
 
