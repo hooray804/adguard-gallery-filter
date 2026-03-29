@@ -147,6 +147,7 @@ m.dcinside.com##.outside-search-box
 m.dcinside.com##section.grid > .md-tit-box:has-text(Daum)
 mlbpark.donga.com##.the_hottest
 namu.wiki##li:has(a > time):not(:has([href*='/raw/'])):upward(2)
+m.naver.com##div.sa_mw.sa_empty_ad
 quasarzone.com##.best-official-news, .new-official-news, .best-official-news-container, .new-official-news-container, .new-partner-saleinfo-container
 search.dcinside.com##.right_content
 
