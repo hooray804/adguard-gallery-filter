@@ -63,8 +63,6 @@ k-hentai.org##.my-3.container
 kone.gg##.flex.justify-center.py-3
 m.bobaedream.co.kr##div[style$='height:50px;']
 m.cafe.daum.net##[class*='_banner']
-m.cafe.naver.com###articleFeedList
-m.cafe.naver.com##.HomeFeedItem
 m.danawa.com###mdnw-main-dimm, #mdnw-main-bottomSheet-container
 m.daum.net###trendKeywordsContainer
 m.dcinside.com###notice_list > li
@@ -84,6 +82,7 @@ mlbpark.donga.com##ul.sub_lists_today.lists > li.items:nth-of-type(6)::before
 mlbpark.donga.com$$li:has-text(/엠팍제휴팀|폰판기/)
 mule.co.kr##[class*='-ad-']
 namu.wiki#$#div[class][id]:is(:empty, :has(> iframe[id^='google_ads_iframe'])) { display: none !important; }
+naver.com##div.sa_mw.sa_empty_ad
 naver.com###sb-kh-shortents-wrap
 nexon.com,gg,ps,xyz,loawa.com,or.kr,go.kr#@#[target='_blank']:has([src*='/banner/'])
 pay.naver.com##div[class^='BottomAds_article']
@@ -140,14 +139,15 @@ gall.dcinside.com##tr[class='ub-content ']
 inven.co.kr##.inven-float-alarm
 m.cafe.naver.com##.CardWrap.home_popular_articles
 m.cafe.naver.com##.FloatingJoinButton
+m.cafe.naver.com##.HomeFeedItem
 m.cafe.naver.com##.join_layer_wrap
 m.cafe.naver.com##.popular_toast_popup
 m.cafe.naver.com##.subscribe_layer_wrap
+m.cafe.naver.com###articleFeedList
 m.dcinside.com##.outside-search-box
 m.dcinside.com##section.grid > .md-tit-box:has-text(Daum)
 mlbpark.donga.com##.the_hottest
 namu.wiki##li:has(a > time):not(:has([href*='/raw/'])):upward(2)
-naver.com##div.sa_mw.sa_empty_ad
 quasarzone.com##.best-official-news, .new-official-news, .best-official-news-container, .new-official-news-container, .new-partner-saleinfo-container
 search.dcinside.com##.right_content
 
