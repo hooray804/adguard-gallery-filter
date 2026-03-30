@@ -150,6 +150,7 @@ mlbpark.donga.com##.the_hottest
 namu.wiki##li:has(a > time):not(:has([href*='/raw/'])):upward(2)
 quasarzone.com##.best-official-news, .new-official-news, .best-official-news-container, .new-official-news-container, .new-partner-saleinfo-container
 search.dcinside.com##.right_content
+search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper) ~ div:has(.fds-aib-related-question-list)
 
 ! Annoyances
 cafe.naver.com##+js(remove-class, disable-select, #ct)
