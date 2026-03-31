@@ -3,7 +3,6 @@
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
-! !#include search/spam.txt
 
 ! Ads
 ##.ad-view
@@ -82,8 +81,8 @@ mlbpark.donga.com##ul.sub_lists_today.lists > li.items:nth-of-type(6)::before
 mlbpark.donga.com$$li:has-text(/엠팍제휴팀|폰판기/)
 mule.co.kr##[class*='-ad-']
 namu.wiki#$#div[class][id]:is(:empty, :has(> iframe[id^='google_ads_iframe'])) { display: none !important; }
-naver.com##div.sa_mw.sa_empty_ad
 naver.com###sb-kh-shortents-wrap
+naver.com##.sa_mw.sa_empty_ad
 nexon.com,gg,ps,xyz,loawa.com,or.kr,go.kr#@#[target='_blank']:has([src*='/banner/'])
 pay.naver.com##div[class^='BottomAds_article']
 ppomppu.co.kr##.bottom > div[style]
@@ -115,7 +114,6 @@ zod.kr##div:has(> [rel='sponsored'])
 ||get*ads-*-du.a.run.app^
 ||ader.naver.com/*?c=m_$all
 ||dvdprime.com/file/*/banner
-||clink.kakao.com/sp/$all,reason=수익링크
 ||kamp.kakao.com^$app=com.kakao.talk
 ||link.coupang.com/re/AFFHOME?lptag=*&amp;subid=pointlink$all,reason=수익링크
 ||shortformstats.kakao.com^$app=com.kakao.talk
@@ -178,6 +176,7 @@ $@$link[rel="manifest"]
 @@||ad-creative.pstatic.net^$app=com.nhn.android.search
 @@||ad-img.gmarket.com^$image,domain=m.gmarket.co.kr|auction.co.kr|www.gmarket.co.kr
 @@||adtouch.*
+@@||arca.live^$generichide
 @@||blog.kakaocdn.net*/img.gif
 @@||code-pia.com^$stealth=dpi
 @@||fs2.joycity.com^$stealth=dpi
