@@ -257,6 +257,7 @@ www.google.*##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".yachts/"])
 ! Allow specific TLDs (e.g., .hu) by adding an exception rule www.google.*#@#.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".horse/"], a[href*=".hu/"])
 
 ! Etc
+arca.live#%#document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelector("div.list-table.table.ARColor");if(!t)return;const s=()=>{const e=t.querySelector('a.notice[href*="/b/"]');if(!e)return;const b=e.querySelector(".vcol.col-ad .badge.badge-success"),g=e.pathname.split("/b/")[1]?.split("/")[0];b&&g&&b.textContent!==g&&(b.textContent=g)};s();let r;new MutationObserver(()=>{clearTimeout(r);r=setTimeout(s,50)}).observe(t,{childList:!0,subtree:!0})});
 dmm.co.jp#%#//scriptlet('trusted-set-cookie-reload', 'ckcy_remedied_check', 'ec_mrnhbtk', '1year', '/', '.dmm.co.jp')
 dcinside.com#%#//scriptlet('trusted-create-element', 'head', 'meta', 'name="theme-color" content="#2b367d"')
 gall.dcinside.com##div.img_area button.btn:style(opacity: 0.4 !important;)
