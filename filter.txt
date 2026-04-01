@@ -13,7 +13,6 @@
 ##[class*='ad'][id^='AD']:not([class*='address'])
 ##[class^='basic-banner'][id]
 ##[class^='happy-header']
-##[id^='AD'][style]
 ##[id^='hd_pop']
 ##iframe[src*='digitalcamp.co.kr']
 ##iframe[src*='targetpush.co.kr']
@@ -68,8 +67,6 @@ m.dcinside.com###notice_list > li
 m.dcinside.com##.layer-bottom-popup
 m.dcinside.com##.view-btm-con
 m.dcinside.com#$##notice_list > li:has(.ct):not(:has(.ntc-line-pink.round)) { display: table !important; }
-m.naver.com##.chf_feed_wrap > .type_square.cc_clip_list
-m.naver.com##script#MM_search_disaster ~*
 m.ppomppu.co.kr##.js-ad_slot.JS-div_gpt_ad
 m.ppomppu.co.kr##div[style^='text-align:center;']
 m.ruliweb.com##tr:has(.nbp_container)
@@ -135,15 +132,17 @@ gall.dcinside.com##.dcmedia.content_box
 gall.dcinside.com##.r_dcmedia
 gall.dcinside.com##tr[class='ub-content ']
 inven.co.kr##.inven-float-alarm
+m.cafe.naver.com###articleFeedList
 m.cafe.naver.com##.CardWrap.home_popular_articles
 m.cafe.naver.com##.FloatingJoinButton
 m.cafe.naver.com##.HomeFeedItem
 m.cafe.naver.com##.join_layer_wrap
 m.cafe.naver.com##.popular_toast_popup
 m.cafe.naver.com##.subscribe_layer_wrap
-m.cafe.naver.com###articleFeedList
 m.dcinside.com##.outside-search-box
 m.dcinside.com##section.grid > .md-tit-box:has-text(Daum)
+m.naver.com##.chf_feed_wrap > .type_square.cc_clip_list
+m.naver.com##script#MM_search_disaster ~*
 mlbpark.donga.com##.the_hottest
 namu.wiki##li:has(a > time):not(:has([href*='/raw/'])):upward(2)
 quasarzone.com##.best-official-news, .new-official-news, .best-official-news-container, .new-official-news-container, .new-partner-saleinfo-container
@@ -257,7 +256,7 @@ www.google.*##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".yachts/"])
 ! Allow specific TLDs (e.g., .hu) by adding an exception rule www.google.*#@#.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".horse/"], a[href*=".hu/"])
 
 ! Etc
-arca.live#%#const _s=document.documentElement.appendChild(Object.assign(document.createElement("style"),{textContent:'a.notice .vcol.col-ad .badge.badge-success,a.notice .vcol.col-id>b{visibility:hidden}'}));document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelector("div.list-table.table");if(!t){_s.remove();return;}const s=()=>{const e=t.querySelector('a.notice[href*="/b/"]');if(!e)return;const g=e.pathname.split("/b/")[1]?.split("/")[0];if(!g)return;const b=e.querySelector(".vcol.col-ad .badge.badge-success"),i=e.querySelector(".vcol.col-id>b");if(b)b.textContent=g;if(i)i.textContent=g;if(b||i)_s.remove()};s();let r;new MutationObserver(()=>{clearTimeout(r);r=setTimeout(s,100)}).observe(t,{childList:!0,subtree:!0})});
+arca.live#%#const _s=document.documentElement.appendChild(Object.assign(document.createElement("style"),{textContent:'a.notice .vcol.col-ad .badge.badge-success,a.notice .vcol.col-id>b{visibility:hidden}'}));document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelector("div.list-table");if(!t){_s.remove();return;}const s=()=>{const e=t.querySelector('a.notice[href*="/b/"]');if(!e)return;const g=e.pathname.split("/b/")[1]?.split("/")[0];if(!g)return;const b=e.querySelector(".vcol.col-ad .badge.badge-success"),i=e.querySelector(".vcol.col-id>b");if(b)b.textContent=g;if(i)i.textContent=g;if(b||i)_s.remove()};s();let r;new MutationObserver(()=>{clearTimeout(r);r=setTimeout(s,100)}).observe(t,{childList:!0,subtree:!0})});
 dmm.co.jp#%#//scriptlet('trusted-set-cookie-reload', 'ckcy_remedied_check', 'ec_mrnhbtk', '1year', '/', '.dmm.co.jp')
 dcinside.com#%#//scriptlet('trusted-create-element', 'head', 'meta', 'name="theme-color" content="#2b367d"')
 gall.dcinside.com##div.img_area button.btn:style(opacity: 0.4 !important;)
@@ -270,5 +269,4 @@ m.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview-tit-box:has
 m.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview-tit-box:has(span.sp-mweb) > div > ul.ginfo2', 'li', 'alt="imgtoggle"', 'MOBILE')
 m.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview-tit-box:not(:has(span.sp-icon)) > div > ul.ginfo2', 'li', 'alt="imgtoggle"', 'PC')
 m.youtube.com#%#setInterval(function(){var ts=document.querySelectorAll(".slim-owner-subscribe-button");for(var i=0;i<ts.length;i++){var t=ts[i];if(t.offsetParent!==null&&!t.parentElement.querySelector(".pip-btn")){var b=document.createElement("div");b.className="pip-btn";b.innerText="PiP";b.tabIndex=0;b.style.cssText="display:flex;align-items:center;justify-content:center;background-color:#f2f2f2;border-radius:18px;height:36px;padding:0 16px;margin-right:8px;font-family:Roboto,Arial,sans-serif;font-size:14px;font-weight:500;color:#0f0f0f;cursor:pointer;outline:none;user-select:none;transition:background-color 0.2s";b.onmouseover=function(){this.style.backgroundColor="#e5e5e5"};b.onmouseout=function(){this.style.backgroundColor="#f2f2f2"};b.onclick=function(e){e.preventDefault();e.stopPropagation();var v=document.querySelector("video");if(v){v.removeAttribute("disablepictureinpicture");document.pictureInPictureElement?document.exitPictureInPicture():v.requestPictureInPicture()}};b.onfocus=b.onmouseenter=function(){if(window._pipT)return;window._pipT=1;var p=document.createElement("div");p.innerText="By Gallery Filter";p.style.cssText="position:fixed;z-index:9999;padding:4px 8px;background:rgba(255,255,255,0.8);border:1px solid rgba(0,0,0,0.2);border-radius:4px;box-shadow:0 2px 5px rgba(0,0,0,0.1);backdrop-filter:blur(3px);font-size:11px;font-family:sans-serif;color:black;pointer-events:none;opacity:1;transition:opacity 0.5s ease-out;";var r=this.getBoundingClientRect();p.style.top=(r.top-30)+"px";p.style.left=(r.left+r.width/2)+"px";p.style.transform="translateX(-50%)";document.body.appendChild(p);setTimeout(function(){p.style.opacity="0";setTimeout(function(){p.remove()},500)},1500)};t.parentElement.insertBefore(b,t)}}},1000);
-@@||namu.wiki^$extension='NamuLink'
 !  =============== END (Maginot Line) =============== !
