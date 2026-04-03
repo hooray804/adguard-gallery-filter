@@ -125,6 +125,7 @@ zod.kr##div:has(> [rel='sponsored'])
 
 ! Minor distractions
 arca.live##.d-lg-none.topbar-area
+arca.live##a:has(img[src*="karisuma-point-x2.png"])
 gall.dcinside.com##.dc_all
 gall.dcinside.com##.dcmedia.content_box
 gall.dcinside.com##.r_dcmedia
