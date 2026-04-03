@@ -1,5 +1,5 @@
 ! Title: 애드가드 갤러리 필터
-! Version: 2026.03.31
+! Version: 2026.04.03
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
@@ -58,7 +58,6 @@ instiz.net##div[style*='min-height:250px;']
 inven.co.kr,mt.co.kr##[class$='ads']
 inven.co.kr,wowtv.co.kr,damoang.net##[class*='-banner']
 k-hentai.org##.my-3.container
-kone.gg##.flex.justify-center.py-3
 m.bobaedream.co.kr##div[style$='height:50px;']
 m.cafe.daum.net##[class*='_banner']
 m.danawa.com###mdnw-main-dimm, #mdnw-main-bottomSheet-container
@@ -126,7 +125,6 @@ zod.kr##div:has(> [rel='sponsored'])
 
 ! Minor distractions
 arca.live##.d-lg-none.topbar-area
-damoang.net##.mb-6 ~.mb-4:not(.sm\:hidden)
 gall.dcinside.com##.dc_all
 gall.dcinside.com##.dcmedia.content_box
 gall.dcinside.com##.r_dcmedia
@@ -144,6 +142,7 @@ m.dcinside.com##section.grid > .md-tit-box:has-text(Daum)
 m.naver.com##.chf_feed_wrap > .type_square.cc_clip_list
 m.naver.com##script#MM_search_disaster ~*
 mlbpark.donga.com##.the_hottest
+namu.wiki##div[class]:matches-css(position: sticky)
 namu.wiki##li:has(a > time):not(:has([href*='/raw/'])):upward(2)
 quasarzone.com##.best-official-news, .new-official-news, .best-official-news-container, .new-official-news-container, .new-partner-saleinfo-container
 search.dcinside.com##.right_content
@@ -153,7 +152,6 @@ search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper)
 cafe.naver.com##+js(remove-class, disable-select, #ct)
 fmkorea.com##+js(set, link_url, '')
 manatoki469.net,manatoki470.net,newtoki469.com,newtoki470.com##+js(acis, oncontextmenu)
-namu.wiki##div[class]:matches-css(position: sticky)
 ||arca.live/static/assets/js/adult.min.js
 
 ! Anti-adblock
@@ -161,7 +159,7 @@ namu.wiki##div[class]:matches-css(position: sticky)
 aagag.com##+js(set-cookie, ab, 0)
 aagag.com#$#.la { position: absolute !important; left: -3000px !important; width: 60px !important; height: 20px !important; }
 kissjav.*##+js(rmnt, script, /contextmenu|ghost|localStorage|video\-ad\-overlay|juicyads|admanager/i)
-dcinside.com###moveOverlay, #gaejukimg
+dcinside.com#$##moveOverlay, #gaejukimg { remove: true; }
 m.fmkorea.com##+js(set, _make_power_link_identifier, noopFunc)
 m.fmkorea.com##script ~ div.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):matches-css(padding: /[0-5]px/):remove()
 m.fmkorea.com##section.fmWidgetStyle2019.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):matches-css(padding: /[0-5]px/):remove()
@@ -175,7 +173,7 @@ $@$link[rel="manifest"]
 @@||ad-creative.pstatic.net^$app=com.nhn.android.search
 @@||ad-img.gmarket.com^$image,domain=m.gmarket.co.kr|auction.co.kr|www.gmarket.co.kr
 @@||adtouch.*
-@@||arca.live^$generichide
+@@||arca.live^$ghide
 @@||blog.kakaocdn.net*/img.gif
 @@||code-pia.com^$stealth=dpi
 @@||fs2.joycity.com^$stealth=dpi
@@ -206,6 +204,7 @@ www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
 ||api.mumuglobal.com^$badfilter
 ||app.appsflyer.com^$badfilter
 ||dadispapi.gmarket.co.kr^$badfilter
+||exlogcollector.sooplive.com^$badfilter
 ||photo.jtbc.co.kr/news/cms/etc/$badfilter
 ||ssl.pstatic.net/t.static.blog/nmobile/versioning//common/lib/ntm/ntm-blog-web-*.js$badfilter
 ||store-api.mumuglobal.com^$badfilter
@@ -258,7 +257,6 @@ www.google.*##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".yachts/"])
 ! Etc
 arca.live#%#const _s=document.documentElement.appendChild(Object.assign(document.createElement("style"),{textContent:'a.notice .vcol.col-ad .badge.badge-success,a.notice .vcol.col-id>b{visibility:hidden}'}));document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelector("div.list-table");if(!t){_s.remove();return;}const s=()=>{const e=t.querySelector('a.notice[href*="/b/"]');if(!e)return;const g=e.pathname.split("/b/")[1]?.split("/")[0];if(!g)return;const b=e.querySelector(".vcol.col-ad .badge.badge-success"),i=e.querySelector(".vcol.col-id>b");if(b)b.textContent=g;if(i)i.textContent=g;if(b||i)_s.remove()};s();let r;new MutationObserver(()=>{clearTimeout(r);r=setTimeout(s,100)}).observe(t,{childList:!0,subtree:!0})});
 dmm.co.jp#%#//scriptlet('trusted-set-cookie-reload', 'ckcy_remedied_check', 'ec_mrnhbtk', '1year', '/', '.dmm.co.jp')
-dcinside.com#%#//scriptlet('trusted-create-element', 'head', 'meta', 'name="theme-color" content="#2b367d"')
 gall.dcinside.com##div.img_area button.btn:style(opacity: 0.4 !important;)
 gall.dcinside.com#$#.btn_imgcmtopen { opacity: 0.4 !important; transform: translate(8px, 7px) !important; }
 gall.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview_head:has(em.icon_write_app) > div.gall_writer > div.fl', 'span', 'alt="imgtoggle"', 'ㅤAPP')
