@@ -24,9 +24,9 @@
 [$domain=/^tvwiki[0-9]*\.net/]###bannerList, #viewCover
 [$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##[href*='/ad'][target='_blank']:has(img)
 [$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##div[class$='gallery'][id] [target='_blank']:upward(1)
-algumon.com##div.card.bg-base-100.rounded-none:has(a[href^='https://link.coupang.com/'], ins.adsbygoogle, div[style*='min-height'])
 algumon.com##div.bg-base-100:has(> div > .fb)
 algumon.com##div.bg-base-100:has(> div > ins.adsbygoogle)
+algumon.com##div.card.bg-base-100.rounded-none:has(a[href^='https://link.coupang.com/'], ins.adsbygoogle, div[style*='min-height'])
 algumon.com##div.deal-2col:has(> div > .fb)
 algumon.com##div.deal-2col:has(> div > ins.adsbygoogle)
 auction.co.kr,gmarket.co.kr##.plcc_banner
