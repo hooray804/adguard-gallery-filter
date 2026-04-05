@@ -49,6 +49,7 @@ danawa.com,m.cafe.naver.com##[class^='banner']
 dcinside.com##li[id^='comment_']:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.1 !important;)
 dvdprime.com##[id$='top_banner']
 dvdprime.com##[id^='ad_mobile']
+ebs.co.kr##.ji_adban
 etoland.co.kr##[id*='underGoodBtn']
 etoland.co.kr,ppomppu.co.kr,m.ppomppu1.co.kr##[id$='_popup']
 fc-info.com##div[class^='Venatus_']
