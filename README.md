@@ -42,7 +42,7 @@ https://gall.dcinside.com/mgallery/board/view/?id=adguard&no=2348
 * **미리보기 섬네일**: 리스트에서 본문의 첫 번째 이미지를 즉시 확인
 * **비추천수 표시**: 게시글 목록에서 추천수와 함께 비추천수 표시
 * **이용자 메모**: ~~모바일 웹에서도 지원~~ [https://m.dcinside.com/board/know/428](https://m.dcinside.com/board/know/428)를 참고하세요.
-* **주의 사항**: **디시인사이드 서버의 Rate Limit 수치가 변경되며 정상적인 스크립트 이용이 불가능해짐에 따라 더 이상 사용을 권장하지 않습니다.** 본 스크립트는 기능 구현을 위해 게시글을 백그라운드에서 접속하므로 셀룰러 데이터 사용량이 증가할 수 있습니다. 다크 모드는 기기 자체 다크 모드 상태와 연동됩니다.
+* **주의 사항**: **디시인사이드 서버의 Rate Limit 수치가 변경되며 정상적인 스크립트 이용이 불가능해짐에 따라 더 이상 사용을 권장하지 않습니다.** 기능 구현을 위해 게시글을 백그라운드에서 접속하므로 셀룰러 데이터 사용량이 증가할 수 있으며 다크 모드는 기기 자체 상태와 연동됩니다.
 * **설정 URL**: https://m.dcinside.com/dcscript
 
 https://gall.dcinside.com/mgallery/board/view/?id=adguard&no=8115
