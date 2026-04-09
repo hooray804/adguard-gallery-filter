@@ -171,7 +171,7 @@ dcinside.com###moveOverlay, #gaejukimg
 m.fmkorea.com##+js(set, _make_power_link_identifier, noopFunc)
 m.fmkorea.com##script ~ div.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):matches-css(padding: /[0-5]px/):remove()
 m.fmkorea.com##section.fmWidgetStyle2019.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):matches-css(padding: /[0-5]px/):remove()
-namu.wiki##div:has(img[data-doc]:not([data-doc^="/"])):has(a[href*="#s-"]):not(:has([id])):not(:has(table)), div:has(> div[id]:empty:only-child):not(:has(table))
+namu.wiki##div:has(img[data-doc]:not([data-doc^="/"])):has(a[href*="#s-"]):not(:has([id])), div:has(> div[id]:empty:only-child)
 ||maxmovie.com/_next/static/chunks/framework.aa400efa16f23e2b0cfe.js
 
 ! Incorrect blocking
