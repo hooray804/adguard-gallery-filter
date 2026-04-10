@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      4.2.0
+// @version      4.3.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -81,7 +81,7 @@
 
     await e();
 
-    const o = 3;
+    const o = 4;
     const p = {
         autoScroll: true,
         showImage: true,
@@ -91,13 +91,15 @@
         showIdCode: false,
         batchDelay: 150,
         showRateLimit: false,
+        blurImage: false,
         version: o
     };
 
     let q = await l.getValue('dc_expert_settings', p);
 
     if (q.version !== o) {
-        q = { ...p };
+        q = { ...p, ...q, version: o };
+        if (typeof q.blurImage === 'undefined') q.blurImage = false;
         await l.setValue('dc_expert_settings', q);
     }
 
@@ -376,6 +378,7 @@
         document.body.appendChild(s('본문 미리보기 (3줄 모드)', 'postPreview'));
         document.body.appendChild(s('식별 코드 미리보기 (메모와 함께 표시)', 'showIdCode'));
         document.body.appendChild(s('Rate Limit 표시 (왼쪽 하단)', 'showRateLimit'));
+        document.body.appendChild(s('게시글 내 이미지 블러 (클릭 시 해제)', 'blurImage'));
         document.body.appendChild(s('데이터 절약 (섬네일, 본문, 비추, 메모 표시 안 됨)', 'disableFetch'));
         document.body.appendChild(E());
         document.body.appendChild(L());
@@ -626,6 +629,24 @@
     }
 
     async function bS() {
+        if (q.blurImage) {
+            const blurImgs = document.querySelectorAll('.thum-txtin img, .writing_view_box img');
+            blurImgs.forEach(img => {
+                if (!img.dataset.blurApplied) {
+                    img.dataset.blurApplied = "true";
+                    img.style.filter = "blur(15px)";
+                    img.style.transition = "filter 0.3s ease";
+                    img.style.cursor = "pointer";
+                    img.addEventListener('click', function(e) {
+                        if (this.style.filter !== "none") {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            this.style.filter = "none";
+                        }
+                    }, true);
+                }
+            });
+        }
         const bT = document.querySelector('.gallview-tit-box');
         if (bT && !bT.dataset.memoApplied) {
             const bU = bK(bT);
