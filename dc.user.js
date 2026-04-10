@@ -90,7 +90,7 @@
         cacheDuration: 21600000,
         showIdCode: false,
         batchDelay: 150,
-        showRateLimit: true,
+        showRateLimit: false,
         blurImage: false,
         version: o
     };
