@@ -160,6 +160,7 @@ search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper)
 cafe.naver.com##+js(remove-class, disable-select, #ct)
 fmkorea.com##+js(set, link_url, '')
 manatoki469.net,manatoki470.net,newtoki469.com,newtoki470.com##+js(acis, oncontextmenu)
+novelpia.com###slide-layer
 ||arca.live/static/assets/js/adult.min.js
 
 ! Anti-adblock
