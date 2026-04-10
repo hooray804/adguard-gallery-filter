@@ -143,7 +143,7 @@
             y.style.minWidth = '45px';
 
             const z = q.disableFetch;
-            const A = ((u === 'showImage' || u === 'postPreview' || u === 'showIdCode') && z);
+            const A = ((u === 'showImage' || u === 'postPreview' || u === 'showIdCode' || u === 'showRateLimit') && z);
 
             if (A) {
                 x.checked = false;
@@ -465,7 +465,7 @@
 
     let rlDiv = null;
     const updateRateLimit = (limit, remaining) => {
-        if (!q.showRateLimit) return;
+        if (!q.showRateLimit || q.disableFetch) return;
         if (!rlDiv) {
             rlDiv = document.createElement('div');
             rlDiv.style.cssText = 'position: fixed; bottom: 10px; left: 10px; background: rgba(0, 0, 0, 0.6); color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 11px; z-index: 99999; pointer-events: none; box-shadow: 0 1px 3px rgba(0,0,0,0.3);';
