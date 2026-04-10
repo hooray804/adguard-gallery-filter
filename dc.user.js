@@ -84,13 +84,13 @@
     const o = 4;
     const p = {
         autoScroll: true,
-        showImage: true,
+        showImage: false,
         disableFetch: false,
         postPreview: false,
         cacheDuration: 21600000,
         showIdCode: false,
         batchDelay: 150,
-        showRateLimit: false,
+        showRateLimit: true,
         blurImage: false,
         version: o
     };
