@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      4.1.0
+// @version      4.2.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -90,6 +90,7 @@
         cacheDuration: 21600000,
         showIdCode: false,
         batchDelay: 150,
+        showRateLimit: false,
         version: o
     };
 
@@ -374,6 +375,7 @@
         document.body.appendChild(s('이미지 미리보기 사용', 'showImage'));
         document.body.appendChild(s('본문 미리보기 (3줄 모드)', 'postPreview'));
         document.body.appendChild(s('식별 코드 미리보기 (메모와 함께 표시)', 'showIdCode'));
+        document.body.appendChild(s('Rate Limit 표시 (왼쪽 하단)', 'showRateLimit'));
         document.body.appendChild(s('데이터 절약 (섬네일, 본문, 비추, 메모 표시 안 됨)', 'disableFetch'));
         document.body.appendChild(E());
         document.body.appendChild(L());
@@ -458,12 +460,30 @@
         });
     };
 
+    let rlDiv = null;
+    const updateRateLimit = (limit, remaining) => {
+        if (!q.showRateLimit) return;
+        if (!rlDiv) {
+            rlDiv = document.createElement('div');
+            rlDiv.style.cssText = 'position: fixed; bottom: 10px; left: 10px; background: rgba(0, 0, 0, 0.6); color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 11px; z-index: 99999; pointer-events: none; box-shadow: 0 1px 3px rgba(0,0,0,0.3);';
+            document.body.appendChild(rlDiv);
+        }
+        rlDiv.innerText = `Rate Limit: ${remaining} / ${limit}`;
+    };
+
     let aW = null;
 
     const aX = async (aY) => {
         if (aW) await aW;
 
         const aZ = await fetch(aY);
+        
+        if (q.showRateLimit) {
+            const rlLimit = aZ.headers.get('x-rate-limit-limit') || aZ.headers.get('x-ratelimit-limit');
+            const rlRem = aZ.headers.get('x-rate-limit-remaining') || aZ.headers.get('x-ratelimit-remaining');
+            if (rlLimit && rlRem) updateRateLimit(rlLimit, rlRem);
+        }
+
         const ba = await aZ.text();
 
         if (ba.includes('너무 많은 요청으로') && ba.includes('penalty-box')) {
@@ -946,6 +966,14 @@
         bS();
         const dy = new MutationObserver(bS);
         dy.observe(document.body, { childList: true, subtree: true });
+
+        if (q.showRateLimit) {
+            fetch(window.location.href, { method: 'HEAD' }).then(res => {
+                const lmt = res.headers.get('x-rate-limit-limit') || res.headers.get('x-ratelimit-limit');
+                const rem = res.headers.get('x-rate-limit-remaining') || res.headers.get('x-ratelimit-remaining');
+                if (lmt && rem) updateRateLimit(lmt, rem);
+            }).catch(()=>{});
+        }
 
         if (ck) {
             const dz = ck.querySelectorAll('li:not(.notice):not(.click_ad)');
