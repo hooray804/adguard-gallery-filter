@@ -87,6 +87,7 @@ naver.com###sb-kh-shortents-wrap
 naver.com##.sa_mw.sa_empty_ad
 nexon.com,gg,ps,xyz,loawa.com,or.kr,go.kr,ai,chat#@#[target='_blank']:has([src*='/banner/'])
 pay.naver.com##div[class^='BottomAds_article']
+postype.com##div[data-sentry-component="RecommendFeedGoogleAd"]:upward(1)
 ppomppu.co.kr##.bottom > div[style]
 ppomppu.co.kr$$tr:has-text(AD)
 rgr.kr,rgrong.net,te31.com###foot:style(height: 150px !important;)
