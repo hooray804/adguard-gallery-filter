@@ -988,7 +988,7 @@
         const dy = new MutationObserver(bS);
         dy.observe(document.body, { childList: true, subtree: true });
 
-        if (q.showRateLimit) {
+        if (q.showRateLimit && !q.disableFetch) {
             fetch(window.location.href, { method: 'HEAD' }).then(res => {
                 const lmt = res.headers.get('x-rate-limit-limit') || res.headers.get('x-ratelimit-limit');
                 const rem = res.headers.get('x-rate-limit-remaining') || res.headers.get('x-ratelimit-remaining');
