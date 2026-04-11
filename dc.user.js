@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      5.0.1
+// @version      5.1.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -88,7 +88,8 @@
         disableFetch: true,
         postPreview: false,
         cacheDuration: 21600000,
-        showIdCode: false,
+        showIdCodePost: false,
+        showIdCodeList: false,
         batchDelay: 150,
         showRateLimit: false,
         blurImage: false,
@@ -100,6 +101,13 @@
     if (q.version !== o) {
         q = { ...p, ...q, version: o };
         if (typeof q.blurImage === 'undefined') q.blurImage = false;
+        await l.setValue('dc_expert_settings', q);
+    }
+
+    if (typeof q.showIdCode !== 'undefined') {
+        if (typeof q.showIdCodePost === 'undefined') q.showIdCodePost = q.showIdCode;
+        if (typeof q.showIdCodeList === 'undefined') q.showIdCodeList = q.showIdCode;
+        delete q.showIdCode;
         await l.setValue('dc_expert_settings', q);
     }
 
@@ -143,7 +151,7 @@
             y.style.minWidth = '45px';
 
             const z = q.disableFetch;
-            const A = ((u === 'showImage' || u === 'postPreview' || u === 'showIdCode' || u === 'showRateLimit') && z);
+            const A = ((u === 'showImage' || u === 'postPreview' || u === 'showIdCodeList' || u === 'showRateLimit') && z);
 
             if (A) {
                 x.checked = false;
@@ -376,7 +384,8 @@
         document.body.appendChild(s('무한 스크롤 사용', 'autoScroll'));
         document.body.appendChild(s('이미지 미리보기 사용', 'showImage'));
         document.body.appendChild(s('본문 미리보기 (3줄 모드)', 'postPreview'));
-        document.body.appendChild(s('식별 코드 미리보기 (메모와 함께 표시)', 'showIdCode'));
+        document.body.appendChild(s('게시글 내 식별 코드 미리보기 (메모와 함께 표시)', 'showIdCodePost'));
+        document.body.appendChild(s('리스트 식별 코드 미리보기 (데이터 절약 시 불가)', 'showIdCodeList'));
         document.body.appendChild(s('Rate Limit 표시 (왼쪽 하단)', 'showRateLimit'));
         document.body.appendChild(s('게시글 내 이미지 블러 (클릭 시 해제)', 'blurImage'));
         document.body.appendChild(s('데이터 절약 (섬네일, 본문, 비추, 메모 표시 안 됨)', 'disableFetch'));
@@ -531,7 +540,7 @@
     const bn = async (bo) => await l.getValue('dc_user_' + bo, { memo: "" });
     const bp = async (bq, br) => await l.setValue('dc_user_' + bq, br);
 
-    window.openUserEditor = async function(bs, bt, bu, bv) {
+    window.openUserEditor = async function(bs, bt, bu, bv, isList = false) {
         const bw = await bn(bs);
         const bx = bv ? bt : `${bt}(${bs})`;
         const by = prompt(`[${bx}] 메모 입력 (비우면 삭제):`, bw.memo);
@@ -541,16 +550,17 @@
             if (bu) {
                 let bz = "";
                 let bA = false;
+                const targetShowIdCode = isList ? q.showIdCodeList : q.showIdCodePost;
 
                 if (by) {
-                    if (q.showIdCode && !bv) {
+                    if (targetShowIdCode && !bv) {
                         bz = `${bs}: ${by}`;
                     } else {
                         bz = by;
                     }
                     bA = true;
                 } else {
-                    if (q.showIdCode && !bv) {
+                    if (targetShowIdCode && !bv) {
                         bz = bs;
                         bA = true;
                     }
@@ -565,7 +575,7 @@
         }
     };
 
-    async function bB(bC, bD, bE) {
+    async function bB(bC, bD, bE, isList = false) {
         const bF = await bn(bC);
         const bG = document.createElement('span');
         bG.className = 'custom-memo-area';
@@ -577,16 +587,17 @@
 
         let bH = "";
         let bI = false;
+        const targetShowIdCode = isList ? q.showIdCodeList : q.showIdCodePost;
 
         if (bF.memo) {
-            if (q.showIdCode && !bE) {
+            if (targetShowIdCode && !bE) {
                 bH = `${bC}: ${bF.memo}`;
             } else {
                 bH = bF.memo;
             }
             bI = true;
         } else {
-            if (q.showIdCode && !bE) {
+            if (targetShowIdCode && !bE) {
                 bH = bC;
                 bI = true;
             }
@@ -601,7 +612,7 @@
         bG.onclick = async (bJ) => {
             bJ.preventDefault();
             bJ.stopPropagation();
-            await window.openUserEditor(bC, bD, bG, bE);
+            await window.openUserEditor(bC, bD, bG, bE, isList);
         };
         return bG;
     }
@@ -665,9 +676,9 @@
                     bV.style.maxWidth = "100%";
 
                     bV.replaceChild(bX, bW);
-                    bV.appendChild(await bB(bU.userId, bU.nickname, bU.isIp));
+                    bV.appendChild(await bB(bU.userId, bU.nickname, bU.isIp, false));
                 } else {
-                    bV.appendChild(await bB(bU.userId, bU.nickname, bU.isIp));
+                    bV.appendChild(await bB(bU.userId, bU.nickname, bU.isIp, false));
                 }
             }
         }
@@ -676,13 +687,13 @@
         bY.forEach(async bZ => {
             if (bZ.dataset.memoApplied) return;
 
-            const ca = bZ.querySelector('a.nick');
+            const ca = bZ.querySelector('button.nick') || bZ.querySelector('a.nick');
             if (!ca) return;
 
             let cb = "";
             let cc = false;
             const cd = bZ.querySelector('.blockCommentId');
-            const ce = bZ.querySelector('.ip');
+            const ce = bZ.querySelector('.blockCommentIp') || bZ.querySelector('.ip');
 
             if (cd && cd.getAttribute('data-info')) {
                 cb = cd.getAttribute('data-info');
@@ -695,24 +706,12 @@
 
             if (cb) {
                 bZ.dataset.memoApplied = true;
-                const cf = ca.childNodes[0].textContent.trim();
+                const cf = ca.innerText.trim();
 
-                if (ca.childNodes.length > 0 && ca.childNodes[0].nodeType === 3) {
-                    const cg = ca.childNodes[0];
-                    const ch = document.createElement('span');
-                    ch.textContent = cg.textContent;
-                    ch.style.cssText = "overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 0 1 auto; pointer-events: none;";
-
-                    ca.style.display = "inline-flex";
-                    ca.style.alignItems = "center";
-                    ca.style.maxWidth = "100%";
-                    ca.style.verticalAlign = "bottom";
-
-                    ca.replaceChild(ch, cg);
-                    ca.appendChild(await bB(cb, cf, cc));
-                } else {
-                    ca.appendChild(await bB(cb, cf, cc));
-                }
+                const memoBtn = await bB(cb, cf, cc, false);
+                ca.parentElement.style.display = "inline-flex";
+                ca.parentElement.style.alignItems = "center";
+                ca.parentElement.appendChild(memoBtn);
             }
         });
     }
@@ -841,7 +840,7 @@
                     const cP = cO.innerText.trim();
                     if (cP === cH.nickname || cP.startsWith(cH.nickname.split('(')[0])) {
                         if (!cO.querySelector('.custom-memo-area')) {
-                            cO.appendChild(await bB(cH.userId, cH.nickname, cH.isIp));
+                            cO.appendChild(await bB(cH.userId, cH.nickname, cH.isIp, true));
                         }
                         break;
                     }
