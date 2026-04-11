@@ -371,7 +371,7 @@
             amDesc.style.fontSize = '13px';
             amDesc.style.color = '#888';
             amDesc.style.lineHeight = '1.5';
-            amDesc.innerHTML = '참고: <a href="https://m.dcinside.com/board/know/428" target="_blank" style="color:#3b5998; text-decoration:underline;">https://m.dcinside.com/board/know/428</a><br><a href="https://m.dcinside.com/userMemo/board/adguard" target="_blank" style="color:#3b5998; text-decoration:underline;">https://m.dcinside.com/userMemo/board/adguard</a><br>위 링크에서 이용자 메모 백업 / 복원 바로가기 후 다운로드 한 파일을 복원하면됩니다.';
+            amDesc.innerHTML = '참고: <a href="https://m.dcinside.com/board/know/428" target="_blank" style="color:#3b5998; text-decoration:underline;">https://m.dcinside.com/board/know/428</a><br><a href="https://m.dcinside.com/userMemo/board/adguard" target="_blank" style="color:#3b5998; text-decoration:underline;">https://m.dcinside.com/userMemo/board/adguard</a><br>위 링크에서 이용자 메모 백업 / 복원 "바로가기" 클릭 후 다운로드 한 파일을 복원하면 됩니다.';
 
             S.appendChild(V);
             S.appendChild(al);
@@ -397,7 +397,7 @@
         am.style.marginTop = '20px';
         am.style.color = '#888';
         am.style.fontSize = '13px';
-        am.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 캐시 시간이 길수록 페이지 로딩이 빨라지나 비추천 수 실시간 반영이 지연됩니다. 배치 처리 지연 시간이 길수록 IP 기반의 Rate Limit 빈도가 줄어 비어있는 미리보기 등 오류의 비율이 감소하지만, 게시글 목록에서 미리보기 로딩 시간이 길어집니다. 모든 메모는 브라우저 내부에만 저장되어 브라우저 데이터 삭제 시 복구되지 않으므로 설정을 통해 정기적으로 백업하시기 바랍니다. 스크립트 개선을 위해 3.1.0 버전에서 설정을 초기화했습니다. 원하시는 맞춤 설정을 다시 적용해주세요. 현재 디시인사이드 측의 Rate Limit 변경으로 인해 기능이 제대로 작동하지 않을 수 있습니다. 데이터 절약 모드 활성화 후 사용을 권장합니다.';
+        am.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 캐시 시간이 길수록 페이지 로딩이 빨라지나 비추천 수 실시간 반영이 지연됩니다. 배치 처리 지연 시간이 길수록 IP 기반의 Rate Limit 빈도가 줄어 비어있는 미리보기와 "너무 많은 요청" 표시의 비율이 감소하지만, 게시글 목록에서 미리보기 로딩 시간이 길어집니다. 모든 메모는 브라우저 내부에만 저장되어 브라우징 데이터 삭제 시 복구되지 않으므로 설정을 통해 정기적으로 백업하시기 바랍니다. 스크립트 개선을 위해 3.1.0 버전에서 설정을 초기화했습니다. 원하시는 맞춤 설정을 다시 적용해주세요. 현재 디시인사이드 측의 Rate Limit 변경으로 인해 기능이 제대로 작동하지 않을 수 있습니다. 데이터 절약 모드 활성화 후 사용을 권장합니다.';
         document.body.appendChild(am);
 
         return;
