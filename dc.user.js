@@ -1,25 +1,27 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
-// @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      5.2.0
+// @namespace    [https://github.com/hooray804/adguard-gallery-filter](https://github.com/hooray804/adguard-gallery-filter)
+// @version      5.4.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
-// @match        https://m.dcinside.com/board/*
-// @match        https://m.dcinside.com/mini/*
-// @match        https://m.dcinside.com/dcscrip*
-// @exclude      https://m.dcinside.com/board/dcbest*
+// @match        [https://m.dcinside.com/board/](https://m.dcinside.com/board/)*
+// @match        [https://m.dcinside.com/mini/](https://m.dcinside.com/mini/)*
+// @match        [https://m.dcinside.com/dcscrip](https://m.dcinside.com/dcscrip)*
+// @exclude      [https://m.dcinside.com/board/dcbest](https://m.dcinside.com/board/dcbest)*
 // @grant        GM.setValue
 // @grant        GM.getValue
 // @grant        GM.listValues
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_listValues
+// @grant        GM.xmlHttpRequest
+// @grant        GM_xmlhttpRequest
 // @run-at       document-end
 // @license      Apache-2.0
-// @homepage     https://github.com/hooray804/adguard-gallery-filter
-// @supportURL   https://github.com/hooray804/adguard-gallery-filter/issues
-// @downloadURL  https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js
-// @updateURL    https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js
+// @homepage     [https://github.com/hooray804/adguard-gallery-filter](https://github.com/hooray804/adguard-gallery-filter)
+// @supportURL   [https://github.com/hooray804/adguard-gallery-filter/issues](https://github.com/hooray804/adguard-gallery-filter/issues)
+// @downloadURL  [https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js](https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js)
+// @updateURL    [https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js](https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js)
 // ==/UserScript==
 
 (async function() {
@@ -84,12 +86,12 @@
     const o = 4;
     const p = {
         autoScroll: true,
-        showImage: false,
-        disableFetch: true,
+        showImage: true,
+        disableFetch: false,
         postPreview: false,
         cacheDuration: 21600000,
         showIdCodePost: true,
-        showIdCodeList: false,
+        showIdCodeList: true,
         batchDelay: 150,
         showRateLimit: false,
         blurImage: false,
@@ -111,7 +113,7 @@
         await l.setValue('dc_expert_settings', q);
     }
 
-    if (window.location.href.includes('m.dcinside.com/dcscrip')) {
+    if (window.location.href.includes('[m.dcinside.com/dcscrip](https://m.dcinside.com/dcscrip)')) {
         document.body.innerHTML = '';
         document.body.style.padding = '20px';
         document.body.style.fontFamily = 'sans-serif';
@@ -371,7 +373,7 @@
             amDesc.style.fontSize = '13px';
             amDesc.style.color = '#888';
             amDesc.style.lineHeight = '1.5';
-            amDesc.innerHTML = '참고: <a href="https://m.dcinside.com/board/know/428" target="_blank" style="color:#3b5998; text-decoration:underline;">https://m.dcinside.com/board/know/428</a><br><a href="https://m.dcinside.com/userMemo/board/adguard" target="_blank" style="color:#3b5998; text-decoration:underline;">https://m.dcinside.com/userMemo/board/adguard</a><br>위 링크에서 이용자 메모 백업 / 복원 "바로가기" 클릭 후 다운로드 한 파일을 복원하면 됩니다.';
+            amDesc.innerHTML = '참고: <a href="[https://m.dcinside.com/board/know/428](https://m.dcinside.com/board/know/428)" target="_blank" style="color:#3b5998; text-decoration:underline;">[https://m.dcinside.com/board/know/428](https://m.dcinside.com/board/know/428)</a><br><a href="[https://m.dcinside.com/userMemo/board/adguard](https://m.dcinside.com/userMemo/board/adguard)" target="_blank" style="color:#3b5998; text-decoration:underline;">[https://m.dcinside.com/userMemo/board/adguard](https://m.dcinside.com/userMemo/board/adguard)</a><br>위 링크에서 이용자 메모 백업 / 복원 "바로가기" 클릭 후 다운로드 한 파일을 복원하면 됩니다.';
 
             S.appendChild(V);
             S.appendChild(al);
@@ -505,11 +507,79 @@
                 });
             }
             await aW;
-            
             throw new Error('Rate limit exceeded');
         }
         
         return ba;
+    };
+
+    const fetchPcPost = async (mobileUrl) => {
+        const match = mobileUrl.match(/(board|mini)\/([^\/?]+)\/([0-9]+)/);
+        
+        if (!match) return await aX(mobileUrl);
+
+        const prefix = match[1] === 'mini' ? 'mini/' : '';
+        const pcUrl = `https://gall.dcinside.com/${prefix}board/view/?id=${match[2]}&no=${match[3]}`;
+
+        if (aW) await aW;
+
+        return new Promise((resolve, reject) => {
+            let gmXhr = null;
+            if (typeof GM !== 'undefined' && typeof GM.xmlHttpRequest === 'function') {
+                gmXhr = GM.xmlHttpRequest.bind(GM);
+            } else if (typeof GM_xmlhttpRequest === 'function') {
+                gmXhr = GM_xmlhttpRequest;
+            }
+
+            if (!gmXhr) {
+                return resolve(aX(pcUrl));
+            }
+
+            gmXhr({
+                method: "GET",
+                url: pcUrl,
+                headers: {
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+                    "Referer": "[https://gall.dcinside.com/](https://gall.dcinside.com/)"
+                },
+                onload: function(response) {
+                    const ba = response.responseText;
+
+                    if (q.showRateLimit) {
+                        try {
+                            const headersObj = {};
+                            if (response.responseHeaders) {
+                                const headerLines = response.responseHeaders.trim().split(/[\r\n]+/);
+                                headerLines.forEach(line => {
+                                    const parts = line.split(': ');
+                                    const key = parts.shift().toLowerCase();
+                                    if (key) {
+                                        headersObj[key] = parts.join(': ');
+                                    }
+                                });
+                            }
+                            const rlLimit = headersObj['x-rate-limit-limit'] || headersObj['x-ratelimit-limit'];
+                            const rlRem = headersObj['x-rate-limit-remaining'] || headersObj['x-ratelimit-remaining'];
+                            if (rlLimit && rlRem) updateRateLimit(rlLimit, rlRem);
+                        } catch(e) {}
+                    }
+
+                    if (ba.includes('너무 많은 요청으로') && ba.includes('penalty-box')) {
+                        if (!aW) {
+                            aW = new Promise(bb => setTimeout(bb, 5000)).then(() => {
+                                aW = null;
+                            });
+                        }
+                        aW.then(() => reject(new Error('Rate limit exceeded')));
+                        return;
+                    }
+                    resolve(ba);
+                },
+                onerror: function(err) {
+                    reject(err);
+                }
+            });
+        });
     };
 
     let bc = false;
@@ -888,34 +958,46 @@
         }
 
         try {
-            const cX = await aX(cz);
+            const cX = await fetchPcPost(cz);
 
             const cY = new DOMParser();
             const cZ = cY.parseFromString(cX, "text/html");
 
             let da = null;
             const db = cZ.querySelector('meta[property="og:image"]');
-            if (db) da = db.content;
-            if (!da || da.includes('dcinside_icon.png')) {
-                const dc = cZ.querySelector('.writing_view_box img, .thum-txtin img');
-                if (dc) da = dc.getAttribute('data-original') || dc.src;
+            if (db) da = db.getAttribute('content');
+            if (!da || da.includes('dcinside_icon.png') || da.includes('no_img')) {
+                const dc = cZ.querySelector('.writing_view_box img'); 
+                if (dc) da = dc.getAttribute('data-original') || dc.getAttribute('src');
             }
 
             let dd = null;
-            const de = cZ.querySelector('#nonrecomm_btn');
+            const de = cZ.querySelector('.down_num');
             if (de) {
-                dd = de.innerText.replace(/[^0-9]/g, '');
+                dd = (de.textContent || "").replace(/[^0-9]/g, '');
             }
 
             let df = null;
-            const dg = cZ.querySelector('.thum-txtin') || cZ.querySelector('.writing_view_box');
-
+            const dg = cZ.querySelector('.write_div'); 
             if (dg) {
                 dg.querySelectorAll('script, style, .adv-groupno, #auto_picture_area').forEach(dh => dh.remove());
-                df = dg.textContent.replace(/\s+/g, ' ').trim().substring(0, 25);
+                df = (dg.textContent || "").replace(/\s+/g, ' ').trim().substring(0, 25);
             }
 
-            const di = bK(cZ.querySelector('.gallview-tit-box'));
+            let di = null;
+            const gallWriter = cZ.querySelector('.gall_writer');
+            if (gallWriter) {
+                let uId = gallWriter.getAttribute('data-uid');
+                let uNick = gallWriter.getAttribute('data-nick');
+                let isIp = false;
+
+                if (!uId) {
+                    uId = gallWriter.getAttribute('data-ip');
+                    isIp = true;
+                    if (uId) uNick = uNick + '(' + uId + ')';
+                }
+                di = { userId: uId, nickname: uNick, isIp: isIp };
+            }
 
             await cE(da, dd, di, df);
 
@@ -931,6 +1013,7 @@
             await aP(dj).catch(() => {});
             return true;
         } catch (dk) {
+            console.error("DC Expert Extension Parsing Error:", dk);
             return false;
         }
     };
@@ -982,7 +1065,7 @@
         }
     };
 
-    if (!window.location.href.includes('m.dcinside.com/dcscrip')) {
+    if (!window.location.href.includes('[m.dcinside.com/dcscrip](https://m.dcinside.com/dcscrip)')) {
         bS();
         const dy = new MutationObserver(bS);
         dy.observe(document.body, { childList: true, subtree: true });
