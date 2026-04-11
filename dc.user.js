@@ -384,7 +384,7 @@
         document.body.appendChild(s('무한 스크롤 사용', 'autoScroll'));
         document.body.appendChild(s('이미지 미리보기 사용', 'showImage'));
         document.body.appendChild(s('본문 미리보기 (3줄 모드)', 'postPreview'));
-        document.body.appendChild(s('게시글 내 식별 코드 미리보기 (메모와 함께 표시)', 'showIdCodePost'));
+        document.body.appendChild(s('게시글 내 식별 코드 미리보기', 'showIdCodePost'));
         document.body.appendChild(s('리스트 식별 코드 미리보기 (데이터 절약 시 불가)', 'showIdCodeList'));
         document.body.appendChild(s('Rate Limit 표시 (왼쪽 하단)', 'showRateLimit'));
         document.body.appendChild(s('게시글 내 이미지 블러 (클릭 시 해제)', 'blurImage'));
@@ -397,7 +397,7 @@
         am.style.marginTop = '20px';
         am.style.color = '#888';
         am.style.fontSize = '13px';
-        am.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 캐시 시간이 길수록 페이지 로딩이 빨라지나 비추천 수 실시간 반영이 지연됩니다. 배치 처리 지연 시간이 길수록 IP 기반의 Rate Limit 빈도가 줄어 비어있는 미리보기 등 오류의 비율이 감소하지만, 게시글 목록에서 미리보기 로딩 시간이 길어집니다. 모든 메모는 브라우저 내부에만 저장되어 브라우저 데이터 삭제 시 복구되지 않으므로 설정을 통해 정기적으로 백업하시기 바랍니다. 스크립트 개선을 위해 3.1.0 버전에서 설정을 초기화했습니다. 원하시는 맞춤 설정을 다시 적용해주세요. 현재 디시인사이드 측의 Rate Limit 등의 알 수 없는 문제로 기능이 제대로 작동하지 않을 수 있습니다.';
+        am.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 캐시 시간이 길수록 페이지 로딩이 빨라지나 비추천 수 실시간 반영이 지연됩니다. 배치 처리 지연 시간이 길수록 IP 기반의 Rate Limit 빈도가 줄어 비어있는 미리보기 등 오류의 비율이 감소하지만, 게시글 목록에서 미리보기 로딩 시간이 길어집니다. 모든 메모는 브라우저 내부에만 저장되어 브라우저 데이터 삭제 시 복구되지 않으므로 설정을 통해 정기적으로 백업하시기 바랍니다. 스크립트 개선을 위해 3.1.0 버전에서 설정을 초기화했습니다. 원하시는 맞춤 설정을 다시 적용해주세요. 현재 디시인사이드 측의 Rate Limit 변경으로 인해 기능이 제대로 작동하지 않을 수 있습니다. 데이터 절약 모드 활성화 후 사용을 권장합니다.';
         document.body.appendChild(am);
 
         return;
