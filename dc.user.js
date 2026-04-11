@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
-// @namespace    [https://github.com/hooray804/adguard-gallery-filter](https://github.com/hooray804/adguard-gallery-filter)
+// @namespace    https://github.com/hooray804/adguard-gallery-filter
 // @version      5.4.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기 등의 기능을 추가합니다.
 // @author       hooray804 and Gemini
-// @match        [https://m.dcinside.com/board/](https://m.dcinside.com/board/)*
-// @match        [https://m.dcinside.com/mini/](https://m.dcinside.com/mini/)*
-// @match        [https://m.dcinside.com/dcscrip](https://m.dcinside.com/dcscrip)*
-// @exclude      [https://m.dcinside.com/board/dcbest](https://m.dcinside.com/board/dcbest)*
+// @match        https://m.dcinside.com/board/*
+// @match        https://m.dcinside.com/mini/*
+// @match        https://m.dcinside.com/dcscrip*
+// @exclude      https://m.dcinside.com/board/dcbest*
 // @grant        GM.setValue
 // @grant        GM.getValue
 // @grant        GM.listValues
@@ -18,10 +18,10 @@
 // @grant        GM_xmlhttpRequest
 // @run-at       document-end
 // @license      Apache-2.0
-// @homepage     [https://github.com/hooray804/adguard-gallery-filter](https://github.com/hooray804/adguard-gallery-filter)
-// @supportURL   [https://github.com/hooray804/adguard-gallery-filter/issues](https://github.com/hooray804/adguard-gallery-filter/issues)
-// @downloadURL  [https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js](https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js)
-// @updateURL    [https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js](https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js)
+// @homepage     https://github.com/hooray804/adguard-gallery-filter
+// @supportURL   https://github.com/hooray804/adguard-gallery-filter/issues
+// @downloadURL  https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js
+// @updateURL    https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js](https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js)
 // ==/UserScript==
 
 (async function() {
