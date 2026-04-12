@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      6.0.1
+// @version      7.0.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기, 너무 많은 요청 우회 기능 추가
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -81,7 +81,7 @@
 
     await e();
 
-    const o = 5;
+    const o = 6;
     const p = {
         aSc: true,
         sIm: true,
@@ -400,7 +400,7 @@
         stDesc.style.marginTop = '20px';
         stDesc.style.color = '#888';
         stDesc.style.fontSize = '13px';
-        stDesc.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 캐시 시간이 길수록 페이지 로딩이 빨라지나 비추천 수 실시간 반영이 지연됩니다. 배치 처리 지연 시간이 길수록 IP 기반의 Rate Limit 빈도가 줄어 비어있는 미리보기와 "너무 많은 요청" 표시의 비율이 감소하지만, 게시글 목록에서 미리보기 로딩 시간이 길어집니다. 모든 메모는 브라우저 내부에만 저장되어 브라우징 데이터 삭제 시 복구되지 않으므로 설정을 통해 정기적으로 백업하시기 바랍니다. 스크립트 개선을 위해 6.0.0 버전에서 설정을 초기화했습니다. 원하시는 맞춤 설정을 다시 적용해주세요. 현재 디시인사이드 측의 Rate Limit 변경으로 인해 기능이 제대로 작동하지 않을 수 있습니다. 데이터 절약 모드 활성화 후 사용을 권장합니다.';
+        stDesc.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 캐시 시간이 길수록 페이지 로딩이 빨라지나 비추천 수 실시간 반영이 지연됩니다. 배치 처리 지연 시간이 길수록 IP 기반의 Rate Limit 빈도가 줄어 비어있는 미리보기와 "너무 많은 요청" 표시의 비율이 감소하지만, 게시글 목록에서 미리보기 로딩 시간이 길어집니다. 모든 메모는 브라우저 내부에만 저장되어 브라우징 데이터 삭제 시 복구되지 않으므로 설정을 통해 정기적으로 백업하시기 바랍니다. 스크립트 개선을 위해 7.0.0 버전에서 설정을 초기화했습니다. 원하시는 맞춤 설정을 다시 적용해주세요. 현재 디시인사이드 측의 Rate Limit 변경으로 인해 기능이 제대로 작동하지 않을 수 있습니다. 데이터 절약 모드 활성화 후 사용을 권장합니다.';
         document.body.appendChild(stDesc);
 
         return;
