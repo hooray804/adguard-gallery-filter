@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      7.1.1
+// @version      7.2.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기, 이미지 블러, 너무 많은 요청 우회 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -515,11 +515,21 @@
     };
 
     const fPP = async (mobileUrl) => {
-        const match = mobileUrl.match(/(board|mini)\/([^\/?]+)\/([0-9]+)/);
-        if (!match) return await aX(mobileUrl);
+        let mP = '';
+        let mI = '';
+        let mN = '';
+        try {
+            let mU = new URL(mobileUrl);
+            let mt = mU.pathname.match(/\/(board|mini)\/([^\/?]+)\/([0-9]+)/);
+            if (mt) { mP = mt[1]; mI = mt[2]; mN = mt[3]; }
+        } catch(e) {
+            let mt = mobileUrl.match(/(board|mini)\/([^\/?]+)\/([0-9]+)/);
+            if (mt) { mP = mt[1]; mI = mt[2]; mN = mt[3]; }
+        }
+        if (!mI) return await aX(mobileUrl);
 
-        const prefix = match[1] === 'mini' ? 'mini/' : '';
-        const pcUrl = `https://gall.dcinside.com/${prefix}board/view/?id=${match[2]}&no=${match[3]}`;
+        const prefix = mP === 'mini' ? 'mini/' : '';
+        const pcUrl = `https://gall.dcinside.com/${prefix}board/view/?id=${mI}&no=${mN}`;
 
         if (aW) await aW;
 
@@ -585,7 +595,7 @@
     async function rRLP() {
         if (!q.rBP) return;
 
-        const mt = window.location.href.match(/(board|mini)\/([^\/?]+)\/([0-9]+)/);
+        const mt = window.location.pathname.match(/\/(board|mini)\/([^\/?]+)\/([0-9]+)/);
         const pB = document.querySelector('.penalty-box-inner');
 
         if (mt && pB && document.body.innerText.includes('너무 많은 요청으로')) {
@@ -649,7 +659,24 @@
                         for (let i = ats.length - 1; i >= 0; i--) {
                             if (ats[i].name.toLowerCase().startsWith('on')) n.removeAttribute(ats[i].name);
                         }
-                        if (n.tagName === 'A' && n.getAttribute('href')?.toLowerCase().startsWith('javascript:')) n.setAttribute('href', '#');
+                        if (n.tagName === 'A') {
+                            let hr = n.getAttribute('href');
+                            if (hr && hr.toLowerCase().startsWith('javascript:')) {
+                                n.setAttribute('href', '#');
+                            } else if (hr && hr.includes('gall.dcinside.com/')) {
+                                try {
+                                    let hu = new URL(hr.startsWith('http') ? hr : 'https:' + hr);
+                                    if (hu.hostname === 'gall.dcinside.com' && hu.pathname.includes('/board/view/')) {
+                                        let hid = hu.searchParams.get('id');
+                                        let hno = hu.searchParams.get('no');
+                                        if (hid && hno) {
+                                            let htype = hu.pathname.includes('/mini/') ? 'mini' : 'board';
+                                            n.setAttribute('href', `https://m.dcinside.com/${htype}/${hid}/${hno}`);
+                                        }
+                                    }
+                                } catch(e) {}
+                            }
+                        }
                     });
                     cHTML = wD.innerHTML;
                 }
@@ -920,6 +947,22 @@
     }
 
     async function bS() {
+        document.querySelectorAll('a[href*="gall.dcinside.com/"]').forEach(a => {
+            try {
+                let href = a.getAttribute('href');
+                if (!href.startsWith('http')) return;
+                let url = new URL(href);
+                if (url.hostname === 'gall.dcinside.com' && url.pathname.includes('/board/view/')) {
+                    let id = url.searchParams.get('id');
+                    let no = url.searchParams.get('no');
+                    if (id && no) {
+                        let type = url.pathname.includes('/mini/') ? 'mini' : 'board';
+                        a.setAttribute('href', `https://m.dcinside.com/${type}/${id}/${no}`);
+                    }
+                }
+            } catch(e) {}
+        });
+
         if (q.bIm) {
             const blurImgs = document.querySelectorAll('.thum-txtin img, .writing_view_box img');
             blurImgs.forEach(img => {
@@ -1078,7 +1121,14 @@
         if (q.dFe) return false;
 
         let cy = cx.querySelector('.dc-preview-thumb');
-        const cz = cw.href;
+        let cz = cw.href;
+        try {
+            let czU = new URL(cz);
+            let czt = czU.pathname.match(/\/(board|mini)\/([^\/?]+)\/([0-9]+)/);
+            if (czt) {
+                cz = `https://m.dcinside.com/${czt[1]}/${czt[2]}/${czt[3]}`;
+            }
+        } catch(e) {}
         const cA = Date.now();
         let cB = null;
 
