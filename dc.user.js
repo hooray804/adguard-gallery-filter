@@ -2,7 +2,7 @@
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
 // @version      6.0.1
-// @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기 등의 기능을 추가합니다.
+// @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기, 너무 많은 요청 우회 기능 추가
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
 // @match        https://m.dcinside.com/mini/*
@@ -46,9 +46,7 @@
                                 await GM.setValue(i, j);
                             }
                         }
-                    } catch (k) {
-                        console.error('Migration failed:', k);
-                    }
+                    } catch (k) {}
                 }
                 await GM.setValue('dc_expert_migrated', true);
             }
@@ -85,16 +83,17 @@
 
     const o = 5;
     const p = {
-        autoScroll: true,
-        showImage: true,
-        disableFetch: false,
-        postPreview: true,
-        cacheDuration: 21600000,
-        showIdCodePost: true,
-        showIdCodeList: true,
-        batchDelay: 150,
-        showRateLimit: false,
-        blurImage: false,
+        aSc: true,
+        sIm: true,
+        dFe: false,
+        pPr: true,
+        cDu: 21600000,
+        sIP: true,
+        sIL: true,
+        bDe: 150,
+        sRL: false,
+        bIm: false,
+        rBP: true,
         version: o
     };
 
@@ -102,13 +101,14 @@
 
     if (q.version !== o) {
         q = { ...p, ...q, version: o };
-        if (typeof q.blurImage === 'undefined') q.blurImage = false;
+        if (typeof q.bIm === 'undefined') q.bIm = false;
+        if (typeof q.rBP === 'undefined') q.rBP = true;
         await l.setValue('dc_expert_settings', q);
     }
 
     if (typeof q.showIdCode !== 'undefined') {
-        if (typeof q.showIdCodePost === 'undefined') q.showIdCodePost = q.showIdCode;
-        if (typeof q.showIdCodeList === 'undefined') q.showIdCodeList = q.showIdCode;
+        if (typeof q.sIP === 'undefined') q.sIP = q.showIdCode;
+        if (typeof q.sIL === 'undefined') q.sIL = q.showIdCode;
         delete q.showIdCode;
         await l.setValue('dc_expert_settings', q);
     }
@@ -152,8 +152,8 @@
             y.style.marginRight = '10px';
             y.style.minWidth = '45px';
 
-            const z = q.disableFetch;
-            const A = ((u === 'showImage' || u === 'postPreview' || u === 'showIdCodeList' || u === 'showRateLimit') && z);
+            const z = q.dFe;
+            const A = ((u === 'sIm' || u === 'pPr' || u === 'sIL' || u === 'sRL') && z);
 
             if (A) {
                 x.checked = false;
@@ -175,14 +175,14 @@
                         y.style.color = '#999';
                     }
                 }
-            };
+            }
             B();
 
             x.onchange = async (C) => {
                 q[u] = C.target.checked;
                 await l.setValue('dc_expert_settings', q);
                 B();
-                if (u === 'disableFetch') location.reload();
+                if (u === 'dFe') location.reload();
             };
 
             v.appendChild(x);
@@ -217,7 +217,7 @@
             H.min = 1;
             H.max = 86400;
 
-            const I = (q.cacheDuration || 21600000) / 1000;
+            const I = (q.cDu || 21600000) / 1000;
             H.value = I;
 
             H.onchange = async (J) => {
@@ -225,7 +225,7 @@
                 if (isNaN(K) || K < 1) K = 1;
                 if (K > 86400) K = 86400;
 
-                q.cacheDuration = K * 1000;
+                q.cDu = K * 1000;
                 await l.setValue('dc_expert_settings', q);
                 H.value = K;
             };
@@ -250,13 +250,13 @@
             O.style.width = '80px';
             O.min = 0;
 
-            O.value = q.batchDelay;
+            O.value = q.bDe;
 
             O.onchange = async (P) => {
                 let Q = parseInt(P.target.value);
                 if (isNaN(Q) || Q < 0) Q = 0;
 
-                q.batchDelay = Q;
+                q.bDe = Q;
                 await l.setValue('dc_expert_settings', q);
                 O.value = Q;
             };
@@ -383,24 +383,25 @@
             return S;
         };
 
-        document.body.appendChild(s('무한 스크롤 사용', 'autoScroll'));
-        document.body.appendChild(s('이미지 미리보기 사용', 'showImage'));
-        document.body.appendChild(s('본문 미리보기 (3줄 모드)', 'postPreview'));
-        document.body.appendChild(s('게시글 내 식별 코드 미리보기', 'showIdCodePost'));
-        document.body.appendChild(s('리스트 식별 코드 미리보기 (데이터 절약 시 불가)', 'showIdCodeList'));
-        document.body.appendChild(s('Rate Limit 표시 (왼쪽 하단)', 'showRateLimit'));
-        document.body.appendChild(s('게시글 내 이미지 블러 (클릭 시 해제)', 'blurImage'));
-        document.body.appendChild(s('데이터 절약 (섬네일, 본문, 비추, 메모 표시 안 됨)', 'disableFetch'));
+        document.body.appendChild(s('무한 스크롤 사용', 'aSc'));
+        document.body.appendChild(s('이미지 미리보기 사용', 'sIm'));
+        document.body.appendChild(s('본문 미리보기 (3줄 모드)', 'pPr'));
+        document.body.appendChild(s('게시글 내 식별 코드 미리보기', 'sIP'));
+        document.body.appendChild(s('리스트 식별 코드 미리보기 (데이터 절약 시 불가)', 'sIL'));
+        document.body.appendChild(s('Rate Limit 표시 (왼쪽 하단)', 'sRL'));
+        document.body.appendChild(s('게시글 내 이미지 블러 (클릭 시 해제)', 'bIm'));
+        document.body.appendChild(s('데이터 절약 (섬네일, 본문, 비추, 메모 표시 안 됨)', 'dFe'));
+        document.body.appendChild(s('게시글 차단 시 PC 우회 복원 (열람 전용)', 'rBP'));
         document.body.appendChild(E());
         document.body.appendChild(L());
         document.body.appendChild(R());
 
-        const am = document.createElement('p');
-        am.style.marginTop = '20px';
-        am.style.color = '#888';
-        am.style.fontSize = '13px';
-        am.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 캐시 시간이 길수록 페이지 로딩이 빨라지나 비추천 수 실시간 반영이 지연됩니다. 배치 처리 지연 시간이 길수록 IP 기반의 Rate Limit 빈도가 줄어 비어있는 미리보기와 "너무 많은 요청" 표시의 비율이 감소하지만, 게시글 목록에서 미리보기 로딩 시간이 길어집니다. 모든 메모는 브라우저 내부에만 저장되어 브라우징 데이터 삭제 시 복구되지 않으므로 설정을 통해 정기적으로 백업하시기 바랍니다. 스크립트 개선을 위해 6.0.0 버전에서 설정을 초기화했습니다. 원하시는 맞춤 설정을 다시 적용해주세요. 현재 디시인사이드 측의 Rate Limit 변경으로 인해 기능이 제대로 작동하지 않을 수 있습니다. 데이터 절약 모드 활성화 후 사용을 권장합니다.';
-        document.body.appendChild(am);
+        const stDesc = document.createElement('p');
+        stDesc.style.marginTop = '20px';
+        stDesc.style.color = '#888';
+        stDesc.style.fontSize = '13px';
+        stDesc.innerText = '설정 변경 후 페이지를 새로고침하면 적용됩니다. 캐시 시간이 길수록 페이지 로딩이 빨라지나 비추천 수 실시간 반영이 지연됩니다. 배치 처리 지연 시간이 길수록 IP 기반의 Rate Limit 빈도가 줄어 비어있는 미리보기와 "너무 많은 요청" 표시의 비율이 감소하지만, 게시글 목록에서 미리보기 로딩 시간이 길어집니다. 모든 메모는 브라우저 내부에만 저장되어 브라우징 데이터 삭제 시 복구되지 않으므로 설정을 통해 정기적으로 백업하시기 바랍니다. 스크립트 개선을 위해 6.0.0 버전에서 설정을 초기화했습니다. 원하시는 맞춤 설정을 다시 적용해주세요. 현재 디시인사이드 측의 Rate Limit 변경으로 인해 기능이 제대로 작동하지 않을 수 있습니다. 데이터 절약 모드 활성화 후 사용을 권장합니다.';
+        document.body.appendChild(stDesc);
 
         return;
     }
@@ -475,8 +476,8 @@
     };
 
     let rlDiv = null;
-    const updateRateLimit = (limit, remaining) => {
-        if (!q.showRateLimit || q.disableFetch) return;
+    const uRL = (limit, remaining) => {
+        if (!q.sRL || q.dFe) return;
         if (!rlDiv) {
             rlDiv = document.createElement('div');
             rlDiv.style.cssText = 'position: fixed; bottom: 10px; left: 10px; background: rgba(0, 0, 0, 0.6); color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 11px; z-index: 99999; pointer-events: none; box-shadow: 0 1px 3px rgba(0,0,0,0.3);';
@@ -492,10 +493,10 @@
 
         const aZ = await fetch(aY);
         
-        if (q.showRateLimit) {
+        if (q.sRL) {
             const rlLimit = aZ.headers.get('x-rate-limit-limit') || aZ.headers.get('x-ratelimit-limit');
             const rlRem = aZ.headers.get('x-rate-limit-remaining') || aZ.headers.get('x-ratelimit-remaining');
-            if (rlLimit && rlRem) updateRateLimit(rlLimit, rlRem);
+            if (rlLimit && rlRem) uRL(rlLimit, rlRem);
         }
 
         const ba = await aZ.text();
@@ -513,9 +514,8 @@
         return ba;
     };
 
-    const fetchPcPost = async (mobileUrl) => {
+    const fPP = async (mobileUrl) => {
         const match = mobileUrl.match(/(board|mini)\/([^\/?]+)\/([0-9]+)/);
-        
         if (!match) return await aX(mobileUrl);
 
         const prefix = match[1] === 'mini' ? 'mini/' : '';
@@ -545,7 +545,7 @@
                 onload: function(response) {
                     const ba = response.responseText;
 
-                    if (q.showRateLimit) {
+                    if (q.sRL) {
                         try {
                             const headersObj = {};
                             if (response.responseHeaders) {
@@ -560,7 +560,7 @@
                             }
                             const rlLimit = headersObj['x-rate-limit-limit'] || headersObj['x-ratelimit-limit'];
                             const rlRem = headersObj['x-rate-limit-remaining'] || headersObj['x-ratelimit-remaining'];
-                            if (rlLimit && rlRem) updateRateLimit(rlLimit, rlRem);
+                            if (rlLimit && rlRem) uRL(rlLimit, rlRem);
                         } catch(e) {}
                     }
 
@@ -582,6 +582,213 @@
         });
     };
 
+    async function rRLP() {
+        if (!q.rBP) return;
+
+        const mt = window.location.href.match(/(board|mini)\/([^\/?]+)\/([0-9]+)/);
+        const pB = document.querySelector('.penalty-box-inner');
+
+        if (mt && pB && document.body.innerText.includes('너무 많은 요청으로')) {
+            const iM = mt[1] === 'mini';
+            const bI = mt[2];
+            const pN = mt[3];
+
+            pB.innerHTML = `<div style="text-align:center; padding: 20px; font-size: 13px; color: #666;">우회 복구 중...</div>`;
+
+            try {
+                let gx = (typeof GM !== 'undefined' && GM.xmlHttpRequest) ? GM.xmlHttpRequest.bind(GM) : (typeof GM_xmlhttpRequest === 'function' ? GM_xmlhttpRequest : null);
+                if (!gx) throw new Error("GM_xmlHttpRequest is not supported in this environment");
+
+                const fPU = async (u, m = "GET", b = null, h = {}) => {
+                    return new Promise((rs, rj) => {
+                        let rH = {
+                            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+                            "Referer": "https://gall.dcinside.com/"
+                        };
+                        for (let k in h) rH[k] = h[k];
+                        let rO = {
+                            method: m,
+                            url: u,
+                            headers: rH,
+                            onload: r => rs(r.responseText),
+                            onerror: e => rj(e)
+                        };
+                        if (b) rO.data = b;
+                        gx(rO);
+                    });
+                };
+
+                let pf = iM ? 'mini/' : '';
+                let pU = `https://gall.dcinside.com/${pf}board/view/?id=${bI}&no=${pN}`;
+                
+                let rT = await fPU(pU);
+                let ps = new DOMParser();
+                let dc = ps.parseFromString(rT, "text/html");
+
+                if (!dc.querySelector('.title_subject') && !iM) {
+                    pU = `https://gall.dcinside.com/mgallery/board/view/?id=${bI}&no=${pN}`;
+                    rT = await fPU(pU);
+                    dc = ps.parseFromString(rT, "text/html");
+                }
+
+                const tO = dc.querySelector('.title_subject');
+                if (!tO) throw new Error("게시글 제목을 찾을 수 없습니다. PC 환경도 차단되었거나 삭제된 게시글일 수 있습니다.");
+
+                const tt = tO.innerText;
+                const wN = dc.querySelector('.gall_writer');
+                const au = wN ? wN.getAttribute('data-nick') : "ㅇㅇ";
+                const ui = wN ? wN.getAttribute('data-uid') : "";
+                const ip = wN && !ui ? wN.getAttribute('data-ip') : "";
+                const dt = dc.querySelector('.gall_date')?.innerText || "";
+                
+                let cHTML = "<p>본문을 파싱하지 못했습니다.</p>";
+                const wD = dc.querySelector('.write_div');
+                if (wD) {
+                    wD.querySelectorAll('*').forEach(n => {
+                        const ats = n.attributes;
+                        for (let i = ats.length - 1; i >= 0; i--) {
+                            if (ats[i].name.toLowerCase().startsWith('on')) n.removeAttribute(ats[i].name);
+                        }
+                        if (n.tagName === 'A' && n.getAttribute('href')?.toLowerCase().startsWith('javascript:')) n.setAttribute('href', '#');
+                    });
+                    cHTML = wD.innerHTML;
+                }
+
+                let cH = '<div class="all-comment" id="comment_box" style="margin: 0px; padding: 0px; background-color: rgb(235, 236, 241); border-top: 4px solid rgb(235, 236, 241);"><div style="margin: 0px; padding: 0px 12px; background-color: rgb(255, 255, 255); display: flex;"><div style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-size: 15px; line-height: 1.5;"><a style="color: rgb(0, 0, 0); text-decoration: none; font-weight: bold;">댓글<span style="font-weight: normal; color: rgb(210, 34, 39); margin-left: 4px; vertical-align: top; display: inline-block;"></span><span style=" display: inline-block; width: 20px; height: 20px; font-size: 0px; line-height: 0; vertical-align: top; margin-left: 2px;">새로고침</span></a></div><div style="margin: 0px 0px 0px auto; padding: 0px; font-size: 13px; vertical-align: top;"><div style="margin: 0px; padding: 0px; display: inline-block; vertical-align: top;"><a style="color: rgb(0, 0, 0); text-decoration: none; display: inline-block; line-height: 37px;">본문</a></div>&nbsp;<div style="margin: 0px; padding: 0px; background-color: rgb(255, 255, 255); height: 37px; display: inline-block; vertical-align: top;">&nbsp;<select style="margin: 0px; padding: 9px 16px 8px 5px; font-size: 13px; vertical-align: middle; line-height: 1.5; color: rgb(0, 0, 0); font-family: AppleSDGothicNeo-Regular, HelveticaNeue, 나눔고딕, NanumGothic, 돋움, Dotum, sans-serif; box-sizing: border-box; border: medium; background: rgb(255, 255, 255);"><option value="default">등록순</option><option value="new">최신순</option><option value="reply">답글순</option></select></div></div></div><ul class="all-comment-lst" style="margin: 0px; padding: 0px; list-style: none; border-top: 4px solid rgb(235, 236, 241);">';
+                
+                let cD = [];
+                try {
+                    let cbU = `https://gall.dcinside.com/${pf}board/comment/`;
+                    let esN = dc.getElementById('e_s_n_o') ? dc.getElementById('e_s_n_o').value : "";
+                    let gT = dc.getElementById('_GALLTYPE_') ? dc.getElementById('_GALLTYPE_').value : "";
+                    if (!gT) {
+                        if (iM) gT = "MI";
+                        else if (pU.includes('mgallery')) gT = "M";
+                        else gT = "G";
+                    }
+                    let fD = `id=${bI}&no=${pN}&cmt_id=${bI}&cmt_no=${pN}&e_s_n_o=${esN}&_GALLTYPE_=${gT}&comment_page=1`;
+                    let cR = await fPU(cbU, "POST", fD, {
+                        "X-Requested-With": "XMLHttpRequest",
+                        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+                    });
+                    let pd = JSON.parse(cR);
+                    if (pd && pd.comments) {
+                        cD = pd.comments;
+                    }
+                } catch(e) {}
+
+                if (cD.length === 0) {
+                    cH += '<li class="comment"><p class="txt" style="color:#999; text-align:center; padding:20px;">댓글이 없거나 우회 로드 중 불러오지 못했습니다.</p></li>';
+                } else {
+                    cD.forEach(c => {
+                        if (!c || c.name === undefined || c.name === '댓글돌이') return;
+                        const iR = c.depth > 0;
+                        const cNk = c.name;
+                        const cUd = c.user_id || '';
+                        const cIp = c.ip || '';
+                        let cCt = c.memo || '';
+
+                        if (c.vr_player && !cCt.includes('<iframe')) {
+                            cCt += `<div class="voice_wrap" style="margin-top:4px;">${c.vr_player}</div>`;
+                        }
+
+                        if (cCt.includes('written_dccon')) {
+                            let sM = cCt.match(/src=(["'])(.*?)\1/);
+                            let aM = cCt.match(/alt=(["'])(.*?)\1/);
+                            if (sM) {
+                                let sr = sM[2];
+                                let al = aM ? aM[2] : "디시콘";
+                                cCt = `<div class="dccon-view-box" style="margin-top:4px;"><div class="imgwrap"><img src="${sr}" class="written_dccon lazy" alt="${al}" title="${al}" style="width:100px;"></div></div>`;
+                            }
+                        }
+
+                        const cDt = c.reg_date || '';
+
+                        let nH = `<button type="button" class="nick">${b(cNk)}</button>`;
+                        if (cUd) {
+                            nH += `<a href="/gallog/${cUd}"><span class="sp-nick m-gonick"></span><span class="blockCommentId" style="display:none;" data-info="${cUd}"></span></a>`;
+                        }
+                        let iH = cIp ? `<span class="ip blockCommentIp">(${cIp})</span>` : '';
+
+                        cH += `
+                        <li class="${iR ? 'comment-add' : 'comment'}" style="${iR ? 'margin: 0px; padding: 5px 12px 5px 38px; list-style: none; border-top: 1px solid rgb(223, 225, 238); background-color: rgb(249, 250, 252);' : 'margin: 0px; padding: 5px 12px; list-style: none; border-top: 1px solid rgb(223, 225, 238); background-color: rgb(255, 255, 255);'}">
+                            <div class="ginfo-area" style="margin: 0px -4px 0px 0px; padding: 0px; display: inline-flex;">${nH}${iH}</div>
+                            <p class="txt" style="margin: 2px 0px 0px; padding: 0px; font-size: 13px; line-height: 1.5; color: rgb(0, 0, 0); word-break: break-all;">${cCt}</p>
+                            <span class="date" style="display: block; font-size: 12px; line-height: 1.5; color: rgb(153, 153, 153);">${cDt}</span>
+                        </li>`;
+                    });
+                }
+                cH += '</ul></div>';
+
+                let aH = `<button type="button" class="nick">${b(au)}</button>`;
+                if (ui) aH += `<a href="/gallog/${ui}"><span class="sp-nick m-gonick"></span><span class="blockCommentId" style="display:none;" data-info="${ui}"></span></a>`;
+                else if (ip) aH += `<span class="ip">(${ip})</span>`;
+
+                const nwH = `
+                    <section class="grid" style="margin-top: 50px;">
+                        <div style="font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; text-decoration-line: none; text-decoration-style: solid; margin: 0px; padding: 10px 12px; border-bottom: 1px solid rgb(223, 225, 238); color: rgb(0, 0, 0); font-family: AppleSDGothicNeo-Regular, HelveticaNeue, 나눔고딕, NanumGothic, 돋움, Dotum, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">
+                            <span style="font-size: 15px; line-height: 1.4; font-weight: bold; word-break: break-all;"><span style="color:#d9534f; margin-right:4px;">[PC 복원]</span>${tt}</span>
+                            <div class="gallview-tit-box" style="margin: 0px; padding: 0px; height: 20px;">
+                                <ul class="ginfo2" style="margin: 0px; padding: 3px 0px 0px; list-style: none; font-size: 0px; line-height: 0;">
+                                    <li style="margin: 0px; padding: 0px; list-style: none; float: left; font-size: 12px; line-height: 1.5; color: rgb(85, 85, 85);">
+                                        <div class="ginfo-area" style="margin: 0px -4px 0px 0px; padding: 0px; display: inline-flex;">
+                                            ${aH}
+                                        </div>&nbsp;
+                                    </li>
+                                    <li style="margin: 0px; padding: 0px; list-style: none; float: left; font-size: 12px; line-height: 1.5; color: rgb(85, 85, 85);">${dt}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div style="font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; text-decoration-line: none; text-decoration-style: solid; margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: AppleSDGothicNeo-Regular, HelveticaNeue, 나눔고딕, NanumGothic, 돋움, Dotum, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">
+                            <div style="margin: 0px; padding: 0px;">
+                                <ul style="margin: 2px 0px 0px; padding: 10px 12px 5px; list-style: none; font-size: 0px; line-height: 0;">
+                                    <li style="margin: 0px; padding: 0px; list-style: none; float: left; font-size: 12px; line-height: 1.5; color: rgb(85, 85, 85);"><a style="color: rgb(85, 85, 85); text-decoration: none; display: inline-block; background: rgb(240, 240, 240); height: 18px; padding: 0px 8px; box-sizing: border-box; border-radius: 12px; border: 1px solid rgb(223, 225, 238); vertical-align: top; line-height: 17px;">댓글&nbsp;<span style="color: rgb(210, 34, 39) !important;">${cD.length}</span></a></li>
+                                </ul>
+                                <div style="margin: 0px; padding: 0px;">
+                                    <div class="thum-txtin" style="margin: 0px; padding: 0px 12px; font-size: 14px; color: rgb(0, 0, 0); word-break: break-all; line-height: 1.5;">
+                                        ${cHTML}
+                                    </div>
+                                </div>
+                                ${cH}
+                                <div style="text-align:center; font-size:11px; color:#999; padding:15px 0;">우회 복원된 페이지입니다. 보안에 취약할 수 있습니다.</div>
+                            </div>
+                        </div>
+                    </section>
+                `;
+
+                const tC = document.querySelector('#container') || document.body;
+                tC.innerHTML = nwH;
+
+                document.querySelectorAll('.thum-txtin img').forEach(img => {
+                    const originalSrc = img.getAttribute('data-original') || img.getAttribute('src');
+                    if (originalSrc) {
+                        img.src = originalSrc;
+                    }
+                    img.style.maxWidth = "100%";
+                    img.style.height = "auto";
+                    img.style.display = "block";
+                    img.style.margin = "10px 0";
+                });
+
+                document.querySelectorAll('.thum-txtin video').forEach(vid => {
+                    vid.style.maxWidth = "100%";
+                    vid.style.height = "auto";
+                    vid.setAttribute('controls', 'true');
+                });
+
+                setTimeout(() => { bS(); }, 300);
+
+            } catch (err) {
+                pB.innerHTML = `
+                    <div style="text-align:center; padding: 30px; color:#d9534f;">
+                        <strong>PC 우회 로드에 실패했습니다.</strong><br>
+                        <small>${err.message}</small>
+                    </div>
+                `;
+            }
+        }
+    }
+
     let bc = false;
     let bd = [];
 
@@ -589,7 +796,7 @@
         bd.push(...Array.from(bf));
         if (!bc) {
             bc = true;
-            bg().catch(console.error).finally(() => {
+            bg().catch(()=>{}).finally(() => {
                 bc = false;
             });
         }
@@ -601,8 +808,8 @@
             const bi = await Promise.all(bh.map(bj => bk(bj)));
             const bl = bi.includes(true);
 
-            if (!q.disableFetch && bl && q.batchDelay > 0) {
-                await new Promise(bm => setTimeout(bm, q.batchDelay));
+            if (!q.dFe && bl && q.bDe > 0) {
+                await new Promise(bm => setTimeout(bm, q.bDe));
             }
         }
     };
@@ -610,7 +817,7 @@
     const bn = async (bo) => await l.getValue('dc_user_' + bo, { memo: "" });
     const bp = async (bq, br) => await l.setValue('dc_user_' + bq, br);
 
-    window.openUserEditor = async function(bs, bt, bu, bv, isList = false) {
+    window.oUE = async function(bs, bt, bu, bv, isList = false) {
         const bw = await bn(bs);
         const bx = bv ? bt : `${bt}(${bs})`;
         const by = prompt(`[${bx}] 메모 입력 (비우면 삭제):`, bw.memo);
@@ -620,7 +827,7 @@
             if (bu) {
                 let bz = "";
                 let bA = false;
-                const targetShowIdCode = isList ? q.showIdCodeList : q.showIdCodePost;
+                const targetShowIdCode = isList ? q.sIL : q.sIP;
 
                 if (by) {
                     if (targetShowIdCode && !bv) {
@@ -657,7 +864,7 @@
 
         let bH = "";
         let bI = false;
-        const targetShowIdCode = isList ? q.showIdCodeList : q.showIdCodePost;
+        const targetShowIdCode = isList ? q.sIL : q.sIP;
 
         if (bF.memo) {
             if (targetShowIdCode && !bE) {
@@ -682,7 +889,7 @@
         bG.onclick = async (bJ) => {
             bJ.preventDefault();
             bJ.stopPropagation();
-            await window.openUserEditor(bC, bD, bG, bE, isList);
+            await window.oUE(bC, bD, bG, bE, isList);
         };
         return bG;
     }
@@ -710,7 +917,7 @@
     }
 
     async function bS() {
-        if (q.blurImage) {
+        if (q.bIm) {
             const blurImgs = document.querySelectorAll('.thum-txtin img, .writing_view_box img');
             blurImgs.forEach(img => {
                 if (!img.dataset.blurApplied) {
@@ -735,7 +942,7 @@
                 bT.dataset.memoApplied = true;
                 const bV = bT.querySelector('.ginfo2 li:first-child');
 
-                if (bV.childNodes.length > 0 && bV.childNodes[0].nodeType === 3) {
+                if (bV && bV.childNodes.length > 0 && bV.childNodes[0].nodeType === 3) {
                     const bW = bV.childNodes[0];
                     const bX = document.createElement('span');
                     bX.textContent = bW.textContent;
@@ -747,13 +954,13 @@
 
                     bV.replaceChild(bX, bW);
                     bV.appendChild(await bB(bU.userId, bU.nickname, bU.isIp, false));
-                } else {
+                } else if (bV) {
                     bV.appendChild(await bB(bU.userId, bU.nickname, bU.isIp, false));
                 }
             }
         }
 
-        const bY = document.querySelectorAll('.all-comment-lst li[id^="comment_cnt_"]');
+        const bY = document.querySelectorAll('.all-comment-lst li.comment, .all-comment-lst li.comment-add');
         bY.forEach(async bZ => {
             if (bZ.dataset.memoApplied) return;
 
@@ -779,9 +986,11 @@
                 const cf = ca.innerText.trim();
 
                 const memoBtn = await bB(cb, cf, cc, false);
-                ca.parentElement.style.display = "inline-flex";
-                ca.parentElement.style.alignItems = "center";
-                ca.parentElement.appendChild(memoBtn);
+                if (ca.parentElement) {
+                    ca.parentElement.style.display = "inline-flex";
+                    ca.parentElement.style.alignItems = "center";
+                    ca.parentElement.appendChild(memoBtn);
+                }
             }
         });
     }
@@ -841,7 +1050,7 @@
                 cp.remove();
             }
 
-            if (!q.showImage) return;
+            if (!q.sIm) return;
 
             const ct = co.querySelector('.gall-detail-lnktb');
             if (ct && !ct.querySelector('.dc-preview-thumb')) {
@@ -863,7 +1072,7 @@
 
         if (!cw || !cx) return false;
 
-        if (q.disableFetch) return false;
+        if (q.dFe) return false;
 
         let cy = cx.querySelector('.dc-preview-thumb');
         const cz = cw.href;
@@ -873,14 +1082,14 @@
         try {
             const cC = await aI(cz);
             if (cC) {
-                if (cA - cC.time < (q.cacheDuration || 21600000)) {
+                if (cA - cC.time < (q.cDu || 21600000)) {
                     cB = cC;
                 }
             }
         } catch(cD) {}
 
         const cE = async (cF, cG, cH, cI) => {
-            if (q.showImage && cy) {
+            if (q.sIm && cy) {
                 const cJ = cF && (cF.includes('dcinside_icon.png') || cF.includes('no_img'));
                 if (cF && !cJ && (cv.querySelector('.sp-lst-img, .sp-lst-recoimg, .sp-lst-best, .sp-lst-bestlight'))) {
                     cy.src = cF;
@@ -892,7 +1101,7 @@
                 }
             }
 
-            if (cG !== null && !q.postPreview) {
+            if (cG !== null && !q.pPr) {
                 const cK = cv.querySelectorAll('.ginfo li');
                 cK.forEach(cL => {
                     if (cL.textContent.includes('추천') && !cL.querySelector('.dislike-cnt')) {
@@ -917,7 +1126,7 @@
                 }
             }
 
-            if (q.postPreview) {
+            if (q.pPr) {
                 const cQ = cv.querySelector('.gall-detail-lnktb .lt');
                 if (cQ && !cv.querySelector('.preview-line')) {
                     let cR = "";
@@ -958,7 +1167,7 @@
         }
 
         try {
-            const cX = await fetchPcPost(cz);
+            const cX = await fPP(cz);
 
             const cY = new DOMParser();
             const cZ = cY.parseFromString(cX, "text/html");
@@ -1013,7 +1222,6 @@
             await aP(dj).catch(() => {});
             return true;
         } catch (dk) {
-            console.error("DC Expert Extension Parsing Error:", dk);
             return false;
         }
     };
@@ -1066,15 +1274,18 @@
     };
 
     if (!window.location.href.includes('m.dcinside.com/dcscrip')) {
+        
+        rRLP();
+
         bS();
         const dy = new MutationObserver(bS);
         dy.observe(document.body, { childList: true, subtree: true });
 
-        if (q.showRateLimit && !q.disableFetch) {
+        if (q.sRL && !q.dFe) {
             fetch(window.location.href, { method: 'HEAD' }).then(res => {
                 const lmt = res.headers.get('x-rate-limit-limit') || res.headers.get('x-ratelimit-limit');
                 const rem = res.headers.get('x-rate-limit-remaining') || res.headers.get('x-ratelimit-remaining');
-                if (lmt && rem) updateRateLimit(lmt, rem);
+                if (lmt && rem) uRL(lmt, rem);
             }).catch(()=>{});
         }
 
@@ -1083,7 +1294,7 @@
             cm(dz);
             be(dz);
 
-            if (q.autoScroll) {
+            if (q.aSc) {
                 window.addEventListener('scroll', dx);
             }
 
