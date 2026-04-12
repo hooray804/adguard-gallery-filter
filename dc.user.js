@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      7.2.0
+// @version      7.1.1
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기, 이미지 블러, 너무 많은 요청 우회 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -528,7 +528,8 @@
         }
         if (!mI) return await aX(mobileUrl);
 
-        const prefix = mP === 'mini' ? 'mini/' : '';
+        const isMinor = !!document.querySelector('.micon.minor_imgicon');
+        const prefix = mP === 'mini' ? 'mini/' : (isMinor ? 'mgallery/' : '');
         const pcUrl = `https://gall.dcinside.com/${prefix}board/view/?id=${mI}&no=${mN}`;
 
         if (aW) await aW;
@@ -628,18 +629,13 @@
                     });
                 };
 
-                let pf = iM ? 'mini/' : '';
+                const isMinor = !!document.querySelector('.micon.minor_imgicon');
+                let pf = iM ? 'mini/' : (isMinor ? 'mgallery/' : '');
                 let pU = `https://gall.dcinside.com/${pf}board/view/?id=${bI}&no=${pN}`;
                 
                 let rT = await fPU(pU);
                 let ps = new DOMParser();
                 let dc = ps.parseFromString(rT, "text/html");
-
-                if (!dc.querySelector('.title_subject') && !iM) {
-                    pU = `https://gall.dcinside.com/mgallery/board/view/?id=${bI}&no=${pN}`;
-                    rT = await fPU(pU);
-                    dc = ps.parseFromString(rT, "text/html");
-                }
 
                 const tO = dc.querySelector('.title_subject');
                 if (!tO) throw new Error("게시글 제목을 찾을 수 없습니다. PC 환경도 차단되었거나 삭제된 게시글일 수 있습니다.");
