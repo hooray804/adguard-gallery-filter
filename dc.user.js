@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      7.1.1
+// @version      7.3.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기, 이미지 블러, 너무 많은 요청 우회 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
