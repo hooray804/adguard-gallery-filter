@@ -11,10 +11,10 @@
 // @grant        GM.setValue
 // @grant        GM.getValue
 // @grant        GM.listValues
+// @grant        GM.xmlHttpRequest
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_listValues
-// @grant        GM.xmlHttpRequest
 // @grant        GM_xmlhttpRequest
 // @run-at       document-end
 // @license      Apache-2.0
