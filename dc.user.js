@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      7.0.0
+// @version      7.1.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기, 너무 많은 요청 우회 기능 추가
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -654,7 +654,7 @@
                     cHTML = wD.innerHTML;
                 }
 
-                let cH = '<div class="all-comment" id="comment_box" style="margin: 0px; padding: 0px; background-color: rgb(235, 236, 241); border-top: 4px solid rgb(235, 236, 241);"><div style="margin: 0px; padding: 0px 12px; background-color: rgb(255, 255, 255); display: flex;"><div style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-size: 15px; line-height: 1.5;"><a style="color: rgb(0, 0, 0); text-decoration: none; font-weight: bold;">댓글<span style="font-weight: normal; color: rgb(210, 34, 39); margin-left: 4px; vertical-align: top; display: inline-block;"></span><span style=" display: inline-block; width: 20px; height: 20px; font-size: 0px; line-height: 0; vertical-align: top; margin-left: 2px;">새로고침</span></a></div><div style="margin: 0px 0px 0px auto; padding: 0px; font-size: 13px; vertical-align: top;"><div style="margin: 0px; padding: 0px; display: inline-block; vertical-align: top;"><a style="color: rgb(0, 0, 0); text-decoration: none; display: inline-block; line-height: 37px;">본문</a></div>&nbsp;<div style="margin: 0px; padding: 0px; background-color: rgb(255, 255, 255); height: 37px; display: inline-block; vertical-align: top;">&nbsp;<select style="margin: 0px; padding: 9px 16px 8px 5px; font-size: 13px; vertical-align: middle; line-height: 1.5; color: rgb(0, 0, 0); font-family: AppleSDGothicNeo-Regular, HelveticaNeue, 나눔고딕, NanumGothic, 돋움, Dotum, sans-serif; box-sizing: border-box; border: medium; background: rgb(255, 255, 255);"><option value="default">등록순</option><option value="new">최신순</option><option value="reply">답글순</option></select></div></div></div><ul class="all-comment-lst" style="margin: 0px; padding: 0px; list-style: none; border-top: 4px solid rgb(235, 236, 241);">';
+                let cH = '<div class="all-comment" id="comment_box" style="margin: 0px; padding: 0px; background-color: rgb(235, 236, 241); border-top: 4px solid rgb(235, 236, 241);"><div style="margin: 0px; padding: 0px 12px; background-color: rgb(255, 255, 255); display: flex;"><div style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-size: 15px; line-height: 1.5;"><a style="color: rgb(0, 0, 0); text-decoration: none; font-weight: bold;">댓글<span style="font-weight: normal; color: rgb(210, 34, 39); margin-left: 4px; vertical-align: top; display: inline-block;"></span><span style=" display: inline-block; width: 20px; height: 20px; font-size: 0px; line-height: 0; vertical-align: top; margin-left: 2px;">새로고침</span></a></div></div><ul class="all-comment-lst" style="margin: 0px; padding: 0px; list-style: none; border-top: 4px solid rgb(235, 236, 241);">';
                 
                 let cD = [];
                 try {
@@ -726,6 +726,9 @@
 
                 const nwH = `
                     <section class="grid" style="margin-top: 50px;">
+                        <div style="padding: 10px 12px; background-color: rgb(255, 255, 255); border-bottom: 1px solid rgb(223, 225, 238);">
+                            <button type="button" onclick="history.back()" style="padding: 6px 12px; border: 1px solid #ccc; background: #fff; border-radius: 4px; font-size: 13px; cursor: pointer; color: #333;">&larr; 뒤로 가기</button>
+                        </div>
                         <div style="font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; text-decoration-line: none; text-decoration-style: solid; margin: 0px; padding: 10px 12px; border-bottom: 1px solid rgb(223, 225, 238); color: rgb(0, 0, 0); font-family: AppleSDGothicNeo-Regular, HelveticaNeue, 나눔고딕, NanumGothic, 돋움, Dotum, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">
                             <span style="font-size: 15px; line-height: 1.4; font-weight: bold; word-break: break-all;"><span style="color:#d9534f; margin-right:4px;">[PC 복원]</span>${tt}</span>
                             <div class="gallview-tit-box" style="margin: 0px; padding: 0px; height: 20px;">
@@ -750,7 +753,7 @@
                                     </div>
                                 </div>
                                 ${cH}
-                                <div style="text-align:center; font-size:11px; color:#999; padding:15px 0;">우회 복원된 페이지입니다. 보안에 취약할 수 있습니다.</div>
+                                <div style="text-align:center; font-size:11px; color:#999; padding:15px 0;">우회 복원된 페이지로 댓글 등의 기능이 정상적으로 작동하지 않습니다. 보안에 취약할 수 있으며, 계정에 로그인했거나 특히 매니저 권한을 가지고 있다면 설정 비활성화를 강력히 권장합니다.</div>
                             </div>
                         </div>
                     </section>
