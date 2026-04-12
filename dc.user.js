@@ -706,7 +706,7 @@
 
                         let nH = `<button type="button" class="nick">${b(cNk)}</button>`;
                         if (cUd) {
-                            nH += `<a href="/gallog/${cUd}"><span class="sp-nick m-gonick"></span><span class="blockCommentId" style="display:none;" data-info="${cUd}"></span></a>`;
+                            nH += `<a href="/gallog/${cUd}"><span class="sp-nick nogonick"></span><span class="blockCommentId" style="display:none;" data-info="${cUd}"></span></a>`;
                         }
                         let iH = cIp ? `<span class="ip blockCommentIp">(${cIp})</span>` : '';
 
@@ -721,7 +721,7 @@
                 cH += '</ul></div>';
 
                 let aH = `<button type="button" class="nick">${b(au)}</button>`;
-                if (ui) aH += `<a href="/gallog/${ui}"><span class="sp-nick m-gonick"></span><span class="blockCommentId" style="display:none;" data-info="${ui}"></span></a>`;
+                if (ui) aH += `<a href="/gallog/${ui}"><span class="sp-nick nogonick"></span><span class="blockCommentId" style="display:none;" data-info="${ui}"></span></a>`;
                 else if (ip) aH += `<span class="ip">(${ip})</span>`;
 
                 const nwH = `
