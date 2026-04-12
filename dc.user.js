@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcinside Expert Extension
 // @namespace    https://github.com/hooray804/adguard-gallery-filter
-// @version      7.4.0
+// @version      7.5.0
 // @description  [디시인사이드 모바일 전용] 무한 스크롤, 이미지 미리보기, 비추천수 로드, 유저 메모, 본문 미리보기, 이미지 블러, 너무 많은 요청 우회 기능을 추가합니다.
 // @author       hooray804 and Gemini
 // @match        https://m.dcinside.com/board/*
@@ -11,10 +11,10 @@
 // @grant        GM.setValue
 // @grant        GM.getValue
 // @grant        GM.listValues
-// @grant        GM.xmlHttpRequest
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_listValues
+// @grant        GM.xmlHttpRequest
 // @grant        GM_xmlhttpRequest
 // @run-at       document-end
 // @license      Apache-2.0
@@ -610,11 +610,12 @@
                 let gx = (typeof GM !== 'undefined' && GM.xmlHttpRequest) ? GM.xmlHttpRequest.bind(GM) : (typeof GM_xmlhttpRequest === 'function' ? GM_xmlhttpRequest : null);
                 if (!gx) throw new Error("GM_xmlHttpRequest is not supported in this environment");
 
+                let pU = "";
                 const fPU = async (u, m = "GET", b = null, h = {}) => {
                     return new Promise((rs, rj) => {
                         let rH = {
                             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-                            "Referer": "https://gall.dcinside.com/"
+                            "Referer": pU || "https://gall.dcinside.com/"
                         };
                         for (let k in h) rH[k] = h[k];
                         let rO = {
@@ -630,7 +631,7 @@
                 };
 
                 let pf = iM ? 'mini/' : '';
-                let pU = `https://gall.dcinside.com/${pf}board/view/?id=${bI}&no=${pN}`;
+                pU = `https://gall.dcinside.com/${pf}board/view/?id=${bI}&no=${pN}`;
                 
                 let rT = await fPU(pU);
                 let ps = new DOMParser();
@@ -687,7 +688,7 @@
                 
                 let cD = [];
                 try {
-                    let cbU = `https://gall.dcinside.com/${pf}board/comment/`;
+                    let cbU = `https://gall.dcinside.com/${iM ? 'mini/' : ''}board/comment/`;
                     let esN = dc.getElementById('e_s_n_o') ? dc.getElementById('e_s_n_o').value : "";
                     let gT = dc.getElementById('_GALLTYPE_') ? dc.getElementById('_GALLTYPE_').value : "";
                     if (!gT) {
