@@ -42,8 +42,8 @@ blog.naver.com,comic.naver.com##[class*='banner_area']
 booktoki469.com,booktoki470.com##.col-sm-9.col-md-9.col-15
 booktoki469.com,booktoki470.com,manatoki469.net,manatoki470.net,newtoki469.com,newtoki470.com##[style='margin-bottom: 20px;'].row.row-15
 booktoki469.com,booktoki470.com,manatoki469.net,manatoki470.net,newtoki469.com,newtoki470.com##li:has([target]:not([href*=bbs]))
-bunjang.co.kr##section:has(> span:has-text(비슷한 새 상품 보기)):has(a[href*="ader.naver.com"])
-bunjang.co.kr##div:has(> h3:has-text(비슷한 새 상품 보기)):has(a[href*="ader.naver.com"])
+bunjang.co.kr##div[class*="ProductExternalAdsstyle"]:has(h3:has-text(비슷한 새 상품 보기))
+bunjang.co.kr##section:has(> [class*="adTitle"]):has-text(AD)
 chimhaha.net##[id^='slot']
 chimhaha.net##div[style='margin-top: 50px; ']
 chimhaha.net,seoul.co.kr,mule.co.kr##[class*='Ad']
