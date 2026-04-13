@@ -8,8 +8,7 @@
 // @match        https://m.dcinside.com/mini/*
 // @match        https://m.dcinside.com/dcscrip*
 // @exclude      https://m.dcinside.com/board/dcbest*
-// @connect      dcinside.com
-// @connect      gall.dcinside.com
+// @connect      *
 // @grant        GM.setValue
 // @grant        GM.getValue
 // @grant        GM.listValues
