@@ -62,4 +62,4 @@ This project is a fork of [Zziniswell/Adguard-gallery-filter](https://github.com
 
 ## Contribution
 
-이용 중 발생한 버그나 개선 제안은 [GitHub Issues](https://github.com/hooray804/adguard-gallery-filter/issues) 등을 통해 제보해 주시기 바랍니다.
+이용 중 발생한 버그, 개선 제안이나 문의는 [GitHub Issues](https://github.com/hooray804/adguard-gallery-filter/issues) 등을 통해 제보해 주시기 바랍니다.
