@@ -57,12 +57,12 @@ etoland.co.kr##[id*='underGoodBtn']
 etoland.co.kr,ppomppu.co.kr,m.ppomppu1.co.kr##[id$='_popup']
 fc-info.com##div[class^='Venatus_']
 fmkorea.com##[class$='_ad']
+gall.dcinside.com##.gnb_list.clear > li:nth-of-type(6)
 gmarket.co.kr##.js-impressionable.box__head-ad
 harpi.in##div:has(> script[src])
 hygall.com##div[style='display: flex;justify-content: center; width:100%;height:100px;']
 instiz.net##.view_top
 instiz.net##div[class^='hot_u']
-instiz.net##div[style*='min-height:250px;']
 inven.co.kr,mt.co.kr##[class$='ads']
 inven.co.kr,wowtv.co.kr,damoang.net##[class*='-banner']
 k-hentai.org##.my-3.container
@@ -73,6 +73,7 @@ m.danawa.com###mdnw-main-dimm, #mdnw-main-bottomSheet-container
 m.daum.net###trendKeywordsContainer
 m.dcinside.com###notice_list > li
 m.dcinside.com##.layer-bottom-popup
+m.dcinside.com##.menu-scroll-lst.swiper-wrapper > li.swiper-slide:nth-of-type(5)
 m.dcinside.com##.view-btm-con
 m.dcinside.com#$##notice_list > li:has(.ct):not(:has(.ntc-line-pink.round)) { display: table !important; }
 m.ppomppu.co.kr##.js-ad_slot.JS-div_gpt_ad
@@ -165,7 +166,6 @@ search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper)
 cafe.naver.com##+js(remove-class, disable-select, #ct)
 fmkorea.com##+js(set, link_url, '')
 manatoki469.net,manatoki470.net,newtoki469.com,newtoki470.com##+js(acis, oncontextmenu)
-novelpia.com###slide-layer
 ||arca.live/static/assets/js/adult.min.js
 
 ! Anti-adblock
@@ -218,7 +218,6 @@ www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
 ||api.mumuglobal.com^$badfilter
 ||app.appsflyer.com^$badfilter
 ||dadispapi.gmarket.co.kr^$badfilter
-||exlogcollector.sooplive.com^$badfilter
 ||photo.jtbc.co.kr/news/cms/etc/$badfilter
 ||ssl.pstatic.net/t.static.blog/nmobile/versioning//common/lib/ntm/ntm-blog-web-*.js$badfilter
 ||store-api.mumuglobal.com^$badfilter
