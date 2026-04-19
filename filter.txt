@@ -1,5 +1,5 @@
 ! Title: 애드가드 갤러리 필터
-! Version: 2026.04.18
+! Version: 2026.04.19
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
@@ -24,6 +24,8 @@
 [$domain=/^tvwiki[0-9]*\.net/]###bannerList, #viewCover
 [$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##[href*='/ad'][target='_blank']:has(img)
 [$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##div[class$='gallery'][id] [target='_blank']:upward(1)
+[$domain=/torrentqq[0-9]*\.com/]##div.at-banner:has(a[href*="/ads/"])
+[$domain=/yadongtv[0-9]*\.com/]##div[style*="top: 215px"]:has(img[src*="/banners/"]), img[src*="/banners/"]
 algumon.com##div.bg-base-100:has(> div > .fb)
 algumon.com##div.bg-base-100:has(> div > ins.adsbygoogle)
 algumon.com##div.card.bg-base-100.rounded-none:has(a[href^='https://link.coupang.com/'], ins.adsbygoogle, div[style*='min-height'])
@@ -65,6 +67,7 @@ instiz.net##.view_top
 instiz.net##div[class^='hot_u']
 inven.co.kr,mt.co.kr##[class$='ads']
 inven.co.kr,wowtv.co.kr,damoang.net##[class*='-banner']
+jusoya.com##div.banner-widget:has(a.secure-banner-link[data-original-url])
 k-hentai.org##.my-3.container
 litomi.in##[data-juicy-ads-slot]
 m.bobaedream.co.kr##div[style$='height:50px;']
@@ -95,6 +98,7 @@ pay.naver.com##div[class^='BottomAds_article']
 postype.com##div[data-sentry-component="RecommendFeedGoogleAd"]:upward(1)
 ppomppu.co.kr##.bottom > div[style]
 ppomppu.co.kr$$tr:has-text(AD)
+redvi79.com##div[style*="z-index: 9999"]:has(img[src*="/banners/"]), img[src*="/banners/"]
 rgr.kr,rgrong.net,te31.com###foot:style(height: 150px !important;)
 rgr.kr,rgrong.net,te31.com##div[style='position:relative;z-index:11;']
 ruliweb.com,ppomppu.co.kr,naver.com,daum.net,etoland.co.kr##[id$='_ad']
@@ -119,6 +123,7 @@ torrentpi150.com##div.col-sm-12 > .widget-box > .basic-post-gallery
 uppity.co.kr##.adrop-outer
 windowsforum.kr,seoul.co.kr,xportsnews.com##.ad
 wowtv.co.kr,cafe.naver.com##[class*='Banner']
+ydzone20.cc##ul.d-flex.flex-wrap:has(a[href*="/bbs/banner.php"])
 zod.kr##div:has(> [rel='sponsored'])
 ||*nestads.*
 ||get*ads-*-du.a.run.app^
