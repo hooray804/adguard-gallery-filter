@@ -152,6 +152,7 @@ gall.dcinside.com##.r_dcmedia
 gall.dcinside.com##tr[class='ub-content ']
 inven.co.kr##.inven-float-alarm
 m.blog.naver.com##div[id="blog_fe_feed"] > div > div:has([data-click-area*="fdairsmx"], [data-click-area*="fdschclip"])
+m.blog.naver.com##div[id="blog_fe_feed"] div[class^="loading_area"]
 m.cafe.naver.com###articleFeedList
 m.cafe.naver.com##.CardWrap.home_popular_articles
 m.cafe.naver.com##.FloatingJoinButton
