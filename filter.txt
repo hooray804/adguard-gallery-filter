@@ -71,7 +71,6 @@ jusoya.com##div.banner-widget:has(a.secure-banner-link[data-original-url])
 k-hentai.org##.my-3.container
 litomi.in##[data-juicy-ads-slot]
 m.blog.naver.com##div[id="blog_fe_feed"] > div > div:has([data-click-area*="fdairsmx"], [data-click-area*="fdschclip"])
-m.blog.naver.com##div[id="blog_fe_feed"] div[class^="loading_area"]
 m.bobaedream.co.kr##div[style$='height:50px;']
 m.cafe.daum.net##[class*='_banner']
 m.danawa.com###mdnw-main-dimm, #mdnw-main-bottomSheet-container
