@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Gallery Extension for FMKOREA
-// @version      4.0
+// @version      4.01
 // @description  (모바일) 사이트 좌측 상단에서 메뉴를 열어주세요. PC는 일부 옵션만 자동 적용됩니다.
 // @author       cent8649
 // @match        https://*.fmkorea.com/*
@@ -666,7 +666,7 @@
                     e.target.checked ? s.classList.add('expanded') : s.classList.remove('expanded');
                     if (key === 'blockUser' || key === 'blockKeyword') {
                         updLists(); rescan();
-                        if(e.target.checked) renderTags(s, key);
+                        if(e.target.checked) renderTags(s, key + 'List');
                     }
                     if (key === 'useMemo') {
                         if(e.target.checked) renderTags(s, 'userMemoDict');
