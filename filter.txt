@@ -34,6 +34,7 @@ algumon.com##div.deal-2col:has(> div > ins.adsbygoogle)
 arca.live##.vrow.hybrid:has(.category-badge)
 auction.co.kr,gmarket.co.kr##.plcc_banner
 avdbs.com##.ad-btn[class*='tp']
+avsee.ru##+js(acis, decodeURI, split)
 avsee.ru##.at-main > div.main-box > .miso-post-mix .post-wrap
 avsee.ru##.at-side div.main-box:first-child
 avsee.ru##.title div[style^='width:100%']
