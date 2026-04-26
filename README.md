@@ -35,7 +35,7 @@ https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/ma
 ### 에펨코리아 갤러리 확장
 * **광고 및 제휴 제거**: 파워링크 제거 및 핫딜 제휴 링크를 일반 링크로 복구
 * **댓글 이미지 임베딩**: 댓글에 있는 이미지/동영상 링크를 클릭 없이 바로 표시
-* **차단 및 메모 시스템**: 유저·키워드 차단(게시물/댓글) 및 메모 기능 제공
+* **차단 및 메모 시스템**: 유저와 키워드 차단(게시물/댓글) 및 메모 기능 제공
 * **UI 최적화**: 공지사항, 검색 어시스턴트, 최근 방문 목록 등 불필요한 요소 제거
 
 https://gall.dcinside.com/mgallery/board/view/?id=adguard&no=7935
