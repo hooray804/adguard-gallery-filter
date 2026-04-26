@@ -125,6 +125,7 @@ uppity.co.kr##.adrop-outer
 veritas-a.com##article.grid.body > div.clearfix:has(.ad-template)
 windowsforum.kr,seoul.co.kr,xportsnews.com##.ad
 wowtv.co.kr,cafe.naver.com##[class*='Banner']
+ydparty02.net##div:is(.top-wrap, .mid-wrap):has(a.grid-asset[data-item-id])
 ydzone20.cc##ul.d-flex.flex-wrap:has(a[href*="/bbs/banner.php"])
 zod.kr##div:has(> [rel='sponsored'])
 ||*nestads.*
