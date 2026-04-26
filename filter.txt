@@ -40,7 +40,7 @@ avsee.ru##.at-side div.main-box:first-child
 avsee.ru##.title div[style^='width:100%']
 avsee.ru##.widget-side-box div.main-box:first-child
 avsee.ru##[alt$='gif']
-bamgad7.com##ul.row:has(img[src*="/data/file/advertise/"])
+bamgad6.com,bamgad7.com##ul.row:has(img[src*="/data/file/advertise/"])
 bbs.ruliweb.com##div.clear:has([style*='overflow-x'])
 bbs.ruliweb.com##tr:has(.nick[style^='display: inline-block'])
 blog.naver.com,comic.naver.com##[class*='banner_area']
