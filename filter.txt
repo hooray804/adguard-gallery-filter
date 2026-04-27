@@ -79,6 +79,7 @@ m.dcinside.com##.menu-scroll-lst.swiper-wrapper > li.swiper-slide:nth-of-type(n+
 m.dcinside.com##.view-btm-con
 m.dcinside.com#$##notice_list > li:has(.ct):not(:has(.ntc-line-pink.round)) { display: table !important; }
 m.ppomppu.co.kr##.js-ad_slot.JS-div_gpt_ad
+m.ppomppu.co.kr##div:has(> ins.adsbygoogle)
 m.ppomppu.co.kr##div[style^='text-align:center;']
 m.ruliweb.com##tr:has(.nbp_container)
 m.wowtv.co.kr##.container > div[style]
