@@ -1,5 +1,5 @@
 ! Title: 애드가드 갤러리 필터
-! Version: 2026.04.26
+! Version: 2026.04.27
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
@@ -44,9 +44,6 @@ bamgad6.com,bamgad7.com##ul.row:has(img[src*="/data/file/advertise/"])
 bbs.ruliweb.com##div.clear:has([style*='overflow-x'])
 bbs.ruliweb.com##tr:has(.nick[style^='display: inline-block'])
 blog.naver.com,comic.naver.com##[class*='banner_area']
-booktoki469.com,booktoki470.com##.col-sm-9.col-md-9.col-15
-booktoki469.com,booktoki470.com,manatoki469.net,manatoki470.net,newtoki469.com,newtoki470.com##[style='margin-bottom: 20px;'].row.row-15
-booktoki469.com,booktoki470.com,manatoki469.net,manatoki470.net,newtoki469.com,newtoki470.com##li:has([target]:not([href*=bbs]))
 bunjang.co.kr##div[class*="ProductExternalAdsstyle"]:has(h3:has-text(비슷한 새 상품 보기))
 bunjang.co.kr##section:has(> [class*="adTitle"]):has-text(AD)
 chimhaha.net##[id^='slot']
@@ -61,7 +58,7 @@ etoland.co.kr##[id*='underGoodBtn']
 etoland.co.kr,ppomppu.co.kr,m.ppomppu1.co.kr##[id$='_popup']
 fc-info.com##div[class^='Venatus_']
 fmkorea.com##[class$='_ad']
-gall.dcinside.com##.gnb_list.clear > li:nth-of-type(6)
+gall.dcinside.com##.gnb_list.clear > li:has(> [onclick])
 gmarket.co.kr##.js-impressionable.box__head-ad
 harpi.in##div:has(> script[src])
 hygall.com##div[style='display: flex;justify-content: center; width:100%;height:100px;']
@@ -78,7 +75,7 @@ m.danawa.com###mdnw-main-dimm, #mdnw-main-bottomSheet-container
 m.daum.net###trendKeywordsContainer
 m.dcinside.com###notice_list > li
 m.dcinside.com##.layer-bottom-popup
-m.dcinside.com##.menu-scroll-lst.swiper-wrapper > li.swiper-slide:nth-of-type(5)
+m.dcinside.com##.menu-scroll-lst.swiper-wrapper > li.swiper-slide:nth-of-type(n+5)
 m.dcinside.com##.view-btm-con
 m.dcinside.com#$##notice_list > li:has(.ct):not(:has(.ntc-line-pink.round)) { display: table !important; }
 m.ppomppu.co.kr##.js-ad_slot.JS-div_gpt_ad
@@ -90,7 +87,6 @@ maplescouter.com,loawa.com###popup
 mingky03.net,ydparty02.net##div:is(.top-wrap, .mid-wrap, .bot-wrap):has(a.grid-asset[data-item-id])
 mlbpark.donga.com##[class^='coupang'], [class*='naver_place']
 mlbpark.donga.com##ul.sub_lists_today.lists > li.items:nth-of-type(6)::before
-mlbpark.donga.com$$li:has-text(/엠팍제휴팀|폰판기/)
 mule.co.kr##[class*='-ad-']
 namu.wiki#$#div[class][id]:is(:empty, :has(> iframe[id^='google_ads_iframe'])) { display: none !important; }
 naver.com###sb-kh-shortents-wrap
@@ -112,7 +108,6 @@ seoul.co.kr###bottomScrollBox
 seoul.co.kr##[class^='ad']
 shopping.naver.com##div[class^="_carouselProductList_mobile_carousel_product_list_"]
 soccerline.kr##.bottBann
-sooplive.com##.adballoon_icon
 svrforum.com$$ins[class="adsbygoogle"]
 talk.op.gg##+js(set-cookie, _talkg_banner, 1)
 te31.com##table:has(td > script)
@@ -121,8 +116,8 @@ teamblind.com##[href^='https://link.coupang.com/re/AFFSDP']
 teamblind.com##div.article-list-pre:has([href^='https://link.coupang.com/re/AFFSDP'])
 teamblind.com##div.article:has(> [href^='https://link.coupang.com/re/AFFSDP'])
 teamblind.com##div.comment_area.wrap-comment[style='cursor: pointer;']
-torrentpi150.com##.h20 +.widget-box
-torrentpi150.com##div.col-sm-12 > .widget-box > .basic-post-gallery
+torrentpi150.com,torrentpi160.com##.h20 +.widget-box
+torrentpi150.com,torrentpi160.com##div.col-sm-12 > .widget-box > .basic-post-gallery
 uppity.co.kr##.adrop-outer
 veritas-a.com##article.grid.body > div.clearfix:has(.ad-template)
 windowsforum.kr,seoul.co.kr,xportsnews.com##.ad
@@ -177,7 +172,6 @@ search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper)
 ! Annoyances
 cafe.naver.com##+js(remove-class, disable-select, #ct)
 fmkorea.com##+js(set, link_url, '')
-manatoki469.net,manatoki470.net,newtoki469.com,newtoki470.com##+js(acis, oncontextmenu)
 ||arca.live/static/assets/js/adult.min.js
 
 ! Anti-adblock
@@ -207,6 +201,7 @@ $@$link[rel="manifest"]
 @@||hanaroetf.com^$stealth=dpi
 @@||isplus.$stealth=dpi
 @@||kamp.daum.net^$xhr
+@@||koreainvestment.com^$stealth=dpi
 @@||kr^$stealth=dpi
 @@||pincrux.com^$stealth=dpi
 @@||searchad-phinf.pstatic.net^$app=com.nhn.android.search
@@ -216,6 +211,7 @@ $@$link[rel="manifest"]
 @@||sofrano.com^$stealth=dpi
 @@||termeden.com^$stealth=dpi
 @@||tivan.naver.com^$app=com.nhn.android.search
+@@||truefriend.com^$stealth=dpi
 @@||wcs.naver.net^$domain=seorinexpress.com|naver.com
 etoland.co.kr#$#div.hit_latest_ad { display: grid !important; }
 m.fmkorea.com#@$?#*.bd.bd_mobile:not(:has(#bd_capture ~ #comment)):has(form[action="./"]:matches-css(height: auto)) { remove: true; }
@@ -283,7 +279,7 @@ www.google.*##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".yachts/"])
 ! Etc
 arca.live#%#const _s=document.documentElement.appendChild(Object.assign(document.createElement("style"),{textContent:'a.notice .vcol.col-ad .badge.badge-success,a.notice .vcol.col-id>b{visibility:hidden}'}));document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelector("div.list-table");if(!t){_s.remove();return;}const s=()=>{const e=t.querySelector('a.notice[href*="/b/"]');if(!e)return;const g=e.pathname.split("/b/")[1]?.split("/")[0];if(!g)return;const b=e.querySelector(".vcol.col-ad .badge.badge-success"),i=e.querySelector(".vcol.col-id>b");if(b)b.textContent=g;if(i)i.textContent=g;if(b||i)_s.remove()};s();let r;new MutationObserver(()=>{clearTimeout(r);r=setTimeout(s,100)}).observe(t,{childList:!0,subtree:!0})});
 dmm.co.jp#%#//scriptlet('trusted-set-cookie-reload', 'ckcy_remedied_check', 'ec_mrnhbtk', '1year', '/', '.dmm.co.jp')
-gall.dcinside.com##div.img_area button.btn:style(opacity: 0.4 !important;)
+gall.dcinside.com##.img_area button.btn:style(opacity: 0.4 !important;)
 gall.dcinside.com#$#.btn_imgcmtopen { opacity: 0.4 !important; transform: translate(8px, 7px) !important; }
 gall.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview_head:has(em.icon_write_app) > div.gall_writer > div.fl', 'span', '', 'ㅤAPP')
 gall.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview_head:has(em.icon_write_mbl) > div.gall_writer > div.fl', 'span', '', 'ㅤMOBILE')
