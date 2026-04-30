@@ -3,7 +3,7 @@
 본 애드가드 갤러리 필터와 유저스크립트는 AdGuard와 uBlock Origin 한국어 필터의 부족한 점을 보완하고, 광고 차단 및 커뮤니티 이용 환경을 개선하기 위해 제작되었습니다.
 
 > [!IMPORTANT]
-> 사용자 정의 필터, DNS 전용 필터, 유저스크립트는 등록하는 메뉴가 서로 다르며 잘못된 설치는 오작동을 유발할 수 있습니다. 차이점에 대해 정확히 인지하고 있지 않으시면 하단 [이용 안내](https://github.com/hooray804/adguard-gallery-filter/blob/main/README.md#%EC%84%A4%EC%B9%98-%EB%B0%A9%EB%B2%95)를 읽어주세요.
+> 사용자 정의 필터, DNS 전용 필터, 유저스크립트는 등록하는 메뉴가 서로 다르며 잘못된 설치는 오작동을 유발할 수 있습니다. 차이점에 대해 정확히 인지하고 있지 않으시면 [설치 가이](./about.md)를 읽어주세요.
 
 ---
 
@@ -38,28 +38,7 @@ https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/ma
 ## 이용 안내
 
 ### 설치 방법
-
-<details>
-<summary><b>Android</b></summary>
-<br>
-내용
-</details>
-<details>
-<summary><b>iOS/iPadOS</b></summary>
-<br>
-유저스크립트 관리자
-</details>
-<details>
-<summary><b>Windows</b></summary>
-<br>
-uBlock에서
-AdGuard
-</details>
-<details>
-<summary><b>macOS</b></summary>
-<br>
-내용
-</details>
+설치 방법에 대한 자세한 설명은 [설치 가이드](./INSTALL.md)를 참고하세요.
 
 ### 에펨코리아 갤러리 확장
 * **광고 및 제휴 제거**: 파워링크 제거 및 핫딜 제휴 링크를 일반 링크로 복구
