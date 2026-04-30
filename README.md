@@ -37,6 +37,8 @@ https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/ma
 
 ## 이용 안내
 
+### 설치 방법
+
 <details>
 <summary><b>Android</b></summary>
 <br>
@@ -58,10 +60,6 @@ AdGuard
 <br>
 내용
 </details>
-
-
-
-### 설치 방법
 
 ### 에펨코리아 갤러리 확장
 * **광고 및 제휴 제거**: 파워링크 제거 및 핫딜 제휴 링크를 일반 링크로 복구
