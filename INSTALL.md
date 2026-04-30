@@ -50,9 +50,11 @@
 
 <details>
 <summary><b>uBlock Origin</b></summary>
-> [!NOTE]
-> uBlock Origin Lite가 아님이 유의하세요. 자세한 내용은 [나무위키](https://namu.wiki/w/uBlock%20Origin#s-5.2)를 참고하세요.
+  
+> uBlock Origin Lite가 아님에 유의하세요. 자세한 내용은 [나무위키](https://namu.wiki/w/uBlock%20Origin#s-5.2)를 참고하세요.
+  
 </details>
+
 ### macOS
 
 ### Android
