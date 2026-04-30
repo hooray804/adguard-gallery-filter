@@ -7,7 +7,9 @@
 
 ---
 
-## 광고 차단 필터
+## 설치하기
+
+### 광고 차단 필터
 
 * **AdGuard/uBlock용 필터**
 ```
@@ -19,7 +21,7 @@ https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/ma
 https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/DNS.txt
 ```
 
-## 유저스크립트
+### 유저스크립트
 
 * **에펨코리아 익스텐션 (Gallery Extension)**
 ```
@@ -32,6 +34,10 @@ https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/ma
 ```
 
 ---
+
+## 이용 안내
+
+### 설치 방법
 
 ### 에펨코리아 갤러리 확장
 * **광고 및 제휴 제거**: 파워링크 제거 및 핫딜 제휴 링크를 일반 링크로 복구
