@@ -59,11 +59,8 @@ AdGuard
 내용
 </details>
 
-<details>
-<summary><b>How does wBlock compare to other ad blockers?</b></summary>
-<br>
-Check out our <a href="Adblock_Comparison.md">comparison guide</a> vs uBlock Origin Lite, Wipr 2, and AdGuard Mini.
-</details>
+
+
 ### 설치 방법
 
 ### 에펨코리아 갤러리 확장
