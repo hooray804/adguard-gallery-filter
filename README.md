@@ -47,7 +47,7 @@ https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/ma
 <details>
 <summary><b>iOS/iPadOS</b></summary>
 <br>
-내용
+유저스크립트 관리자
 </details>
 <details>
 <summary><b>Windows</b></summary>
