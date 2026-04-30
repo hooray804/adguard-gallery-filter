@@ -49,8 +49,6 @@
 
 ### iOS / iPadOS
 
-#### 광고 차단 필터
-
 <details>
 <summary><b>AdGuard</b></summary>
 내용
