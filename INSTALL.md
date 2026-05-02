@@ -88,6 +88,13 @@
 
 ### Android
 
+<details>
+<summary><b>AdGuard</b></summary>
+  
+> AdGuard 콘텐츠 차단기가 아님에 유의하세요.
+
+</details>
+
 ### iOS / iPadOS
 
 <details>
