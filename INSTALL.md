@@ -67,7 +67,7 @@
 
 <details>
 <summary><b>uBlock Origin</b></summary>
-  
+
 > uBlock Origin Lite가 아님에 유의하세요. 자세한 내용은 [나무위키](https://namu.wiki/w/uBlock%20Origin#s-5.2)를 참고하세요.
 1. `대시보드` 열기
 2. `필터 목록` 탭 선택
@@ -81,7 +81,7 @@
 
 <details>
 <summary><b>AdGuard</b></summary>
-  
+
 > AdGuard Mini가 아님에 유의하세요.
 
 </details>
@@ -90,8 +90,24 @@
 
 <details>
 <summary><b>AdGuard</b></summary>
-  
+
 > AdGuard 콘텐츠 차단기가 아님에 유의하세요.
+아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
+1. 상단 바에서 `설정` 탭 열기
+2. `광고와 팝업 차단` 메뉴 선택
+3. `필터 추가` 버튼 클릭
+4. `URL로 필터 추가` 버튼 클릭
+5. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력
+6. `신뢰할 수 있는 필터임` 체크 후 하단 `추가` 버튼 클릭
+
+아래의 방법으로 DNS 필터를 추가합니다.
+1. `설정` 탭 열기
+2. `DNS 보호` 메뉴 선택
+3. 하단에 위치한 `DNS 필터 편집기 열기` 클릭
+4. 하단 `+` 버튼 선택
+5. `URL로 필터 추가` 버튼 클릭
+6. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/DNS.txt` 입력
+7. `추가`, `추가` 버튼 차례로 클릭
 
 </details>
 
