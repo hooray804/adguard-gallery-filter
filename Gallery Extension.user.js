@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Gallery Extension for FMKOREA
-// @version      4.02
+// @version      4.03
 // @description  (모바일) 사이트 좌측 상단에서 메뉴를 열어주세요. PC는 일부 옵션만 자동 적용됩니다.
 // @author       cent8649
 // @match        https://*.fmkorea.com/*
@@ -21,10 +21,10 @@
     const doc = document;
     const isMobile = location.hostname === 'm.fmkorea.com';
     const defs = {
-        removePowerLink: true, preventAffiliate: true, noWatermark: false, imgEmbed: true, blockSearchAssist: true,
-        skipAd: false,
+        removePowerLink: false, preventAffiliate: false, noWatermark: false, imgEmbed: true, blockSearchAssist: true,
+        skipAd: true,
         blockUser: false, blockUserList: '[]', blockKeyword: false, blockKeywordList: '[]',
-        useMemo: false, userMemoDict: '{}',
+        useMemo: true, userMemoDict: '{}',
         blockNotice: false, blockNav: false, blockRecent: false, blockFmAlert: false,
         autoDelComment: false
     };
@@ -296,6 +296,9 @@
         });
     };
 
+    const applyListMemo=()=>{if(!getVal('useMemo'))return;const m=getDict('userMemoDict');qsa('ul>li>.li>div:last-child').forEach(c=>{const a=qs('span.author',c);if(!a)return;const n=a.textContent.split('/').pop().trim(),s=qs('.fmk-lst-mm',c)||c.appendChild(Object.assign(doc.createElement('span'),{className:'fmk-lst-mm',style:'color:#888'}));if(m[n]){s.textContent=` / 메모: ${m[n]}`;s.style.display='';}else s.style.display='none';});qsa('li.clear>.rt_area>.info').forEach(c=>{let a;try{a=qs('span:has(>i.fa-user)',c)}catch(e){a=Array.from(qsa('span',c)).find(x=>qs('i.fa-user',x))}if(!a)return;const n=a.textContent.trim(),s=qs('.fmk-lst-mm',c)||c.appendChild(Object.assign(doc.createElement('span'),{className:'fmk-lst-mm',style:'color:#888'}));if(m[n]){s.textContent=` 메모: ${m[n]}`;s.style.display='';}else s.style.display='none';});};
+    const runListMemo=()=>window.requestIdleCallback?requestIdleCallback(applyListMemo):setTimeout(applyListMemo,300);
+
     const injectMemoBtn = () => {
         if (!getVal('useMemo')) return;
         const pencilIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>`;
@@ -394,6 +397,7 @@
             setDict('userMemoDict', d);
             popup.style.display = 'none';
             applyMemo();
+            applyListMemo();
             const _ms = qs('#section_user_memo'); if (_ms) renderTags(_ms, 'userMemoDict');
             if (_refreshTags) _refreshTags();
         });
@@ -404,6 +408,7 @@
             setDict('userMemoDict', d);
             popup.style.display = 'none';
             applyMemo();
+            applyListMemo();
             const _ms2 = qs('#section_user_memo'); if (_ms2) renderTags(_ms2, 'userMemoDict');
             if (_refreshTags) _refreshTags();
         });
@@ -504,6 +509,7 @@
         if (isMobile && getVal('useMemo')) {
             applyMemo();
             injectMemoBtn();
+            runListMemo();
         }
         if (isMobile) rescan();
         runAutoDel();
@@ -582,6 +588,7 @@
                     setDict(key, d);
                     renderTags(sec, key);
                     applyMemo();
+                    applyListMemo();
                 });
                 con.appendChild(tag);
             });
@@ -638,7 +645,7 @@
                 <div class="fmk-tag-container"></div>
             </div>`;
 
-        panel.innerHTML = `<div class="fmk-panel-header"><span>Settings</span><span class="fmk-panel-close">&times;</span></div><div class="fmk-panel-body"><div class="fmk-opt-info" style="text-align:center;margin-bottom:15px">대부분의 설정은 새로고침 후에 적용됩니다. 필요없는 옵션은 끄세요.</div><div class="fmk-opt-row"><div class="fmk-opt-label">파워링크 제거</div><label class="fmk-switch"><input type="checkbox" id="fmk_opt_powerlink"><span class="fmk-slider"></span></label></div><div class="fmk-opt-info">Unicorn Pro나 갤필터 사용시 꼭 끄세요.</div><div class="fmk-opt-row"><div class="fmk-opt-label">핫딜 제휴링크 변환 방지</div><label class="fmk-switch"><input type="checkbox" id="fmk_opt_affiliate"><span class="fmk-slider"></span></label></div><div class="fmk-opt-info">AdGuard 추적보호필터, 갤필터 사용시 필요하지 않습니다.</div><div class="fmk-opt-row"><div class="fmk-opt-label">캡쳐방지 및 워터마크 해제</div><label class="fmk-switch"><input type="checkbox" id="fmk_opt_watermark"><span class="fmk-slider"></span></label></div><div class="fmk-opt-info">AdGuard 기타방해요소필터 사용시 필요하지 않습니다.</div><div class="fmk-opt-row"><div class="fmk-opt-label">광고 없이 잉포 리워드 수령</div><label class="fmk-switch"><input type="checkbox" id="fmk_opt_skipad"><span class="fmk-slider"></span></label></div><div class="fmk-opt-info">펨코요정 잉여력 선물을 광고없이 수령합니다.</div><div class="fmk-opt-row"><div class="fmk-opt-label">댓글 이미지 임베딩</div><label class="fmk-switch"><input type="checkbox" id="fmk_opt_imgembed"><span class="fmk-slider"></span></label></div><hr style="border:0;border-top:1px solid ${isDark?'#444':'#eee'};margin:15px 0;">
+        panel.innerHTML = `<div class="fmk-panel-header"><span>Settings</span><span class="fmk-panel-close">&times;</span></div><div class="fmk-panel-body"><div class="fmk-opt-info" style="text-align:center;margin-bottom:15px">대부분의 설정은 새로고침 후에 적용됩니다. 필요없는 옵션은 끄세요.</div><div class="fmk-opt-row"><div class="fmk-opt-label">파워링크 제거</div><label class="fmk-switch"><input type="checkbox" id="fmk_opt_powerlink"><span class="fmk-slider"></span></label></div><div class="fmk-opt-info">갤필터 사용시 끄세요. 스크립트 설치 후에도 지워지지 않을 때만 키세요.</div><div class="fmk-opt-row"><div class="fmk-opt-label">핫딜 제휴링크 변환 방지</div><label class="fmk-switch"><input type="checkbox" id="fmk_opt_affiliate"><span class="fmk-slider"></span></label></div><div class="fmk-opt-info">AdGuard 추적보호필터, 갤필터 사용시 필요하지 않습니다.</div><div class="fmk-opt-row"><div class="fmk-opt-label">캡쳐방지 및 워터마크 해제</div><label class="fmk-switch"><input type="checkbox" id="fmk_opt_watermark"><span class="fmk-slider"></span></label></div><div class="fmk-opt-info">AdGuard 기타방해요소필터 사용시 필요하지 않습니다.</div><div class="fmk-opt-row"><div class="fmk-opt-label">광고 없이 잉포 리워드 수령</div><label class="fmk-switch"><input type="checkbox" id="fmk_opt_skipad"><span class="fmk-slider"></span></label></div><div class="fmk-opt-info">펨코요정의 잉여력 선물을 광고없이 수령합니다.</div><div class="fmk-opt-row"><div class="fmk-opt-label">댓글 이미지 임베딩</div><label class="fmk-switch"><input type="checkbox" id="fmk_opt_imgembed"><span class="fmk-slider"></span></label></div><hr style="border:0;border-top:1px solid ${isDark?'#444':'#eee'};margin:15px 0;">
         ${blkHtml('section_block_user', '유저 차단')}
         ${memoBlkHtml}
         ${blkHtml('section_block_keyword', '게시물/댓글 키워드 차단')}
@@ -712,6 +719,7 @@
                 setDict('userMemoDict', dict);
                 renderTags(memoSec, 'userMemoDict');
                 applyMemo();
+                applyListMemo();
                 nickInp.value = '';
                 valInp.value = '';
             });
