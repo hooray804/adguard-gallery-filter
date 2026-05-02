@@ -284,6 +284,9 @@ www.google.com##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".yachts/"])
 
 ! Etc
 arca.live#%#const _s=document.documentElement.appendChild(Object.assign(document.createElement("style"),{textContent:'a.notice .vcol.col-ad .badge.badge-success,a.notice .vcol.col-id>b{visibility:hidden}'}));document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelector("div.list-table");if(!t){_s.remove();return;}const s=()=>{const e=t.querySelector('a.notice[href*="/b/"]');if(!e)return;const g=e.pathname.split("/b/")[1]?.split("/")[0];if(!g)return;const b=e.querySelector(".vcol.col-ad .badge.badge-success"),i=e.querySelector(".vcol.col-id>b");if(b)b.textContent=g;if(i)i.textContent=g;if(b||i)_s.remove()};s();let r;new MutationObserver(()=>{clearTimeout(r);r=setTimeout(s,100)}).observe(t,{childList:!0,subtree:!0})});
+arca.live##+js(execute-script, document.addEventListener('click', e => { const c = e.target.closest('.comment-count'); if (c) { const a = c.closest('a.vrow'); if (a) { e.preventDefault(); e.stopImmediatePropagation(); location.href = a.href.split('?')[0] + '#comment'; } } }, true))
+arca.live##.vcol.col-title .comment-count:hover:style(background-color: #cccccc !important; color: white !important;)
+arca.live##.vcol.col-title .comment-count:style(display: inline-block !important; padding: 6px 4px !important; margin: -6px -4px !important; position: relative; z-index: 10;)
 dmm.co.jp#%#//scriptlet('trusted-set-cookie-reload', 'ckcy_remedied_check', 'ec_mrnhbtk', '1year', '/', '.dmm.co.jp')
 gall.dcinside.com##.img_area button.btn:style(opacity: 0.4 !important;)
 gall.dcinside.com#$#.btn_imgcmtopen { opacity: 0.4 !important; transform: translate(8px, 7px) !important; }
