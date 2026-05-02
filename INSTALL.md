@@ -79,6 +79,13 @@
 
 ### macOS
 
+<details>
+<summary><b>AdGuard</b></summary>
+  
+> AdGuard Mini가 아님에 유의하세요.
+
+</details>
+
 ### Android
 
 ### iOS / iPadOS
