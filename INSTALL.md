@@ -69,6 +69,7 @@
 <summary><b>uBlock Origin</b></summary>
 
 > uBlock Origin Lite가 아님에 유의하세요. 자세한 내용은 [나무위키](https://namu.wiki/w/uBlock%20Origin#s-5.2)를 참고하세요.
+
 1. `대시보드` 열기
 2. `필터 목록` 탭 선택
 3. 하단 스크롤 및 `불러오기` 펼치기
@@ -92,6 +93,7 @@
 <summary><b>AdGuard</b></summary>
 
 > AdGuard 콘텐츠 차단기가 아님에 유의하세요.
+
 아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
 1. 하단 바에서 다섯번째 `설정` 탭 열기
 2. `필터링` 메뉴 선택
