@@ -26,8 +26,7 @@
 [$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##div[class$='gallery'][id] [target='_blank']:upward(1)
 [$domain=/torrentqq[0-9]*\.com/]##div.at-banner:has(a[href*="/ads/"])
 [$domain=/yadongtv[0-9]*\.com/]##div[style*="top: 215px"]:has(img[src*="/banners/"]), img[src*="/banners/"]
-algumon.com##div.card.bg-base-100.rounded-none:has([data-tip])
-algumon.com##div.deal-2col:has(> div > ins.adsbygoogle)
+algumon.com##div:has([data-tip^='파트너스'], div[style*='height]):is(.card, .deal-2col)
 arca.live##.vrow.hybrid:has(.category-badge)
 auction.co.kr,gmarket.co.kr##.plcc_banner
 avdbs.com##.ad-btn[class*='tp']
