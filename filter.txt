@@ -26,10 +26,7 @@
 [$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##div[class$='gallery'][id] [target='_blank']:upward(1)
 [$domain=/torrentqq[0-9]*\.com/]##div.at-banner:has(a[href*="/ads/"])
 [$domain=/yadongtv[0-9]*\.com/]##div[style*="top: 215px"]:has(img[src*="/banners/"]), img[src*="/banners/"]
-algumon.com##div.bg-base-100:has(> div > .fb)
-algumon.com##div.bg-base-100:has(> div > ins.adsbygoogle)
-algumon.com##div.card.bg-base-100.rounded-none:has(a[href^='https://link.coupang.com/'], ins.adsbygoogle, div[style*='min-height'])
-algumon.com##div.deal-2col:has(> div > .fb)
+algumon.com##div.card.bg-base-100.rounded-none:has([data-tip])
 algumon.com##div.deal-2col:has(> div > ins.adsbygoogle)
 arca.live##.vrow.hybrid:has(.category-badge)
 auction.co.kr,gmarket.co.kr##.plcc_banner
@@ -283,7 +280,7 @@ www.google.com##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".works/"], a[
 www.google.com##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".yachts/"])
 ! Allow specific TLDs (e.g., .hu) by adding an exception rule: www.google.com#@#.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".horse/"], a[href*=".hu/"])
 
-! Etc
+! Tweaks
 arca.live#%#const _s=document.documentElement.appendChild(Object.assign(document.createElement("style"),{textContent:'a.notice .vcol.col-ad .badge.badge-success,a.notice .vcol.col-id>b{visibility:hidden}'}));document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelector("div.list-table");if(!t){_s.remove();return;}const s=()=>{const e=t.querySelector('a.notice[href*="/b/"]');if(!e)return;const g=e.pathname.split("/b/")[1]?.split("/")[0];if(!g)return;const b=e.querySelector(".vcol.col-ad .badge.badge-success"),i=e.querySelector(".vcol.col-id>b");if(b)b.textContent=g;if(i)i.textContent=g;if(b||i)_s.remove()};s();let r;new MutationObserver(()=>{clearTimeout(r);r=setTimeout(s,100)}).observe(t,{childList:!0,subtree:!0})});
 arca.live##+js(execute-script, document.addEventListener('click', e => {const t=e.target.closest(".comment-count");if(t){const o=t.closest("a.vrow");o&&(e.preventDefault(),e.stopImmediatePropagation(),location.href=o.href.split("?")[0]+"#comment")}}, true))
 arca.live##.vcol.col-title .comment-count:hover:style(background-color: #cccccc !important; color: white !important;)
