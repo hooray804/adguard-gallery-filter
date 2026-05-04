@@ -55,6 +55,7 @@ etoland.co.kr,ppomppu.co.kr,m.ppomppu1.co.kr##[id$='_popup']
 fc-info.com##div[class^='Venatus_']
 fmkorea.com##[class$='_ad']
 gall.dcinside.com##.gnb_list.clear > li:has(> [onclick])
+get*ads-*-du.a.run.app^
 gmarket.co.kr##.js-impressionable.box__head-ad
 harpi.in##div:has(> script[src])
 hygall.com##div[style='display: flex;justify-content: center; width:100%;height:100px;']
@@ -130,7 +131,6 @@ zod.kr##div:has(> [rel='sponsored'])
 ||*nestads.*
 ||ader.naver.com/*?c=m_$all
 ||dvdprime.com/file/*/banner
-||get*ads-*-du.a.run.app^
 ||kamp.kakao.com^$app=com.kakao.talk
 ||link.coupang.com/re/AFFHOME?lptag=*&amp;subid=pointlink$all,reason=수익링크
 ||shortformstats.kakao.com^$app=com.kakao.talk
