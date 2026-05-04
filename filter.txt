@@ -1,5 +1,5 @@
 ! Title: 애드가드 갤러리 필터
-! Version: 2026.05.04
+! Version: 2026.05.05
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
@@ -72,11 +72,11 @@ m.bobaedream.co.kr##div[style$='height:50px;']
 m.cafe.daum.net##[class*='_banner']
 m.danawa.com###mdnw-main-dimm, #mdnw-main-bottomSheet-container
 m.daum.net###trendKeywordsContainer
-m.dcinside.com###notice_list > li
 m.dcinside.com##.layer-bottom-popup
 m.dcinside.com##.menu-scroll-lst.swiper-wrapper > li.swiper-slide:nth-of-type(n+5)
+m.dcinside.com##.survey
 m.dcinside.com##.view-btm-con
-m.dcinside.com#$##notice_list > li:has(.ct):not(:has(.ntc-line-pink.round)) { display: table !important; }
+m.dcinside.com##li:not(.notice):has(> .detail-top-lnk)
 m.ppomppu.co.kr##.js-ad_slot.JS-div_gpt_ad
 m.ppomppu.co.kr##div:has(> ins.adsbygoogle)
 m.ppomppu.co.kr##div[style^='text-align:center;']
@@ -128,9 +128,9 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 ydzone20.cc##ul.d-flex.flex-wrap:has(a[href*="/bbs/banner.php"])
 zod.kr##div:has(> [rel='sponsored'])
 ||*nestads.*
-||get*ads-*-du.a.run.app^
 ||ader.naver.com/*?c=m_$all
 ||dvdprime.com/file/*/banner
+||get*ads-*-du.a.run.app^
 ||kamp.kakao.com^$app=com.kakao.talk
 ||link.coupang.com/re/AFFHOME?lptag=*&amp;subid=pointlink$all,reason=수익링크
 ||shortformstats.kakao.com^$app=com.kakao.talk
