@@ -99,10 +99,10 @@
 5. `✏️` 버튼 클릭 후 `신뢰할 수 있는 필터임` 체크
 
 아래의 방법으로 DNS 필터를 추가합니다.
-1. 상단 바에서 `설정` 탭 열기
+1. 상단 바에서 `⚙️` 버튼 클릭
 2. `DNS` 메뉴 선택
 3. `필터` 클릭
-4. 하단 `+` 버튼 선택
+4. 하단 `+` 버튼 클릭
 5. `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/DNS.txt` 필터 추가하기
 
 </details>
