@@ -186,19 +186,6 @@
 </details>
 
 <details>
-<summary><b>uBlock Origin</b></summary>
-
-> uBlock Origin Lite가 아님에 유의하세요. 자세한 내용은 [나무위키](https://namu.wiki/w/uBlock%20Origin#s-5.2)를 참고하세요.
-
-아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
-1. `Settings` 열기
-2. `Shields` 탭 선택
-3. `Content filtering` 탭 선택
-4. `Create custom filters`에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력 및 추가
-
-</details>
-
-<details>
 <summary><b>Brave</b></summary>
 
 아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
