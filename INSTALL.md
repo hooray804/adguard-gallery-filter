@@ -44,8 +44,9 @@
 
 ## 설치 방법
 
-사용하는 OS와 프로그램에 맞춰 적절히 설치하세요. 한 기기에서 여러 광고 차단기를 동시에 사용하는 것은 오작동 가능성이 높으니 지양을 권고합니다.
-광고 차단 필터의 설치 방법만 제공하며, 유저스크립트는 적절한 매니저를 설치하여 관리하실 수 있습니다.
+> [!CAUTION]
+> 사용하는 OS와 프로그램에 맞춰 적절히 설치하세요. 한 기기에서 여러 광고 차단기를 동시에 사용하는 것은 오작동 가능성이 높으니 지양을 권고합니다.
+> 광고 차단 필터의 설치 방법만 제공하며, 유저스크립트는 적절한 매니저를 설치하여 관리하실 수 있습니다.
 
 ### Windows
 
@@ -119,6 +120,17 @@
 
 </details>
 
+<details>
+<summary><b>Brave</b></summary>
+
+아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
+1. `Settings` 열기
+2. `Shields` 탭 선택
+3. `Content filtering` 탭 선택
+4. `Create custom filters`에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력 및 추가
+
+</details>
+
 ### Android
 
 <details>
@@ -183,6 +195,24 @@
 7. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/DNS.txt` 입력
 8. `다음`, `추가` 버튼 차례로 클릭
 
+</details>
+
+<details>
+<summary><b>wBlock</b></summary>
+
+> 다른 OS용 버전과 달리 AdGuard에 내장 유저스크립트 관리자 기능이 없기에 예외적으로 제공되는 가이드입니다.
+> AdGuard의 Safari 보호와 wBlock의 콘텐츠 차단기 기능을 동시에 사용하지 마세요.
+
+아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
+1. 하단 탭 바에서 첫번째 아이콘 `필터` 탭 열기
+2. 상단 `+` 버튼 클릭
+3. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력 및 우측 상단 버튼을 통해 URL 추가
+4. 왼쪽 상단의 `적용` 버튼 차례로 클릭
+
+아래의 방법으로 유저스크립트를 추가합니다.
+1. 하단 탭 바에서 두번째 아이콘 `유저스크립트` 탭 열기
+2. 상단 `+` 버튼 클릭
+3. 텍스트 필드에 원하는 유저스크립트의 URL 입력 및 우측 상단 버튼을 통해 추가
 </details>
 
 <details>
