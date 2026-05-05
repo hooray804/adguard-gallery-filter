@@ -76,11 +76,23 @@
 
 > uBlock Origin Lite가 아님에 유의하세요. 자세한 내용은 [나무위키](https://namu.wiki/w/uBlock%20Origin#s-5.2)를 참고하세요.
 
+아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
 1. `대시보드` 열기
 2. `필터 목록` 탭 선택
 3. 하단 스크롤 및 `불러오기` 펼치기
 4. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력
 5. 상단 `변경사항 적용` 버튼 클릭
+
+</details>
+
+<details>
+<summary><b>Brave</b></summary>
+
+아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
+1. `Settings` 열기
+2. `Shields` 탭 선택
+3. `Content filtering` 탭 선택
+4. `Create custom filters`에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력 및 추가
 
 </details>
 
@@ -134,6 +146,17 @@
 
 </details>
 
+<details>
+<summary><b>Brave</b></summary>
+
+아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
+1. `Settings` 열기
+2. `Brave Shields & privacy` 탭 선택
+3. `Content filtering` 탭 선택
+4. `Create custom filters`에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력 및 추가
+
+</details>
+
 ### iOS / iPadOS
 
 <details>
@@ -159,5 +182,29 @@
 6. 상단 `필터 추가` 버튼 클릭
 7. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/DNS.txt` 입력
 8. `다음`, `추가` 버튼 차례로 클릭
+
+</details>
+
+<details>
+<summary><b>uBlock Origin</b></summary>
+
+> uBlock Origin Lite가 아님에 유의하세요. 자세한 내용은 [나무위키](https://namu.wiki/w/uBlock%20Origin#s-5.2)를 참고하세요.
+
+아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
+1. `Settings` 열기
+2. `Shields` 탭 선택
+3. `Content filtering` 탭 선택
+4. `Create custom filters`에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력 및 추가
+
+</details>
+
+<details>
+<summary><b>Brave</b></summary>
+
+아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
+1. `Settings` 열기
+2. `Shields & Privacy` 탭 선택
+3. `Content filtering` 탭 선택
+4. `Custom Filters`에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력 및 추가
 
 </details>
