@@ -91,6 +91,20 @@
 
 > AdGuard Mini가 아님에 유의하세요.
 
+아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
+1. 상단 바에서 `⚙️` 버튼 클릭
+2. `필터 구독` 메뉴 선택
+3. 목록 왼쪽 하단의 `+` 버튼 클릭
+4. `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 필터 추가하기
+5. `✏️` 버튼 클릭 후 `신뢰할 수 있는 필터임` 체크
+
+아래의 방법으로 DNS 필터를 추가합니다.
+1. 상단 바에서 `설정` 탭 열기
+2. `DNS` 메뉴 선택
+3. `필터` 클릭
+4. 하단 `+` 버튼 선택
+5. `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/DNS.txt` 필터 추가하기
+
 </details>
 
 ### Android
