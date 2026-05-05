@@ -89,7 +89,7 @@ mingky03.net,ydparty02.net##div:is(.top-wrap, .mid-wrap, .bot-wrap):has(a.grid-a
 mlbpark.donga.com##[class^='coupang'], [class*='naver_place']
 mlbpark.donga.com##ul.sub_lists_today.lists > li.items:nth-of-type(6)::before
 mule.co.kr##[class*='-ad-']
-namu.news##li.lg\:hidden:has(div[style*="min-height:100px"]):has(> div > div[id*="article-a"])
+namu.news##li:has(div[style*="min-height:100px"]):has(> div > div[id*="article-a"])
 namu.wiki#$#div[class][id]:is(:empty, :has(> iframe[id^='google_ads_iframe'])) { display: none !important; }
 naver.com###sb-kh-shortents-wrap
 naver.com##.sa_mw.sa_empty_ad
