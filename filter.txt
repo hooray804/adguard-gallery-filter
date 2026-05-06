@@ -20,8 +20,9 @@
 *$script,third-party,domain=nimi.wiki|kissjav.*
 *tcid=$all
 [$domain=/darkgirl[0-9]*\.com/]###adskip, #posterWrap, #main-banner
-[$domain=/darkgirl[0-9]*\.com/]##.banner, a[href*="clickadu.net"]
+[$domain=/darkgirl[0-9]*\.com/]##.banner
 [$domain=/darkgirl[0-9]*\.com/]##+js(click-element, #adbtn)
+[$domain=/darkgirl[0-9]*\.com/]##a[href*="clickadu.net"]
 [$domain=/^hoohootv[0-9]*\.[a-z]{2,}/]###img_row_container
 [$domain=/^tvmon[0-9]*\.[a-z]{2,}/]##.banner_wrap2
 [$domain=/^tvwiki[0-9]*\.net/]###bannerList, #viewCover
