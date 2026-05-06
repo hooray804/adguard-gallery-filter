@@ -109,7 +109,7 @@ postype.com##div[data-sentry-component="RecommendFeedGoogleAd"]:upward(1)
 ppomppu.co.kr##.bottom > div[style]
 ppomppu.co.kr$$tr:has-text(AD)
 qquing.net##[class*="ad-wrapper"]
-redvi79.com##div[style*="z-index: 9999"]:has(img[src*="/banners/"]), img[src*="/banners/"]
+redvi80.com,redvi81.com##div[style*="z-index: 9999"]:has(img[src*="/banners/"]), img[src*="/banners/"]
 rgr.kr,rgrong.net,te31.com###foot:style(height: 150px !important;)
 rgr.kr,rgrong.net,te31.com##div[style='position:relative;z-index:11;']
 ruliweb.com,ppomppu.co.kr,naver.com,daum.net,etoland.co.kr##[id$='_ad']
