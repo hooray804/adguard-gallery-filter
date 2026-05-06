@@ -37,7 +37,7 @@ avsee.ru##.title div[style^='width:100%']
 avsee.ru##.widget-side-box div.main-box:first-child
 avsee.ru##[alt$='gif']
 bamgad6.com,bamgad7.com##ul.row:has(img[src*="/data/file/advertise/"])
-bampt3.com##.small-banners-grid, .small-ad-item
+bampt3.com,bampt4.com##.small-banners-grid, .small-ad-item
 bbs.ruliweb.com##div.clear:has([style*='overflow-x'])
 bbs.ruliweb.com##tr:has(.nick[style^='display: inline-block'])
 blog.naver.com,comic.naver.com##[class*='banner_area']
@@ -47,9 +47,9 @@ chimhaha.net##[id^='slot']
 chimhaha.net##div[style='margin-top: 50px; ']
 chimhaha.net,seoul.co.kr,mule.co.kr##[class*='Ad']
 danawa.com,m.cafe.naver.com##[class^='banner']
-darkgirl8.com###adskip, #posterWrap, #main-banner
-darkgirl8.com##.banner, a[href*="clickadu.net"]
-darkgirl8.com##+js(click-element, #adbtn)
+darkgirl8.com,darkgirl9.com###adskip, #posterWrap, #main-banner
+darkgirl8.com,darkgirl9.com##.banner, a[href*="clickadu.net"]
+darkgirl8.com,darkgirl9.com##+js(click-element, #adbtn)
 dcinside.com##li[id^='comment_']:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.1 !important;)
 ddaltube.com##+js(remove-attr, data-a, #dtube-player)
 ddaltube.com##.dtube-banner-grid, .vjs-video-ad-click-overlay, .player-banner-overlay.absolute > a.block
