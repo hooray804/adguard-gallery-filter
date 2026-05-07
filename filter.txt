@@ -1,5 +1,5 @@
 ! Title: 애드가드 갤러리 필터
-! Version: 2026.05.07
+! Version: 2026.05.08
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
@@ -136,6 +136,7 @@ veritas-a.com##article.grid.body > div.clearfix:has(.ad-template)
 windowsforum.kr,seoul.co.kr,xportsnews.com##.ad
 wowtv.co.kr,cafe.naver.com##[class*='Banner']
 xxzone21.cc##ul.d-flex.flex-wrap:has(a[href*="/bbs/banner.php"])
+yozm.wishket.com##[data-testid^="advertisement-"], [data-testid="top-banner"]
 zod.kr##div:has(> [rel='sponsored'])
 ||*nestads.*
 ||ader.naver.com/*?c=m_$all
@@ -180,7 +181,6 @@ namu.wiki##li:has(a > time):not(:has([href*='/raw/'])):upward(2)
 naver.com##div.sds-comps-vertical-layout.fds-shortents-compact-block[data-template-id="layout"]
 phdkim.net###app-smart-banner
 quasarzone.com##.best-official-news, .new-official-news, .best-official-news-container, .new-official-news-container, .new-partner-saleinfo-container
-yozm.wishket.com##[data-testid^="advertisement-"], [data-testid="top-banner"]
 search.dcinside.com##.right_content
 search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper) ~ div:has(.fds-aib-related-question-list)
 
