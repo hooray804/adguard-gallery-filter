@@ -207,6 +207,7 @@ $@$link[rel="manifest"]
 @@||a*.smlog.co.kr^$app=com.nhn.android.search
 @@||ad-creative.pstatic.net^$app=com.nhn.android.search
 @@||ad-img.gmarket.com^$image,domain=m.gmarket.co.kr|auction.co.kr|www.gmarket.co.kr
+@@||ad.co.kr^$ghide
 @@||adtouch.*
 @@||arca.live^$ghide
 @@||blog.kakaocdn.net*/img.gif
