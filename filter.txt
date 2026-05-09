@@ -26,7 +26,7 @@
 [$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##[href*='/ad'][target='_blank']:has(img)
 [$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##div[class$='gallery'][id] [target='_blank']:upward(1)
 [$domain=/torrentqq[0-9]*\.com/]##div.at-banner:has(a[href*="/ads/"])
-[$domain=/yadongtv[0-9]*\.com/]##div[style*="top: 215px"]:has(img[src*="/banners/"]), img[src*="/banners/"]
+[$domain=/yadongtv[0-9]*\.[a-z]{2,}/]##div[style*="top: 215px"]:has(img[src*="/banners/"]), img[src*="/banners/"]
 algumon.com##div:has([data-tip^='파트너스'], div[style*='height'], ins):is(.card, .deal-2col)
 arca.live##.vrow.hybrid:has(.category-badge)
 auction.co.kr,gmarket.co.kr##.plcc_banner
@@ -37,8 +37,6 @@ avsee.ru##.at-side div.main-box:first-child
 avsee.ru##.title div[style^='width:100%']
 avsee.ru##.widget-side-box div.main-box:first-child
 avsee.ru##[alt$='gif']
-bamgad6.com,bamgad7.com##ul.row:has(img[src*="/data/file/advertise/"])
-bampt3.com,bampt4.com##.small-banners-grid, .small-ad-item
 bbs.ruliweb.com##div.clear:has([style*='overflow-x'])
 bbs.ruliweb.com##tr:has(.nick[style^='display: inline-block'])
 blog.naver.com,comic.naver.com##[class*='banner_area']
@@ -48,9 +46,6 @@ chimhaha.net##[id^='slot']
 chimhaha.net##div[style='margin-top: 50px; ']
 chimhaha.net,seoul.co.kr,mule.co.kr##[class*='Ad']
 danawa.com,m.cafe.naver.com##[class^='banner']
-darkgirl8.com,darkgirl9.com###adskip, #posterWrap, #main-banner
-darkgirl8.com,darkgirl9.com##.banner, a[href*="clickadu.net"]
-darkgirl8.com,darkgirl9.com##+js(click-element, #adbtn)
 dcinside.com##li[id^='comment_']:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.1 !important;)
 ddaltube.com##+js(remove-attr, data-a, #dtube-player)
 ddaltube.com##.dtube-banner-grid, .vjs-video-ad-click-overlay, .player-banner-overlay.absolute > a.block
@@ -66,14 +61,12 @@ get*ads-*-du.a.run.app^
 gmarket.co.kr##.js-impressionable.box__head-ad
 harpi.in##div:has(> script[src])
 hygall.com##div[style='display: flex;justify-content: center; width:100%;height:100px;']
-hygall.com##li.admanager-row
 i-boss.co.kr##div.topNoticeArea
 ibric.org##[class*="ad-wrap"]
 instiz.net##.view_top
 instiz.net##div[class^='hot_u']
 inven.co.kr,mt.co.kr##[class$='ads']
 inven.co.kr,wowtv.co.kr,damoang.net##[class*='-banner']
-jusocon1.com,jusocon2.com##.banner_box
 jusoya.com##div.banner-widget:has(a.secure-banner-link[data-original-url])
 k-hentai.org##.my-3.container
 khan.co.kr##div[class*="banner"]:has(div[class*="ad-wrapper"])
@@ -94,7 +87,6 @@ m.ruliweb.com##tr:has(.nbp_container)
 m.wowtv.co.kr##.container > div[style]
 m.wowtv.co.kr,inven.co.kr##[id*='Banner']
 maplescouter.com,loawa.com###popup
-mingky13.net,ydparty06.net##div:is(.top-wrap, .mid-wrap, .bot-wrap):has(a.grid-asset[data-item-id])
 mlbpark.donga.com##[class^='coupang'], [class*='naver_place']
 mlbpark.donga.com##ul.sub_lists_today.lists > li.items:nth-of-type(6)::before
 mule.co.kr##[class*='-ad-']
@@ -123,7 +115,7 @@ shopping.naver.com##div[class^="_carouselProductList_mobile_carousel_product_lis
 soccerline.kr##.bottBann
 svrforum.com$$ins[class="adsbygoogle"]
 talk.op.gg##+js(set-cookie, _talkg_banner, 1)
-tdgall.com##.admanager-row
+tdgall.com,hygall.com##.admanager-row
 te31.com##table:has(td > script)
 teamblind.com##.coupang_gnb
 teamblind.com##[href^='https://link.coupang.com/re/AFFSDP']
@@ -132,14 +124,12 @@ teamblind.com##div.article:has(> [href^='https://link.coupang.com/re/AFFSDP'])
 teamblind.com##div.comment_area.wrap-comment[style='cursor: pointer;']
 torrentpi150.com,torrentpi160.com##.h20 +.widget-box
 torrentpi150.com,torrentpi160.com##div.col-sm-12 > .widget-box > .basic-post-gallery
-tvroom.vip##.banner_l
+tvroom.*##.banner_l
 uppity.co.kr##.adrop-outer
 veritas-a.com##article.grid.body > div.clearfix:has(.ad-template)
 windowsforum.kr,seoul.co.kr,xportsnews.com##.ad
 wowtv.co.kr,cafe.naver.com##[class*='Banner']
-xxzone21.cc##ul.d-flex.flex-wrap:has(a[href*="/bbs/banner.php"])
 yozm.wishket.com##[data-testid^="advertisement-"], [data-testid="top-banner"]
-zod.kr##div:has(> [rel='sponsored'])
 ||*nestads.*
 ||ader.naver.com/*?c=m_$all
 ||dvdprime.com/file/*/banner
@@ -149,6 +139,15 @@ zod.kr##div:has(> [rel='sponsored'])
 ||t*kor*.com/images/
 ||thumb.kakaocdn.net^$app=com.kakao.talk
 ||trillion.toss.im^
+!
+bamgad6.com,bamgad7.com##ul.row:has(img[src*="/data/file/advertise/"])
+bampt3.com,bampt4.com##.small-banners-grid, .small-ad-item
+darkgirl8.com,darkgirl9.com###adskip, #posterWrap, #main-banner
+darkgirl8.com,darkgirl9.com##.banner, a[href*="clickadu.net"]
+darkgirl8.com,darkgirl9.com%#%#//scriptlet('trusted-click-element', '#adbtn')
+jusocon1.com,jusocon2.com##.banner_box
+mingky13.net,ydparty06.net##div:is(.top-wrap, .mid-wrap, .bot-wrap):has(a.grid-asset[data-item-id])
+xxzone21.cc##ul.d-flex.flex-wrap:has(a[href*="/bbs/banner.php"])
 !
 !#if (adguard && adguard_app_ios && adguard_ext_safari && adguard_ext_chromium && adguard_ext_edge && adguard_ext_firefox)
 ###img_row_container
@@ -221,7 +220,6 @@ $@$link[rel="manifest"]
 @@||kamp.daum.net^$xhr
 @@||koreainvestment.com^$stealth=dpi
 @@||kr^$stealth=dpi
-@@||pincrux.com^$stealth=dpi
 @@||searchad-phinf.pstatic.net^$app=com.nhn.android.search
 @@||shopping.naver.com^$stealth
 @@||slrclub.com/rss/today_photo.slr
@@ -239,6 +237,7 @@ meeco.kr#@##cCon + aside.sidebar2
 mlbpark.donga.com#@#div[class*="_ad"]
 mlbpark.donga.com#@$#div[id^="SmartPhone_"][id$="_today"] .lists > li::before { padding-top: 0px !important; border-bottom: none !important; }
 mule.co.kr#@#.ad-mobile
+sooplive.com#@%#//scriptlet('json-prune-xhr-response', 'data.adballoon', '', 'station/video/a/view')
 www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
 ||api-ao.adison.co^$badfilter
 ||api.mumuglobal.com^$badfilter
