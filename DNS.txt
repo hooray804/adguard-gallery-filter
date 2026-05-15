@@ -1,17 +1,18 @@
 ! Title: 애드가드 갤러리 DNS 필터
-! Version: 2026.05.07
+! Version: 2026.05.15
 ! Description: AdGuard DNS 필터의 오차단을 해제하고 누락된 광고를 차단합니다.
 ! Homepage: https://gallog.dcinside.com/cent8649
 
 
 ! Disable incorrect blocking
-@@||a*.smlog.co.kr^
+||a*.smlog.co.kr^$badfilter
 ||ad-creative.pstatic.net^$badfilter
 ||adshnk.com^$badfilter
 ||adtouch.adbrix.io^$badfilter
 ||api.mumuglobal.com^$badfilter
 ||app.appsflyer.com^$badfilter
 ||dadispapi.gmarket.co.kr^$badfilter
+||exlogcollector.sooplive.com^$badfilter
 ||sdk.airbridge.io^$badfilter
 ||searchad-phinf.pstatic.net^$badfilter
 ||store-api.mumuglobal.com^$badfilter
