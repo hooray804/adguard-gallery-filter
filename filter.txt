@@ -134,6 +134,7 @@ yozm.wishket.com##[data-testid^="advertisement-"], [data-testid="top-banner"]
 ||dvdprime.com/file/*/banner
 ||kamp.kakao.com^$app=com.kakao.talk
 ||link.coupang.com/re/AFFHOME?lptag=*&amp;subid=pointlink$all,reason=수익링크
+||serv.ds.kakao.com^
 ||shortformstats.kakao.com^$app=com.kakao.talk
 ||t*kor*.com/images/
 ||thumb.kakaocdn.net^$app=com.kakao.talk
