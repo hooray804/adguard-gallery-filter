@@ -102,6 +102,7 @@ orbi.kr##li.listAd
 pay.naver.com##div[class^='BottomAds_article']
 postype.com##div[data-sentry-component="RecommendFeedGoogleAd"]:upward(1)
 ppomppu.co.kr##.bottom > div[style]
+ppomppu.co.kr##tr[id*="_list_ad_"]
 ppomppu.co.kr$$tr:has-text(AD)
 ppomppu.co.kr,m.ppomppu1.co.kr##[id$='_popup']
 qquing.net,ibric.org##[class*="ad-wrap"]
