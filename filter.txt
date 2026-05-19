@@ -76,8 +76,8 @@ jusoya.com##div.banner-widget:has(a.secure-banner-link[data-original-url])
 k-hentai.org##.my-3.container
 khan.co.kr##div[class*="banner"]:has(div[class*="ad-wrapper"])
 linkareer.com##[role="advertisement"]:not([class^="card-item"])
-linkareer.com##ins.adsbygoogle:upward(div[style*="min-height"])
 linkareer.com##div:has(> ins.adsbygoogle)
+linkareer.com##ins.adsbygoogle:upward(div[style*="min-height"])
 litomi.in##[data-juicy-ads-slot]
 m.bobaedream.co.kr##div[style$='height:50px;']
 m.cafe.daum.net##[class*='_banner']
