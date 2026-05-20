@@ -116,7 +116,7 @@ qquing.net,ibric.org##[class*="ad-wrap"]
 rgr.kr,rgrong.net,te31.com###foot:style(height: 150px !important;)
 rgr.kr,rgrong.net,te31.com##div[style='position:relative;z-index:11;']
 ruliweb.com,ppomppu.co.kr,naver.com,daum.net,etoland.co.kr##[id$='_ad']
-sbxh1.com##[aria-label='배너']
+sbxh1.com##[aria-label*='배너']
 search.danawa.com##[id^='powerShoppingArea']
 search.danawa.com##li[data-itemtype='adsmart']
 section.blog.naver.com##.area_advertisement
