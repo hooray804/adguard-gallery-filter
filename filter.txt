@@ -30,6 +30,8 @@
 a-ha.io##div[aria-label="advertisement"]
 algumon.com##div:has([data-tip^='파트너스'], div[style*='height'], ins):is(.card, .deal-2col)
 arca.live##.vrow.hybrid:has(.category-badge)
+asked.kr##div[class^="kad_"]:has(ins.kakao_ad_area)
+asked.kr##div[class*="index_"] div[class*="banner_"]
 auction.co.kr,gmarket.co.kr##.plcc_banner
 avdbs.com##.ad-btn[class*='tp']
 avsee.ru##+js(acis, decodeURI, split)
