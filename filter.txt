@@ -204,6 +204,8 @@ fmkorea.com##+js(set, link_url, '')
 /api/me/layout-settings
 @@||piku.co.kr^$generichide
 @@||sbxh1.com^$generichide
+@@||sbxh2.com^$generichide
+@@||sbxh3.com^$generichide
 aagag.com##+js(set-cookie, ab, 0)
 aagag.com#$#.la { position: absolute !important; left: -3000px !important; width: 60px !important; height: 20px !important; }
 kissjav.*##+js(rmnt, script, /contextmenu|ghost|localStorage|video\-ad\-overlay|admanager/i)
@@ -213,7 +215,7 @@ m.fmkorea.com##script ~ div.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):
 m.fmkorea.com##section.fmWidgetStyle2019.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):matches-css(padding: /[0-5]px/):remove()
 namu.wiki##div:has(img[data-doc]:not([data-doc^="/jump/"]):not([data-doc^="/w/"])):not(:has([id])), div:has(> div[id]:empty:only-child)
 sbxh1.com,sbxh2.com,sbxh3.com##+js(nosiif, , 700)
-sbxh1.com#%#(function(){const o=window.getComputedStyle;window.getComputedStyle=function(e,t){return e&&(e.hasAttribute("data-adblock-bait")||e.hasAttribute("data-adblock-root")||"1"===e.getAttribute("data-br"))?{display:"block",visibility:"visible",opacity:"1"}: o.apply(this,arguments)};const f=window.fetch;window.fetch=function(e,t){const u="string"==typeof e?e:e instanceof URL?e.href:e&&e.url?e.url:"";if(u.includes("/api/me/block-check"))return Promise.resolve(new Response(JSON.stringify({ok:!0,blocked:!1}),{headers:{"content-type":"application/json"}}));if(u.includes("/api/dev-block"))return Promise.resolve(new Response(JSON.stringify({ok:!0}),{headers:{"content-type":"application/json"}}));return f.apply(this,arguments)}})();
+sbxh1.com,sbxh2.com,sbxh3.com#%#(function(){const o=window.getComputedStyle;window.getComputedStyle=function(e,t){return e&&(e.hasAttribute("data-adblock-bait")||e.hasAttribute("data-adblock-root")||"1"===e.getAttribute("data-br"))?{display:"block",visibility:"visible",opacity:"1"}: o.apply(this,arguments)};const f=window.fetch;window.fetch=function(e,t){const u="string"==typeof e?e:e instanceof URL?e.href:e&&e.url?e.url:"";if(u.includes("/api/me/block-check"))return Promise.resolve(new Response(JSON.stringify({ok:!0,blocked:!1}),{headers:{"content-type":"application/json"}}));if(u.includes("/api/dev-block"))return Promise.resolve(new Response(JSON.stringify({ok:!0}),{headers:{"content-type":"application/json"}}));return f.apply(this,arguments)}})();
 ||maxmovie.com/_next/static/chunks/framework.aa400efa16f23e2b0cfe.js
 
 ! Incorrect blocking
