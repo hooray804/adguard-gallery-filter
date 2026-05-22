@@ -203,6 +203,7 @@ fmkorea.com##+js(set, link_url, '')
 ! Anti-adblock
 @@||piku.co.kr^$generichide
 @@||sbxh*.com^$generichide
+[$domain=/^sbxh[0-9]*\.com/]##+js(set, Number.isFinite, noopFunc)
 aagag.com##+js(set-cookie, ab, 0)
 aagag.com#$#.la { position: absolute !important; left: -3000px !important; width: 60px !important; height: 20px !important; }
 kissjav.*##+js(rmnt, script, /contextmenu|ghost|localStorage|video\-ad\-overlay|admanager/i)
@@ -211,7 +212,7 @@ m.fmkorea.com##+js(set, _make_power_link_identifier, noopFunc)
 m.fmkorea.com##script ~ div.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):matches-css(padding: /[0-5]px/):remove()
 m.fmkorea.com##section.fmWidgetStyle2019.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):matches-css(padding: /[0-5]px/):remove()
 namu.wiki##div:has(img[data-doc]:not([data-doc^="/jump/"]):not([data-doc^="/w/"])):not(:has([id])), div:has(> div[id]:empty:only-child)
-sbxh1.com,sbxh2.com,sbxh3.com##+js(nosiif, , 700)
+sbxh9*1.com##+js(set, Number.isFinite, noopFunc)
 sbxh1.com,sbxh2.com,sbxh3.com#%#!function(){"use strict";const t=window.fetch;window.fetch=function(e,o){const n="string"==typeof e?e:e instanceof URL?e.href:e&&e.url?e.url:"";return n.includes("/api/dev-block")||n.includes("/api/me/block-check")?Promise.resolve(new Response(JSON.stringify({ok:!0,blocked:!1}),{status:200,headers:{"Content-Type":"application/json"}})):t.apply(this,arguments)};const e=Element.prototype.getAttribute;Element.prototype.getAttribute=function(t){return"data-ab"===t||"data-br-n"===t?"0":e.apply(this,arguments)};const o=Element.prototype.getBoundingClientRect;Element.prototype.getBoundingClientRect=function(){return this.hasAttribute("data-bs")||this.hasAttribute("data-bp")||this.hasAttribute("data-br")?{top:0,left:0,width:300,height:250,bottom:250,right:300,x:0,y:0,toJSON:()=>{}}:o.apply(this,arguments)};const n=window.getComputedStyle;window.getComputedStyle=function(t,e){const o=n.apply(this,arguments);return t&&(t.hasAttribute("data-bs")||t.hasAttribute("data-bp")||t.hasAttribute("data-br"))?new Proxy(o,{get:(t,e)=>"display"===e?"block":"visibility"===e?"visible":"opacity"===e?"1":t[e]}):o},window.stop=function(){};const i=CSSStyleDeclaration.prototype.setProperty;CSSStyleDeclaration.prototype.setProperty=function(t,e,o){if("overflow"!==t||"hidden"!==e)return i.apply(this,arguments)};try{document.cookie="ntk_blk=; Path=/; Max-Age=0; SameSite=Lax; Secure",localStorage.removeItem("ntk_blk"),localStorage.removeItem("ntk_dev_warn")}catch(t){}const r=Storage.prototype.setItem;Storage.prototype.setItem=function(t,e){if(!t.startsWith("ntk_blk")&&!t.startsWith("ntk_dev_warn"))return r.apply(this,arguments)}}();
 ||maxmovie.com/_next/static/chunks/framework.aa400efa16f23e2b0cfe.js
 
