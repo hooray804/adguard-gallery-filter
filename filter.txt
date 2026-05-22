@@ -138,6 +138,7 @@ veritas-a.com##article.grid.body > div.clearfix:has(.ad-template)
 windowsforum.kr,seoul.co.kr,xportsnews.com##.ad
 wowtv.co.kr,cafe.naver.com##[class*='Banner']
 yozm.wishket.com##[data-testid^="advertisement-"], [data-testid="top-banner"]
+yugiyu.com##.popup
 zod.kr##div[id]:has(> [target] > img)
 ||*nestads.*
 ||ader.naver.com/*?c=m_$all
