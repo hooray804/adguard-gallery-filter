@@ -77,6 +77,8 @@ inven.co.kr,wowtv.co.kr,damoang.net,hungryapp.co.kr##[class*='-banner']
 jusoya.com##div.banner-widget:has(a.secure-banner-link[data-original-url])
 k-hentai.org##.my-3.container
 khan.co.kr##div[class*="banner"]:has(div[class*="ad-wrapper"])
+kidd.co.kr##.product-recommendations
+kidd.co.kr##slidebanner
 linkareer.com##[role="advertisement"]:not([class^="card-item"])
 linkareer.com,m.ppomppu.co.kr##div:has(> ins.adsbygoogle)
 linkareer.com##ins.adsbygoogle:upward(div[style*="min-height"])
