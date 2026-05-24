@@ -225,7 +225,7 @@ sbxh1.com,sbxh2.com,sbxh3.com#@%#//scriptlet('set-local-storage-item', '/ntk_blk
 sbxh1.com,sbxh2.com,sbxh3.com#@%#//scriptlet('spoof-css', '[data-bs], img[width], img[height], [data-bp]', 'height', '100')
 sbxh1.com,sbxh2.com,sbxh3.com#@%#//scriptlet('spoof-css', '[data-bs], img[width], img[height], [data-bp]', 'width', '100')
 @@||sbxh*.com/init/block.js
-sbxh1.com,sbxh2.com,sbxh3.com#%#(()=>{let f=()=>{document.querySelectorAll('[data-br="1"] button,[data-bs="1"] button').forEach(e=>{if(!e.querySelector('.x-cv')){e.style.position="relative";let o=document.createElement("div");o.className="x-cv";o.style.cssText="position:absolute;inset:0;background:#d0d0d0;z-index:10;pointer-events:none;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:bold;color:#b0b0b0;letter-spacing:1px;";o.textContent="AdGuard";e.appendChild(o)}})};new MutationObserver(f).observe(document.documentElement,{childList:!0,subtree:!0});f()})();
+sbxh1.com,sbxh2.com,sbxh3.com#%#(()=>{let f=()=>{document.querySelectorAll('[data-br="1"] button,[data-bs="1"] button').forEach(e=>{if(!e.querySelector('.x-cv')){e.style.position="relative";let o=document.createElement("div");o.className="x-cv";o.style.cssText="position:absolute;inset:0;background:rgba(20,24,33,0.04);z-index:10;pointer-events:auto;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:bold;color:rgba(20,24,33,0.08);letter-spacing:1px;";o.textContent="AdGuard";e.appendChild(o)}})};new MutationObserver(f).observe(document.documentElement,{childList:!0,subtree:!0});f()})();
 !#endif
 
 ! Incorrect blocking
