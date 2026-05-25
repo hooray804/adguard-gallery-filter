@@ -63,6 +63,8 @@ fnnews.com##[id="hotPhotoArea"], [data-widget_id]
 fnnews.com##div[style*="height:"]:has(iframe, script, ins), div[style*="text-align: center"]:has(> iframe)
 gall.dcinside.com##.gnb_list.clear > li:has(> [onclick])
 get*ads-*-du.a.run.app^
+ggoorr.net##div[style^="min-height"]:has(> ins.adsbygoogle)
+ggoorr.net##li.code-list-middle > div:has(ins.adsbygoogle)
 gmarket.co.kr##.js-impressionable.box__head-ad
 harpi.in##div:has(> script[src])
 hungryapp.co.kr##.bannersww
