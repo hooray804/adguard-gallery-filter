@@ -224,8 +224,6 @@ namu.wiki##div:has(img[data-doc]:not([data-doc^="/jump/"]):not([data-doc^="/w/"]
 !
 sbxh1.com,sbxh2.com,sbxh3.com#@#[data-brs][data-br]
 sbxh1.com,sbxh2.com,sbxh3.com#@%#//scriptlet('set-local-storage-item', '/ntk_blk_/', '$remove$')
-sbxh1.com,sbxh2.com,sbxh3.com#@%#//scriptlet('spoof-css', '[data-bs], img[width], img[height], [data-bp]', 'height', '100')
-sbxh1.com,sbxh2.com,sbxh3.com#@%#//scriptlet('spoof-css', '[data-bs], img[width], img[height], [data-bp]', 'width', '100')
 @@||sbxh*.com/init/block.js
 sbxh1.com,sbxh2.com,sbxh3.com#%#(()=>{let f=()=>{document.querySelectorAll('[data-br="1"] button,[data-bs="1"] button').forEach(e=>{if(!e.querySelector('.x-cv')){e.style.position="relative";let o=document.createElement("div");o.className="x-cv";o.style.cssText="position:absolute;inset:0;background:rgba(20,24,33,0.04);z-index:10;pointer-events:auto;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:bold;color:rgba(20,24,33,0.08);letter-spacing:1px;";o.textContent="AdGuard";e.appendChild(o)}})};new MutationObserver(f).observe(document.documentElement,{childList:!0,subtree:!0});f()})();
 !
