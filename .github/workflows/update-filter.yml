@@ -1,4 +1,4 @@
-Name: Update Filter Header
+name: Update Filter Header
 on:
   push:
     branches:
