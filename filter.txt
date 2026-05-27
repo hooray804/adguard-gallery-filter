@@ -113,6 +113,9 @@ nexon.com,gg,ps,xyz,loawa.com,or.kr,go.kr,ai,chat#@#[target='_blank']:has([src*=
 orbi.kr##div[x-data="advertisement"]
 orbi.kr##li.listAd
 pay.naver.com##div[class^='BottomAds_article']
+postshare.co.kr###adWallContainer
+postshare.co.kr###blurredContentArea:style(filter: none !important; -webkit-filter: none !important; opacity: 1 !important; pointer-events: auto !important; user-select: auto !important;)
+postshare.co.kr##div:has(> a > img[src*="/images/banner/"])
 postype.com##div[data-sentry-component="RecommendFeedGoogleAd"]:upward(1)
 ppomppu.co.kr##.bottom > div[style]
 ppomppu.co.kr##tr[id*="_list_ad_"]
