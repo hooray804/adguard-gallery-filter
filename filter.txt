@@ -172,7 +172,7 @@ fxfx324.com,fxfx325.com,wftoon211.com,wftoon212.com##div.top-banner
 jusocon1.com,jusocon2.com##.banner_box
 mingky13.net,ydparty08.net##div:is(.top-wrap, .mid-wrap, .bot-wrap):has(a.grid-asset[data-item-id])
 sbxh1.com,sbxh2.com,sbxh3.com##[data-pm-ov="1"]
-tkor119.com##[class*="bancol"], div.main_top_bann
+tkor121.com##[class*="bancol"], div.main_top_bann
 wtwt327.com##div.banner
 xxzone22.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
 !
