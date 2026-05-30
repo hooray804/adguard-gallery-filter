@@ -171,12 +171,12 @@ bampt3.com,bampt4.com##.small-banners-grid, .small-ad-item, .premium-banner-wrap
 darkgirl8.com###adskip, #posterWrap, #main-banner
 darkgirl8.com##.banner, a[href*="clickadu.net"]
 darkgirl8.com%#%#//scriptlet('trusted-click-element', '#adbtn')
-fxfx324.com,fxfx325.com,wftoon211.com,wftoon212.com##div.top-banner
+fxfx325.com,fxfx326.com,wftoon213.com,wftoon214.com##div.top-banner
 jusocon1.com,jusocon2.com##.banner_box
 mingky13.net,ydparty08.net##div:is(.top-wrap, .mid-wrap, .bot-wrap):has(a.grid-asset[data-item-id])
 sbxh1.com,sbxh2.com,sbxh3.com##[data-pm-ov="1"]
 tkor121.com##[class*="bancol"], div.main_top_bann
-wtwt327.com##div.banner
+wtwt328.com,wtwt329.com##div.banner
 xxzone22.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
 !
 !#if (adguard && adguard_app_ios && adguard_ext_safari && adguard_ext_chromium && adguard_ext_edge && adguard_ext_firefox)
