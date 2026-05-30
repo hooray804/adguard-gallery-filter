@@ -145,8 +145,6 @@ teamblind.com##[href^='https://link.coupang.com/re/AFFSDP']
 teamblind.com##div.article-list-pre:has([href^='https://link.coupang.com/re/AFFSDP'])
 teamblind.com##div.article:has(> [href^='https://link.coupang.com/re/AFFSDP'])
 teamblind.com##div.comment_area.wrap-comment[style='cursor: pointer;']
-torrentpi150.com,torrentpi160.com##.h20 +.widget-box
-torrentpi150.com,torrentpi160.com##div.col-sm-12 > .widget-box > .basic-post-gallery
 tvroom.*##.banner_l
 uppity.co.kr##.adrop-outer
 veritas-a.com##article.grid.body > div.clearfix:has(.ad-template)
