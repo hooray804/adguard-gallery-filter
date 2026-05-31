@@ -14,6 +14,7 @@
 ##[class^='basic-banner'][id]
 ##[class^='happy-header']
 ##[id^='hd_pop']
+##[target='_blank']:has([src*='/banner/'])
 *##[target='_blank']:has([src*='/banner/'])
 *$script,third-party,domain=nimi.wiki|kissjav.*
 *tcid=$all
@@ -150,6 +151,7 @@ uppity.co.kr##.adrop-outer
 veritas-a.com##article.grid.body > div.clearfix:has(.ad-template)
 windowsforum.kr,seoul.co.kr,xportsnews.com##.ad
 wowtv.co.kr,cafe.naver.com##[class*='Banner']
+xtoon365.com##[class$='-ad']
 yozm.wishket.com##[data-testid^="advertisement-"], [data-testid="top-banner"]
 yugiyu.com##.popup
 zod.kr##div[id]:has(> [target] > img)
@@ -158,7 +160,6 @@ zod.kr##div[id]:has(> [target] > img)
 ||dvdprime.com/file/*/banner
 ||kamp.kakao.com^$app=com.kakao.talk
 ||link.coupang.com/re/AFFHOME?lptag=*&amp;subid=pointlink$all,reason=수익링크
-||serv.ds.kakao.com^
 ||shortformstats.kakao.com^$app=com.kakao.talk
 ||t*kor*.com/images/
 ||thumb.kakaocdn.net^$app=com.kakao.talk
@@ -168,7 +169,7 @@ bamgad7.com,bamgad8.com##ul.row:has(img[src*="/file/advertise/"])
 bampt3.com,bampt4.com##.small-banners-grid, .small-ad-item, .premium-banner-wrapper
 darkgirl8.com###adskip, #posterWrap, #main-banner
 darkgirl8.com##.banner, a[href*="clickadu.net"]
-darkgirl8.com%#%#//scriptlet('trusted-click-element', '#adbtn')
+darkgirl8.com#%#//scriptlet('trusted-click-element', '#adbtn')
 fxfx325.com,fxfx326.com,wftoon213.com,wftoon214.com##div.top-banner
 jusocon1.com,jusocon2.com##.banner_box
 mingky13.net,ydparty08.net##div:is(.top-wrap, .mid-wrap, .bot-wrap):has(a.grid-asset[data-item-id])
@@ -233,8 +234,7 @@ m.fmkorea.com##section.fmWidgetStyle2019.bd_mobile.bd:matches-css(margin: /[0-5]
 namu.wiki##div:has(img[data-doc]:not([data-doc^="/jump/"]):not([data-doc^="/w/"])):not(:has([id])), div:has(> div[id]:empty:only-child)
 ||maxmovie.com/_next/static/chunks/framework.aa400efa16f23e2b0cfe.js
 !
-sbxh1.com,sbxh2.com,sbxh3.com#@#[data-brs][data-br]
-sbxh1.com,sbxh2.com,sbxh3.com#@%#//scriptlet('set-local-storage-item', '/ntk_blk_/', '$remove$')
+sbxh3.com,sbxh4.com,sbxh5.com#@#[data-brs][data-br]
 !
 
 ! Incorrect blocking
@@ -255,6 +255,7 @@ $@$link[rel="manifest"]
 @@||kamp.daum.net^$xhr
 @@||koreainvestment.com^$stealth=dpi
 @@||kr^$stealth=dpi
+@@||nexon.com^$stealth=dpi
 @@||searchad-phinf.pstatic.net^$app=com.nhn.android.search
 @@||shopping.naver.com^$stealth
 @@||slrclub.com/rss/today_photo.slr
@@ -282,6 +283,9 @@ www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
 ||ssl.pstatic.net/t.static.blog/nmobile/versioning//common/lib/ntm/ntm-blog-web-*.js$badfilter
 ||store-api.mumuglobal.com^$badfilter
 ||tnkfactory.com^$badfilter
+!#if (adguard && adguard_app_windows)
+@@||coupang.com^$stealth
+!#endif
 
 ! Malware & Spam
 ||ublockdns.com^$doc
