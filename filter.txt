@@ -105,6 +105,8 @@ m.ppomppu.co.kr##div[style^='text-align:center;']
 m.ruliweb.com##tr:has(.nbp_container)
 m.wowtv.co.kr##.container > div[style]
 m.wowtv.co.kr,inven.co.kr##[id*='Banner']
+map.naver.com##.marker_icon_area.main:has(img[src*="/ad-marker/"])
+map.naver.com##div[class*="StyledAdGuideTooltip"]
 maplescouter.com,loawa.com###popup
 mlbpark.donga.com##[class^='coupang'], [class*='naver_place']
 mlbpark.donga.com##ul.sub_lists_today.lists > li.items:nth-of-type(6)::before
