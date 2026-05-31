@@ -175,7 +175,7 @@ fxfx325.com,fxfx326.com,wftoon213.com,wftoon214.com##div.top-banner
 jusocon1.com,jusocon2.com##.banner_box
 mingky13.net,ydparty08.net##div:is(.top-wrap, .mid-wrap, .bot-wrap):has(a.grid-asset[data-item-id])
 sbxh1.com,sbxh2.com,sbxh3.com##[data-pm-ov="1"]
-tkor121.com##[class*="bancol"], div.main_top_bann
+tkor121.com##.main_top_bann
 wtwt328.com,wtwt329.com##div.banner
 xxzone23.top,xxzone24.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
 !
@@ -212,7 +212,7 @@ namu.wiki##li:has(a > time):not(:has([href*='/raw/'])):upward(2)
 naver.com##div.sds-comps-vertical-layout.fds-shortents-compact-block[data-template-id="layout"]
 phdkim.net##.app-smart-banner
 quasarzone.com##.best-official-news, .new-official-news, .best-official-news-container, .new-official-news-container, .new-partner-saleinfo-container
-sbxh1.com,sbxh2.com,sbxh3.com##.vw-swipe-hint
+sbxh3.com,sbxh4.com,sbxh5.com##.vw-swipe-hint
 search.dcinside.com##.right_content
 search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) + div
 search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) + div + div
