@@ -116,7 +116,6 @@ naver.com##.sa_mw.sa_empty_ad
 news.jtbc.co.kr##.print-hide:has-text(AD)
 nexon.com,gg,ps,xyz,loawa.com,or.kr,go.kr,ai,chat#@#[target='_blank']:has([src*='/banner/'])
 nimi.wiki##+js(aeld, click, popMagic)
-nimi.wiki##+js(window.open-defuser)
 orbi.kr##div[x-data="advertisement"]
 orbi.kr##li.listAd
 pay.naver.com##div[class^='BottomAds_article']
