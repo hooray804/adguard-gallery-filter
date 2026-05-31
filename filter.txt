@@ -115,6 +115,7 @@ naver.com###sb-kh-shortents-wrap
 naver.com##.sa_mw.sa_empty_ad
 news.jtbc.co.kr##.print-hide:has-text(AD)
 nexon.com,gg,ps,xyz,loawa.com,or.kr,go.kr,ai,chat#@#[target='_blank']:has([src*='/banner/'])
+nimi.wiki##+js(aeld, click, doEvent)
 nimi.wiki##+js(aeld, click, popMagic)
 orbi.kr##div[x-data="advertisement"]
 orbi.kr##li.listAd
