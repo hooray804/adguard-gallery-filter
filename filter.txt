@@ -105,6 +105,7 @@ m.dcinside.com##.view-btm-con
 m.dcinside.com##li:not(.notice):has(> .detail-top-lnk)
 m.ppomppu.co.kr##.js-ad_slot.JS-div_gpt_ad
 m.ppomppu.co.kr##div[style^='text-align:center;']
+m.ruliweb.com##.board_bottom > .ruli_delayed_ad_slot
 m.ruliweb.com##tr:has(.nbp_container)
 m.wowtv.co.kr##.container > div[style]
 m.wowtv.co.kr,inven.co.kr##[id*='Banner']
@@ -191,7 +192,6 @@ xxzone23.top,xxzone24.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBanne
 !#endif
 
 ! Minor distractions
-arca.live##.d-lg-none.topbar-area
 arca.live##a:has(img[src*="karisuma-point-x2.png"])
 gall.dcinside.com##.dc_all
 gall.dcinside.com##.dcmedia.content_box
