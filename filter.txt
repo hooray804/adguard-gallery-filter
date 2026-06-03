@@ -113,8 +113,10 @@ m.wowtv.co.kr,inven.co.kr##[id*='Banner']
 map.naver.com##.marker_icon_area.main:has(img[src*="/ad-marker/"])
 map.naver.com##div[class*="StyledAdGuideTooltip"]
 mimint.co.kr###anchor-layer:has(.anchor-slot)
+mimint.co.kr##.ads-container
 mimint.co.kr##.banner-split-reveal
-mimint.co.kr##.index-right-banner:has(.main-right-ad)
+mimint.co.kr##.index-right-banner
+mimint.co.kr##.list_row:has(div[data-ad-mode])
 maplescouter.com,loawa.com###popup
 mlbpark.donga.com##[class^='coupang'], [class*='naver_place']
 mlbpark.donga.com##ul.sub_lists_today.lists > li.items:nth-of-type(6)::before
