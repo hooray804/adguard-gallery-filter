@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Gallery Extension for FMKOREA
-// @version      4.04
+// @version      4.05 (정치글 버그 수정)
 // @description  (모바일) 사이트 좌측 상단에서 메뉴를 열어주세요. PC는 일부 옵션만 자동 적용됩니다.
 // @author       cent8649
 // @match        https://*.fmkorea.com/*
@@ -185,8 +185,8 @@
             for (const t of txts) if (bKeys.some(k => t.textContent.includes(k))) { hide = true; break; }
             if (!hide && (srchT || clrT)) if (bKeys.some(k => (srchT && srchT.textContent.includes(k)) || (clrT && clrT.textContent.includes(k)))) hide = true;
         }
-        if (hide) li.style.setProperty('display', 'none', 'important');
-        else li.style.removeProperty('display');
+        if (hide) { li.style.setProperty('display', 'none', 'important'); li.dataset.fmkHidden = '1'; }
+        else if (li.dataset.fmkHidden) { li.style.removeProperty('display'); delete li.dataset.fmkHidden; }
     };
 
     const rescan = () => qsa('li').forEach(scan);
