@@ -225,6 +225,8 @@ m.dcinside.com##section.grid > .md-tit-box:has-text(Daum)
 m.naver.com##.chf_feed_wrap > .type_square.cc_clip_list
 m.naver.com##script#MM_search_disaster ~*
 mlbpark.donga.com##.the_hottest
+muko.kr##.lp-install-chip
+muko.kr##.muko-aa-join
 namu.wiki##div[class]:matches-css(position: sticky)
 namu.wiki##li:has(a > time):not(:has([href*='/raw/'])):upward(2)
 naver.com##div.sds-comps-vertical-layout.fds-shortents-compact-block[data-template-id="layout"]
