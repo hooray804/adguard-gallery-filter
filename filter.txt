@@ -197,7 +197,7 @@ jusocon1.com,jusocon2.com##.banner_box
 mingky.live,ydparty.tv##div:is(.top-wrap, .mid-wrap, .bot-wrap):has(a.grid-asset[data-item-id])
 redbogo2.com,redbogo3.com##.ad-banner-section
 sbxh3.com,sbxh4.com,sbxh5.com##[data-pm-ov="1"]
-tkor123.com,tkor125.com,tkor127.com##.main_top_bann
+tkor124.com,tkor125.com,tkor127.com##.main_top_bann
 xxzone23.top,xxzone24.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
 !
 !#if (adguard && adguard_app_ios && adguard_ext_safari && adguard_ext_chromium && adguard_ext_edge && adguard_ext_firefox)
