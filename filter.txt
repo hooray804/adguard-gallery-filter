@@ -161,6 +161,7 @@ seoul.co.kr###bottomScrollBox
 seoul.co.kr##[class^='ad']
 shopping.naver.com##div[class^="_carouselProductList_mobile_carousel_product_list_"]
 soccerline.kr##.bottBann
+ssalmuk.com##+js(json-prune, data.[-].popupCode)
 svrforum.com$$ins[class="adsbygoogle"]
 tdgall.com,hygall.com##.admanager-row
 te31.com##table:has(td > script)
