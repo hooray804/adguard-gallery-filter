@@ -258,7 +258,7 @@ m.fmkorea.com##section.fmWidgetStyle2019.bd_mobile.bd:matches-css(margin: /[0-5]
 namu.wiki##div:has(img[data-doc]:not([data-doc^="/jump/"]):not([data-doc^="/w/"])):not(:has([id])), div:has(> div[id]:empty:only-child)
 ||maxmovie.com/_next/static/chunks/framework.aa400efa16f23e2b0cfe.js
 !
-sbxh5.com,sbxh6.com,sbxh7.com#@#[data-brs][data-br]
+sbxh6.com,sbxh7.com,sbxh8.com#@#[data-brs][data-br]
 !
 
 ! Incorrect blocking
