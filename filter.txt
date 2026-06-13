@@ -1,5 +1,5 @@
 ! Title: 애드가드 갤러리 필터
-! Version: 2026.06.13.0
+! Version: 2026.06.13.1
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
@@ -191,14 +191,14 @@ zod.kr##div[id]:has(> [target] > img)
 !
 bamgad7.com,bamgad8.com##ul.row:has(img[src*="/file/advertise/"])
 bampt3.com,bampt4.com##.small-banners-grid, .small-ad-item, .premium-banner-wrapper
-darkgirl10.com,darkgirl11.com###adskip, #posterWrap, #main-banner
-darkgirl10.com,darkgirl11.com##.banner, a[href*="clickadu.net"]
-darkgirl10.com,darkgirl11.com#%#//scriptlet('trusted-click-element', '#adbtn')
+darkgirl11.com,darkgirl12.com###adskip, #posterWrap, #main-banner
+darkgirl11.com,darkgirl12.com##.banner, a[href*="clickadu.net"]
+darkgirl11.com,darkgirl12.com#%#//scriptlet('trusted-click-element', '#adbtn')
 jusocon1.com,jusocon2.com##.banner_box
-mingky.live,ydparty.tv##div:is(.top-wrap, .mid-wrap, .bot-wrap):has(a.grid-asset[data-item-id])
-redbogo2.com,redbogo3.com##.ad-banner-section
-sbxh3.com,sbxh4.com,sbxh5.com##[data-pm-ov="1"]
-xxzone23.top,xxzone24.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
+mingky04.live,ydparty02.tv##div:is(.top-wrap, .mid-wrap, .bot-wrap):has(a.grid-asset[data-item-id])
+redbogo4.com,redbogo5.com##.ad-banner-section
+sbxh5.com,sbxh6.com,sbxh7.com##[data-pm-ov="1"]
+xxzone24.top,xxzone25.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
 yugiyu2.com,yugiyu3.com##ul:has(> li.banner-item)
 !
 !#if (adguard && adguard_app_ios && adguard_ext_safari && adguard_ext_chromium && adguard_ext_edge && adguard_ext_firefox)
@@ -233,7 +233,7 @@ namu.wiki##li:has(a > time):not(:has([href*='/raw/'])):upward(2)
 naver.com##div.sds-comps-vertical-layout.fds-shortents-compact-block[data-template-id="layout"]
 phdkim.net##.app-smart-banner
 quasarzone.com##.best-official-news, .new-official-news, .best-official-news-container, .new-official-news-container, .new-partner-saleinfo-container
-sbxh3.com,sbxh4.com,sbxh5.com##.vw-swipe-hint
+sbxh5.com,sbxh6.com,sbxh7.com##.vw-swipe-hint
 search.dcinside.com##.right_content
 search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) + div
 search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) + div + div
@@ -256,7 +256,7 @@ m.fmkorea.com##section.fmWidgetStyle2019.bd_mobile.bd:matches-css(margin: /[0-5]
 namu.wiki##div:has(img[data-doc]:not([data-doc^="/jump/"]):not([data-doc^="/w/"])):not(:has([id])), div:has(> div[id]:empty:only-child)
 ||maxmovie.com/_next/static/chunks/framework.aa400efa16f23e2b0cfe.js
 !
-sbxh3.com,sbxh4.com,sbxh5.com#@#[data-brs][data-br]
+sbxh5.com,sbxh6.com,sbxh7.com#@#[data-brs][data-br]
 !
 
 ! Incorrect blocking
