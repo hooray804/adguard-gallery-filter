@@ -233,10 +233,12 @@ namu.wiki##li:has(a > time):not(:has([href*='/raw/'])):upward(2)
 naver.com##div.sds-comps-vertical-layout.fds-shortents-compact-block[data-template-id="layout"]
 phdkim.net##.app-smart-banner
 quasarzone.com##.best-official-news, .new-official-news, .best-official-news-container, .new-official-news-container, .new-partner-saleinfo-container
-sbxh6.com,sbxh7.com,sbxh8.com##.vw-swipe-hint
 search.dcinside.com##.right_content
 search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) + div
 search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) + div + div
+!
+sbxh6.com,sbxh7.com,sbxh8.com##.vw-swipe-hint
+!
 
 ! Annoyances
 cafe.naver.com##+js(remove-class, disable-select, #ct)
@@ -255,6 +257,9 @@ m.fmkorea.com##script ~ div.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):
 m.fmkorea.com##section.fmWidgetStyle2019.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):matches-css(padding: /[0-5]px/):remove()
 namu.wiki##div:has(img[data-doc]:not([data-doc^="/jump/"]):not([data-doc^="/w/"])):not(:has([id])), div:has(> div[id]:empty:only-child)
 ||maxmovie.com/_next/static/chunks/framework.aa400efa16f23e2b0cfe.js
+!
+sbxh5.com,sbxh6.com,sbxh7.com#@#[data-brs][data-br]
+!
 
 ! Incorrect blocking
 $@$link[rel="manifest"]
