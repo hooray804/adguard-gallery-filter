@@ -209,6 +209,12 @@ yugiyu2.com,yugiyu3.com##ul:has(> li.banner-item)
 ###viewCover
 ##.banner_wrap2
 !#endif
+!
+!#if adguard_app_ios
+hitomi.la##div:has(> div[id^="__clb-spot"])
+hitomi.la##div:has(> iframe[id^="__clb-spot"])
+hitomi.la##+js(nowoif)
+!#endif
 
 ! Minor distractions
 arca.live##a:has(img[src*="karisuma-point-x2.png"])
