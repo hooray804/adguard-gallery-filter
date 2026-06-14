@@ -193,11 +193,11 @@ zod.kr##div[id]:has(> [target] > img)
 ||trillion.toss.im^
 !
 bamgad7.com,bamgad8.com,bamgad9.com##ul.row:has(img[src*="/file/advertise/"])
-bampt3.com,bampt4.com,bampt4.com##.small-banners-grid, .small-ad-item, .premium-banner-wrapper
+bampt3.com,bampt4.com,bampt5.com##.small-banners-grid, .small-ad-item, .premium-banner-wrapper
 darkgirl11.com,darkgirl12.com,darkgirl13.com###adskip, #posterWrap, #main-banner
 darkgirl11.com,darkgirl12.com,darkgirl13.com##.banner, a[href*="clickadu.net"]
 darkgirl11.com,darkgirl12.com,darkgirl13.com#%#//scriptlet('trusted-click-element', '#adbtn')
-jusocon1.com,jusocon2.com,jusocon3.com#.banner_box
+jusocon1.com,jusocon2.com,jusocon3.com##.banner_box
 mingky04.live,ydparty02.tv##.grid-asset
 sbxh6.com,sbxh7.com,sbxh8.com##[data-pm-ov="1"]
 xxzone24.top,xxzone25.top,xxzone26.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
