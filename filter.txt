@@ -200,11 +200,9 @@ bampt3.com,bampt4.com,bampt5.com##.small-banners-grid, .small-ad-item, .premium-
 darkgirl11.com,darkgirl12.com,darkgirl13.com###adskip, #posterWrap, #main-banner
 darkgirl11.com,darkgirl12.com,darkgirl13.com##.banner, a[href*="clickadu.net"]
 darkgirl11.com,darkgirl12.com,darkgirl13.com#%#//scriptlet('trusted-click-element', '#adbtn')
-jusocon1.com,jusocon2.com,jusocon3.com##.banner_box
 mingky04.live,ydparty02.tv##.grid-asset
 sbxh6.com,sbxh7.com,sbxh8.com##[data-pm-ov="1"]
 xxzone24.top,xxzone25.top,xxzone26.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
-yugiyu2.com,yugiyu3.com,yugiyu4.com##ul:has(> li.banner-item)
 !
 !#if (adguard && adguard_app_ios && adguard_ext_safari && adguard_ext_chromium && adguard_ext_edge && adguard_ext_firefox)
 ###img_row_container
