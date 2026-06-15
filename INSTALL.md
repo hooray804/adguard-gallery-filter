@@ -52,7 +52,7 @@
 
 아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
 1. 상단 바에서 `설정` 탭 열기
-2. `광고와 팝업 차단` 메뉴 선택
+2. 두번째 `광고와 팝업 차단` 메뉴 선택
 3. `필터 추가` 버튼 클릭
 4. `URL로 필터 추가` 버튼 클릭
 5. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력
@@ -60,7 +60,7 @@
 
 아래의 방법으로 DNS 필터를 추가합니다.
 1. 상단 바에서 `설정` 탭 열기
-2. `DNS 보호` 메뉴 선택
+2. 다섯번째 `DNS 보호` 메뉴 선택
 3. 하단에 위치한 `DNS 필터 편집기 열기` 클릭
 4. 하단 좌측 `+` 버튼 선택
 5. `URL로 필터 추가` 버튼 클릭
@@ -176,7 +176,7 @@
 아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
 1. 하단 탭 바에서 두번째 아이콘 `보호` 탭 열기
 2. `Safari 보호` 메뉴 선택
-3. 첫번째 위치한 `필터` 열기
+3. 첫번째에 위치한 `필터` 열기
 4. `Custom` 메뉴 선택
 5. 상단 `필터 추가` 버튼 클릭
 6. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력
@@ -185,7 +185,7 @@
 아래의 방법으로 DNS 필터를 추가합니다.
 1. 하단 탭 바에서 두번째 아이콘 `보호` 탭 열기
 2. `DNS 보호` 메뉴 선택
-3. 네번째 위치한 `DNS 필터링` 열기
+3. 네번째에 위치한 `DNS 필터링` 열기
 4. `Custom` 메뉴 선택
 5. 상단 `DNS 필터` 버튼 클릭
 6. 상단 `필터 추가` 버튼 클릭
