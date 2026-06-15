@@ -95,7 +95,6 @@ instiz.net##.view_top
 instiz.net##div[class^='hot_u']
 inven.co.kr,mt.co.kr##[class$='ads']
 inven.co.kr,wowtv.co.kr,damoang.net,hungryapp.co.kr##[class*='-banner']
-jusoya.com##div.banner-widget:has(a.secure-banner-link[data-original-url])
 k-hentai.org##.my-3.container
 kgirls.net##.layout_pc_banner
 khan.co.kr##div[class*="banner"]:has(div[class*="ad-wrapper"])
