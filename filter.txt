@@ -33,7 +33,7 @@ ddaltube.com,yastar.xyz##.dtube-banner-grid, .vjs-video-ad-click-overlay, .playe
 gaykorea.net,yoboyobo.kr##.cu_gallery-item, .main-slider, .md_ad, .product_viewpage-latest, div[class^="m-b-"]:has(> div > p.powered)
 inven.co.kr,mt.co.kr##[class$='ads']
 inven.co.kr,wowtv.co.kr,damoang.net,hungryapp.co.kr##[class*='-banner']
-linkareer.com,m.ppomppu.co.kr##div:has(> ins.adsbygoogle)
+linkareer.com,m.ppomppu.co.kr,ggoorr.net##div:has(> ins.adsbygoogle)
 m.wowtv.co.kr,inven.co.kr##[id*='Banner']
 maplescouter.com,loawa.com###popup
 nexon.com,gg,ps,xyz,loawa.com,or.kr,go.kr,ai,chat#@#[target='_blank']:has([src*='/banner/'])
@@ -100,8 +100,6 @@ fnnews.com##div[style*="height:"]:has(iframe, script, ins), div[style*="text-ali
 gall.dcinside.com##.gnb_list.clear > li:has(> [onclick])
 gangmom.kr##.banner-wrapper
 get*ads-*-du.a.run.app^
-ggoorr.net##div[style^="min-height"]:has(> ins.adsbygoogle)
-ggoorr.net##li.code-list-middle > div:has(ins.adsbygoogle)
 gmarket.co.kr##.js-impressionable.box__head-ad
 harpi.in##div:has(> script[src])
 hungryapp.co.kr##.bannersww
