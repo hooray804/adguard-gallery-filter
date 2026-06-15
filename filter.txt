@@ -217,8 +217,7 @@ xxzone24.top,xxzone25.top,xxzone26.top##[id*="main-banner"], .gplayer-ad-overlay
 !#endif
 !
 !#if (adguard_app_ios || adguard_ext_safari) && !adguard_app_mac
-hitomi.la##div:has(> div[id^="__clb-spot"])
-hitomi.la##div:has(> iframe[id^="__clb-spot"])
+hitomi.la##div:has(> [id^="__clb-spot"])
 hitomi.la##+js(nowoif)
 !#endif
 
