@@ -25,8 +25,8 @@
 ! Common rules
 !
 auction.co.kr,gmarket.co.kr##.plcc_banner
-chimhaha.net,seoul.co.kr,mule.co.kr##[class*='Ad']
 blog.naver.com,comic.naver.com##[class*='banner_area']
+chimhaha.net,seoul.co.kr,mule.co.kr##[class*='Ad']
 danawa.com,m.cafe.naver.com##[class^='banner']
 ddaltube.com,yastar.xyz##+js(remove-attr, data-a, #dtube-player)
 ddaltube.com,yastar.xyz##.dtube-banner-grid, .vjs-video-ad-click-overlay, .player-banner-overlay > a.block
