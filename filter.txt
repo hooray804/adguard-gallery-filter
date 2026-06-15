@@ -156,8 +156,6 @@ orbi.kr##li.listAd
 paxnet.co.kr##.stock-ad, [class^="dv-com-m0"]
 paxnet.co.kr##iframe[src*="/banner/"]
 pay.naver.com##div[class^='BottomAds_article']
-postshare.co.kr###adWallContainer
-postshare.co.kr###blurredContentArea:style(filter: none !important; -webkit-filter: none !important; opacity: 1 !important; pointer-events: auto !important; user-select: auto !important;)
 postshare.co.kr##div:has(> a > img[src*="/images/banner/"])
 postype.com##div[data-sentry-component="RecommendFeedGoogleAd"]:upward(1)
 ppomppu.co.kr##.bottom > div[style]
@@ -276,6 +274,7 @@ m.fmkorea.com##script ~ div.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):
 m.fmkorea.com##section.fmWidgetStyle2019.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):matches-css(padding: /[0-5]px/):remove()
 money-master-365.tistory.com##+js(nostif, detectAdblock)
 namu.wiki##div:has(img[data-doc]:not([data-doc^="/jump/"]):not([data-doc^="/w/"])):not(:has([id])), div:has(> div[id]:empty:only-child)
+postshare.co.kr##+js(set-cookie, ad_unlocked_timer_final_v2, true)
 toronon.kr##+js(prevent-fetch, site_id=, emptyObj)
 ||maxmovie.com/_next/static/chunks/framework.aa400efa16f23e2b0cfe.js
 !
