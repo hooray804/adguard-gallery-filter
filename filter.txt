@@ -1,5 +1,5 @@
 ! Title: 애드가드 갤러리 필터
-! Version: 2026.06.17.1
+! Version: 2026.06.17.2
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
@@ -33,7 +33,7 @@ ddaltube.com,yastar.xyz##.dtube-banner-grid, .vjs-video-ad-click-overlay, .playe
 gaykorea.net,yoboyobo.kr##.cu_gallery-item, .main-slider, .md_ad, .product_viewpage-latest, div[class^="m-b-"]:has(> div > p.powered)
 inven.co.kr,mt.co.kr##[class$='ads']
 inven.co.kr,wowtv.co.kr,damoang.net,hungryapp.co.kr##[class*='-banner']
-linkareer.com,m.ppomppu.co.kr,ggoorr.net,coinpan.com##div:has(> ins.adsbygoogle)
+linkareer.com,m.ppomppu.co.kr,ggoorr.net,coinpan.com,shipdago.com##div:has(> ins.adsbygoogle)
 m.wowtv.co.kr,inven.co.kr##[id*='Banner']
 maplescouter.com,loawa.com###popup
 nexon.com,gg,ps,xyz,loawa.com,or.kr,go.kr,ai,chat#@#[target='_blank']:has([src*='/banner/'])
@@ -278,6 +278,10 @@ m.fmkorea.com##section.fmWidgetStyle2019.bd_mobile.bd:matches-css(margin: /[0-5]
 money-master-365.tistory.com##+js(nostif, detectAdblock)
 namu.wiki##div:has(img[data-doc]:not([data-doc^="/jump/"]):not([data-doc^="/w/"])):not(:has([id])), div:has(> div[id]:empty:only-child)
 postshare.co.kr##+js(set-cookie, ad_unlocked_timer_final_v2, true)
+shipdago.com##+js(no-fetch-if, adsbygoogle.js)
+shipdago.com##+js(nostif, adsbygoogle-status)
+shipdago.com##+js(set-attr, ins.adsbygoogle, data-ad-status, true)
+shipdago.com##+js(set-attr, ins.adsbygoogle, data-adsbygoogle-status, true)
 toronon.kr##+js(prevent-fetch, site_id=, emptyObj)
 ||maxmovie.com/_next/static/chunks/framework.aa400efa16f23e2b0cfe.js
 !
