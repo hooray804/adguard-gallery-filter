@@ -267,7 +267,6 @@ ruliweb.com##+js(remove-class, ai_blind, #board_read)
 ||arca.live/static/assets/js/adult.min.js
 
 ! Anti-adblock
-@@||assets1.cdnhop.com/static/js/*$script,important,domain=kissjav.com
 @@||piku.co.kr^$generichide
 aagag.com##+js(set-cookie, ab, 0)
 aagag.com#$#.la { position: absolute !important; left: -3000px !important; width: 60px !important; height: 20px !important; }
@@ -300,6 +299,7 @@ $@$link[rel="manifest"]
 @@||ad.co.kr^$ghide
 @@||adtouch.*
 @@||arca.live^$ghide
+@@||assets1.cdnhop.com/static/js/*$script,important,domain=kissjav.com
 @@||blog.kakaocdn.net*/img.gif
 @@||code-pia.com^$stealth=dpi
 @@||fs2.joycity.com^$stealth=dpi
