@@ -102,6 +102,7 @@ gangmom.kr##.banner-wrapper
 get*ads-*-du.a.run.app^
 gmarket.co.kr##.js-impressionable.box__head-ad
 harpi.in##div:has(> script[src])
+hungryapp.co.kr##.banner4
 hungryapp.co.kr##.bannersww
 hungryapp.co.kr##[aria-label="헝그리앱 배너"]
 hungryapp.co.kr##div.fixed-top:has(ins.adsbygoogle)
