@@ -1,5 +1,5 @@
 ! Title: 애드가드 갤러리 필터
-! Version: 2026.06.17.4
+! Version: 2026.06.17.5
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
@@ -265,7 +265,7 @@ ruliweb.com##+js(remove-class, ai_blind, #board_read)
 ||arca.live/static/assets/js/adult.min.js
 
 ! Anti-adblock
-@@||assets1.cdnhop.com/static/js/*$script,domain=kissjav.com,important
+@@||assets1.cdnhop.com/static/js/*$script,important,domain=kissjav.com
 @@||piku.co.kr^$generichide
 aagag.com##+js(set-cookie, ab, 0)
 aagag.com#$#.la { position: absolute !important; left: -3000px !important; width: 60px !important; height: 20px !important; }
