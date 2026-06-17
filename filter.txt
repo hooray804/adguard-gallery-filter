@@ -1,5 +1,5 @@
 ! Title: 애드가드 갤러리 필터
-! Version: 2026.06.18.1
+! Version: 2026.06.18.2
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
@@ -214,7 +214,7 @@ darkgirl11.com,darkgirl12.com,darkgirl13.com#%#//scriptlet('trusted-click-elemen
 ggbam14.com,ggbam15.com,ggbam16.com##+js(nano-stb, adGate)
 mingky04.live,ydparty02.tv##.grid-asset
 redgg60.top,redgg61.top,redgg70.cc##+js(nano-sib, countdown)
-sbxh7.com,sbxh8.com,sbxh9.com##[data-pm-ov="1"]
+sbxh8.com,sbxh9.com,sbxh10.com##[data-pm-ov="1"]
 xxzone24.top,xxzone25.top,xxzone26.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
 !
 !#if (adguard && adguard_app_ios && adguard_ext_safari && adguard_ext_chromium && adguard_ext_edge && adguard_ext_firefox)
@@ -258,7 +258,7 @@ search.dcinside.com##.right_content
 search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) + div
 search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) + div + div
 !
-sbxh7.com,sbxh8.com,sbxh9.com##.vw-swipe-hint
+sbxh8.com,sbxh9.com,sbxh10.com##.vw-swipe-hint
 !
 
 ! Annoyances
@@ -290,7 +290,7 @@ shipdago.com##+js(set-attr, ins.adsbygoogle, data-adsbygoogle-status, true)
 toronon.kr##+js(prevent-fetch, site_id=, emptyObj)
 ||maxmovie.com/_next/static/chunks/framework.aa400efa16f23e2b0cfe.js
 !
-sbxh7.com,sbxh8.com,sbxh9.com#@#[data-brs][data-br]
+sbxh8.com,sbxh9.com,sbxh10.com#@#[data-brs][data-br]
 !
 
 ! Incorrect blocking
