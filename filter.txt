@@ -1,5 +1,5 @@
 ! Title: 애드가드 갤러리 필터
-! Version: 2026.06.17.7
+! Version: 2026.06.18.0
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
@@ -81,6 +81,7 @@ chimhaha.net##div[style='margin-top: 50px; ']
 coinpan.com##li:has(> span.wgp_ad)
 coinpan.com##li:has(ins.adsbygoogle)
 coinpan.com##p > strong > span:contains(AD):upward(p)
+cola16.app##+js(acis, decodeURIComponent, ABCDEFGHIJKLMNOPQRSTUVWXYZ)
 community.rememberapp.co.kr##[alt="배너 광고 이미지"]
 damoang.net##.dm-card:has(#gam-index-top-damoang-banner-index)
 daum.net##div[data-slot-type="AD_BRANDING_STATION"]
@@ -181,9 +182,11 @@ ssalmuk.com##+js(json-prune, data.[-].popupCode)
 svrforum.com$$ins[class="adsbygoogle"]
 te31.com##table:has(td > script)
 teamblind.com##.coupang_gnb
+teamblind.com##.top_banner
 teamblind.com##[href^='https://link.coupang.com/re/AFFSDP']
 teamblind.com##div.article-list-pre:has([href^='https://link.coupang.com/re/AFFSDP'])
 teamblind.com##div.article:has(> [href^='https://link.coupang.com/re/AFFSDP'])
+teamblind.com##div.border-b:has(> div.flex > div[id^="infeed-home-"])
 teamblind.com##div.comment_area.wrap-comment[style='cursor: pointer;']
 tvroom.*##.banner_l
 uppity.co.kr##.adrop-outer
