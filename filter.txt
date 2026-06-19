@@ -1,5 +1,5 @@
 ! Title: 애드가드 갤러리 필터
-! Version: 2026.06.20.1
+! Version: 2026.06.20.2
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
@@ -27,12 +27,12 @@
 auction.co.kr,gmarket.co.kr##.plcc_banner
 blog.naver.com,comic.naver.com##[class*='banner_area']
 chimhaha.net,seoul.co.kr,mule.co.kr##[class*='Ad']
-danawa.com,m.cafe.naver.com##[class^='banner']
+danawa.com,m.cafe.naver.com,hungryapp.co.kr,hungapp.com##[class^='banner']
 ddaltube.com,yastar.xyz##+js(remove-attr, data-a, #dtube-player)
 ddaltube.com,yastar.xyz##.dtube-banner-grid, .vjs-video-ad-click-overlay, .player-banner-overlay > a.block
 gaykorea.net,yoboyobo.kr##.cu_gallery-item, .main-slider, .md_ad, .product_viewpage-latest, div[class^="m-b-"]:has(> div > p.powered)
 inven.co.kr,mt.co.kr##[class$='ads']
-inven.co.kr,wowtv.co.kr,damoang.net,hungryapp.co.kr##[class*='-banner']
+inven.co.kr,wowtv.co.kr,damoang.net,hungryapp.co.kr,hungapp.com##[class*='-banner']
 linkareer.com,m.ppomppu.co.kr,ggoorr.net,coinpan.com,shipdago.com##div:has(> ins.adsbygoogle)
 m.wowtv.co.kr,inven.co.kr##[id*='Banner']
 maplescouter.com,loawa.com###popup
@@ -102,10 +102,8 @@ gangmom.kr##.banner-wrapper
 get*ads-*-du.a.run.app^
 gmarket.co.kr##.js-impressionable.box__head-ad
 harpi.in##div:has(> script[src])
-hungryapp.co.kr##.banner4
-hungryapp.co.kr##.bannersww
-hungryapp.co.kr##[aria-label="헝그리앱 배너"]
-hungryapp.co.kr##div.fixed-top:has(ins.adsbygoogle)
+hungryapp.co.kr,hungapp.com##[aria-label="헝그리앱 배너"]
+hungryapp.co.kr,hungapp.com##.fixed-top
 hygall.com##div[style='display: flex;justify-content: center; width:100%;height:100px;']
 i-boss.co.kr##[class$="-bn"]:has(a[target="_blank"])
 i-boss.co.kr##.contextAdWrap
