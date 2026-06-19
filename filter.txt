@@ -1,5 +1,5 @@
 ! Title: 애드가드 갤러리 필터
-! Version: 2026.06.19.4
+! Version: 2026.06.19.5
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
@@ -60,7 +60,6 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 [$domain=/yadongtv[0-9]*\.com/]##div[style*="top: 215px"]:has(img[src*="/banners/"]), img[src*="/banners/"]
 3rd.supply##.h-hori-ad
 3rd.supply##.text-center:has(sp-common-adsense)
-a-ha.io##div[aria-label="advertisement"]
 algumon.com##div:has([data-tip^='파트너스'], div[style*='height'], ins):is(.card, .deal-2col)
 arca.live##.vrow.hybrid:has(.category-badge)
 asked.kr##div[class^="kad_"]:has(ins.kakao_ad_area)
@@ -171,7 +170,6 @@ samgakgame.com###homeAdSlot, #bannerAd, #resultBannerAd, #frontAdMedia
 samgakgame.com##+js(nano-sib, adRemaining)
 search.danawa.com##[id^='powerShoppingArea']
 search.danawa.com##li[data-itemtype='adsmart']
-section.blog.naver.com##.area_advertisement
 seoul.co.kr###bottomScrollBox
 seoul.co.kr##[class^='ad']
 shopping.naver.com##div[class^="_carouselProductList_mobile_carousel_product_list_"]
@@ -191,7 +189,6 @@ veritas-a.com##article.grid.body > div.clearfix:has(.ad-template)
 xtoon365.com##[class$='-ad']
 yozm.wishket.com##[data-testid^="advertisement-"]
 yozm.wishket.com##[data-testid="top-banner"]
-zod.kr##div[id]:has(> [target] > img)
 !
 ||*nestads.*
 ||ader.naver.com/*?c=m_$all
