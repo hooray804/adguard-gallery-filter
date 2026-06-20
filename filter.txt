@@ -211,7 +211,7 @@ darkgirl11.com,darkgirl12.com,darkgirl13.com#%#//scriptlet('trusted-click-elemen
 ggbam14.com,ggbam15.com,ggbam16.com##+js(nano-stb, adGate)
 mingky04.live,ydparty04.tv##.grid-asset
 redgg75.top,redgg76.top,redgg85.top##+js(nano-sib, countdown)
-sbxh8.com,sbxh9.com,sbxh10.com##[data-pm-ov="1"]
+sbxh9.com,sbxh10.com,sbxh11.com##[data-pm-ov="1"]
 xxzone24.top,xxzone25.top,xxzone26.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
 !
 !#if (adguard && adguard_app_ios && adguard_ext_safari && adguard_ext_chromium && adguard_ext_edge && adguard_ext_firefox)
@@ -251,7 +251,7 @@ namu.wiki##li:has(a > time):not(:has([href*='/raw/'])):upward(2)
 naver.com##div.sds-comps-vertical-layout.fds-shortents-compact-block[data-template-id="layout"]
 phdkim.net##.app-smart-banner
 quasarzone.com##.best-official-news, .new-official-news, .best-official-news-container, .new-official-news-container, .new-partner-saleinfo-container
-sbxh8.com,sbxh9.com,sbxh10.com##.vw-swipe-hint
+sbxh9.com,sbxh10.com,sbxh11.com##.vw-swipe-hint
 search.dcinside.com##.right_content
 search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) + div
 search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) + div + div
@@ -279,7 +279,7 @@ m.fmkorea.com##section.fmWidgetStyle2019.bd_mobile.bd:matches-css(margin: /[0-5]
 money-master-365.tistory.com##+js(nostif, detectAdblock)
 namu.wiki##div:has(img[data-doc]:not([data-doc^="/jump/"]):not([data-doc^="/w/"])):not(:has([id])), div:has(> div[id]:empty:only-child)
 postshare.co.kr##+js(set-cookie, ad_unlocked_timer_final_v2, true)
-sbxh8.com,sbxh9.com,sbxh10.com#@#[data-brs][data-br]
+sbxh9.com,sbxh10.com,sbxh11.com#@#[data-brs][data-br]
 shipdago.com,ez2pattern.kr,quizbubble.kr##+js(no-fetch-if, adsbygoogle.js)
 shipdago.com##+js(nostif, adsbygoogle-status)
 shipdago.com##+js(set-attr, ins.adsbygoogle, data-ad-status, true)
