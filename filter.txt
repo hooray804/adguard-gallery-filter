@@ -1,5 +1,5 @@
 ! Title: 애드가드 갤러리 필터
-! Version: 2026.06.21.1
+! Version: 2026.06.21.2
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
@@ -31,12 +31,16 @@ danawa.com,m.cafe.naver.com,hungryapp.co.kr,hungapp.com##[class^='banner']
 ddaltube.com,yastar.xyz##+js(remove-attr, data-a, #dtube-player)
 ddaltube.com,yastar.xyz##.dtube-banner-grid, .vjs-video-ad-click-overlay, .player-banner-overlay > a.block
 gaykorea.net,yoboyobo.kr##.cu_gallery-item, .main-slider, .md_ad, .product_viewpage-latest, div[class^="m-b-"]:has(> div > p.powered)
+hungryapp.co.kr,hungapp.com##[aria-label="헝그리앱 배너"]
+hungryapp.co.kr,hungapp.com##.fixed-top
 inven.co.kr,mt.co.kr##[class$='ads']
 inven.co.kr,wowtv.co.kr,damoang.net,hungryapp.co.kr,hungapp.com##[class*='-banner']
 linkareer.com,m.ppomppu.co.kr,ggoorr.net,coinpan.com,shipdago.com##div:has(> ins.adsbygoogle)
 m.wowtv.co.kr,inven.co.kr##[id*='Banner']
 maplescouter.com,loawa.com###popup
 nexon.com,gg,ps,xyz,loawa.com,or.kr,go.kr,ai,chat#@#[target='_blank']:has([src*='/banner/'])
+ppomppu.co.kr,m.ppomppu1.co.kr##[id$='_popup']
+qquing.net,ibric.org##[class*="ad-wrap"]
 rgr.kr,rgrong.net,te31.com###foot:style(height: 150px !important;)
 rgr.kr,rgrong.net,te31.com##div[style='position:relative;z-index:11;']
 ruliweb.com,ppomppu.co.kr,naver.com,daum.net,etoland.co.kr##[id$='_ad']
@@ -94,15 +98,14 @@ dvdprime.com##[id^='ad_mobile']
 ebs.co.kr##.ji_adban
 fc-info.com##div[class^='Venatus_']
 fmkorea.com##[class$='_ad']
-fnnews.com##[id="hotPhotoArea"], [data-widget_id]
+fnnews.com##[data-widget_id]
+fnnews.com##[id="hotPhotoArea"]
 fnnews.com##div[style*="height:"]:has(iframe, script, ins), div[style*="text-align: center"]:has(> iframe)
 gall.dcinside.com##.gnb_list.clear > li:has(> [onclick])
 gangmom.kr##.banner-wrapper
 get*ads-*-du.a.run.app^
 gmarket.co.kr##.js-impressionable.box__head-ad
 harpi.in##div:has(> script[src])
-hungryapp.co.kr,hungapp.com##[aria-label="헝그리앱 배너"]
-hungryapp.co.kr,hungapp.com##.fixed-top
 hygall.com##div[style='display: flex;justify-content: center; width:100%;height:100px;']
 i-boss.co.kr##[class$="-bn"]:has(a[target="_blank"])
 i-boss.co.kr##.contextAdWrap
@@ -137,7 +140,10 @@ m.ruliweb.com##aside.native_timeline_ad
 m.ruliweb.com##tr:has(.nbp_container)
 m.wowtv.co.kr##.container > div[style]
 mimint.co.kr###anchor-layer:has(.anchor-slot)
-mimint.co.kr##.ads-container, .banner-split-reveal, .g-center-wrap, .index-right-banner
+mimint.co.kr##.ads-container
+mimint.co.kr##.banner-split-reveal
+mimint.co.kr##.g-center-wrap
+mimint.co.kr##.index-right-banner
 mimint.co.kr##.list_row:has(div[data-ad-mode])
 mlbpark.donga.com##[class^='coupang'], [class*='naver_place']
 mlbpark.donga.com##ul.sub_lists_today.lists > li.items:nth-of-type(6)::before
@@ -152,7 +158,8 @@ news.jtbc.co.kr##.print-hide:has-text(AD)
 nimi.wiki##+js(aeld, click, popMagic)
 orbi.kr##div[x-data="advertisement"]
 orbi.kr##li.listAd
-paxnet.co.kr##.stock-ad, [class^="dv-com-m0"]
+paxnet.co.kr##.stock-ad
+paxnet.co.kr##[class^="dv-com-m0"]
 paxnet.co.kr##iframe[src*="/banner/"]
 pay.naver.com##div[class^='BottomAds_article']
 postshare.co.kr##div:has(> a > img[src*="/images/banner/"])
@@ -160,8 +167,6 @@ postype.com##div[data-sentry-component="RecommendFeedGoogleAd"]:upward(1)
 ppomppu.co.kr##.bottom > div[style]
 ppomppu.co.kr##tr[id*="_list_ad_"]
 ppomppu.co.kr$$tr:has-text(AD)
-ppomppu.co.kr,m.ppomppu1.co.kr##[id$='_popup']
-qquing.net,ibric.org##[class*="ad-wrap"]
 red52.kr##.notice-box-area, .banner-pc, .banner-m
 samgakgame.com###homeAdSlot, #bannerAd, #resultBannerAd, #frontAdMedia
 samgakgame.com##+js(nano-sib, adRemaining)
