@@ -1,5 +1,5 @@
 ! Title: 애드가드 갤러리 필터
-! Version: 2026.06.21.3
+! Version: 2026.06.23.0
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
@@ -60,7 +60,6 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 [$domain=/^wtwt[0-9]*\.com/]##.banner
 [$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##[href*='/ad'][target='_blank']:has(img)
 [$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##div[class$='gallery'][id] [target='_blank']:upward(1)
-[$domain=/torrentqq[0-9]*\.com/]##div.at-banner:has(a[href*="/ads/"])
 [$domain=/yadongtv[0-9]*\.com/]##div[style*="top: 215px"]:has(img[src*="/banners/"]), img[src*="/banners/"]
 3rd.supply##.h-hori-ad
 3rd.supply##.text-center:has(sp-common-adsense)
@@ -210,8 +209,8 @@ darkgirl11.com,darkgirl12.com,darkgirl13.com#%#//scriptlet('trusted-click-elemen
 ggbam14.com,ggbam15.com,ggbam16.com##+js(nano-stb, adGate)
 mingky04.live,ydparty04.tv##.grid-asset
 redgg75.top,redgg76.top,redgg85.top##+js(nano-sib, countdown)
-sbxh9.com,sbxh10.com,sbxh11.com##[data-pm-ov="1"]
-xxzone24.top,xxzone25.top,xxzone26.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
+toki25.com##[data-pm-ov="1"]
+xxzone25.top,xxzone26.top,xxzone27.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
 !
 !#if (adguard && adguard_app_ios && adguard_ext_safari && adguard_ext_chromium && adguard_ext_edge && adguard_ext_firefox)
 ###img_row_container
@@ -250,10 +249,10 @@ namu.wiki##li:has(a > time):not(:has([href*='/raw/'])):upward(2)
 naver.com##div.sds-comps-vertical-layout.fds-shortents-compact-block[data-template-id="layout"]
 phdkim.net##.app-smart-banner
 quasarzone.com##.best-official-news, .new-official-news, .best-official-news-container, .new-official-news-container, .new-partner-saleinfo-container
-sbxh9.com,sbxh10.com,sbxh11.com##.vw-swipe-hint
 search.dcinside.com##.right_content
 search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) + div
 search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) + div + div
+toki25.com##.vw-swipe-hint
 
 ! Annoyances
 cafe.naver.com##+js(remove-class, disable-select, #ct)
@@ -265,6 +264,8 @@ ruliweb.com##+js(remove-class, ai_blind, #board_read)
 
 ! Anti-adblock
 @@||piku.co.kr^$generichide
+0db.co.kr##+js(spoof-css, #adsbox, display, block, visibility, visible, height, 100px, _recth, 100)
+0db.co.kr##+js(set, adsbygoogle, [])
 aagag.com##+js(set-cookie, ab, 0)
 aagag.com#$#.la { position: absolute !important; left: -3000px !important; width: 60px !important; height: 20px !important; }
 chatgpts.kr,free4u.tistory.com##+js(nostif, checkRealAdBlock)
@@ -278,7 +279,6 @@ m.fmkorea.com##section.fmWidgetStyle2019.bd_mobile.bd:matches-css(margin: /[0-5]
 money-master-365.tistory.com##+js(nostif, detectAdblock)
 namu.wiki##div:has(img[data-doc]:not([data-doc^="/jump/"]):not([data-doc^="/w/"])):not(:has([id])), div:has(> div[id]:empty:only-child)
 postshare.co.kr##+js(set-cookie, ad_unlocked_timer_final_v2, true)
-sbxh9.com,sbxh10.com,sbxh11.com#@#[data-brs][data-br]
 shipdago.com,ez2pattern.kr,quizbubble.kr##+js(no-fetch-if, adsbygoogle.js)
 shipdago.com##+js(nostif, adsbygoogle-status)
 shipdago.com##+js(set-attr, ins.adsbygoogle, data-ad-status, true)
