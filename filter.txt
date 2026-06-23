@@ -115,6 +115,7 @@ instiz.net##div[class^='hot_u']
 k-hentai.org##.my-3.container
 kgirls.net##.layout_pc_banner
 khan.co.kr##div[class*="banner"]:has(div[class*="ad-wrapper"])
+kidd.co.kr##.bottomAdBox
 kidd.co.kr##.product-recommendations
 kidd.co.kr##slidebanner
 kissjav.com##+js(nowoif)
@@ -204,12 +205,12 @@ yozm.wishket.com##[data-testid="top-banner"]
 !
 bamgad7.com,bamgad8.com,bamgad9.com##ul.row:has(img[src*="/file/advertise/"])
 bampt4.com,bampt5.com,bampt6.com##.small-banners-grid, .small-ad-item, .premium-banner-wrapper
-darkgirl11.com,darkgirl12.com,darkgirl13.com###adskip, #posterWrap, #main-banner
-darkgirl11.com,darkgirl12.com,darkgirl13.com##.banner, a[href*="clickadu.net"]
-darkgirl11.com,darkgirl12.com,darkgirl13.com#%#//scriptlet('trusted-click-element', '#adbtn')
+darkgirl12.com,darkgirl13.com,darkgirl14.com###adskip, #posterWrap, #main-banner
+darkgirl12.com,darkgirl13.com,darkgirl14.com##.banner, a[href*="clickadu.net"]
+darkgirl12.com,darkgirl13.com,darkgirl14.com#%#//scriptlet('trusted-click-element', '#adbtn')
 ggbam14.com,ggbam15.com,ggbam16.com##+js(nano-stb, adGate)
 mingky04.live,ydparty04.tv##.grid-asset
-redgg75.top,redgg76.top,redgg85.top##+js(nano-sib, countdown)
+redgg76.top,redgg77.top,redgg78.top##+js(nano-sib, countdown)
 toki25.com##[data-pm-ov="1"]
 xxzone25.top,xxzone26.top,xxzone27.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
 !
