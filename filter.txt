@@ -1,5 +1,5 @@
 ! Title: 애드가드 갤러리 필터
-! Version: 2026.06.24.1
+! Version: 2026.06.25.0
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
@@ -24,6 +24,7 @@
 !
 ! Common rules
 !
+/p2p$domain=tvwiki32.net|tvwiki33.net|tvwiki34.net|bunny-frame.online
 auction.co.kr,gmarket.co.kr##.plcc_banner
 blog.naver.com,comic.naver.com##[class*='banner_area']
 chimhaha.net,seoul.co.kr,mule.co.kr##[class*='Ad']
@@ -155,8 +156,11 @@ naver.com###sb-kh-shortents-wrap
 naver.com##.sa_mw.sa_empty_ad
 news.jtbc.co.kr##.print-hide:has-text(AD)
 nimi.wiki##+js(aeld, click, popMagic)
+orbi.kr##.label-banner
+orbi.kr##.listAd
 orbi.kr##div[x-data="advertisement"]
-orbi.kr##li.listAd
+orbi.kr##div[style*="82px;"]:has(ins[data-revive-zoneid])
+orbi.kr##div[style^="margin-bottom: 4px; height: 70px"]:has(ins[data-revive-zoneid])
 paxnet.co.kr##.stock-ad
 paxnet.co.kr##[class^="dv-com-m0"]
 paxnet.co.kr##iframe[src*="/banner/"]
@@ -294,9 +298,7 @@ $@$link[rel="manifest"]
 @@||a*.smlog.co.kr^$app=com.nhn.android.search
 @@||ad-creative.pstatic.net^$app=com.nhn.android.search
 @@||ad-img.gmarket.com^$image,domain=m.gmarket.co.kr|auction.co.kr|www.gmarket.co.kr
-@@||ad.co.kr^$ghide
 @@||adtouch.*
-@@||arca.live^$ghide
 @@||blog.kakaocdn.net*/img.gif
 @@||code-pia.com^$stealth=dpi
 @@||fs2.joycity.com^$stealth=dpi
@@ -334,9 +336,18 @@ www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
 ||ssl.pstatic.net/t.static.blog/nmobile/versioning//common/lib/ntm/ntm-blog-web-*.js$badfilter
 ||store-api.mumuglobal.com^$badfilter
 ||tnkfactory.com^$badfilter
+!
 !#if (adguard && adguard_app_windows)
 @@||coupang.com^$stealth
 !#endif
+!
+!#safari_cb_affinity(all)
+@@||ad.co.kr^$ghide
+!#safari_cb_affinity
+!
+!#safari_cb_affinity(general)
+@@||arca.live^$ghide
+!#safari_cb_affinity
 
 ! Malware & Spam
 ||ublockdns.com^$doc
