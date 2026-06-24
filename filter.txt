@@ -158,9 +158,9 @@ news.jtbc.co.kr##.print-hide:has-text(AD)
 nimi.wiki##+js(aeld, click, popMagic)
 orbi.kr##.label-banner
 orbi.kr##.listAd
-orbi.kr##div[x-data="advertisement"]
 orbi.kr##div[style*="82px;"]:has(ins[data-revive-zoneid])
 orbi.kr##div[style^="margin-bottom: 4px; height: 70px"]:has(ins[data-revive-zoneid])
+orbi.kr##div[x-data="advertisement"]
 paxnet.co.kr##.stock-ad
 paxnet.co.kr##[class^="dv-com-m0"]
 paxnet.co.kr##iframe[src*="/banner/"]
