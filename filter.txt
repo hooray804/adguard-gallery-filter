@@ -19,7 +19,6 @@
 ##[id^='hd_pop']
 ##[target='_blank']:has([src*='/banner/'])
 *##[target='_blank']:has([src*='/banner/'])
-*$script,third-party,domain=nimi.wiki
 *tcid=$all
 !
 ! Common rules
@@ -52,6 +51,7 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 !
 ! Specific rules
 !
+*$script,third-party,domain=nimi.wiki
 [$domain=/^fxfx[0-9]*\.com/]##.top-banner
 [$domain=/^hoohootv[0-9]*\.[a-z]{2,}/]###img_row_container
 [$domain=/^redvi[0-9]*\.com/]##div[style*="z-index: 9999"]:has(img[src*="/banners/"]), img[src*="/banners/"]
