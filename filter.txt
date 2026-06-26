@@ -128,7 +128,6 @@ litomi.in##[data-juicy-ads-slot]
 m.anewsa.com##div[style*="width:300px"]
 m.bobaedream.co.kr##div[style$='height:50px;']
 m.danawa.com###mdnw-main-dimm, #mdnw-main-bottomSheet-container
-m.daum.net###trendKeywordsContainer
 m.dcinside.com##.layer-bottom-popup
 m.dcinside.com##.menu-scroll-lst.swiper-wrapper > li.swiper-slide:nth-of-type(n+5)
 m.dcinside.com##.survey
