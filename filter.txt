@@ -1,5 +1,5 @@
 ! Title: 애드가드 갤러리 필터
-! Version: 2026.06.28.3
+! Version: 2026.06.28.4
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
@@ -56,7 +56,7 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 [$domain=/^hoohootv[0-9]*\.[a-z]{2,}/]###img_row_container
 [$domain=/^redvi[0-9]*\.com/]##div[style*="z-index: 9999"]:has(img[src*="/banners/"]), img[src*="/banners/"]
 [$domain=/^tvmon[0-9]*\.[a-z]{2,}/]##.banner_wrap2
-[$domain=/^tvwiki[0-9]*\.net/]###bannerList, #viewCover
+[$domain=/^tvwiki[0-9]*\.net/]###bannerList, #viewCover, img[src*="/banner/"]
 [$domain=/^wftoon[0-9]*\.com/]##.top-banner
 [$domain=/^wfwf[0-9]*\.com/]##.top-banner
 [$domain=/^wtwt[0-9]*\.com/]##.banner
@@ -262,7 +262,6 @@ phdkim.net##.app-smart-banner
 quasarzone.com##.best-official-news, .new-official-news, .best-official-news-container, .new-official-news-container, .new-partner-saleinfo-container
 search.dcinside.com##.right_content
 sbxh9.com,sbxh10.com,toki25.com,toki26.com##.vw-swipe-hint
-tvwiki32.net,tvwiki33.net,tvwiki34.net##.over
 
 ! Annoyances
 cafe.naver.com##+js(remove-class, disable-select, #ct)
