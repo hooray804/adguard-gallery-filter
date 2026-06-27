@@ -282,7 +282,7 @@ chatgpts.kr,free4u.tistory.com##+js(nostif, checkRealAdBlock)
 chatgpts.kr,free4u.tistory.com##+js(nostif, checkAdBlock)
 damoang.net##+js(nostif, bait_hidden)
 dcinside.com###moveOverlay, #gaejukimg
-hmstory.net##script:contains(detect-message-shown):remove()
+hmstory.net$$script:contains(detect-message-shown)
 m.fmkorea.com##+js(set, _make_power_link_identifier, noopFunc)
 m.fmkorea.com##script ~ div.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):matches-css(padding: /[0-5]px/):remove()
 m.fmkorea.com##section.fmWidgetStyle2019.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):matches-css(padding: /[0-5]px/):remove()
