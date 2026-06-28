@@ -20,7 +20,7 @@
 ##[target='_blank']:has([src*='/banner/'])
 *##[target='_blank']:has([src*='/banner/'])
 *tcid=$all
-/^https:\/\/[0-9a-z]{7,12}\.in(?:\/[a-z]{2,10}){1,3}\?.{70,}$/$script,media,3p,match-case
+/^https:\/\/[0-9a-z]{7,12}\.in(?:\/[a-z]{2,10}){1,3}\?.{200,}$/$script,media,third-party,match-case
 !
 ! Common rules
 !
