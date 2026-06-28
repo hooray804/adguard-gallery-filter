@@ -1,5 +1,5 @@
 ! Title: 애드가드 갤러리 필터
-! Version: 2026.06.28.4
+! Version: 2026.06.28.5
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
@@ -67,8 +67,8 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 3rd.supply##.text-center:has(sp-common-adsense)
 algumon.com##div:has([data-tip^='파트너스'], div[style*='height'], ins):is(.card, .deal-2col)
 arca.live##.vrow.hybrid:has(.category-badge)
-asked.kr##div[class^="kad_"]:has(ins.kakao_ad_area)
 asked.kr##div[class*="index_"] div[class*="banner_"]
+asked.kr##div[class^="kad_"]:has(ins.kakao_ad_area)
 avdbs.com##.ad-btn[class*='tp']
 avsee.ru##+js(acis, decodeURI, split)
 avsee.ru##.at-main > div.main-box > .miso-post-mix .post-wrap
@@ -108,10 +108,10 @@ get*ads-*-du.a.run.app^
 gmarket.co.kr##.js-impressionable.box__head-ad
 harpi.in##div:has(> script[src])
 hygall.com##div[style='display: flex;justify-content: center; width:100%;height:100px;']
-i-boss.co.kr##[class$="-bn"]:has(a[target="_blank"])
 i-boss.co.kr##.contextAdWrap
 i-boss.co.kr##.home-board:has(.home-banner-wrap)
 i-boss.co.kr##.topNoticeArea
+i-boss.co.kr##[class$="-bn"]:has(a[target="_blank"])
 ibric.org##.top-banner-wrap
 instiz.net##.view_top
 instiz.net##div[class^='hot_u']
@@ -195,8 +195,8 @@ tvseoul.kr##div[style*="width:360px"][style*="height:300px"]
 uppity.co.kr##.adrop-outer
 veritas-a.com##article.grid.body > div.clearfix:has(.ad-template)
 xtoon365.com##[class$='-ad']
-yozm.wishket.com##[data-testid^="advertisement-"]
 yozm.wishket.com##[data-testid="top-banner"]
+yozm.wishket.com##[data-testid^="advertisement-"]
 !
 ||*nestads.*
 ||ader.naver.com/*?c=m_$all
@@ -216,8 +216,8 @@ darkgirl12.com,darkgirl13.com,darkgirl14.com###adskip, #posterWrap, #main-banner
 darkgirl12.com,darkgirl13.com,darkgirl14.com##.banner, a[href*="clickadu.net"]
 darkgirl12.com,darkgirl13.com,darkgirl14.com#%#//scriptlet('trusted-click-element', '#adbtn')
 ggbam14.com,ggbam15.com,ggbam16.com##+js(nano-stb, adGate)
-mingky04.live,ydparty04.tv##.grid-asset
 jaddal37.top,jaddal38.top,jaddal39.top##+js(nano-sib, countdown)
+mingky04.live,ydparty04.tv##.grid-asset
 sbxh9.com,sbxh10.com,toki25.com,toki26.com##[data-pm-ov="1"]
 xxzone25.top,xxzone26.top,xxzone27.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
 !
@@ -228,8 +228,8 @@ xxzone25.top,xxzone26.top,xxzone27.top##[id*="main-banner"], .gplayer-ad-overlay
 !#endif
 !
 !#if (adguard_app_ios || adguard_ext_safari) && !adguard_app_mac
-hitomi.la##div:has(> [id^="__clb-spot"])
 hitomi.la##+js(nowoif)
+hitomi.la##div:has(> [id^="__clb-spot"])
 !#endif
 
 ! Minor distractions
@@ -277,8 +277,8 @@ ruliweb.com##+js(remove-class, ai_blind, #board_read)
 0db.co.kr##+js(spoof-css, #adsbox, display, block, visibility, visible, height, 100px, _recth, 100)
 aagag.com##+js(set-cookie, ab, 0)
 aagag.com#$#.la { position: absolute !important; left: -3000px !important; width: 60px !important; height: 20px !important; }
-chatgpts.kr,free4u.tistory.com##+js(nostif, checkRealAdBlock)
 chatgpts.kr,free4u.tistory.com##+js(nostif, checkAdBlock)
+chatgpts.kr,free4u.tistory.com##+js(nostif, checkRealAdBlock)
 damoang.net##+js(nostif, bait_hidden)
 dcinside.com###moveOverlay, #gaejukimg
 hmstory.net$$script:contains(detect-message-shown)
@@ -291,10 +291,10 @@ namu.wiki##div:has(img[data-doc]:not([data-doc^="/jump/"]):not([data-doc^="/w/"]
 oraksil.cc##+js(acis, onload, showAdblockMessage)
 postshare.co.kr##+js(set-cookie, ad_unlocked_timer_final_v2, true)
 sbxh9.com,sbxh10.com#@#[data-brs][data-br]
-shipdago.com,ez2pattern.kr,quizbubble.kr##+js(no-fetch-if, adsbygoogle.js)
 shipdago.com##+js(nostif, adsbygoogle-status)
 shipdago.com##+js(set-attr, ins.adsbygoogle, data-ad-status, true)
 shipdago.com##+js(set-attr, ins.adsbygoogle, data-adsbygoogle-status, true)
+shipdago.com,ez2pattern.kr,quizbubble.kr##+js(no-fetch-if, adsbygoogle.js)
 toronon.kr##+js(prevent-fetch, site_id=, emptyObj)
 ||maxmovie.com/_next/static/chunks/framework.aa400efa16f23e2b0cfe.js
 
@@ -399,9 +399,9 @@ www.google.com##.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".yachts/"])
 ! Allow specific TLDs (e.g., .hu) by adding an exception rule: www.google.com#@#.MjjYud:not(:has([data-id="mosaic"])):has(a[href*=".horse/"], a[href*=".hu/"])
 
 ! Tweaks
-arca.live#%#const _s=document.documentElement.appendChild(Object.assign(document.createElement("style"),{textContent:'a.notice .vcol.col-ad .badge.badge-success,a.notice .vcol.col-id>b{visibility:hidden}'}));document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelector("div.list-table");if(!t){_s.remove();return;}const s=()=>{const e=t.querySelector('a.notice[href*="/b/"]');if(!e)return;const g=e.pathname.split("/b/")[1]?.split("/")[0];if(!g)return;const b=e.querySelector(".vcol.col-ad .badge.badge-success"),i=e.querySelector(".vcol.col-id>b");if(b)b.textContent=g;if(i)i.textContent=g;if(b||i)_s.remove()};s();let r;new MutationObserver(()=>{clearTimeout(r);r=setTimeout(s,100)}).observe(t,{childList:!0,subtree:!0})});
 arca.live##.vcol.col-title .comment-count:hover:style(background-color: #cccccc !important; color: white !important;)
 arca.live##.vcol.col-title .comment-count:style(display: inline-block !important; padding: 6px 5px 6px 3px !important; margin: -6px -5px -6px -3px !important; position: relative; z-index: 10;)
+arca.live#%#const _s=document.documentElement.appendChild(Object.assign(document.createElement("style"),{textContent:'a.notice .vcol.col-ad .badge.badge-success,a.notice .vcol.col-id>b{visibility:hidden}'}));document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelector("div.list-table");if(!t){_s.remove();return;}const s=()=>{const e=t.querySelector('a.notice[href*="/b/"]');if(!e)return;const g=e.pathname.split("/b/")[1]?.split("/")[0];if(!g)return;const b=e.querySelector(".vcol.col-ad .badge.badge-success"),i=e.querySelector(".vcol.col-id>b");if(b)b.textContent=g;if(i)i.textContent=g;if(b||i)_s.remove()};s();let r;new MutationObserver(()=>{clearTimeout(r);r=setTimeout(s,100)}).observe(t,{childList:!0,subtree:!0})});
 dcinside.com#%#//scriptlet('trusted-create-element', 'head', 'meta', 'name="theme-color" content="#2b367d"')
 dmm.co.jp#%#//scriptlet('trusted-set-cookie-reload', 'ckcy_remedied_check', 'ec_mrnhbtk', '1year', '/', '.dmm.co.jp')
 gall.dcinside.com##.img_area button.btn:style(opacity: 0.4 !important;)
