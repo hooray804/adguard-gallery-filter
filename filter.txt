@@ -55,6 +55,7 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 [$domain=/^fxfx[0-9]*\.com/]##.top-banner
 [$domain=/^hoohootv[0-9]*\.[a-z]{2,}/]###img_row_container
 [$domain=/^redvi[0-9]*\.com/]##div[style*="z-index: 9999"]:has(img[src*="/banners/"]), img[src*="/banners/"]
+[$domain=/^toki[0-9]*\.com/]##.vw-swipe-hint, [data-pm-ov="1"]
 [$domain=/^tvmon[0-9]*\.[a-z]{2,}/]##.banner_wrap2
 [$domain=/^tvwiki[0-9]*\.net/]###bannerList, #viewCover, img[src*="/banner/"]
 [$domain=/^wftoon[0-9]*\.com/]##.top-banner
@@ -218,7 +219,6 @@ darkgirl12.com,darkgirl13.com,darkgirl14.com#%#//scriptlet('trusted-click-elemen
 ggbam14.com,ggbam15.com,ggbam16.com##+js(nano-stb, adGate)
 jaddal37.top,jaddal38.top,jaddal39.top##+js(nano-sib, countdown)
 mingky04.live,ydparty04.tv##.grid-asset
-sbxh9.com,sbxh10.com,toki25.com,toki27.com##[data-pm-ov="1"]
 xxzone25.top,xxzone26.top,xxzone27.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
 !
 !#if (adguard && adguard_app_ios && adguard_ext_safari && adguard_ext_chromium && adguard_ext_edge && adguard_ext_firefox)
@@ -260,7 +260,6 @@ namu.wiki##li:has(a > time):not(:has([href*='/raw/'])):upward(2)
 naver.com##div.sds-comps-vertical-layout.fds-shortents-compact-block[data-template-id="layout"]
 phdkim.net##.app-smart-banner
 quasarzone.com##.best-official-news, .new-official-news, .best-official-news-container, .new-official-news-container, .new-partner-saleinfo-container
-sbxh9.com,sbxh10.com,toki25.com,toki27.com##.vw-swipe-hint
 search.dcinside.com##.right_content
 
 ! Annoyances
