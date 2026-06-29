@@ -221,7 +221,6 @@ darkgirl12.com,darkgirl13.com,darkgirl14.com##.banner, a[href*="clickadu.net"]
 darkgirl12.com,darkgirl13.com,darkgirl14.com#%#//scriptlet('trusted-click-element', '#adbtn')
 ggbam14.com,ggbam15.com,ggbam16.com##+js(nano-stb, adGate)
 jaddal37.top,jaddal38.top,jaddal39.top##+js(nano-sib, countdown)
-mingky04.live,ydparty04.tv##.grid-asset
 xxzone25.top,xxzone26.top,xxzone27.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
 !
 !#if (adguard && adguard_app_ios && adguard_ext_safari && adguard_ext_chromium && adguard_ext_edge && adguard_ext_firefox)
