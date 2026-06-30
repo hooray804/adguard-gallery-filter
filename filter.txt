@@ -199,6 +199,8 @@ tvseoul.kr##div[style*="width:360px"][style*="height:300px"]
 uppity.co.kr##.adrop-outer
 veritas-a.com##article.grid.body > div.clearfix:has(.ad-template)
 xtoon365.com##[class$='-ad']
+yonhapnewstv.co.kr##.main-banner-area
+yonhapnewstv.co.kr##.popular-news
 yonhapnewstv.co.kr##.view-ad-center
 yozm.wishket.com##[data-testid="top-banner"]
 yozm.wishket.com##[data-testid^="advertisement-"]
