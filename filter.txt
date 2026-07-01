@@ -160,7 +160,6 @@ namu.wiki#$#div[class][id]:is(:empty, :has(> iframe[id^='google_ads_iframe'])) {
 naver.com###sb-kh-shortents-wrap
 naver.com##.sa_mw.sa_empty_ad
 news.jtbc.co.kr##.print-hide:has-text(AD)
-nimi.wiki##+js(aeld, click, popMagic)
 orbi.kr##.label-banner
 orbi.kr##.listAd
 orbi.kr##div[style*="82px;"]:has(ins[data-revive-zoneid])
