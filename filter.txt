@@ -13,7 +13,7 @@
 ##.happy-under-player-mobile
 ##.textwidget
 ##[alt$='광고']
-##[class*='ad'][id^='AD']:not([class*='address'])
+##[class*='ad'][id^='AD']:not([class*='add'])
 ##[class^='basic-banner'][id]
 ##[class^='happy-header']
 ##[id^='hd_pop']
