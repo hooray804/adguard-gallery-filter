@@ -86,7 +86,6 @@ chimhaha.net##div[style='margin-top: 50px; ']
 coinpan.com##li:has(> span.wgp_ad)
 coinpan.com##li:has(ins.adsbygoogle)
 coinpan.com##p > strong > span:contains(AD):upward(p)
-cola16.app##+js(acis, decodeURIComponent, ABCDEFGHIJKLMNOPQRSTUVWXYZ)
 community.rememberapp.co.kr##[alt="배너 광고 이미지"]
 damoang.net##.dm-card:has(#gam-index-top-damoang-banner-index)
 daum.net##div[data-slot-type="AD_BRANDING_STATION"]
@@ -287,6 +286,7 @@ aagag.com##+js(set-cookie, ab, 0)
 aagag.com#$#.la { position: absolute !important; left: -3000px !important; width: 60px !important; height: 20px !important; }
 chatgpts.kr,free4u.tistory.com##+js(nostif, checkAdBlock)
 chatgpts.kr,free4u.tistory.com##+js(nostif, checkRealAdBlock)
+cola16.app##+js(acis, decodeURIComponent, ABCDEFGHIJKLMNOPQRSTUVWXYZ)
 damoang.net##+js(nostif, bait_hidden)
 dcinside.com###moveOverlay, #gaejukimg
 hmstory.net$$script:contains(detect-message-shown)
