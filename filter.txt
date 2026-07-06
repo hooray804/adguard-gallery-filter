@@ -260,7 +260,7 @@ m.cafe.naver.com##.popular_toast_popup
 m.cafe.naver.com##.subscribe_layer_wrap
 m.dcinside.com###light_tipbox
 m.dcinside.com##.outside-search-box
-m.dcinside.com##section.grid > .md-tit-box:has-text(Daum)
+m.dcinside.com##section.grid > .md-tit-box:has(> div > .daumtxt)
 m.naver.com###MM_AI_TAB_TOOLTIP
 m.naver.com##.chf_feed_wrap > .type_square.cc_clip_list
 m.naver.com##script#MM_search_disaster ~*
