@@ -246,6 +246,7 @@ arca.live##a:has(img[src*="karisuma-point-x2.png"])
 gall.dcinside.com##.dc_all
 gall.dcinside.com##.dcmedia.content_box
 gall.dcinside.com##.r_dcmedia
+gall.dcinside.com##.ltr
 gall.dcinside.com##tr[class='ub-content ']
 inven.co.kr##.inven-float-alarm
 m.blog.naver.com##div[id="blog_fe_feed"] > div > div:has([data-click-area*="fdairsmx"], [data-click-area*="fdschclip"])
