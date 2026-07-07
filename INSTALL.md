@@ -84,6 +84,20 @@
 </details>
 
 <details>
+<summary><b>uBlock Origin Lite</b></summary>
+
+> 해당 확장 프로그램은 uBlock Origin이 아닌, (Chrome) MV3 전용이므로 갤러리 필터의 일부 기능 사용이 제한될 수 있음에 유의하세요. 자세한 내용은 [나무위키](https://namu.wiki/w/uBlock%20Origin#s-5.2)를 참고하세요.
+
+아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
+1. `대시보드` 열기
+2. `필터 목록` 탭 선택
+3. 하단 스크롤 및 `가져온 목록` 펼치기
+4. `필터 목록 추가` 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력
+5. 우측 `추가` 버튼 클릭
+
+</details>
+
+<details>
 <summary><b>Brave</b></summary>
 
 아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
