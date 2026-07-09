@@ -83,7 +83,7 @@ chimhaha.net##[id^='slot']
 chimhaha.net##div[style='margin-top: 50px; ']
 coinpan.com##li:has(> span.wgp_ad)
 coinpan.com##li:has(ins.adsbygoogle)
-coinpan.com##p > strong > span:contains(AD):upward(p)
+coinpan.com##p > strong > span:has-text(AD):upward(p)
 community.rememberapp.co.kr##[alt="배너 광고 이미지"]
 damoang.net##.dm-card:has(#gam-index-top-damoang-banner-index)
 daum.net##div[data-slot-type="AD_BRANDING_STATION"]
