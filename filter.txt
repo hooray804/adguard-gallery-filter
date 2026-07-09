@@ -293,8 +293,6 @@ ruliweb.com##+js(remove-class, ai_blind, #board_read)
 0db.co.kr##+js(nostif, adsbygoogle, 1500)
 aagag.com##+js(set-cookie, ab, 0)
 aagag.com#$#.la { position: absolute !important; left: -3000px !important; width: 60px !important; height: 20px !important; }
-chatgpts.kr,free4u.tistory.com##+js(nostif, checkAdBlock)
-chatgpts.kr,free4u.tistory.com##+js(nostif, checkRealAdBlock)
 cola16.app##+js(acis, decodeURIComponent, ABCDEFGHIJKLMNOPQRSTUVWXYZ)
 damoang.net##+js(nostif, bait_hidden)
 dcinside.com###moveOverlay, #gaejukimg
