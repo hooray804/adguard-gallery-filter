@@ -222,6 +222,7 @@ yozm.wishket.com##[data-testid^="advertisement-"]
 ||link.coupang.com/re/AFFHOME?lptag=*&amp;subid=pointlink$all,reason=수익링크
 ||pandalive.co.kr^$document,domain=heye.kr
 ||player.bunny-frame.online/js/ad_fetcher.js
+||red52.kr/ads
 ||shortformstats.kakao.com^$app=com.kakao.talk
 ||t*kor*.com/images/
 ||thumb.kakaocdn.net^$app=com.kakao.talk
