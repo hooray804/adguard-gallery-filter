@@ -216,6 +216,7 @@ yonhapnewstv.co.kr##.view-ad-center
 yonhapnewstv.co.kr##section[class^="popular"]
 yozm.wishket.com##[data-testid="top-banner"]
 yozm.wishket.com##[data-testid^="advertisement-"]
+zod.kr##div[id]:has(> [target] > img)
 !
 ||*nestads.*
 ||ader.naver.com/*?c=m_$all
