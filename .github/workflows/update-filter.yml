@@ -1,0 +1,78 @@
+name: Update Filter Header
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'filter.txt'
+
+jobs:
+  update-header:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Update Version and Timestamp
+        run: |
+          FILE="filter.txt"
+          
+          KST_DATE=$(TZ='Asia/Seoul' date +'%Y.%m.%d')
+          UTC_TIME=$(date -u +'%Y-%m-%dT%H:%M:%S+00:00')
+          
+          CURR_VER_LINE=$(grep "^! Version:" "$FILE" | head -n 1)
+          
+          if git rev-parse HEAD~1 >/dev/null 2>&1; then
+            PREV_VER_LINE=$(git show HEAD~1:"$FILE" | grep "^! Version:" | head -n 1)
+          else
+            PREV_VER_LINE=""
+          fi
+          
+          if [ "$CURR_VER_LINE" = "$PREV_VER_LINE" ] || [ -z "$PREV_VER_LINE" ]; then
+            echo "No manual version change detected. Starting auto-versioning..."
+            
+            PREV_VERSION=$(echo "$PREV_VER_LINE" | awk '{print $3}')
+            
+            if [ -n "$PREV_VERSION" ]; then
+              PREV_DATE=$(echo "$PREV_VERSION" | cut -d'.' -f1-3)
+              PREV_NUM=$(echo "$PREV_VERSION" | cut -d'.' -f4)
+              [ -z "$PREV_NUM" ] && PREV_NUM=0
+              
+              if [ "$KST_DATE" = "$PREV_DATE" ]; then
+                NEW_NUM=$((PREV_NUM + 1))
+                NEW_VERSION="$KST_DATE.$NEW_NUM"
+              else
+                NEW_VERSION="$KST_DATE.0"
+              fi
+            else
+              NEW_VERSION="$KST_DATE.0"
+            fi
+            
+            sed -i "s/^! Version: .*/! Version: $NEW_VERSION/" "$FILE"
+            echo "Version automatically updated to: $NEW_VERSION"
+          else
+            echo "Manual version change detected. Skipping auto-versioning."
+          fi
+          
+          if grep -q "^! TimeUpdated:" "$FILE"; then
+            sed -i "s/^! TimeUpdated: .*/! TimeUpdated: $UTC_TIME/" "$FILE"
+          else
+            sed -i "/^! Version:/a ! TimeUpdated: $UTC_TIME" "$FILE"
+          fi
+          echo "Timestamp updated to: $UTC_TIME (UTC)"
+          
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          if git diff --quiet "$FILE"; then
+            echo "No changes detected. Skipping git commit."
+          else
+            git add "$FILE"
+            git commit -m "chore: auto-update filter header (Version/TimeUpdated) [skip ci]"
+            git push origin main
+          fi
