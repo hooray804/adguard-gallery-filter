@@ -7,7 +7,7 @@
 
 ! Ads
 !
-! General rule
+! General rules
 !
 ##.ad-view
 ##.banner_m
