@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - name: Update Version and Push
         env:
@@ -33,25 +35,39 @@ jobs:
             exit 0
           fi
 
-          CURRENT_VERSION=$(grep "^! Version:" "$FILE" | head -n 1 | awk '{print $3}')
+          CURR_VER_LINE=$(grep "^! Version:" "$FILE" | head -n 1)
           
-          if [ -n "$CURRENT_VERSION" ]; then
-            PREV_DATE=$(echo "$CURRENT_VERSION" | cut -d'.' -f1-3)
-            PREV_NUM=$(echo "$CURRENT_VERSION" | cut -d'.' -f4)
-            [ -z "$PREV_NUM" ] && PREV_NUM=0
+          if git rev-parse HEAD~1 >/dev/null 2>&1; then
+            PREV_VER_LINE=$(git show HEAD~1:"$FILE" | grep "^! Version:" | head -n 1)
+          else
+            PREV_VER_LINE=""
+          fi
+
+          if [ "$CURR_VER_LINE" = "$PREV_VER_LINE" ] || [ -z "$PREV_VER_LINE" ]; then
+            CURRENT_VERSION=$(echo "$CURR_VER_LINE" | awk '{print $3}')
             
-            if [ "$KST_DATE" = "$PREV_DATE" ]; then
-              NEW_NUM=$((PREV_NUM + 1))
-              NEW_VERSION="$KST_DATE.$NEW_NUM"
+            if [ -n "$CURRENT_VERSION" ]; then
+              PREV_DATE=$(echo "$CURRENT_VERSION" | cut -d'.' -f1-3)
+              PREV_NUM=$(echo "$CURRENT_VERSION" | cut -d'.' -f4)
+              [ -z "$PREV_NUM" ] && PREV_NUM=0
+              
+              if [ "$KST_DATE" = "$PREV_DATE" ]; then
+                NEW_NUM=$((PREV_NUM + 1))
+                NEW_VERSION="$KST_DATE.$NEW_NUM"
+              else
+                NEW_VERSION="$KST_DATE.0"
+              fi
             else
               NEW_VERSION="$KST_DATE.0"
             fi
+
+            sed -i "0,/^! Version: .*/s/^! Version: .*/! Version: $NEW_VERSION/" "$FILE"
+            COMMIT_MSG="chore: update filter header to v$NEW_VERSION"
           else
-            NEW_VERSION="$KST_DATE.0"
+            MANUAL_VERSION=$(echo "$CURR_VER_LINE" | awk '{print $3}')
+            COMMIT_MSG="chore: update filter timestamp (v$MANUAL_VERSION)"
           fi
 
-          sed -i "0,/^! Version: .*/s/^! Version: .*/! Version: $NEW_VERSION/" "$FILE"
-          
           if grep -q "^! TimeUpdated:" "$FILE"; then
             sed -i "0,/^! TimeUpdated: .*/s/^! TimeUpdated: .*/! TimeUpdated: $UTC_TIME/" "$FILE"
           else
@@ -62,5 +78,5 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
           git add "$FILE"
-          git commit -m "chore: update filter header to v$NEW_VERSION"
+          git commit -m "$COMMIT_MSG"
           git push origin main
