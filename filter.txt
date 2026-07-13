@@ -80,6 +80,7 @@ avsee.ru##[alt$='gif']
 battlepage.com##div[style$="min-height:200px;"]:has(ins.adsbyaiinad)
 bbs.ruliweb.com##div.clear:has([style*='overflow-x'])
 bbs.ruliweb.com##tr:has(.nick[style^='display: inline-block'])
+boutique.chosun.com###bo_main_modalWrap
 bunjang.co.kr##div[class*="ProductExternalAdsstyle"]:has(h3:has-text(비슷한 새 상품 보기))
 bunjang.co.kr##section:has(> [class*="adTitle"]):has-text(AD)
 chimhaha.net##[id^='slot']
@@ -103,6 +104,8 @@ dschool.co.kr##[id="lean_overlay"]
 dvdprime.com##[id$='top_banner']
 dvdprime.com##[id^='ad_mobile']
 ebs.co.kr##.ji_adban
+edu.chosun.com##a:has(> [src*="edu.chosun.com/images/bn/"])
+edu.chosun.com##section:has(> [id^="AD_Main_"])
 ez2pattern.kr##.sticky
 fc-info.com##div[class^='Venatus_']
 fmkorea.com##[class$='_ad']
@@ -114,6 +117,7 @@ gangmom.kr##.banner-wrapper
 get*ads-*-du.a.run.app^
 gmarket.co.kr##.js-impressionable.box__head-ad
 harpi.in##div:has(> script[src])
+health.chosun.com##.ad-main-top
 hygall.com##div[style='display: flex;justify-content: center; width:100%;height:100px;']
 i-boss.co.kr##.home-board:has(.home-banner-wrap)
 i-boss.co.kr##.topNoticeArea
