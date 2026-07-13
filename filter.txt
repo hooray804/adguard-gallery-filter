@@ -318,7 +318,7 @@ shipdago.com##+js(nostif, adsbygoogle-status)
 shipdago.com##+js(set-attr, ins.adsbygoogle, data-ad-status, true)
 shipdago.com##+js(set-attr, ins.adsbygoogle, data-adsbygoogle-status, true)
 shipdago.com,ez2pattern.kr,quizbubble.kr##+js(no-fetch-if, adsbygoogle.js)
-toronon.kr##+js(prevent-fetch, site_id=, emptyObj)
+toronon.kr##+js(no-fetch-if, site_id=, emptyObj)
 ||maxmovie.com/_next/static/chunks/framework.aa400efa16f23e2b0cfe.js
 
 ! Incorrect blocking
