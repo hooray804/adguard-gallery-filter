@@ -124,7 +124,6 @@ instiz.net##div[class^='hot_u']
 inven.co.kr##div[style="width: 100%; height: 250px"]:has(.ad-right2)
 k-hentai.org##.my-3.container
 kgirls.net##.layout_pc_banner
-khan.co.kr##[class*="banner"]:has(div[class*="ad-wrapper"])
 khan.co.kr##[class^="ad-art-"]
 kidd.co.kr##.bottomAdBox
 kidd.co.kr##.product-recommendations
