@@ -9,6 +9,7 @@
 !
 ! General rules
 !
+##.ad400__100:has(img[src*="angle777899.com/other/atoona/"])
 ##.ad-view
 ##.banner_m
 ##.happy-under-player-mobile
