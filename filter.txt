@@ -243,7 +243,6 @@ zod.kr##div[id]:has(> [target] > img)
 ||trillion.toss.im^
 !
 bamgad7.com,bamgad8.com,bamgad9.com##ul.row:has(img[src*="/file/advertise/"])
-bampt6.com,bampt7.com,bampt8.com##.small-banners-grid, .small-ad-item, .premium-banner-wrapper
 darkgirl13.com,darkgirl14.com,darkgirl15.com###adskip, #posterWrap, #main-banner
 darkgirl13.com,darkgirl14.com,darkgirl15.com##.banner, a[href*="clickadu.net"]
 darkgirl13.com,darkgirl14.com,darkgirl15.com#%#//scriptlet('trusted-click-element', '#adbtn')
