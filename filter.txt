@@ -149,6 +149,8 @@ m.dcinside.com##.menu-scroll-lst.swiper-wrapper > li.swiper-slide:nth-of-type(n+
 m.dcinside.com##.survey
 m.dcinside.com##.view-btm-con
 m.dcinside.com##li:not(.notice):has(> .detail-top-lnk)
+m.nate.com##a[href^="https://cyad1.nate.com/click.kti/mnate/"]
+m.pann.nate.com##section > div[style^="width: 100%; min-height: 100px;"]:has(> iframe[title="광고"])
 m.ppomppu.co.kr##.js-ad_slot.JS-div_gpt_ad
 m.ppomppu.co.kr##div[style^='text-align:center;']
 m.ppomppu.co.kr##ul:has(> .mobile-ad-sponsor)
