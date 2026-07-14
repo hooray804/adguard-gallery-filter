@@ -40,7 +40,7 @@ linkareer.com,m.ppomppu.co.kr,ggoorr.net,coinpan.com,shipdago.com,outstanding.kr
 m.cafe.daum.net,bokuennews.com##[class*='_banner']
 m.wowtv.co.kr,inven.co.kr##[id*='Banner']
 maplescouter.com,loawa.com###popup
-nexon.com,gg,ps,xyz,loawa.com,or.kr,go.kr,ai,chat,ms.kr,hs.kr#@#[target='_blank']:has([src*='/banner/'])
+nexon.com,gg,ps,xyz,loawa.com,or.kr,go.kr,ai,chat,ms.kr,hs.kr#@#[target='_blank']:has([src*='/banner/']):not([title^="새"])
 ppomppu.co.kr,m.ppomppu1.co.kr##[id$='_popup']
 qquing.net,ibric.org##[class*="ad-wrap"]
 rgr.kr,rgrong.net,te31.com###foot:style(height: 150px !important;)
