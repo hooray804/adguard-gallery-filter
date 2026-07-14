@@ -204,7 +204,8 @@ search.danawa.com##[id^='powerShoppingArea']
 search.danawa.com##li[data-itemtype='adsmart']
 seoul.co.kr###bottomScrollBox
 seoul.co.kr##[class^='ad']
-shopping.naver.com##div[class^="_carouselProductList_mobile_carousel_product_list_"]
+shopping.naver.com##div[class^="_carouselProductList_mobile_carousel_product_list_"]:has([class^="_adMark"])
+shopping.naver.com##li[class*="brandCRMProductList_item__"]:has(> div[class*="miniProductCard_mini_product_card__"] > [href^="https://ader.naver.com/"])
 soccerline.kr##.bottBann
 ssalmuk.com##+js(json-prune, data.[-].popupCode)
 svrforum.com$$ins[class="adsbygoogle"]
