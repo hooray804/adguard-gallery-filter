@@ -305,7 +305,7 @@ ruliweb.com##+js(remove-class, ai_blind, #board_read)
 
 ! Anti-adblock
 @@||piku.co.kr^$generichide
-0db.co.kr##+js(nostif, adsbygoogle, 1500)
+0db.co.kr###adblock_notice
 aagag.com##+js(set-cookie, ab, 0)
 aagag.com#$#.la { position: absolute !important; left: -3000px !important; width: 60px !important; height: 20px !important; }
 cola16.app##+js(acis, decodeURIComponent, ABCDEFGHIJKLMNOPQRSTUVWXYZ)
