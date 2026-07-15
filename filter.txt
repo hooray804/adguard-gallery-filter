@@ -69,7 +69,7 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 3rd.supply##.h-hori-ad
 3rd.supply##.text-center:has(sp-common-adsense)
 algumon.com##div:has([data-tip^='파트너스'], div[style*='height'], ins):is(.card, .deal-2col)
-arca.live##.vrow.hybrid:has(.category-badge)
+arca.live##.category-badge:has-text(광고):upward(.vrow.hybrid)
 asked.kr##div[class^="index_"] div[class^="banner_"]
 asked.kr##div[class^="kad_"]
 avdbs.com##.ad-btn[class*='tp']
