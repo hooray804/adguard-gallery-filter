@@ -56,7 +56,6 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 *$websocket,domain=bunny-frame.online
 [$domain=/^fxfx[0-9]*\.com/]##.top-banner
 [$domain=/^hoohootv[0-9]*\.[a-z]{2,}/]###img_row_container
-[$domain=/^redvi[0-9]*\.com/]##div[style*="z-index: 9999"]:has(img[src*="/banners/"]), img[src*="/banners/"]
 [$domain=/^toki[0-9]*\.com/]##.vw-swipe-hint, [data-pm-ov="1"]
 [$domain=/^tvmon[0-9]*\.[a-z]{2,}/]##.banner_wrap2
 [$domain=/^tvwiki[0-9]*\.net/]###bannerList, #viewCover, img[src*="/banner/"]
