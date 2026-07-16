@@ -206,6 +206,7 @@ seoul.co.kr##[class^='ad']
 shopping.naver.com##div[class^="_carouselProductList_mobile_carousel_product_list_"]:has([class^="_adMark"])
 shopping.naver.com##li[class*="brandCRMProductList_item__"]:has(> div[class*="miniProductCard_mini_product_card__"] > [href^="https://ader.naver.com/"])
 soccerline.kr##.bottBann
+soccerline.kr##.rightBann
 ssalmuk.com##+js(json-prune, data.[-].popupCode)
 svrforum.com$$ins[class="adsbygoogle"]
 te31.com##table:has(td > script)
