@@ -101,6 +101,7 @@ dschool.co.kr###modal-banner
 dschool.co.kr##[id="lean_overlay"]
 dvdprime.com##[id$='top_banner']
 dvdprime.com##[id^='ad_mobile']
+dvdprime.com##[id^='slot-']
 ebs.co.kr##.ji_adban
 edu.chosun.com##a:has(> [src*="edu.chosun.com/images/bn/"])
 edu.chosun.com##section:has(> [id^="AD_Main_"])
