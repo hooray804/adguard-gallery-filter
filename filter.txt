@@ -263,7 +263,6 @@ xxzone26.top,xxzone27.top,xxzone28.top##[id*="main-banner"], .gplayer-ad-overlay
 /^https:\/\/[a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]?[0-9a-z]?[0-9a-z]?[0-9a-z]?\.com\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?(\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?)?(\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?)?\?[0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?=[0-9a-zA-Z%][0-9a-zA-Z%]?[0-9a-zA-Z%]?[0-9a-zA-Z%]?[0-9a-zA-Z%]?[0-9a-zA-Z%]?&[0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?=[0-9a-zA-Z%._-]+&[0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?=[0-9a-zA-Z%._-]+&[0-9a-zA-Z%_=&.+-]+&[a-z][a-z][a-z][a-z][a-z][a-z][a-z]=[0-9]\.[0-9]\.[0-9][0-9]-[a-z][a-z][0-9a-zA-Z%_=&.+-]*$/$script,third-party,match-case
 hitomi.la##+js(nowoif)
 hitomi.la##div:has(> [id^="__clb-spot"])
-namu.wiki#?#body:xpath(//div[descendant::div and not(descendant-or-self::*[not(self::div)]) and normalize-space() = '' and not(descendant-or-self::*/@*[not(name()='class' or name()='id' or starts-with(name(), 'data-v-') or (name()='style' and normalize-space()=''))])]):remove()
 !#endif
 
 ! Minor distractions
