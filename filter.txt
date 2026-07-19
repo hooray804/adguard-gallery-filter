@@ -105,6 +105,8 @@ dvdprime.com##[id^='slot-']
 ebs.co.kr##.ji_adban
 edu.chosun.com##a:has(> [src*="edu.chosun.com/images/bn/"])
 edu.chosun.com##section:has(> [id^="AD_Main_"])
+encar.com##[class*="Banner_wrap"]
+encar.com##li > a[class*="RecommendQuick_link_quick__"][href^="https://automotive.encar.com/RealMedia/ads/"][target="_blank"]
 ez2pattern.kr##.sticky
 fc-info.com##div[class^='Venatus_']
 fmkorea.com##[class$='_ad']
