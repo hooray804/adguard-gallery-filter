@@ -203,7 +203,6 @@ ppomppu.co.kr##.bottom > div[style]
 ppomppu.co.kr##tr[id*="_list_ad_"]
 ppomppu.co.kr$$tr:has-text(AD)
 red52.kr##.notice-box-area, .banner-pc, .banner-m
-search.danawa.com##[id^='powerShoppingArea']
 search.danawa.com##li[data-itemtype='adsmart']
 seoul.co.kr###bottomScrollBox
 seoul.co.kr##[class^='ad']
