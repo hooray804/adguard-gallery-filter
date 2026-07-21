@@ -147,7 +147,7 @@ loawa.com##[data-ad-placement]
 m.10000recipe.com##li:has(div.rcp_list2022_new_cont > div:has-text(AD))
 m.anewsa.com##div[style*="width:300px"]
 m.bobaedream.co.kr##div[style$='height:50px;']
-m.danawa.com###mdnw-main-dimm, #mdnw-main-bottomSheet-container
+m.bobaedream.co.kr##div.cyber-ad-wrapper
 m.dcinside.com##.layer-bottom-popup
 m.dcinside.com##.menu-scroll-lst.swiper-wrapper > li.swiper-slide:nth-of-type(n+5)
 m.dcinside.com##.survey
