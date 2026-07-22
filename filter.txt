@@ -230,6 +230,7 @@ xtoon365.com##[class$='-ad']
 yonhapnewstv.co.kr##.main-banner-area
 yonhapnewstv.co.kr##.view-ad-center
 yonhapnewstv.co.kr##section[class^="popular"]
+youthassembly.kr##.coupang-box
 yozm.wishket.com##[data-testid="top-banner"]
 yozm.wishket.com##[data-testid^="advertisement-"]
 zod.kr##div[id]:has(> [target] > img)
