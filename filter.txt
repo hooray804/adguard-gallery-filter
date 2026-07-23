@@ -65,7 +65,6 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 [$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##div[class$='gallery'][id] [target='_blank']:upward(1)
 3rd.supply##.h-hori-ad
 3rd.supply##.text-center:has(sp-common-adsense)
-ajunews.com##div.article_con > div > div[style*="580px;"]
 algumon.com##div:has([data-tip^='파트너스'], div[style*='height'], ins):is(.card, .deal-2col)
 arca.live##.category-badge:has-text(광고):upward(.vrow.hybrid)
 asked.kr##div[class^="index_"] div[class^="banner_"]
@@ -228,6 +227,7 @@ tiendeo.co.kr##section.justify-center:has([id^="div-gpt-ad-web"])
 tvseoul.kr##div[style*="width:360px"][style*="height:300px"]
 uppity.co.kr##.adrop-outer
 veritas-a.com##article.grid.body > div.clearfix:has(.ad-template)
+wadiz.kr##[class^="MultiBoardAdBannerDisplay-"]
 xtoon365.com##[class$='-ad']
 yonhapnewstv.co.kr##.main-banner-area
 yonhapnewstv.co.kr##.view-ad-center
