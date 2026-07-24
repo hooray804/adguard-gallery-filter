@@ -138,7 +138,7 @@ khan.co.kr##[class^="ad-art-"]
 kidd.co.kr##.bottomAdBox
 kidd.co.kr##.product-recommendations
 kidd.co.kr##slidebanner
-kissjav.*##+js(nowoif)
+kissjav.*##+js(nowoif, !kissjav)
 kloa.gg##div[class*="min-h-"]:has(> div[id]:empty):not(:has(a))
 kyeongin.com##.horizon-ad
 lawtimes.co.kr###top-banner
@@ -340,8 +340,8 @@ shipdago.com,ez2pattern.kr,quizbubble.kr##+js(no-fetch-if, adsbygoogle.js)
 ||maxmovie.com/_next/static/chunks/framework.aa400efa16f23e2b0cfe.js
 
 ! Incorrect blocking
-$@$link[rel="manifest"]
 !#safari_cb_affinity(general,custom)
+$@$link[rel="manifest"]
 @@||192.168.$stealth=dpi
 @@||a*.smlog.co.kr^$app=com.nhn.android.search
 @@||ad-creative.pstatic.net^$app=com.nhn.android.search
