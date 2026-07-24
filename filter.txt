@@ -340,7 +340,7 @@ shipdago.com,ez2pattern.kr,quizbubble.kr##+js(no-fetch-if, adsbygoogle.js)
 
 ! Incorrect blocking
 $@$link[rel="manifest"]
-!#safari_cb_affinity(general)
+!#safari_cb_affinity(general,custom)
 @@||192.168.$stealth=dpi
 @@||a*.smlog.co.kr^$app=com.nhn.android.search
 @@||ad-creative.pstatic.net^$app=com.nhn.android.search
