@@ -131,6 +131,7 @@ iloa.gg##div.justify-center[class*="min-h-"]:has(> div.items-center:empty):not(:
 instiz.net##.view_top
 instiz.net##div[class^='hot_u']
 inven.co.kr##div[style="width: 100%; height: 250px"]:has(.ad-right2)
+jjtv.kr##div[style^="text-align: center"]:has(> iframe[src*="//ad.adnmore.co.kr/"])
 k-hentai.org##.my-3.container
 kgirls.net##.layout_pc_banner
 khan.co.kr##[class^="ad-art-"]
