@@ -251,12 +251,12 @@ zod.kr##div[id]:has(> [target] > img)
 ||thumb.kakaocdn.net^$app=com.kakao.talk
 ||trillion.toss.im^
 !
-bamgad7.com,bamgad8.com,bamgad9.com##ul.row:has(img[src*="/file/advertise/"])
+bamgad8.com,bamgad9.com,bamgad10.com##ul.row:has(img[src*="/file/advertise/"])
 darkgirl14.com,darkgirl15.com,darkgirl16.com###adskip, #posterWrap, #main-banner
 darkgirl14.com,darkgirl15.com,darkgirl16.com##.banner, a[href*="clickadu.net"]
 darkgirl14.com,darkgirl15.com,darkgirl16.com#%#//scriptlet('trusted-click-element', '#adbtn')
 ggbam16.com,ggbam17.com,ggbam18.com##+js(nano-stb, adGate)
-jaddal37.top,jaddal38.top,jaddal39.top##+js(nano-sib, countdown)
+jaddal38.top,jaddal39.top,jaddal40.top##+js(nano-sib, countdown)
 xxzone26.top,xxzone27.top,xxzone28.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
 !
 !#if (adguard && adguard_app_ios && adguard_ext_safari && adguard_ext_chromium && adguard_ext_edge && adguard_ext_firefox)
