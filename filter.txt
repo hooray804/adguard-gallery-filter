@@ -340,12 +340,16 @@ shipdago.com,ez2pattern.kr,quizbubble.kr##+js(no-fetch-if, adsbygoogle.js)
 
 ! Incorrect blocking
 $@$link[rel="manifest"]
+!#safari_cb_affinity(general)
 @@||192.168.$stealth=dpi
 @@||a*.smlog.co.kr^$app=com.nhn.android.search
 @@||ad-creative.pstatic.net^$app=com.nhn.android.search
 @@||ad-img.gmarket.com^$image,domain=m.gmarket.co.kr|auction.co.kr|www.gmarket.co.kr
+@@||ad.co.kr^$ghide
 @@||adtouch.*
+@@||arca.live^$ghide
 @@||blog.kakaocdn.net*/img.gif
+@@||cdn.cms.outstanding.kr/images/origin/2
 @@||code-pia.com^$stealth=dpi
 @@||fs2.joycity.com^$stealth=dpi
 @@||glonmall.com^$stealth=dpi
@@ -382,19 +386,11 @@ www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
 ||ssl.pstatic.net/t.static.blog/nmobile/versioning//common/lib/ntm/ntm-blog-web-*.js$badfilter
 ||store-api.mumuglobal.com^$badfilter
 ||tnkfactory.com^$badfilter
+!#safari_cb_affinity
 !
 !#if (adguard && adguard_app_windows)
 @@||coupang.com^$stealth
 !#endif
-!
-!#safari_cb_affinity(all)
-@@||ad.co.kr^$ghide
-!#safari_cb_affinity
-!
-!#safari_cb_affinity(general)
-@@||arca.live^$ghide
-@@||cdn.cms.outstanding.kr/images/origin/2
-!#safari_cb_affinity
 
 ! Malware & Spam
 ||ublockdns.com^$doc
