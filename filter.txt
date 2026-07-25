@@ -277,7 +277,7 @@ namu.wiki##div[class]:has(> ins.adsbygoogle:empty):not(:has(a))
 !#endif
 
 ! Minor distractions
-arca.live##a:has(img[src*="karisuma-point-x2.png"])
+arca.live##a:has(img[src*="/static/assets/images/karisuma-point"])
 gall.dcinside.com##.dc_all
 gall.dcinside.com##.dcmedia.content_box
 gall.dcinside.com##.ltr
