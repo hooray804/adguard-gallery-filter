@@ -215,6 +215,7 @@ shopping.naver.com##div[class^="contentModuleWrapper_content_module_wrapper"]:ha
 shopping.naver.com##div[class^="pagedListResponsive_inner_"] > ul > li[class*="pagedListResponsive_list_item_"]:has(> div > div[class^="productCard-module_product_card_"] a[class^="adButton-module_ad_button_"])
 shopping.naver.com##div[id*="ADVERTISE"][class*="contentModuleWrapper_news_ad__"]
 shopping.naver.com##li[class*="brandCRMProductList_item__"]:has(> div[class*="miniProductCard_mini_product_card__"] > [href^="https://ader.naver.com/"])
+shopping.naver.com##ul[class^="horizontalScrollListResponsive_set_list_"] > li[class^="horizontalScrollListResponsive_list_item_"]:has(> div > div[class*="productCard-module_product_card_"] a[class*="adButton-module_"])
 snxbest.naver.com##div[class^="rankingItemResponsive_product_inner"] > ul[class^="rankingItemResponsive_set_list"] > li._nlog_impression_element[class^="threeTierProductCardResponsive"]:has(> div > a[href^="https://ader.naver.com/"])
 snxbest.naver.com##li[class^="productCardResponsive_product_card_responsive__"]:has(> div[class*="productCardResponsive_inner"] > [href^="https://ader.naver.com/"])
 soccerline.kr##.bottBann
