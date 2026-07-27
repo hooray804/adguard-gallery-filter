@@ -367,11 +367,14 @@ $@$link[rel="manifest"]
 @@||koreainvestment.com^$stealth=dpi
 @@||kr^$stealth=dpi
 @@||nexon.com^$stealth=dpi
+@@||nlog.naver.com^$domain=map.naver.com
+@@||ntm.pstatic.net/scripts/$domain=map.naver.com
 @@||searchad-phinf.pstatic.net^$app=com.nhn.android.search
 @@||shopping.naver.com^$stealth
 @@||slrclub.com/rss/today_photo.slr
 @@||smartstore.naver.com^$stealth
 @@||sofrano.com^$stealth=dpi
+@@||ssl.pstatic.net^$domain=map.naver.com
 @@||termeden.com^$stealth=dpi
 @@||tivan.naver.com^$app=com.nhn.android.search
 @@||truefriend.com^$stealth=dpi
