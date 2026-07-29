@@ -200,11 +200,10 @@
 1. 하단 탭 바에서 두번째 아이콘 `보호` 탭 열기
 2. `DNS 보호` 메뉴 선택
 3. 네번째에 위치한 `DNS 필터링` 열기
-4. `Custom` 메뉴 선택
-5. 상단 `DNS 필터` 버튼 클릭
-6. 상단 `필터 추가` 버튼 클릭
-7. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/DNS.txt` 입력
-8. `다음`, `추가` 버튼 차례로 클릭
+4. 상단 `DNS 필터` 버튼 클릭
+5. 상단 `필터 추가` 버튼 클릭
+6. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/DNS.txt` 입력
+7. `다음`, `추가` 버튼 차례로 클릭
 
 </details>
 
