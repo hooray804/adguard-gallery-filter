@@ -1,7 +1,5 @@
 # AdGuard Gallery Filter for Korean
 
-# [아카이브 관련 공지](https://github.com/hooray804/adguard-gallery-filter/issues/18)
-
 본 애드가드 갤러리 필터와 유저스크립트는 AdGuard와 uBlock Origin 한국어 필터의 부족한 점을 보완하고, 광고 차단 및 커뮤니티 이용 환경을 개선하기 위해 제작되었습니다.
 
 > [!IMPORTANT]
