@@ -130,6 +130,7 @@ i-boss.co.kr##.home-board:has(.home-banner-wrap)
 i-boss.co.kr##.topNoticeArea
 i-boss.co.kr##[class$="-bn"]:has(a[target="_blank"])
 ibric.org##.top-banner-wrap
+ikbc.co.kr##.box.banner
 iloa.gg##div.justify-center[class*="min-h-"]:has(> div.items-center:empty):not(:has(a))
 instiz.net##.view_top
 instiz.net##div[class^='hot_u']
@@ -166,6 +167,7 @@ m.ppomppu.co.kr##div[style^='text-align:center;']
 m.ppomppu.co.kr##ul:has(> .mobile-ad-sponsor)
 m.ruliweb.com##aside.native_timeline_ad
 m.ruliweb.com##tr:has(.nbp_container)
+m.tf.co.kr##div[style*="height"]:has([id^="ADFRAME"])
 m.wowtv.co.kr##.container > div[style]
 maplescouter.com##div.justify-center:has([alt="boomback ad"])
 mbong.kr##.ink_slide
@@ -179,6 +181,8 @@ mimint.co.kr##.g-center-wrap
 mimint.co.kr##.index-right-banner
 mimint.co.kr##.list_row:has(div[data-ad-mode])
 missav01.com##+js(nowoif)
+mk.co.kr##div[data-ad-render-container]
+mk.co.kr##li.native-ad-list-item
 mlbpark.donga.com##[class^='coupang'], [class*='naver_place']
 mlbpark.donga.com##ul.sub_lists_today.lists > li.items:nth-of-type(6)::before
 mmzone.co.kr###header_top:has(.ads-wrap)
@@ -201,8 +205,7 @@ orbi.kr##div[x-data="advertisement"]
 outstanding.kr###top_banner_home
 outstanding.kr##.Toastify__toast:has([id^="banner_"])
 paxnet.co.kr##.stock-ad
-paxnet.co.kr##[class^="dv-com-m0"]
-paxnet.co.kr##iframe[src*="/banner/"]
+paxnet.co.kr##[class^="dv-com-m"]
 pay.naver.com##div[class^='BottomAds_article']
 postshare.co.kr##div:has(> a > img[src*="/images/banner/"])
 postype.com##div[data-sentry-component="RecommendFeedGoogleAd"]:upward(1)
@@ -239,6 +242,7 @@ umrb.co.kr##ul.main_slider_area
 uppity.co.kr##.adrop-outer
 veritas-a.com##article.grid.body > div.clearfix:has(.ad-template)
 wadiz.kr##[class^="MultiBoardAdBannerDisplay-"]
+welfarehello.com##[style^="--ad-frame-width-"]
 xtoon365.com##[class$='-ad']
 yonhapnewstv.co.kr##.main-banner-area
 yonhapnewstv.co.kr##.view-ad-center
@@ -268,6 +272,7 @@ darkgirl14.com,darkgirl15.com,darkgirl16.com##.banner, a[href*="clickadu.net"]
 darkgirl14.com,darkgirl15.com,darkgirl16.com#%#//scriptlet('trusted-click-element', '#adbtn')
 ggbam16.com,ggbam17.com,ggbam18.com##+js(nano-stb, adGate)
 jaddal39.top,jaddal40.top,jaddal41.top##+js(nano-sib, countdown)
+tvroom24.org,tvroom25.org,tvroom26.org##a[href*="/banner/"][target="_blank"]
 xxzone26.top,xxzone27.top,xxzone28.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
 !
 !#if (adguard && adguard_app_ios && adguard_ext_safari && adguard_ext_chromium && adguard_ext_edge && adguard_ext_firefox)
