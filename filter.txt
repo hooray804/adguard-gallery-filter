@@ -90,7 +90,8 @@ coinpan.com##p > strong > span:has-text(AD):upward(p)
 community.rememberapp.co.kr##[alt="배너 광고 이미지"]
 damoang.net##.dm-card:has(#gam-index-top-damoang-banner-index)
 danawa.com##.auto_product_list:has(> .icon__ad)
-daum.net##div[data-slot-type="AD_BRANDING_STATION"]
+daum.net##[data-slot-type="AD_BRANDING_STATION"]
+daum.net##[data-slot-type="DAUM_AD"]
 dcinside.com##li[id^='comment_']:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.1 !important;)
 ddaltube.com##+js(remove-attr, data-a, #dtube-player)
 ddaltube.com##.dtube-banner-grid, .vjs-video-ad-click-overlay, .player-banner-overlay > a.block
@@ -98,6 +99,7 @@ diningcode.com##.ad-container
 diningcode.com##li:has(.PoiAdsSpacerList)
 dispatch.co.kr##article.page-post-font.page-post-article > div:has(iframe)
 dispatch.co.kr##article.page-post-font.page-post-article > iframe
+dnews.co.kr##div[style^="text-align: center"][style*="z-index: 999"]
 doctornow.co.kr##div.flex.w-full:has(> div.relative, > ins.adsbygoogle)
 dschool.co.kr###modal-banner
 dschool.co.kr##[id="lean_overlay"]
@@ -142,6 +144,7 @@ kidd.co.kr##.product-recommendations
 kidd.co.kr##slidebanner
 kissjav.*##+js(nowoif, !kissjav)
 kloa.gg##div[class*="min-h-"]:has(> div[id]:empty):not(:has(a))
+korea.com##div[class*="banner"]
 kyeongin.com##.horizon-ad
 lawtimes.co.kr###top-banner
 linkareer.com##[role="advertisement"]:not([class^="card-item"])
@@ -185,6 +188,8 @@ mlbpark.donga.com##ul.sub_lists_today.lists > li.items:nth-of-type(6)::before
 mmzone.co.kr###header_top:has(.ads-wrap)
 mmzone.co.kr##.m-center-adt-container
 mule.co.kr##[class*='-ad-']
+musinsa.com##a.gtm-click-content[href$="/main/musinsa/brand_ad"]
+musinsa.com##div[class^="TabItem__DefaultCombinationWrap-"]:has(> a.gtm-click-content[href="/main/musinsa/brand_ad"])
 namu.news##li:has(div[style*="min-height:100px"]):has(> div > div[id*="article-a"])
 namu.wiki#$#div[class][id]:is(:empty, :has(> iframe[id^='google_ads_iframe'])) { display: none !important; }
 naver.com###sb-kh-shortents-wrap
@@ -210,6 +215,8 @@ ppomppu.co.kr##.bottom > div[style]
 ppomppu.co.kr##tr[id*="_list_ad_"]
 ppomppu.co.kr$$tr:has-text(AD)
 red52.kr##.notice-box-area, .banner-pc, .banner-m
+sbs.co.kr##[class$="_bnr_ad"]
+sbs.co.kr##[class$="-ad"]
 search.danawa.com##li[data-itemtype='adsmart']
 seoul.co.kr###bottomScrollBox
 seoul.co.kr##[class^='ad']
