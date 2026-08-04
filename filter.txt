@@ -154,8 +154,8 @@ loawa.com##[aria-label="광고 팝업"]
 loawa.com##[data-ad-placement]
 m.10000recipe.com##li:has(div.rcp_list2022_new_cont > div:has-text(AD))
 m.anewsa.com##div[style*="width:300px"]
-m.bobaedream.co.kr##div[style$='height:50px;']
 m.bobaedream.co.kr##div.cyber-ad-wrapper
+m.bobaedream.co.kr##div[style$='height:50px;']
 m.dcinside.com##.layer-bottom-popup
 m.dcinside.com##.menu-scroll-lst.swiper-wrapper > li.swiper-slide:nth-of-type(n+5)
 m.dcinside.com##.survey
@@ -215,8 +215,8 @@ ppomppu.co.kr##.bottom > div[style]
 ppomppu.co.kr##tr[id*="_list_ad_"]
 ppomppu.co.kr$$tr:has-text(AD)
 red52.kr##.notice-box-area, .banner-pc, .banner-m
-sbs.co.kr##[class$="_bnr_ad"]
 sbs.co.kr##[class$="-ad"]
+sbs.co.kr##[class$="_bnr_ad"]
 search.danawa.com##li[data-itemtype='adsmart']
 seoul.co.kr###bottomScrollBox
 seoul.co.kr##[class^='ad']
@@ -466,9 +466,9 @@ arca.live##.vcol.col-title .comment-count:style(display: inline-block !important
 arca.live#%#const _s=document.documentElement.appendChild(Object.assign(document.createElement("style"),{textContent:'a.notice .vcol.col-ad .badge.text-bg-success,a.notice .vcol.col-id>b{visibility:hidden}'}));document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelector("div.list-table");if(!t){_s.remove();return;}const s=()=>{const e=t.querySelector('a.notice[href*="/b/"]');if(!e)return;const g=e.pathname.split("/b/")[1]?.split("/")[0];if(!g)return;const b=e.querySelector(".vcol.col-ad .badge.text-bg-success"),i=e.querySelector(".vcol.col-id>b");if(b)b.textContent=g;if(i)i.textContent=g;if(b||i)_s.remove()};s();let r;new MutationObserver(()=>{clearTimeout(r);r=setTimeout(s,100)}).observe(t,{childList:!0,subtree:!0})});
 dcinside.com#%#//scriptlet('trusted-create-element', 'head', 'meta', 'name="theme-color" content="#2b367d"')
 dmm.co.jp#%#//scriptlet('trusted-set-cookie-reload', 'ckcy_remedied_check', 'ec_mrnhbtk', '1year', '/', '.dmm.co.jp')
-gall.dcinside.com##.img_area button.btn:style(opacity: 0.4 !important;)
 gall.dcinside.com##+js(aeld, contextmenu, , elements, video)
 gall.dcinside.com##+js(remove-attr, controlslist, video, stay)
+gall.dcinside.com##.img_area button.btn:style(opacity: 0.4 !important;)
 gall.dcinside.com#$#.btn_imgcmtopen { opacity: 0.4 !important; transform: translate(8px, 7px) !important; }
 gall.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview_head:has(em.icon_write_app) > div.gall_writer > div.fl', 'span', '', 'ㅤAPP')
 gall.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview_head:has(em.icon_write_mbl) > div.gall_writer > div.fl', 'span', '', 'ㅤMOBILE')
