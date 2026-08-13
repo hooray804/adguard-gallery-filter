@@ -29,8 +29,10 @@
 auction.co.kr,gmarket.co.kr##.plcc_banner
 blog.naver.com,comic.naver.com##[class*='banner_area']
 chimhaha.net,seoul.co.kr,mule.co.kr,hiromi.fans##[class*='Ad']
+chimhaha.net,dvdprime.com##[id^='slot']
 danawa.com,m.cafe.naver.com,hungryapp.co.kr,hungapp.com##[class^='banner']
 gaykorea.net,yoboyobo.kr##.cu_gallery-item, .main-slider, .md_ad, .product_viewpage-latest, div[class^="m-b-"]:has(> div > p.powered)
+diningcode.com,chuchu.gg##.ad-container
 hani.co.kr,i-boss.co.kr,spin-spin.com##[class*="AdWrap"]
 hungryapp.*##.fixed-top
 hungryapp.*##[aria-label="헝그리앱 배너"]
@@ -59,6 +61,7 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 [$domain=/^hoohootv[0-9]*\.[a-z]{2,}/]###img_row_container
 [$domain=/^toki[0-9]*\.com/]##.vw-swipe-hint, [data-pm-ov="1"]
 [$domain=/^tvmon[0-9]*\.[a-z]{2,}/]##.banner_wrap2
+[$domain=/^tvroom[0-9]*\.org/]##a[href*="/banner/"][target="_blank"]
 [$domain=/^tvwiki[0-9]*\.net/]###bannerList, #viewCover, img[src*="/banner/"]
 [$domain=/^wftoon[0-9]*\.com/]##.top-banner
 [$domain=/^wtwt[0-9]*\.com/]##.banner
@@ -74,6 +77,7 @@ avsee.ru##+js(acis, decodeURI, split)
 avsee.ru##.at-main > div.main-box > .miso-post-mix > .post-wrap
 avsee.ru##.title
 avsee.ru##div.main-box:first-child
+band.us##[data-viewname="DNewsFeedAdListItemView"]:has(img[src^="https://partnercenter-phinf.pstatic.net"])
 battlepage.com##div[style$="min-height:200px;"]:has(ins.adsbyaiinad)
 bbs.ruliweb.com##div.clear:has([style*='overflow-x'])
 bbs.ruliweb.com##tr:has(.nick[style^='display: inline-block'])
@@ -82,11 +86,13 @@ bobaedream.co.kr##div.content.community > div[style$="height:100px;"]:has([id^="
 boutique.chosun.com###bo_main_modalWrap
 bunjang.co.kr##div[class*="ProductExternalAdsstyle"]:has(h3:has-text(비슷한 새 상품 보기))
 chimhaha.net##div[style='margin-top: 50px; ']
-chimhaha.net,dvdprime.com##[id^='slot']
 coinpan.com##li:has(> span.wgp_ad)
 coinpan.com##li:has(ins.adsbygoogle)
 coinpan.com##p > strong > span:has-text(AD):upward(p)
 community.rememberapp.co.kr##[alt="배너 광고 이미지"]
+crepe.cm##section.mx-auto.block:has(> a[href$="utm_campaign=crepe_main"][target="_blank"])
+dak.gg###venatus-container-top
+dak.gg##.ad[id="mobile-takeover"]
 damoang.net##.dm-card:has(#gam-index-top-damoang-banner-index)
 danawa.com##.auto_product_list:has(> .icon__ad)
 daum.net##[data-slot-type="AD_BRANDING_STATION"]
@@ -95,13 +101,13 @@ dcinside.com##li[id^='comment_']:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-
 ddaltube.com##+js(remove-attr, data-a, #dtube-player)
 ddaltube.com##.dtube-banner-grid, .vjs-video-ad-click-overlay, .player-banner-overlay > a.block
 diningcode.com##li:has(.PoiAdsSpacerList)
-diningcode.com,chuchu.gg##.ad-container
 dispatch.co.kr##article.page-post-font.page-post-article > div:has(iframe)
 dispatch.co.kr##article.page-post-font.page-post-article > iframe
 dnews.co.kr##div[style^="text-align: center"][style*="z-index: 999"]
 doctornow.co.kr##div.flex.w-full:has(> div.relative, > ins.adsbygoogle)
 dschool.co.kr###modal-banner
 dschool.co.kr##[id="lean_overlay"]
+dvdprime.com###ad_view_right1
 dvdprime.com##[id$='top_banner']
 dvdprime.com##[id^='ad_mobile']
 ebs.co.kr##.ji_adban
@@ -188,11 +194,14 @@ musinsa.com##div[class^="TabItem__DefaultCombinationWrap-"]:has(> a.gtm-click-co
 namu.news##li:has(div[style*="min-height:100px"]):has(> div > div[id*="article-a"])
 naver.com###sb-kh-shortents-wrap
 naver.com##.sa_mw.sa_empty_ad
+news.jtbc.co.kr##.MuiBox-root[radius="0"][style]:empty
+news.jtbc.co.kr##.print-hide.MuiBox-root:has(> iframe)
 news.jtbc.co.kr##.print-hide:has-text(AD)
 newspim.com##[style*="width:100%; height:250px; margin:10px"]
 ohmynews.com###dvCenterAd
 ohmynews.com##aside.content_rt > div[style="height: 270px; margin: 0px; padding: 0px;"]
 ohmynews.com##div[style="width: 336px; height: 280px;"]
+okky.kr##div.relative.mt-16:has(> div > div > div > a[target="_blank"][href^="https://ad.doubleclick.net"]):has(> footer.border-t.bg-background)
 orbi.kr##.label-banner
 orbi.kr##.listAd
 orbi.kr##div[style*="82px;"]:has(ins[data-revive-zoneid])
@@ -216,14 +225,13 @@ search.danawa.com##li[data-itemtype='adsmart']
 seoul.co.kr###bottomScrollBox
 seoul.co.kr##[class^='ad']
 shopping.naver.com##div[class^="_carouselProductList_mobile_carousel_product_list_"]:has([class^="_adMark"])
-shopping.naver.com##div[class^="contentModuleWrapper_content_module_wrapper"]:has(> div[class^="contentModuleWrapper_common_content_size"] > div > div[class^="pagedListResponsive_button_wrap"] > [class^="adMarkResponsive"])
-shopping.naver.com##div[class^="pagedListResponsive_inner_"] > ul > li[class*="pagedListResponsive_list_item_"]:has(> div > div[class^="productCard-module_product_card_"] a[class^="adButton-module_ad_button_"])
 shopping.naver.com##div[id*="ADVERTISE"][class*="contentModuleWrapper_news_ad__"]
 shopping.naver.com##li[class*="brandCRMProductList_item__"]:has(> div[class*="miniProductCard_mini_product_card__"] > [href^="https://ader.naver.com/"])
 shopping.naver.com##ul[class^="horizontalScrollListResponsive_set_list_"] > li[class^="horizontalScrollListResponsive_list_item_"]:has(> div > div[class*="productCard-module_product_card_"] a[class*="adButton-module_"])
-snxbest.naver.com##div[class^="rankingItemResponsive_product_inner"] > ul[class^="rankingItemResponsive_set_list"] > li._nlog_impression_element[class^="threeTierProductCardResponsive"]:has(> div > a[href^="https://ader.naver.com/"])
 snxbest.naver.com##li[class^="productCardResponsive_product_card_responsive__"]:has(> div[class*="productCardResponsive_inner"] > [href^="https://ader.naver.com/"])
 soccerline.kr##.bottBann, .rightBann
+soccerline.kr##aside.midBann
+soccerline.kr##div[style$="513px; position: absolute; text-align: center; top: 242px; width: 160px; height: 600px; background-color: transparent;"][class]
 ssalmuk.com##+js(json-prune, data.[-].popupCode)
 svrforum.com$$ins[class="adsbygoogle"]
 te31.com##table:has(td > script)
@@ -265,12 +273,8 @@ zod.kr##div[id]:has(> [target] > img)
 ||trillion.toss.im^
 !
 bamgad8.com,bamgad9.com,bamgad10.com##ul.row:has(img[src*="/file/advertise/"])
-darkgirl14.com,darkgirl15.com,darkgirl16.com###adskip, #posterWrap, #main-banner
-darkgirl14.com,darkgirl15.com,darkgirl16.com##.banner, a[href*="clickadu.net"]
-darkgirl14.com,darkgirl15.com,darkgirl16.com#%#//scriptlet('trusted-click-element', '#adbtn')
 ggbam16.com,ggbam17.com,ggbam18.com##+js(nano-stb, adGate)
 jaddal39.top,jaddal40.top,jaddal41.top##+js(nano-sib, countdown)
-tvroom25.org,tvroom26.org,tvroom27.org##a[href*="/banner/"][target="_blank"]
 xxzone27.top,xxzone28.top,xxzone29.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
 !
 !#if (adguard && adguard_app_ios && adguard_ext_safari && adguard_ext_chromium && adguard_ext_edge && adguard_ext_firefox)
@@ -347,7 +351,9 @@ namu.wiki##div:has(img[data-doc]:not([data-doc^="/jump/"]):not([data-doc^="/w/"]
 oraksil.cc##+js(acis, onload, showAdblockMessage)
 postshare.co.kr##+js(set-cookie, ad_unlocked_timer_final_v2, true)
 ridy.kr##div[aria-labelledby="adblock-banner-title"]
-shipdago.com##+js(nostif, /adsbygoogle/)
+shipdago.com##+js(nostif, adsbygoogle-status)
+shipdago.com##+js(set-attr, ins.adsbygoogle, data-ad-status, true)
+shipdago.com##+js(set-attr, ins.adsbygoogle, data-adsbygoogle-status, true)
 shipdago.com,ez2pattern.kr,quizbubble.kr##+js(no-fetch-if, adsbygoogle.js)
 ||maxmovie.com/_next/static/chunks/framework.aa400efa16f23e2b0cfe.js
 
