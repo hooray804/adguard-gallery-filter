@@ -331,12 +331,10 @@ search.dcinside.com##.right_content
 cafe.naver.com##+js(remove-class, disable-select, #ct)
 fmkorea.com##+js(set, link_url, '')
 gmarket.co.kr##+js(set, mouseRightButtonDisabled, noopFunc)
-! incorrect blocking gmarket.co.kr#$#body { -webkit-user-select: text !important; user-select: text !important; -draggable: true !important; }
 ruliweb.com##+js(remove-class, ai_blind, #board_read)
 ||arca.live/static/assets/js/adult.min.js
 
 ! Anti-adblock
-! invalid rule hmstory.net##script:contains(detect-message-shown):remove()
 0db.co.kr###adblock_notice
 @@||piku.co.kr^$generichide
 aagag.com#$#.la { position: absolute !important; left: -3000px !important; width: 60px !important; height: 20px !important; }
