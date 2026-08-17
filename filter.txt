@@ -75,11 +75,11 @@ arca.live##.category-badge:has-text(광고):upward(.vrow.hybrid)
 asked.kr##div[class^="index_"] div[class^="banner_"]
 asked.kr##div[class^="kad_"]
 avdbs.com##.ad-btn[class*='tp']
-avsee.ru###at-main > a[rel]
-avsee.ru##+js(acis, decodeURI, split)
-avsee.ru##.at-main > div.main-box > .miso-post-mix > .post-wrap
-avsee.ru##.title
-avsee.ru##div.main-box:first-child
+avsee.is###at-main > a[rel]
+avsee.is##+js(acis, decodeURI, split)
+avsee.is##.at-main > div.main-box > .miso-post-mix > .post-wrap
+avsee.is##.title
+avsee.is##div.main-box:first-child
 band.us##[data-viewname="DNewsFeedAdListItemView"]:has(img[src^="https://partnercenter-phinf.pstatic.net"])
 battlepage.com##div[style$="min-height:200px;"]:has(ins.adsbyaiinad)
 bbs.ruliweb.com##div.clear:has([style*='overflow-x'])
@@ -100,7 +100,7 @@ damoang.net##.dm-card:has(#gam-index-top-damoang-banner-index)
 danawa.com##.auto_product_list:has(> .icon__ad)
 daum.net##[data-slot-type="AD_BRANDING_STATION"]
 daum.net##[data-slot-type="DAUM_AD"]
-dcinside.com##li[id^='comment_']:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.1 !important;)
+dcinside.com##li[id^='comment_']:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.4 !important;)
 ddaltube.com##+js(remove-attr, data-a, #dtube-player)
 ddaltube.com##.dtube-banner-grid, .vjs-video-ad-click-overlay, .player-banner-overlay > a.block
 diningcode.com##li:has(.PoiAdsSpacerList)
@@ -124,7 +124,7 @@ fmkorea.com##[class$='_ad']
 fnnews.com##[data-widget_id]
 fnnews.com##div[style*="height:"]:has(iframe, script, ins), div[style*="text-align: center"]:has(> iframe)
 gall.dcinside.com##.gnb_list.clear > li:has(> [onclick])
-gall.dcinside.com##li[id^="reply_li_"]:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.1 !important;)
+gall.dcinside.com##li[id^="reply_li_"]:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.4 !important;)
 gangmom.kr##.banner-wrapper
 get*ads-*-du.a.run.app^
 gmarket.co.kr##.js-impressionable.box__head-ad
@@ -382,6 +382,7 @@ $@$link[rel="manifest"]
 @@||isplus.$stealth=dpi
 @@||koreainvestment.com^$stealth=dpi
 @@||kr^$stealth=dpi
+@@||log1.toup.net^$app=com.nhn.android.search
 @@||nexon.com^$stealth=dpi
 @@||searchad-phinf.pstatic.net^$app=com.nhn.android.search
 @@||shopping.naver.com^$stealth
