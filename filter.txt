@@ -57,6 +57,8 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 *$script,third-party,domain=nimi.wiki
 3rd.supply##.h-hori-ad
 3rd.supply##.text-center:has(sp-common-adsense)
+[$domain=/^darkg[a-z0-9]*\.com/]###side-popup, #posterWrap, a[class*="banner"]
+[$domain=/^darkg[a-z0-9]*\.com/]##+js(nano-stb, tick, 1000)
 [$domain=/^fxfx[0-9]*\.com/]##.top-banner
 [$domain=/^hoohootv[0-9]*\.[a-z]{2,}/]###img_row_container
 [$domain=/^mingky[0-9]*\.[a-z]{2,}/]##a.grid-asset[target="_blank"]:has(> img[alt])
@@ -279,10 +281,6 @@ zod.kr##div[id]:has(> [target] > img)
 ||shortformstats.kakao.com^$app=com.kakao.talk
 ||thumb.kakaocdn.net^$app=com.kakao.talk
 ||trillion.toss.im^
-!
-bamgad8.com,bamgad9.com,bamgad10.com##ul.row:has(img[src*="/file/advertise/"])
-ggbam16.com,ggbam17.com,ggbam18.com##+js(nano-stb, adGate)
-xxzone27.top,xxzone28.top,xxzone29.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
 !
 !#if (adguard && adguard_app_ios && adguard_ext_safari && adguard_ext_chromium && adguard_ext_edge && adguard_ext_firefox)
 ###img_row_container
