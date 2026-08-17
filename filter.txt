@@ -59,6 +59,7 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 3rd.supply##.text-center:has(sp-common-adsense)
 [$domain=/^fxfx[0-9]*\.com/]##.top-banner
 [$domain=/^hoohootv[0-9]*\.[a-z]{2,}/]###img_row_container
+[$domain=/^mingky[0-9]*\.[a-z]{2,}/]##a.grid-asset[target="_blank"]:has(> img[alt])
 [$domain=/^toki[0-9]*\.com/]##.vw-swipe-hint, [data-pm-ov="1"]
 [$domain=/^tvmon[0-9]*\.[a-z]{2,}/]##.banner_wrap2
 [$domain=/^tvroom[0-9]*\.org/]##a[href*="/banner/"][target="_blank"]
@@ -141,6 +142,7 @@ joongdo.co.kr##div.right_content > div[style^="text-align:center;padding-bottom:
 joongdo.co.kr##div.view-news-wrap div[style*="min-height:"]:has(> script[src])
 k-hentai.org##.my-3.container
 kgirls.net##.layout_pc_banner
+kgnews.co.kr##div[itemprop="articleBody"] > div[style^="clear:both;margin:0 auto;margin-bottom:"]
 khan.co.kr##[class^="ad-art-"]
 kidd.co.kr##.bottomAdBox
 kidd.co.kr##.product-recommendations
@@ -216,6 +218,7 @@ outstanding.kr##.Toastify__toast:has([id^="banner_"])
 paxnet.co.kr##.stock-ad
 paxnet.co.kr##[class^="dv-com-m"]
 pay.naver.com##div[class^='BottomAds_article']
+pixiv.net##div.banner-ad-footer-scale
 postshare.co.kr##div:has(> a > img[src*="/images/banner/"])
 postype.com##div.MuiBox-root:has(> [data-sentry-component="RecommendFeedGoogleAd"])
 postype.com##div[data-sentry-component="FeedGoogleAd"]
@@ -279,7 +282,6 @@ zod.kr##div[id]:has(> [target] > img)
 !
 bamgad8.com,bamgad9.com,bamgad10.com##ul.row:has(img[src*="/file/advertise/"])
 ggbam16.com,ggbam17.com,ggbam18.com##+js(nano-stb, adGate)
-jaddal39.top,jaddal40.top,jaddal41.top##+js(nano-sib, countdown)
 xxzone27.top,xxzone28.top,xxzone29.top##[id*="main-banner"], .gplayer-ad-overlay, #popupBannerModal
 !
 !#if (adguard && adguard_app_ios && adguard_ext_safari && adguard_ext_chromium && adguard_ext_edge && adguard_ext_firefox)
