@@ -28,8 +28,7 @@
 !
 auction.co.kr,gmarket.co.kr##.plcc_banner
 blog.naver.com,comic.naver.com##[class*='banner_area']
-chimhaha.net,seoul.co.kr,mule.co.kr,hiromi.fans##[class*='Ad']
-chimhaha.net,dvdprime.com##[id^='slot']
+seoul.co.kr,mule.co.kr,hiromi.fans##[class*='Ad']
 danawa.com,m.cafe.naver.com,hungryapp.co.kr,hungapp.com##[class^='banner']
 gaykorea.net,yoboyobo.kr##.cu_gallery-item, .main-slider, .md_ad, .product_viewpage-latest, div[class^="m-b-"]:has(> div > p.powered)
 diningcode.com,chuchu.gg##.ad-container
@@ -88,7 +87,6 @@ biz.chosun.com##aside > div.flex-chain-wrapper:has(> section > div > .raw-html >
 bobaedream.co.kr##div.content.community > div[style$="height:100px;"]:has([id^="div-gpt-ad"])
 boutique.chosun.com###bo_main_modalWrap
 bunjang.co.kr##div[class*="ProductExternalAdsstyle"]:has(h3:has-text(비슷한 새 상품 보기))
-chimhaha.net##div[style='margin-top: 50px; ']
 coinpan.com##li:has(> span.wgp_ad)
 coinpan.com##li:has(ins.adsbygoogle)
 coinpan.com##p > strong > span:has-text(AD):upward(p)
@@ -113,6 +111,7 @@ dschool.co.kr##[id="lean_overlay"]
 dvdprime.com###ad_view_right1
 dvdprime.com##[id$='top_banner']
 dvdprime.com##[id^='ad_mobile']
+dvdprime.com##[id^='slot']
 ebs.co.kr##.ji_adban
 edu.chosun.com##a:has(> [src*="edu.chosun.com/images/bn/"])
 edu.chosun.com##section:has(> [id^="AD_Main_"])
