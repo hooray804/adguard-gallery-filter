@@ -25,7 +25,7 @@
 1. 좌측 바에서 두번째 `보호` 탭 열기
 2. 네번째 `DNS 보호` 메뉴 선택
 3. `DNS 필터` 메뉴 선택
-4. 하단 좌측 `+` 버튼 선택
+5. 목록 왼쪽 하단의 `+` 버튼 클릭
 5. `URL로 필터 추가` 버튼 클릭
 6. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/DNS.txt` 입력
 7. `추가`, `추가` 버튼 차례로 클릭
