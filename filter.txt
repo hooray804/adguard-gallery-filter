@@ -20,7 +20,6 @@
 ##[class^='happy-header']
 ##[data-brs][data-br]
 ##[id^='hd_pop']
-##[target='_blank']:has([src*='/banner/']):not([title^='새']):not([class*='slide'] > *)
 *##[target='_blank']:has([src*='/banner/']):not([title^='새']):not([class*='slide'] > *)
 *tcid=$all
 !
@@ -41,7 +40,7 @@ linkareer.com,m.ppomppu.co.kr,ggoorr.net,coinpan.com,shipdago.com,outstanding.kr
 m.cafe.daum.net,bokuennews.com##[class*='_banner']
 m.wowtv.co.kr,inven.co.kr##[id*='Banner']
 maplescouter.com,loawa.com###popup
-nexon.com,gg,ps,xyz,loawa.com,or.kr,go.kr,ai,chat,ms.kr,hs.kr#@#[target='_blank']:has([src*='/banner/']):not([title^='새']):not([class*='slide'] > *)
+nexon.com,loawa.com,or.kr,go.kr,gg,ps,xyz,ai,chat,ms.kr,hs.kr#@#[target='_blank']:has([src*='/banner/']):not([title^='새']):not([class*='slide'] > *)
 ppomppu.co.kr,m.ppomppu1.co.kr##[id$='_popup']
 qquing.net,ibric.org##[class*="ad-wrap"]
 rgr.kr,rgrong.net,te31.com###foot:style(height: 150px !important;)
@@ -80,7 +79,7 @@ avsee.is##.at-main > div.main-box > .miso-post-mix > .post-wrap
 avsee.is##.title
 avsee.is##div.main-box:first-child
 band.us##[data-viewname="DNewsFeedAdListItemView"]:has(img[src^="https://partnercenter-phinf.pstatic.net"])
-battlepage.com##div[style$="min-height:200px;"]:has(ins.adsbyaiinad)
+battlepage.com##div[style$="min-height:200px;"]
 bbs.ruliweb.com##div.clear:has([style*='overflow-x'])
 bbs.ruliweb.com##tr:has(.nick[style^='display: inline-block'])
 biz.chosun.com##aside > div.flex-chain-wrapper:has(> section > div > .raw-html > iframe[width="300"])
@@ -98,7 +97,7 @@ damoang.net##.dm-card:has(#gam-index-top-damoang-banner-index)
 danawa.com##.auto_product_list:has(> .icon__ad)
 daum.net##[data-slot-type="AD_BRANDING_STATION"]
 daum.net##[data-slot-type="DAUM_AD"]
-dcinside.com##li[id^='comment_']:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.4 !important;)
+dcinside.com##li[id^='comment_']:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.5 !important;)
 ddaltube.com##+js(remove-attr, data-a, #dtube-player)
 ddaltube.com##.dtube-banner-grid, .vjs-video-ad-click-overlay, .player-banner-overlay > a.block
 diningcode.com##li:has(.PoiAdsSpacerList)
@@ -123,7 +122,7 @@ fmkorea.com##[class$='_ad']
 fnnews.com##[data-widget_id]
 fnnews.com##div[style*="height:"]:has(iframe, script, ins), div[style*="text-align: center"]:has(> iframe)
 gall.dcinside.com##.gnb_list.clear > li:has(> [onclick])
-gall.dcinside.com##li[id^="reply_li_"]:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.4 !important;)
+gall.dcinside.com##li[id^="reply_li_"]:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.5 !important;)
 gangmom.kr##.banner-wrapper
 get*ads-*-du.a.run.app^
 gmarket.co.kr##.js-impressionable.box__head-ad
@@ -238,8 +237,7 @@ shopping.naver.com##div[id*="ADVERTISE"][class*="contentModuleWrapper_news_ad__"
 shopping.naver.com##li[class*="brandCRMProductList_item__"]:has(> div[class*="miniProductCard_mini_product_card__"] > [href^="https://ader.naver.com/"])
 shopping.naver.com##ul[class^="horizontalScrollListResponsive_set_list_"] > li[class^="horizontalScrollListResponsive_list_item_"]:has(> div > div[class*="productCard-module_product_card_"] a[class*="adButton-module_"])
 snxbest.naver.com##li[class^="productCardResponsive_product_card_responsive__"]:has(> div[class*="productCardResponsive_inner"] > [href^="https://ader.naver.com/"])
-soccerline.kr##.bottBann, .rightBann
-soccerline.kr##aside.midBann
+soccerline.kr##[class*='Bann']
 soccerline.kr##div[style$="513px; position: absolute; text-align: center; top: 242px; width: 160px; height: 600px; background-color: transparent;"][class]
 ssalmuk.com##+js(json-prune, data.[-].popupCode)
 svrforum.com$$ins[class="adsbygoogle"]
@@ -268,9 +266,10 @@ yozm.wishket.com##[data-testid^="advertisement-"]
 zod.kr##div[id]:has(> [target] > img)
 !
 ||*nestads.*
-||ader.naver.com/*?c=m_$all
-||ader.naver.com/v1/$all
+||ader.naver.com/*?c=m_$all,reason=파워링크
+||ader.naver.com/v1/$all,reason=파워링크
 ||bokuennews.com/data/banner
+||clink.kakao.com/sp/$all,reason=수익링크
 ||dvdprime.com/file/*/banner
 ||kamp.kakao.com^$app=com.kakao.talk
 ||link.coupang.com/re/AFFHOME*subid=pointlink$all,reason=수익링크
@@ -281,13 +280,10 @@ zod.kr##div[id]:has(> [target] > img)
 ||thumb.kakaocdn.net^$app=com.kakao.talk
 ||trillion.toss.im^
 !
-!#if (adguard && adguard_app_ios && adguard_ext_safari && adguard_ext_chromium && adguard_ext_edge && adguard_ext_firefox)
+!#if (adguard_app_ios || adguard_ext_safari) && !adguard_app_mac
 ###img_row_container
 ###viewCover
 ##.banner_wrap2
-!#endif
-!
-!#if (adguard_app_ios || adguard_ext_safari) && !adguard_app_mac
 /^https:\/\/[0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]?[0-9a-z]?[0-9a-z]?[0-9a-z]?[0-9a-z]?[0-9a-z]?\.in\/[a-z.][a-z.][a-z.]?[a-z.]?[a-z.]?[a-z.]?[a-z.]?[a-z.]?[a-z.]?[a-z.]?(\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?)?(\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?)?(\?[^ ]+)?$/$media,script,third-party,match-case
 /^https:\/\/[a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]?[0-9a-z]?[0-9a-z]?[0-9a-z]?\.com\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?(\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?)?(\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?)?\?[0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?=[0-9a-zA-Z%][0-9a-zA-Z%]?[0-9a-zA-Z%]?[0-9a-zA-Z%]?[0-9a-zA-Z%]?[0-9a-zA-Z%]?&[0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?=[0-9a-zA-Z%._-]+&[0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?=[0-9a-zA-Z%._-]+&[0-9a-zA-Z%_=&.+-]+&[a-z][a-z][a-z]=[A-Z][a-z][a-z][a-z][a-z]%20[A-Z][a-zA-Z][a-zA-Z][.]?[0-9a-zA-Z%_=&.+-]*$/$script,third-party,match-case
 /^https:\/\/[a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]?[0-9a-z]?[0-9a-z]?[0-9a-z]?\.com\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?(\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?)?(\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?)?\?[0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?=[0-9a-zA-Z%][0-9a-zA-Z%]?[0-9a-zA-Z%]?[0-9a-zA-Z%]?[0-9a-zA-Z%]?[0-9a-zA-Z%]?&[0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?=[0-9a-zA-Z%._-]+&[0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?=[0-9a-zA-Z%._-]+&[0-9a-zA-Z%_=&.+-]+&[a-z][a-z][a-z][a-z][a-z][a-z][a-z]=[0-9]\.[0-9]\.[0-9][0-9]-[a-z][a-z][0-9a-zA-Z%_=&.+-]*$/$script,third-party,match-case
@@ -374,11 +370,12 @@ $@$link[rel="manifest"]
 @@||cdn.cms.outstanding.kr/images/origin/2
 @@||claude.ai^$stealth=push
 @@||code-pia.com^$stealth=dpi
-@@||dcinside.com^$stealth=push
-@@||fs2.joycity.com^$stealth=dpi
+@@||coupang.com^$stealth
+@@||gall.dcinside.com^$stealth=push
 @@||glonmall.com^$stealth=dpi
 @@||hanaroetf.com^$stealth=dpi
 @@||isplus.$stealth=dpi
+@@||joycity.com^$stealth=dpi
 @@||koreainvestment.com^$stealth=dpi
 @@||kr^$stealth=dpi
 @@||log1.toup.net^$app=com.nhn.android.search
@@ -411,10 +408,6 @@ www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
 ||ssl.pstatic.net/t.static.blog/nmobile/versioning//common/lib/ntm/ntm-blog-web-*.js$badfilter
 ||tnkfactory.com^$badfilter
 !#safari_cb_affinity
-!
-!#if (adguard && adguard_app_windows)
-@@||coupang.com^$stealth
-!#endif
 
 ! Malware & Spam
 *$websocket,domain=bunny-frame.online
