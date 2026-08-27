@@ -338,7 +338,6 @@ ruliweb.com##+js(remove-class, ai_blind, #board_read)
 0db.co.kr###adblock_notice
 @@||piku.co.kr^$generichide
 aagag.com#$#.la { position: absolute !important; left: -3000px !important; width: 60px !important; height: 20px !important; }
-chzzk.naver.com#%#//scriptlet('trusted-replace-outbound-text', 'TextDecoder.prototype.decode', '/"skipPreRollAd":false/g', '"skipPreRollAd":true')
 cola16.app##+js(acis, decodeURIComponent, ABCDEFGHIJKLMNOPQRSTUVWXYZ)
 damoang.net##+js(nostif, bait_hidden)
 dcinside.com###moveOverlay, #gaejukimg
@@ -409,10 +408,6 @@ www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
 ||ssl.pstatic.net/t.static.blog/nmobile/versioning//common/lib/ntm/ntm-blog-web-*.js$badfilter
 ||tnkfactory.com^$badfilter
 !#safari_cb_affinity
-!#if adguard
-chzzk.naver.com#@%#//scriptlet('prevent-xhr', '/(veta.naver.com\/vas|veta.naver.com\/gfp|veta.naver.com\/call)/ method:OPTIONS')
-chzzk.naver.com#@%#//scriptlet('trusted-suppress-native-method', 'Function.prototype.call', ' |"setRequestHeader"', 'abort')
-!#endif
 
 ! Malware & Spam
 *$websocket,domain=bunny-frame.online
