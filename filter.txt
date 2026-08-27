@@ -147,6 +147,7 @@ kidd.co.kr##.bottomAdBox
 kidd.co.kr##.product-recommendations
 kidd.co.kr##slidebanner
 kissjav.*##+js(nowoif, !kissjav)
+kitpa.org##div.h-70:has(> ins.adsbygoogle)
 kloa.gg##div[class*="min-h-"]:has(> div[id]:empty):not(:has(a))
 korea.com##div[class*="banner"]
 kyeongin.com##.horizon-ad
@@ -203,9 +204,6 @@ news.jtbc.co.kr##.MuiBox-root[radius="0"][style]:empty
 news.jtbc.co.kr##.print-hide.MuiBox-root:has(> iframe)
 news.jtbc.co.kr##.print-hide:has-text(AD)
 newspim.com##[style*="width:100%; height:250px; margin:10px"]
-ohmynews.com###dvCenterAd
-ohmynews.com##aside.content_rt > div[style="height: 270px; margin: 0px; padding: 0px;"]
-ohmynews.com##div[style="width: 336px; height: 280px;"]
 okky.kr##div.relative.mt-16:has(> div > div > div > a[target="_blank"][href^="https://ad.doubleclick.net"]):has(> footer.border-t.bg-background)
 orbi.kr##.label-banner
 orbi.kr##.listAd
@@ -397,6 +395,7 @@ meeco.kr#@##cCon + aside.sidebar2
 mlbpark.donga.com#@#div[class*="_ad"]
 mlbpark.donga.com#@$#div[id^="SmartPhone_"][id$="_today"] .lists > li::before { padding-top: 0px !important; border-bottom: none !important; }
 mule.co.kr#@#.ad-mobile
+poro.gg#@#main > div[class]:has(div.ad-wrapper)
 soomgo.com#%#(()=>{const f=window.fetch;window.fetch=(u,...a)=>typeof u=='string'&&u.includes('cdn.segment.com/v1/projects/')&&u.includes('/settings')?Promise.resolve(new Response('{"integrations":{}}',{status:200})):f(u,...a);const o=XMLHttpRequest.prototype.open,s=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.open=function(m,u,...a){this._u=u;return o.call(this,m,u,...a)};XMLHttpRequest.prototype.send=function(...a){if(typeof this._u=='string'&&this._u.includes('cdn.segment.com/v1/projects/')&&this._u.includes('/settings')){Object.defineProperties(this,{status:{value:200},readyState:{value:4},responseText:{value:'{"integrations":{}}'},response:{value:'{"integrations":{}}'}});this.onload&&this.onload();this.onreadystatechange&&this.onreadystatechange();return}s.apply(this,a)}})();
 sooplive.com#@%#//scriptlet('json-prune-xhr-response', 'data.adballoon', '', 'station/video/a/view')
 www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
@@ -415,7 +414,7 @@ www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
 ||ublockorigin.com^$doc
 
 ! Google Spam Links
-www.google.com##.MjjYud:has(a:matches-attr("href"="/^https?:\/\/[a-z]{12}\.(fit|live|my|shop|site|store|today|wiki)\/[a-z]{25,}/")):has([data-snhf])
+www.google.com##.MjjYud:has(a:matches-attr("href"="/^https?:\/\/[a-z]{12}\.(fit|live|my|shop|site|store|today|wiki)\/[a-z]{20,}/")):has([data-snhf])
 www.google.com##.MjjYud:has(a[href*=".auction/"], a[href*=".autos/"]):has([data-snhf])
 www.google.com##.MjjYud:has(a[href*=".bar/"], a[href*=".beauty/"], a[href*=".best/"], a[href*=".boats/"]):has([data-snhf])
 www.google.com##.MjjYud:has(a[href*=".be/"]):has([data-snhf]):not(:has(a[href*="yt.be/"])):not(:has(a[href*="youtu.be/"]))
