@@ -15,9 +15,10 @@
 ##.happy-under-player-mobile
 ##.textwidget
 ##[alt$='광고']
-##[class*='ad'][id^='AD']:not([class*='add'])
+##[class*='ad'][id^='AD']:not([class*='add']):not([id*='ADD'])
 ##[class^='basic-banner'][id]
 ##[class^='happy-header']
+##[data-pm-ov="1"]
 ##[id^='hd_pop']
 *##[target='_blank']:has([src*='/banner/']):not([title^='새']):not([class*='slide'] > *)
 *tcid=$all
@@ -59,7 +60,7 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 [$domain=/^fxfx[0-9]*\.com/]##.top-banner
 [$domain=/^hoohootv[0-9]*\.[a-z]{2,}/]###img_row_container
 [$domain=/^mingky[0-9]*\.[a-z]{2,}/]##a.grid-asset[target="_blank"]:has(> img[alt])
-[$domain=/^toki[0-9]*\.com/]##.vw-swipe-hint, [data-pm-ov="1"]
+[$domain=/^toki[0-9]*\.com/]##.vw-swipe-hint
 [$domain=/^tvmon[0-9]*\.[a-z]{2,}/]##.banner_wrap2
 [$domain=/^tvroom[0-9]*\.org/]##a[href*="/banner/"][target="_blank"]
 [$domain=/^tvwiki[0-9]*\.net/]###bannerList, #viewCover, img[src*="/banner/"]
@@ -223,9 +224,9 @@ ppomppu.co.kr##.bottom > div[style]
 ppomppu.co.kr##tr[id*="_list_ad_"]
 ppomppu.co.kr$$tr:has-text(AD)
 red52.kr##.notice-box-area, .banner-pc, .banner-m
+ruliweb.com#@#[alt$='광고']
 sbs.co.kr##[class$="-ad"]
 sbs.co.kr##[class$="_bnr_ad"]
-sbxh*.com,toki*.com,newtoki*.org#@#[data-brs][data-br]
 search.danawa.com##li[data-itemtype='adsmart']
 seoul.co.kr###bottomScrollBox
 seoul.co.kr##[class^='ad']
@@ -260,7 +261,9 @@ yonhapnewstv.co.kr##section[class^="popular"]
 youthassembly.kr##.coupang-box
 yozm.wishket.com##[data-testid="top-banner"]
 yozm.wishket.com##[data-testid^="advertisement-"]
-zod.kr##div[id]:has(> [target] > img)
+zod.kr##.app-footer > div > nav[style*='height']
+zod.kr##.app-header-menu__content > div > [href^='https://zod.kr/go']
+zod.kr##.app-mobile-only:has(> div > a[target] > img)
 !
 ||*nestads.*
 ||ader.naver.com/*?c=m_$all,reason=파워링크
@@ -287,7 +290,7 @@ zod.kr##div[id]:has(> [target] > img)
 /^https:\/\/[a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]?[0-9a-z]?[0-9a-z]?[0-9a-z]?\.com\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?(\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?)?(\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?)?\?[0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?=[0-9a-zA-Z%][0-9a-zA-Z%]?[0-9a-zA-Z%]?[0-9a-zA-Z%]?[0-9a-zA-Z%]?[0-9a-zA-Z%]?&[0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?=[0-9a-zA-Z%._-]+&[0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?=[0-9a-zA-Z%._-]+&[0-9a-zA-Z%_=&.+-]+&[a-z][a-z][a-z][a-z][a-z][a-z][a-z]=[0-9]\.[0-9]\.[0-9][0-9]-[a-z][a-z][0-9a-zA-Z%_=&.+-]*$/$script,third-party,match-case
 hitomi.la##+js(nowoif, !hitomi.la)
 hitomi.la##div:has(> [id^="__clb-spot"])
-namu.wiki##div[class]:has(> ins.adsbygoogle:empty):not(:has(a))
+! namu.wiki##div[class]:has(> ins.adsbygoogle:empty):not(:has(a))
 namu.wiki#%#!function(){const e=document.createElement("style");e.textContent=".agf-h{display:none!important}",document.documentElement.appendChild(e);const n=()=>{t.disconnect();const e=document.evaluate("//div[descendant::div and not(descendant-or-self::*[not(self::div)]) and normalize-space() = '' and not(descendant-or-self::*/@*[not(name()='class' or name()='id' or starts-with(name(), 'data-v-') or (name()='style' and normalize-space()=''))])]",document,null,7,null),n=new Set;for(let t=0;t<e.snapshotLength;t++)n.add(e.snapshotItem(t));document.querySelectorAll(".agf-h").forEach(e=>n.has(e)||e.classList.remove("agf-h")),n.forEach(e=>e.classList.contains("agf-h")||e.classList.add("agf-h")),t.observe(document.documentElement,{childList:!0,subtree:!0})},t=new MutationObserver(n);n()}();
 !#else
 /^https:\/\/[0-9a-z]{6,12}\.in\/[a-z.]{2,10}(\/[a-z]{2,10})?(\/[a-z]{2,10})?(\?[^ ]+)?$/$media,script,third-party,match-case
@@ -334,7 +337,7 @@ ruliweb.com##+js(remove-class, ai_blind, #board_read)
 
 ! Anti-adblock
 0db.co.kr###adblock_notice
-@@||piku.co.kr^$generichide
+@@||piku.co.kr^$ghide
 aagag.com#$#.la { position: absolute !important; left: -3000px !important; width: 60px !important; height: 20px !important; }
 cola16.app##+js(acis, decodeURIComponent, ABCDEFGHIJKLMNOPQRSTUVWXYZ)
 damoang.net##+js(nostif, bait_hidden)
@@ -384,6 +387,7 @@ $@$link[rel="manifest"]
 @@||smartstore.naver.com^$stealth
 @@||sofrano.com^$stealth=dpi
 @@||termeden.com^$stealth=dpi
+@@||ticketlink.co.kr^$stealth
 @@||tivan.naver.com^$app=com.nhn.android.search
 @@||truefriend.com^$stealth=dpi
 @@||wcs.naver.net^$domain=seorinexpress.com|naver.com
@@ -395,7 +399,7 @@ meeco.kr#@##cCon + aside.sidebar2
 mlbpark.donga.com#@#div[class*="_ad"]
 mlbpark.donga.com#@$#div[id^="SmartPhone_"][id$="_today"] .lists > li::before { padding-top: 0px !important; border-bottom: none !important; }
 mule.co.kr#@#.ad-mobile
-poro.gg#@#main > div[class]:has(div.ad-wrapper)
+sbxh*.com#@#[data-brs][data-br]
 soomgo.com#%#(()=>{const f=window.fetch;window.fetch=(u,...a)=>typeof u=='string'&&u.includes('cdn.segment.com/v1/projects/')&&u.includes('/settings')?Promise.resolve(new Response('{"integrations":{}}',{status:200})):f(u,...a);const o=XMLHttpRequest.prototype.open,s=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.open=function(m,u,...a){this._u=u;return o.call(this,m,u,...a)};XMLHttpRequest.prototype.send=function(...a){if(typeof this._u=='string'&&this._u.includes('cdn.segment.com/v1/projects/')&&this._u.includes('/settings')){Object.defineProperties(this,{status:{value:200},readyState:{value:4},responseText:{value:'{"integrations":{}}'},response:{value:'{"integrations":{}}'}});this.onload&&this.onload();this.onreadystatechange&&this.onreadystatechange();return}s.apply(this,a)}})();
 sooplive.com#@%#//scriptlet('json-prune-xhr-response', 'data.adballoon', '', 'station/video/a/view')
 www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
@@ -455,10 +459,10 @@ www.google.com##.MjjYud:has(img[src^="data:image/png;base64,iVBORw0KGgoAAAANSUhE
 ! Allow specific TLDs (e.g., .hu) by adding an exception rule: www.google.com#@#.MjjYud:has(a[href*=".horse/"], a[href*=".hu/"]):has([data-snhf])
 
 ! Tweaks
-arca.live##.vcol.col-title .comment-count:hover:style(background-color: #cccccc !important; color: white !important;)
-arca.live##.vcol.col-title .comment-count:style(display: inline-block !important; padding: 6px 5px 6px 3px !important; margin: -6px -5px -6px -3px !important; position: relative; z-index: 10;)
+! arca.live##.vcol.col-title .comment-count:hover:style(background-color: #cccccc !important; color: white !important;)
+! arca.live##.vcol.col-title .comment-count:style(display: inline-block !important; padding: 6px 5px 6px 3px !important; margin: -6px -5px -6px -3px !important; position: relative; z-index: 10;)
 arca.live#%#(()=>{const N="nrx",S='a.notice[href*="/b/"] .vcol.col-ad>.badge.text-bg-success,a.notice[href*="/b/"] .vcol.col-id>b';document.documentElement.appendChild(Object.assign(document.createElement("style"),{textContent:`${S}{visibility:hidden;animation:${N} 1ms}@keyframes ${N}{to{}}`}));addEventListener("animationstart",e=>{if(e.animationName!==N)return;const g=/\/b\/([^/]+)/.exec(e.target.closest("a.notice").pathname)?.[1];if(g){e.target.textContent=g;e.target.style.visibility="visible"}},true)})();
-dcinside.com#%#//scriptlet('trusted-create-element', 'head', 'meta', 'name="theme-color" content="#2b367d"')
+! dcinside.com#%#//scriptlet('trusted-create-element', 'head', 'meta', 'name="theme-color" content="#2b367d"')
 dmm.co.jp#%#//scriptlet('trusted-set-cookie-reload', 'ckcy_remedied_check', 'ec_mrnhbtk', '1year', '/', '.dmm.co.jp')
 gall.dcinside.com##+js(aeld, contextmenu, , elements, video)
 gall.dcinside.com##+js(remove-attr, controlslist, video, stay)
