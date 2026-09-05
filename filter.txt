@@ -1,6 +1,6 @@
 ! Title: 애드가드 갤러리 필터
-! Version: 2026.09.06.0
-! TimeUpdated: 2026-09-05T16:21:23+00:00
+! Version: 2026.08.28.0
+! TimeUpdated: 2026-08-27T15:23:28+00:00
 ! Description: AdGuard, uBlock Origin, Unicorn Pro, wBlock, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
@@ -18,8 +18,8 @@
 ##[class*='ad'][id^='AD']:not([class*='add']):not([id*='ADD'])
 ##[class^='basic-banner'][id]
 ##[class^='happy-header']
-##[data-pm-ov="1"]
 ##[id^='hd_pop']
+#$#button[data-banner-id] { mix-blend-mode: hue !important; }
 *##[target='_blank']:has([src*='/banner/']):not([title^='새']):not([class*='slide'] > *)
 *tcid=$all
 !
@@ -60,7 +60,8 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 [$domain=/^fxfx[0-9]*\.com/]##.top-banner
 [$domain=/^hoohootv[0-9]*\.[a-z]{2,}/]###img_row_container
 [$domain=/^mingky[0-9]*\.[a-z]{2,}/]##a.grid-asset[target="_blank"]:has(> img[alt])
-[$domain=/^toki[0-9]*\.com/]##.vw-swipe-hint
+[$domain=/^sbxh[0-9]*\.com/]##.vw-swipe-hint, [data-pm-ov]
+[$domain=/^toki[0-9]*\.com/]##.vw-swipe-hint, [data-pm-ov]
 [$domain=/^tvmon[0-9]*\.[a-z]{2,}/]##.banner_wrap2
 [$domain=/^tvroom[0-9]*\.org/]##a[href*="/banner/"][target="_blank"]
 [$domain=/^tvwiki[0-9]*\.net/]###bannerList, #viewCover, img[src*="/banner/"]
@@ -224,7 +225,7 @@ ppomppu.co.kr##.bottom > div[style]
 ppomppu.co.kr##tr[id*="_list_ad_"]
 ppomppu.co.kr$$tr:has-text(AD)
 red52.kr##.notice-box-area, .banner-pc, .banner-m
-ruliweb.com#@#[alt$='광고']
+ruliweb.com,fmkorea.com#@#[alt$='광고']
 sbs.co.kr##[class$="-ad"]
 sbs.co.kr##[class$="_bnr_ad"]
 search.danawa.com##li[data-itemtype='adsmart']
@@ -290,7 +291,7 @@ zod.kr##.app-mobile-only:has(> div > a[target] > img)
 /^https:\/\/[a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]?[0-9a-z]?[0-9a-z]?[0-9a-z]?\.com\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?(\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?)?(\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?)?\?[0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?=[0-9a-zA-Z%][0-9a-zA-Z%]?[0-9a-zA-Z%]?[0-9a-zA-Z%]?[0-9a-zA-Z%]?[0-9a-zA-Z%]?&[0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?=[0-9a-zA-Z%._-]+&[0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?=[0-9a-zA-Z%._-]+&[0-9a-zA-Z%_=&.+-]+&[a-z][a-z][a-z][a-z][a-z][a-z][a-z]=[0-9]\.[0-9]\.[0-9][0-9]-[a-z][a-z][0-9a-zA-Z%_=&.+-]*$/$script,third-party,match-case
 hitomi.la##+js(nowoif, !hitomi.la)
 hitomi.la##div:has(> [id^="__clb-spot"])
-! namu.wiki##div[class]:has(> ins.adsbygoogle:empty):not(:has(a))
+namu.wiki##div[class]:has(> ins.adsbygoogle:empty):not(:has(a))
 namu.wiki#%#!function(){const e=document.createElement("style");e.textContent=".agf-h{display:none!important}",document.documentElement.appendChild(e);const n=()=>{t.disconnect();const e=document.evaluate("//div[descendant::div and not(descendant-or-self::*[not(self::div)]) and normalize-space() = '' and not(descendant-or-self::*/@*[not(name()='class' or name()='id' or starts-with(name(), 'data-v-') or (name()='style' and normalize-space()=''))])]",document,null,7,null),n=new Set;for(let t=0;t<e.snapshotLength;t++)n.add(e.snapshotItem(t));document.querySelectorAll(".agf-h").forEach(e=>n.has(e)||e.classList.remove("agf-h")),n.forEach(e=>e.classList.contains("agf-h")||e.classList.add("agf-h")),t.observe(document.documentElement,{childList:!0,subtree:!0})},t=new MutationObserver(n);n()}();
 !#else
 /^https:\/\/[0-9a-z]{6,12}\.in\/[a-z.]{2,10}(\/[a-z]{2,10})?(\/[a-z]{2,10})?(\?[^ ]+)?$/$media,script,third-party,match-case
@@ -462,7 +463,7 @@ www.google.com##.MjjYud:has(img[src^="data:image/png;base64,iVBORw0KGgoAAAANSUhE
 ! arca.live##.vcol.col-title .comment-count:hover:style(background-color: #cccccc !important; color: white !important;)
 ! arca.live##.vcol.col-title .comment-count:style(display: inline-block !important; padding: 6px 5px 6px 3px !important; margin: -6px -5px -6px -3px !important; position: relative; z-index: 10;)
 arca.live#%#(()=>{const N="nrx",S='a.notice[href*="/b/"] .vcol.col-ad>.badge.text-bg-success,a.notice[href*="/b/"] .vcol.col-id>b';document.documentElement.appendChild(Object.assign(document.createElement("style"),{textContent:`${S}{visibility:hidden;animation:${N} 1ms}@keyframes ${N}{to{}}`}));addEventListener("animationstart",e=>{if(e.animationName!==N)return;const g=/\/b\/([^/]+)/.exec(e.target.closest("a.notice").pathname)?.[1];if(g){e.target.textContent=g;e.target.style.visibility="visible"}},true)})();
-! dcinside.com#%#//scriptlet('trusted-create-element', 'head', 'meta', 'name="theme-color" content="#2b367d"')
+dcinside.com#%#//scriptlet('trusted-create-element', 'head', 'meta', 'name="theme-color" content="#2b367d"')
 dmm.co.jp#%#//scriptlet('trusted-set-cookie-reload', 'ckcy_remedied_check', 'ec_mrnhbtk', '1year', '/', '.dmm.co.jp')
 gall.dcinside.com##+js(aeld, contextmenu, , elements, video)
 gall.dcinside.com##+js(remove-attr, controlslist, video, stay)
