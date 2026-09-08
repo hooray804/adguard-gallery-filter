@@ -21,7 +21,7 @@
 ##[id^='hd_pop']
 #$#button[data-banner-id] { mix-blend-mode: hue !important; }
 *##[target='_blank']:has([src*='/banner/']):not([title^='새']):not([class*='slide'] > *)
-*tcid=$all
+*tcid=$all,reason=제휴링크
 !
 ! Common rules
 !
@@ -333,7 +333,6 @@ search.dcinside.com##.right_content
 cafe.naver.com##+js(remove-class, disable-select, #ct)
 fmkorea.com##+js(set, link_url, '')
 gmarket.co.kr##+js(set, mouseRightButtonDisabled, noopFunc)
-ruliweb.com##+js(remove-class, ai_blind, #board_read)
 ||arca.live/static/assets/js/adult.min.js
 
 ! Anti-adblock
@@ -415,8 +414,6 @@ www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
 
 ! Malware & Spam
 *$websocket,domain=bunny-frame.online
-||ublockdns.com^$doc
-||ublockorigin.com^$doc
 
 ! Google Spam Links
 www.google.com##.MjjYud:has(a:matches-attr("href"="/^https?:\/\/[a-z]{12}\.(fit|live|my|shop|site|store|today|wiki)\/[a-z]{20,}/")):has([data-snhf])
