@@ -360,8 +360,8 @@ shipdago.com,ez2pattern.kr,quizbubble.kr##+js(no-fetch-if, adsbygoogle.js)
 ! Incorrect blocking
 !#safari_cb_affinity(general,custom)
 $@$link[rel="manifest"]
-@@*$stealth=dpi,app=com.dcinside.app.android|com.dcinside.app|com.dcinside.app.android.revanced
-@@||192.168.$stealth=dpi
+@@*$stealth=dpi,app=com.dcinside.app.android|com.dcinside.app|com.dcinside.app.android.revanced|com.nhn.android.search
+@@||192.168.$stealth
 @@||a*.smlog.co.kr^$app=com.nhn.android.search
 @@||ad-creative.pstatic.net^$app=com.nhn.android.search
 @@||ad-img.gmarket.com^$image,domain=m.gmarket.co.kr|auction.co.kr|www.gmarket.co.kr
@@ -393,6 +393,7 @@ $@$link[rel="manifest"]
 @@||tivan.naver.com^$app=com.nhn.android.search
 @@||truefriend.com^$stealth=dpi
 @@||wcs.naver.net^$domain=seorinexpress.com|naver.com
+@@||yes24.com^$stealth=dpi
 ktmmobile.com#@%#//scriptlet('set-constant', 'mainBottomBanner', 'noopFunc')
 m.fmkorea.com#@$?#*.bd.bd_mobile:not(:has(#bd_capture ~ #comment)):has(form[action="./"]:matches-css(height: auto)) { remove: true; }
 m.gmarket.co.kr#@#.ReactVirtualized__Grid__innerScrollContainer .box__banner-wrap > .box__banner--today
