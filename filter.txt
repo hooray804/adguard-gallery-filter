@@ -53,6 +53,7 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 ! Specific rules
 !
 *$script,third-party,domain=nimi.wiki
+/vue/component/common/banner_modal.vue
 3rd.supply##.h-hori-ad
 3rd.supply##.text-center:has(sp-common-adsense)
 [$domain=/^darkg[a-z0-9]*\.com/]###side-popup, #posterWrap, a[class*="banner"]
@@ -359,6 +360,7 @@ shipdago.com,ez2pattern.kr,quizbubble.kr##+js(no-fetch-if, adsbygoogle.js)
 ! Incorrect blocking
 !#safari_cb_affinity(general,custom)
 $@$link[rel="manifest"]
+@@*$stealth=dpi,app=com.dcinside.app.android|com.dcinside.app|com.dcinside.app.android.revanced
 @@||192.168.$stealth=dpi
 @@||a*.smlog.co.kr^$app=com.nhn.android.search
 @@||ad-creative.pstatic.net^$app=com.nhn.android.search
