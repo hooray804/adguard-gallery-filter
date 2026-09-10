@@ -374,7 +374,7 @@ $@$link[rel="manifest"]
 @@||claude.ai^$stealth=push
 @@||code-pia.com^$stealth=dpi
 @@||coupang.com^$stealth
-@@||gall.dcinside.com^$stealth=push
+@@||dcinside.$stealth=dpi|push
 @@||glonmall.com^$stealth=dpi
 @@||hanaroetf.com^$stealth=dpi
 @@||isplus.$stealth=dpi
