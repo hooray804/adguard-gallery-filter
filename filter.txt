@@ -381,6 +381,7 @@ $@$link[rel="manifest"]
 @@||claude.ai^$stealth=push
 @@||clien.net^$stealth=dpi
 @@||code-pia.com^$stealth=dpi
+@@||coolenjoy.net^$stealth=dpi
 @@||coupang.com^$stealth
 @@||danawa.com^$stealth=dpi
 @@||dcinside.com^$stealth=dpi|push
@@ -395,6 +396,7 @@ $@$link[rel="manifest"]
 @@||kr^$stealth=dpi
 @@||log1.toup.net^$app=com.nhn.android.search
 @@||lotte*.$stealth=dpi
+@@||m.$stealth=dpi
 @@||miraeasset.com^$stealth=dpi
 @@||mykt.com^$stealth=dpi
 @@||nc.com^$stealth=dpi
