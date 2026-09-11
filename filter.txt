@@ -398,6 +398,7 @@ $@$link[rel="manifest"]
 @@||lotte*.$stealth=dpi
 @@||m.$stealth=dpi
 @@||miraeasset.com^$stealth=dpi
+@@||monimo.com^$stealth=dpi
 @@||mykt.com^$stealth=dpi
 @@||nc.com^$stealth=dpi
 @@||nexon.com^$stealth=dpi
@@ -412,7 +413,7 @@ $@$link[rel="manifest"]
 @@||sofrano.com^$stealth=dpi
 @@||ssg.com^$stealth=dpi
 @@||termeden.com^$stealth=dpi
-@@||ticke*.$stealth
+@@||ticket*.$stealth
 @@||tivan.naver.com^$app=com.nhn.android.search
 @@||toss*.$stealth=dpi
 @@||truefriend.com^$stealth=dpi
