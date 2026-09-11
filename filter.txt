@@ -13,9 +13,8 @@
 ##.ad400__100
 ##.banner_m
 ##.happy-under-player-mobile
-##.textwidget
 ##[alt$='광고']
-##[class*='ad'][id^='AD']:not([class*='add']):not([id*='ADD'])
+##[class*='ad'][id^='AD']:not([class*='add']):not([id^='ADD'])
 ##[class^='basic-banner'][id]
 ##[class^='happy-header']
 ##[id^='hd_pop']
@@ -34,7 +33,6 @@ diningcode.com,chuchu.gg##.ad-container
 hani.co.kr,i-boss.co.kr,spin-spin.com##[class*="AdWrap"]
 hungryapp.co.kr,hungapp.com##.fixed-top
 hungryapp.co.kr,hungapp.com##[aria-label="헝그리앱 배너"]
-inven.co.kr,mt.co.kr##[class$='ads']
 inven.co.kr,wowtv.co.kr,damoang.net,hungryapp.co.kr,hungapp.com##[class*='-banner']
 linkareer.com,m.ppomppu.co.kr,ggoorr.net,coinpan.com,shipdago.com,outstanding.kr,dispatch.co.kr,namechart.kr##div:has(> ins.adsbygoogle)
 m.cafe.daum.net,bokuennews.com##[class*='_banner']
@@ -52,7 +50,6 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 !
 ! Specific rules
 !
-*$script,third-party,domain=nimi.wiki
 /vue/component/common/banner_modal.vue
 3rd.supply##.h-hori-ad
 3rd.supply##.text-center:has(sp-common-adsense)
@@ -71,7 +68,7 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 [$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##[href*='/ad'][target='_blank']:has(img)
 [$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##div[class$='gallery'][id] [target='_blank']:upward(1)
 algumon.com##div:has([data-tip^='파트너스'], div[style*='height'], ins):is(.card, .deal-2col)
-arca.live##.category-badge:has-text(광고):upward(.vrow.hybrid)
+arca.live##div.vrow.hybrid:has(.badge.category-badge)
 asked.kr##div[class^="index_"] div[class^="banner_"]
 asked.kr##div[class^="kad_"]
 avdbs.com##.ad-btn[class*='tp']
@@ -120,7 +117,7 @@ encar.com##[class*="Banner_wrap"]
 encar.com##li > a[class*="RecommendQuick_link_quick__"][href^="https://automotive.encar.com/RealMedia/ads/"][target="_blank"]
 ez2pattern.kr##.sticky
 fc-info.com##div[class^='Venatus_']
-fmkorea.com##[class$='_ad']
+fmkorea.com,sbs.co.kr##[class$='_ad']
 fnnews.com##[data-widget_id]
 fnnews.com##div[style*="height:"]:has(iframe, script, ins), div[style*="text-align: center"]:has(> iframe)
 gall.dcinside.com##.gnb_list.clear > li:has(> [onclick])
@@ -198,8 +195,7 @@ mmzone.co.kr##.m-center-adt-container
 mule.co.kr##[class*='-ad-']
 munhwa.com###bottom-sticky
 munhwa.com##.top-banner-area
-musinsa.com##a.gtm-click-content[href$="/main/musinsa/brand_ad"]
-musinsa.com##div[class^="TabItem__DefaultCombinationWrap-"]:has(> a.gtm-click-content[href="/main/musinsa/brand_ad"])
+musinsa.com##[href$="/main/musinsa/brand_ad"]
 namu.news##li:has(div[style*="min-height:100px"]):has(> div > div[id*="article-a"])
 naver.com###sb-kh-shortents-wrap
 naver.com##.sa_mw.sa_empty_ad
@@ -228,7 +224,6 @@ ppomppu.co.kr$$tr:has-text(AD)
 red52.kr##.notice-box-area, .banner-pc, .banner-m
 ruliweb.com,fmkorea.com#@#[alt$='광고']
 sbs.co.kr##[class$="-ad"]
-sbs.co.kr##[class$="_bnr_ad"]
 search.danawa.com##li[data-itemtype='adsmart']
 seoul.co.kr###bottomScrollBox
 seoul.co.kr##[class^='ad']
@@ -245,8 +240,7 @@ te31.com##table:has(td > script)
 teamblind.com##.coupang_gnb
 teamblind.com##.top_banner
 teamblind.com##[href^='https://link.coupang.com/re/AFFSDP']
-teamblind.com##div.article-list-pre:has([href^='https://link.coupang.com/re/AFFSDP'])
-teamblind.com##div.article:has(> [href^='https://link.coupang.com/re/AFFSDP'])
+teamblind.com##.topic-list.best > div.article:has(> [href^='https://link.coupang.com/re/'])
 teamblind.com##div.border-b:has(> div.flex > div[id^="infeed-home-"])
 teamblind.com##div.comment_area.wrap-comment[style='cursor: pointer;']
 tiendeo.co.kr##section.justify-center:has([id^="div-gpt-ad-web"])
@@ -360,13 +354,11 @@ shipdago.com,ez2pattern.kr,quizbubble.kr##+js(no-fetch-if, adsbygoogle.js)
 ! Incorrect blocking
 !#safari_cb_affinity(general,custom)
 $@$link[rel="manifest"]
-@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:bank|stock|invest|coin|pay|mobile|card|post|logi|finance|tele|news|pass|econom|biz|member|shop|mall|store|game|market|mart|hana|insure|direct)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
-@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*ins(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
-@@/^https?:\/\/(?:[a-z]+\.)*cj[a-z0-9]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
-@@/^https?:\/\/(?:[a-z]+\.)*kb[a-z0-9]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
-@@/^https?:\/\/(?:[a-z]+\.)*kt[a-z0-9]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
-@@/^https?:\/\/(?:[a-z]+\.)*lg[a-z0-9]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
-@@fire.$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:bank|stock|invest|coin|pay|mobile|card|post|logi|financ)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:tele|news|pass|econom|biz|member|shop|mall|store|univ)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:market|mart|hana|insure|direct|soft|point|cash|time|info)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@*fire.$stealth=dpi
+@@*ins.$stealth=dpi
 @@||192.168.$stealth
 @@||a*.smlog.co.kr^$app=com.nhn.android.search
 @@||ad-creative.pstatic.net^$app=com.nhn.android.search
@@ -376,8 +368,8 @@ $@$link[rel="manifest"]
 @@||arca.live^$ghide
 @@||arca.live^$stealth=push
 @@||blog.kakaocdn.net*/img.gif
-@@||bloodinfo.net^$stealth=dpi
 @@||cdn.cms.outstanding.kr/images/origin/2
+@@||cj*.$stealth=dpi
 @@||claude.ai^$stealth=push
 @@||clien.net^$stealth=dpi
 @@||code-pia.com^$stealth=dpi
@@ -385,18 +377,18 @@ $@$link[rel="manifest"]
 @@||coupang.com^$stealth
 @@||danawa.com^$stealth=dpi
 @@||dcinside.com^$stealth=dpi|push
-@@||direct.$stealth=dpi
 @@||donga.com^$stealth=dpi
 @@||ichannela.com^$stealth=dpi
-@@||io^$stealth=dpi
 @@||isplus.$stealth=dpi
 @@||joycity.com^$stealth=dpi
 @@||kakao*.$stealth=dpi
+@@||kb*.$stealth=dpi
+@@||kt*.$stealth=dpi
 @@||kiwoom.com^$stealth=dpi
 @@||kr^$stealth=dpi
+@@||lg*.$stealth=dpi
 @@||log1.toup.net^$app=com.nhn.android.search
 @@||lotte*.$stealth=dpi
-@@||m.$stealth=dpi
 @@||miraeasset.com^$stealth=dpi
 @@||monimo.com^$stealth=dpi
 @@||mykt.com^$stealth=dpi
@@ -411,7 +403,7 @@ $@$link[rel="manifest"]
 @@||slrclub.com/rss/today_photo.slr
 @@||smartstore.naver.com^$stealth
 @@||sofrano.com^$stealth=dpi
-@@||ssg.com^$stealth=dpi
+@@||ssg*.com^$stealth=dpi
 @@||termeden.com^$stealth=dpi
 @@||ticket*.$stealth
 @@||tivan.naver.com^$app=com.nhn.android.search
@@ -504,4 +496,5 @@ m.dcinside.com#%#//scriptlet('trusted-create-element', 'section.grid > .gallview
 m.dcinside.com#%#//scriptlet('trusted-create-element', 'section.grid > .gallview-tit-box:not(:has(span.sp-icon)) > div > ul.ginfo2', 'li', '', 'PC')
 m.dcinside.com#%#//scriptlet('trusted-set-local-storage-item', 'imgSizeSetting', 'ori')
 m.youtube.com#%#setInterval(function(){for(var e=document.querySelectorAll(".slim-owner-subscribe-button, .slim-subscribe-button"),t=0;t<e.length;t++){var n=e[t];if(null!==n.offsetParent&&!n.parentElement.querySelector(".pip-btn")){var o=n.classList.contains("slim-subscribe-button"),i=document.createElement("div");i.className="pip-btn",i.innerText="PiP",i.tabIndex=0,i.style.cssText=o?"display:flex;align-items:center;justify-content:center;background-color:#f2f2f2;border-radius:16px;height:32px;padding:0 12px;margin-left:8px;font-family:Roboto,Arial,sans-serif;font-size:12px;font-weight:500;color:#0f0f0f;cursor:pointer;outline:none;user-select:none;transition:background-color 0.2s":"display:flex;align-items:center;justify-content:center;background-color:#f2f2f2;border-radius:18px;height:36px;padding:0 16px;margin-right:8px;font-family:Roboto,Arial,sans-serif;font-size:14px;font-weight:500;color:#0f0f0f;cursor:pointer;outline:none;user-select:none;transition:background-color 0.2s",i.onmouseover=function(){this.style.backgroundColor="#e5e5e5"},i.onmouseout=function(){this.style.backgroundColor="#f2f2f2"},i.onclick=function(e){e.preventDefault(),e.stopPropagation();var t=document.querySelector("video");t&&(t.removeAttribute("disablepictureinpicture"),document.pictureInPictureElement?document.exitPictureInPicture():t.requestPictureInPicture())},i.onfocus=i.onmouseenter=function(){if(!window._pipT){window._pipT=1;var e=document.createElement("div");e.innerText="By Gallery Filter",e.style.cssText="position:fixed;z-index:9999;padding:4px 8px;background:rgba(255,255,255,0.8);border:1px solid rgba(0,0,0,0.2);border-radius:4px;box-shadow:0 2px 5px rgba(0,0,0,0.1);backdrop-filter:blur(3px);font-size:11px;font-family:sans-serif;color:black;pointer-events:none;opacity:1;transition:opacity 0.5s ease-out;";var t=this.getBoundingClientRect();e.style.top=t.top-30+"px",e.style.left=t.left+t.width/2+"px",e.style.transform="translateX(-50%)",document.body.appendChild(e),setTimeout(function(){e.style.opacity="0",setTimeout(function(){e.remove()},500)},1500)}},o?(n.style.display="flex",n.style.alignItems="center",n.appendChild(i)):n.parentElement.insertBefore(i,n)}}},1e3);
-!  =============== END (Maginot Line) =============== !
+
+!  =============== NO MORE (Maginot Line) =============== !
