@@ -360,12 +360,12 @@ shipdago.com,ez2pattern.kr,quizbubble.kr##+js(no-fetch-if, adsbygoogle.js)
 ! Incorrect blocking
 !#safari_cb_affinity(general,custom)
 $@$link[rel="manifest"]
-@@/^https?:\/\/(?:[a-z0-9-]+\.)*[a-z0-9-]*(?:bank|stock|invest|coin|pay|mobile|card|post|logi|finance|tele|news|pass|econom|biz|member|shop|mall|store|game|market|tech|toss|ticket|premium|special|mart|deal)[a-z0-9-]*(?:\.[a-z0-9-]+)+(?::[0-9]+)?(?:[\/?#]|$)/$stealth=dpi
-@@/cj[a-z]*\.[a-z]/$stealth=dpi
-@@/kb[a-z]*\.[a-z]/$stealth=dpi
-@@/kt[a-z]*\.[a-z]/$stealth=dpi
-@@/lotte[a-z]*\.[a-z]/$stealth=dpi
-@@/shinhan[a-z]*\.[a-z]/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:bank|stock|invest|coin|pay|mobile|card|post|logi|finance|tele|news|pass|econom|biz|member|shop|mall|store|game|market|tech|toss|ticket|premium|special|mart|deal|hana)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*cj[a-z0-9]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*kb[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*kt[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*lotte[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*shinhan[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
 @@||192.168.$stealth
 @@||a*.smlog.co.kr^$app=com.nhn.android.search
 @@||ad-creative.pstatic.net^$app=com.nhn.android.search
@@ -383,7 +383,6 @@ $@$link[rel="manifest"]
 @@||danawa.com^$stealth=dpi
 @@||dcinside.com^$stealth=dpi|push
 @@||donga.com^$stealth=dpi
-@@||hanaroetf.com^$stealth=dpi
 @@||ichannela.com^$stealth=dpi
 @@||io^$stealth=dpi
 @@||isplus.$stealth=dpi
