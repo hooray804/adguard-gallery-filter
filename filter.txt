@@ -360,7 +360,7 @@ shipdago.com,ez2pattern.kr,quizbubble.kr##+js(no-fetch-if, adsbygoogle.js)
 ! Incorrect blocking
 !#safari_cb_affinity(general,custom)
 $@$link[rel="manifest"]
-@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:bank|stock|invest|coin|pay|mobile|card|post|logi|finance|tele|news|pass|econom|biz|member|shop|mall|store|game|market|tech|toss|ticket|premium|special|mart|deal|hana|health|info)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:bank|stock|invest|coin|pay|mobile|card|post|logi|finance|tele|news|pass|econom|biz|member|shop|mall|store|game|market|tech|toss|ticket|premium|special|mart|deal|hana)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*cj[a-z0-9]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*kb[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*kt[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
@@ -375,6 +375,7 @@ $@$link[rel="manifest"]
 @@||arca.live^$ghide
 @@||arca.live^$stealth=push
 @@||blog.kakaocdn.net*/img.gif
+@@||bloodinfo.net^$stealth=dpi
 @@||cdn.cms.outstanding.kr/images/origin/2
 @@||claude.ai^$stealth=push
 @@||clien.net^$stealth=dpi
