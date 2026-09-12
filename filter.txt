@@ -143,6 +143,7 @@ k-hentai.org##.my-3.container
 kgirls.net##.layout_pc_banner
 kgnews.co.kr##div[itemprop="articleBody"] > div[style^="clear:both;margin:0 auto;margin-bottom:"]
 khan.co.kr##[class^="ad-art-"]
+kidd.co.kr##.product-recommendations, .product-recommendations +hr
 kissjav.*##+js(nowoif, !kissjav)
 kitpa.org##div.h-70:has(> ins.adsbygoogle)
 kloa.gg##div[class*="min-h-"]:has(> div[id]:empty):not(:has(a))
@@ -187,8 +188,6 @@ mk.co.kr##div[data-ad-render-container]
 mk.co.kr##li.native-ad-list-item
 mlbpark.donga.com##[class^='coupang'], [class*='naver_place']
 mlbpark.donga.com##ul.sub_lists_today.lists > li.items:nth-of-type(6)::before
-mmzone.co.kr###header_top:has(.ads-wrap)
-mmzone.co.kr##.m-center-adt-container
 mule.co.kr##[class*='-ad-']
 munhwa.com###bottom-sticky
 munhwa.com##.top-banner-area
@@ -283,7 +282,6 @@ zod.kr##.app-mobile-only:has(> div > a[target] > img)
 /^https:\/\/[a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]?[0-9a-z]?[0-9a-z]?[0-9a-z]?\.com\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?(\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?)?(\/[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?)?\?[0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?=[0-9a-zA-Z%][0-9a-zA-Z%]?[0-9a-zA-Z%]?[0-9a-zA-Z%]?[0-9a-zA-Z%]?[0-9a-zA-Z%]?&[0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?=[0-9a-zA-Z%._-]+&[0-9a-zA-Z][0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?[0-9a-zA-Z]?=[0-9a-zA-Z%._-]+&[0-9a-zA-Z%_=&.+-]+&[a-z][a-z][a-z][a-z][a-z][a-z][a-z]=[0-9]\.[0-9]\.[0-9][0-9]-[a-z][a-z][0-9a-zA-Z%_=&.+-]*$/$script,third-party,match-case
 hitomi.la##+js(nowoif, !hitomi.la)
 hitomi.la##div:has(> [id^="__clb-spot"])
-namu.wiki##div[class]:has(> ins.adsbygoogle:empty):not(:has(a))
 namu.wiki#%#!function(){const e=document.createElement("style");e.textContent=".agf-h{display:none!important}",document.documentElement.appendChild(e);const n=()=>{t.disconnect();const e=document.evaluate("//div[descendant::div and not(descendant-or-self::*[not(self::div)]) and normalize-space() = '' and not(descendant-or-self::*/@*[not(name()='class' or name()='id' or starts-with(name(), 'data-v-') or (name()='style' and normalize-space()=''))])]",document,null,7,null),n=new Set;for(let t=0;t<e.snapshotLength;t++)n.add(e.snapshotItem(t));document.querySelectorAll(".agf-h").forEach(e=>n.has(e)||e.classList.remove("agf-h")),n.forEach(e=>e.classList.contains("agf-h")||e.classList.add("agf-h")),t.observe(document.documentElement,{childList:!0,subtree:!0})},t=new MutationObserver(n);n()}();
 !#else
 /^https:\/\/[0-9a-z]{6,12}\.in\/[a-z.]{2,10}(\/[a-z]{2,10})?(\/[a-z]{2,10})?(\?[^ ]+)?$/$media,script,third-party,match-case
@@ -375,6 +373,7 @@ $@$link[rel="manifest"]
 @@||danawa.com^$stealth=dpi
 @@||dcinside.com^$stealth=dpi|push
 @@||donga.com^$stealth=dpi
+@@||google*.$stealth=dpi|push
 @@||ichannela.com^$stealth=dpi
 @@||isplus.$stealth=dpi
 @@||joycity.com^$stealth=dpi
@@ -495,6 +494,7 @@ m.dcinside.com#%#//scriptlet('trusted-create-element', 'section.grid > .gallview
 m.dcinside.com#%#//scriptlet('trusted-create-element', 'section.grid > .gallview-tit-box:not(:has(span.sp-icon)) > div > ul.ginfo2', 'li', '', 'PC')
 m.dcinside.com#%#//scriptlet('trusted-set-local-storage-item', 'imgSizeSetting', 'ori')
 m.youtube.com#%#setInterval(function(){for(var e=document.querySelectorAll(".slim-owner-subscribe-button, .slim-subscribe-button"),t=0;t<e.length;t++){var n=e[t];if(null!==n.offsetParent&&!n.parentElement.querySelector(".pip-btn")){var o=n.classList.contains("slim-subscribe-button"),i=document.createElement("div");i.className="pip-btn",i.innerText="PiP",i.tabIndex=0,i.style.cssText=o?"display:flex;align-items:center;justify-content:center;background-color:#f2f2f2;border-radius:16px;height:32px;padding:0 12px;margin-left:8px;font-family:Roboto,Arial,sans-serif;font-size:12px;font-weight:500;color:#0f0f0f;cursor:pointer;outline:none;user-select:none;transition:background-color 0.2s":"display:flex;align-items:center;justify-content:center;background-color:#f2f2f2;border-radius:18px;height:36px;padding:0 16px;margin-right:8px;font-family:Roboto,Arial,sans-serif;font-size:14px;font-weight:500;color:#0f0f0f;cursor:pointer;outline:none;user-select:none;transition:background-color 0.2s",i.onmouseover=function(){this.style.backgroundColor="#e5e5e5"},i.onmouseout=function(){this.style.backgroundColor="#f2f2f2"},i.onclick=function(e){e.preventDefault(),e.stopPropagation();var t=document.querySelector("video");t&&(t.removeAttribute("disablepictureinpicture"),document.pictureInPictureElement?document.exitPictureInPicture():t.requestPictureInPicture())},i.onfocus=i.onmouseenter=function(){if(!window._pipT){window._pipT=1;var e=document.createElement("div");e.innerText="By Gallery Filter",e.style.cssText="position:fixed;z-index:9999;padding:4px 8px;background:rgba(255,255,255,0.8);border:1px solid rgba(0,0,0,0.2);border-radius:4px;box-shadow:0 2px 5px rgba(0,0,0,0.1);backdrop-filter:blur(3px);font-size:11px;font-family:sans-serif;color:black;pointer-events:none;opacity:1;transition:opacity 0.5s ease-out;";var t=this.getBoundingClientRect();e.style.top=t.top-30+"px",e.style.left=t.left+t.width/2+"px",e.style.transform="translateX(-50%)",document.body.appendChild(e),setTimeout(function(){e.style.opacity="0",setTimeout(function(){e.remove()},500)},1500)}},o?(n.style.display="flex",n.style.alignItems="center",n.appendChild(i)):n.parentElement.insertBefore(i,n)}}},1e3);
+
 
 
 !  =============== NO MORE THAN 500 (Maginot Line) =============== !
