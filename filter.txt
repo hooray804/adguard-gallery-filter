@@ -263,6 +263,7 @@ zod.kr##.app-mobile-only:has(> div > a[target] > img)
 ||*nestads.*
 ||ader.naver.com/*?c=m_$all,reason=파워링크
 ||ader.naver.com/v1/$all,reason=파워링크
+||api.hobos.studio/v1/ads$domain=xn--v69ak0xskm.com
 ||bokuennews.com/data/banner
 ||clink.kakao.com/sp/$all,reason=수익링크
 ||dvdprime.com/file/*/banner
@@ -434,8 +435,6 @@ www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
 *$websocket,domain=bunny-frame.online
 
 ! Tweaks
-! arca.live##.vcol.col-title .comment-count:hover:style(background-color: #cccccc !important; color: white !important;)
-! arca.live##.vcol.col-title .comment-count:style(display: inline-block !important; padding: 6px 5px 6px 3px !important; margin: -6px -5px -6px -3px !important; position: relative; z-index: 10;)
 arca.live#%#(()=>{const N="nrx",S='a.notice[href*="/b/"] .vcol.col-ad>.badge.text-bg-success,a.notice[href*="/b/"] .vcol.col-id>b';document.documentElement.appendChild(Object.assign(document.createElement("style"),{textContent:`${S}{visibility:hidden;animation:${N} 1ms}@keyframes ${N}{to{}}`}));addEventListener("animationstart",e=>{if(e.animationName!==N)return;const g=/\/b\/([^/]+)/.exec(e.target.closest("a.notice").pathname)?.[1];if(g){e.target.textContent=g;e.target.style.visibility="visible"}},true)})();
 dcinside.com#%#//scriptlet('trusted-create-element', 'head', 'meta', 'name="theme-color" content="#2b367d"')
 dmm.co.jp#%#//scriptlet('trusted-set-cookie-reload', 'ckcy_remedied_check', 'ec_mrnhbtk', '1year', '/', '.dmm.co.jp')
