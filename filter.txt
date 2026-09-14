@@ -243,6 +243,7 @@ teamblind.com##[href^='https://link.coupang.com/re/AFFSDP']
 teamblind.com##.topic-list.best > div.article:has(> [href^='https://link.coupang.com/re/'])
 teamblind.com##div.border-b:has(> div.flex > div[id^="infeed-home-"])
 teamblind.com##div.comment_area.wrap-comment[style='cursor: pointer;']
+terms.naver.com##div.ad-banner-area
 tiendeo.co.kr##section.justify-center:has([id^="div-gpt-ad-web"])
 tvseoul.kr##div[style*="width:360px"][style*="height:300px"]
 umrb.co.kr##ul.main_slider_area
