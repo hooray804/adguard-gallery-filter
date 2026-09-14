@@ -108,6 +108,7 @@ dnews.co.kr##div[style^="text-align: center"][style*="z-index: 999"]
 doctornow.co.kr##div.flex.w-full:has(> div.relative, > ins.adsbygoogle)
 dschool.co.kr###modal-banner
 dschool.co.kr##[id="lean_overlay"]
+dt.co.kr##.horizon-ad
 dvdprime.com###ad_view_right1
 dvdprime.com##[id$='top_banner']
 dvdprime.com##[id^='ad_mobile']
