@@ -356,6 +356,7 @@ shipdago.com,ez2pattern.kr,quizbubble.kr##+js(no-fetch-if, adsbygoogle.js)
 ! Incorrect blocking
 !#safari_cb_affinity(general,custom)
 $@$link[rel="manifest"]
+@@*capital.$stealth=dpi
 @@*fire.$stealth=dpi
 @@*ins.$stealth=dpi
 @@*sb.com^$stealth=dpi
@@ -382,6 +383,8 @@ $@$link[rel="manifest"]
 @@||dcinside.com^$stealth=dpi|push
 @@||donga.com^$stealth=dpi
 @@||google*.$stealth=dpi|push
+@@||gs*.com^$stealth=dpi
+@@||hyundai*.com^$stealth=dpi
 @@||ichannela.com^$stealth=dpi
 @@||isplus.$stealth=dpi
 @@||joycity.com^$stealth=dpi
@@ -395,6 +398,7 @@ $@$link[rel="manifest"]
 @@||log1.toup.net^$app=com.nhn.android.search
 @@||lotte*.$stealth=dpi
 @@||miraeasset.com^$stealth=dpi
+@@||mobis.com^$stealth=dpi
 @@||monimo.com^$stealth=dpi
 @@||mykt.com^$stealth=dpi
 @@||nc.com^$stealth=dpi
