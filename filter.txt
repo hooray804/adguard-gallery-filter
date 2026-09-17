@@ -96,7 +96,6 @@ coinpan.com##li:has(ins.adsbygoogle)
 coinpan.com##p > strong > span:has-text(AD):upward(p)
 community.rememberapp.co.kr##[alt="배너 광고 이미지"]
 crepe.cm##section.mx-auto.block:has(> a[href="https://takemm.com/?utm_source=web&utm_medium=display&utm_campaign=crepe_main"])
-! incorrect blocking (pc) dailypharm.com##div[class*="_banner"]
 dak.gg###venatus-container-top
 dak.gg##.ad[id="mobile-takeover"]
 damoang.net##.dm-card:has(#gam-index-top-damoang-banner-index)
@@ -276,6 +275,7 @@ zod.kr##.app-mobile-only:has(> div > a[target] > img)
 ||api.hobos.studio/v1/ads$domain=xn--v69ak0xskm.com
 ||bokuennews.com/data/banner
 ||clink.kakao.com/sp/$all
+||vodcdn.dailypharm.com/new_dailypharm/banners
 ||dvdprime.com/file/*/banner
 ||kamp.kakao.com^$app=com.kakao.talk
 ||link.coupang.com/re/AFFHOME*subid=pointlink$all
