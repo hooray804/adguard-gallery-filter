@@ -452,6 +452,8 @@ www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
 
 ! Malware & Spam
 *$websocket,domain=bunny-frame.online
+www.google.com##.MjjYud:has([data-snhf]):has(cite:contains(/(https?:\/\/)?([a-z]{12})\.(baby|cam|fit|link|live|my|shop|site|store|today|wiki)[\s\/›]+[a-z]{20,}/))
+www.google.com##.MjjYud:has(cite:has-text(/^https:\/\/[a-zA-Z0-9.-]+\.hu/)):has([data-snhf])
 ||player.bunny-frame.online/js/ad_fetcher.js
 
 ! Tweaks
