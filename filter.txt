@@ -283,7 +283,6 @@ zod.kr##.app-mobile-only:has(> div > a[target] > img)
 ||link.coupang.com/re/AFFHOME*subid=pointlink$all
 ||link.coupang.com/re/AFFSDP*subid=dynamicda$all
 ||pandalive.co.kr^$document,domain=heye.kr
-||player.bunny-frame.online/js/ad_fetcher.js
 ||red52.kr/ads
 ||shortformstats.kakao.com^$app=com.kakao.talk
 ||storage1.ilyo.co.kr/contents/banner/images
@@ -326,8 +325,8 @@ m.naver.com###MM_AI_TAB_TOOLTIP
 m.naver.com###MM_homefeed_react_container > .grid1_wrap.brick-house > .brick-vowel > div:not(:first-child)
 m.naver.com##.chf_feed_wrap > .type_square.cc_clip_list
 m.naver.com##script#MM_search_disaster ~*
-m.search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) + div
-m.search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) + div + div
+! m.search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) + div
+! m.search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) + div + div
 mlbpark.donga.com##.the_hottest
 namu.wiki##div[class]:matches-css(position: sticky)
 namu.wiki##li:has(a > time):not(:has([href*='/raw/'])):upward(2)
@@ -348,7 +347,8 @@ gmarket.co.kr##+js(set, mouseRightButtonDisabled, noopFunc)
 aagag.com#$#.la { position: absolute !important; left: -3000px !important; width: 60px !important; height: 20px !important; }
 cola16.app##+js(acis, decodeURIComponent, ABCDEFGHIJKLMNOPQRSTUVWXYZ)
 damoang.net##+js(nostif, bait_hidden)
-dcinside.com###moveOverlay, #gaejukimg
+dcinside.com###gaejukimg
+dcinside.com###moveOverlay
 litomi.*#%#(()=>{"use strict";let t=1;const e=new Map,n=new WeakSet;window.__REACT_DEVTOOLS_GLOBAL_HOOK__={supportsFiber:!0,renderers:e,inject:n=>{const o=t++;return e.set(o,n),o},onCommitFiberRoot:(t,e)=>{const o=t=>{if(!t)return;const e=t.memoizedProps;if(e&&!n.has(t)){if("function"==typeof e.onAdClick){n.add(t);try{e.onAdClick()}catch(t){}}if("function"==typeof e.onResult){n.add(t);try{e.onResult({success:!0,earned:10})}catch(t){}}}o(t.child),o(t.sibling)};e&&e.current&&o(e.current)},onCommitFiberUnmount:()=>{},onPostCommitFiberRoot:()=>{}}})();
 m.fmkorea.com##+js(set, _make_power_link_identifier, noopFunc)
 m.fmkorea.com##script ~ div.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):matches-css(padding: /[0-5]px/):remove()
@@ -452,6 +452,7 @@ www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
 
 ! Malware & Spam
 *$websocket,domain=bunny-frame.online
+||player.bunny-frame.online/js/ad_fetcher.js
 
 ! Tweaks
 arca.live#%#(()=>{const N="nrx",S='a.notice[href*="/b/"] .vcol.col-ad>.badge.text-bg-success,a.notice[href*="/b/"] .vcol.col-id>b';document.documentElement.appendChild(Object.assign(document.createElement("style"),{textContent:`${S}{visibility:hidden;animation:${N} 1ms}@keyframes ${N}{to{}}`}));addEventListener("animationstart",e=>{if(e.animationName!==N)return;const g=/\/b\/([^/]+)/.exec(e.target.closest("a.notice").pathname)?.[1];if(g){e.target.textContent=g;e.target.style.visibility="visible"}},true)})();
