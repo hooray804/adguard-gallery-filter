@@ -18,6 +18,7 @@
 ##[class^='basic-banner'][id]
 ##[class^='happy-header']
 ##[id^='hd_pop']
+##iframe[src*="//ad.adnmore.co.kr"]
 #@#[data-brs][data-br]
 *##+js(remove-class, topBanner--on, body)
 *##[target='_blank']:has([src*='/banner/']):not([title^='새']):not([class*='slide'] > *)
@@ -31,7 +32,7 @@ blog.naver.com,comic.naver.com##[class*='banner_area']
 seoul.co.kr,mule.co.kr,hiromi.fans##[class*='Ad']
 danawa.com,m.cafe.naver.com,hungryapp.co.kr,hungapp.com##[class^='banner']
 gaykorea.net,yoboyobo.kr##.cu_gallery-item, .main-slider, .md_ad, .product_viewpage-latest, div[class^="m-b-"]:has(> div > p.powered)
-diningcode.com,chuchu.gg##.ad-container
+diningcode.com,chuchu.gg,platum.kr##.ad-container
 hani.co.kr,i-boss.co.kr,spin-spin.com##[class*="AdWrap"]
 hungryapp.co.kr,hungapp.com##.fixed-top
 hungryapp.co.kr,hungapp.com##[aria-label="헝그리앱 배너"]
@@ -45,6 +46,7 @@ ppomppu.co.kr,m.ppomppu1.co.kr##[id$='_popup']
 qquing.net,ibric.org##[class*="ad-wrap"]
 rgr.kr,rgrong.net,te31.com###foot:style(height: 150px !important;)
 rgr.kr,rgrong.net,te31.com##div[style='position:relative;z-index:11;']
+ruliweb.com,fmkorea.com#@#[alt$='광고']
 ruliweb.com,ppomppu.co.kr,naver.com,daum.net,etoland.co.kr##[id$='_ad']
 tdgall.com,hygall.com##.admanager-row
 windowsforum.kr,seoul.co.kr,xportsnews.com,yonhapnewstv.co.kr,goodgag.net##.ad
@@ -71,6 +73,9 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 [$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##div[class$='gallery'][id] [target='_blank']:upward(1)
 algumon.com##div:has([data-tip^='파트너스'], div[style*='height'], ins):is(.card, .deal-2col)
 arca.live##div.vrow.hybrid:has(.badge.category-badge)
+asiatoday.co.kr###ad-floating-wrapper
+asiatoday.co.kr##.ad_banner3
+asiatoday.co.kr##.ad_view_top
 asked.kr##div[class^="index_"] div[class^="banner_"]
 asked.kr##div[class^="kad_"]
 avdbs.com##.ad-btn[class*='tp']
@@ -92,6 +97,7 @@ coinpan.com##li:has(ins.adsbygoogle)
 coinpan.com##p > strong > span:has-text(AD):upward(p)
 community.rememberapp.co.kr##[alt="배너 광고 이미지"]
 crepe.cm##section.mx-auto.block:has(> a[href="https://takemm.com/?utm_source=web&utm_medium=display&utm_campaign=crepe_main"])
+dailypharm.com##div[class*="_banner"]
 dak.gg###venatus-container-top
 dak.gg##.ad[id="mobile-takeover"]
 damoang.net##.dm-card:has(#gam-index-top-damoang-banner-index)
@@ -114,6 +120,7 @@ dvdprime.com##[id$='top_banner']
 dvdprime.com##[id^='ad_mobile']
 dvdprime.com##[id^='slot']
 ebs.co.kr##.ji_adban
+economist.co.kr##[class*="_ad"]
 edu.chosun.com##a:has(> [src*="edu.chosun.com/images/bn/"])
 edu.chosun.com##section:has(> [id^="AD_Main_"])
 encar.com##[class*="Banner_wrap"]
@@ -222,7 +229,6 @@ ppomppu.co.kr##.bottom > div[style]
 ppomppu.co.kr##tr[id*="_list_ad_"]
 ppomppu.co.kr$$tr:has-text(AD)
 red52.kr##.notice-box-area, .banner-pc, .banner-m
-ruliweb.com,fmkorea.com#@#[alt$='광고']
 sbs.co.kr##[class$="-ad"]
 search.danawa.com##li[data-itemtype='adsmart']
 seoul.co.kr###bottomScrollBox
@@ -251,7 +257,9 @@ uppity.co.kr##.adrop-outer
 veritas-a.com##article.grid.body > div.clearfix:has(.ad-template)
 viva100.com##.banner_box
 wadiz.kr##[class^="MultiBoardAdBannerDisplay-"]
+weekly.donga.com##div.right_wingad
 welfarehello.com##[style^="--ad-frame-width-"]
+wooriilbo.com##div[style$="width:360px;height:320px;"]
 xtoon365.com##[class$='-ad']
 yonhapnewstv.co.kr##.main-banner-area
 yonhapnewstv.co.kr##.view-ad-center
@@ -266,6 +274,7 @@ zod.kr##.app-mobile-only:has(> div > a[target] > img)
 ||*nestads.*
 ||ader.naver.com/*c=m_$all
 ||ader.naver.com/v1/$all
+||adraction.co.kr^
 ||api.hobos.studio/v1/ads$domain=xn--v69ak0xskm.com
 ||bokuennews.com/data/banner
 ||clink.kakao.com/sp/$all
@@ -277,6 +286,7 @@ zod.kr##.app-mobile-only:has(> div > a[target] > img)
 ||player.bunny-frame.online/js/ad_fetcher.js
 ||red52.kr/ads
 ||shortformstats.kakao.com^$app=com.kakao.talk
+||storage1.ilyo.co.kr/contents/banner/images
 ||thumb.kakaocdn.net^$app=com.kakao.talk
 ||trillion.toss.im^
 !
