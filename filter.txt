@@ -56,8 +56,8 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 /vue/component/common/banner_modal.vue
 3rd.supply##.h-hori-ad
 3rd.supply##.text-center:has(sp-common-adsense)
-[$domain=/^darkg[a-z0-9]*\.[a-z]{2,}/]###side-popup, #posterWrap, a[class*="banner"]
-[$domain=/^darkg[a-z0-9]*\.[a-z]{2,}/]##+js(nano-stb, tick, 1000)
+[$domain=/^darkg[a-z0-9]*\.com/]###side-popup, #posterWrap, a[class*="banner"]
+[$domain=/^darkg[a-z0-9]*\.com/]##+js(nano-stb, tick, 1000)
 [$domain=/^fxfx[0-9]*\.com/]##.top-banner
 [$domain=/^hoohootv[0-9]*\.[a-z]{2,}/]###img_row_container
 [$domain=/^mingky[0-9]*\.[a-z]{2,}/]##a.grid-asset[target="_blank"]:has(> img[alt])
@@ -402,7 +402,6 @@ $@$link[rel="manifest"]
 @@||kb*.$stealth=dpi
 @@||kfc*.$stealth=dpi
 @@||kiwoom.com^$stealth=dpi
-@@||kone.gg^$stealth=push
 @@||kr^$stealth=dpi
 @@||kt*.$stealth=dpi
 @@||lg*.$stealth=dpi
