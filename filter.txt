@@ -33,6 +33,7 @@ seoul.co.kr,mule.co.kr,hiromi.fans##[class*='Ad']
 danawa.com,m.cafe.naver.com,hungryapp.co.kr,hungapp.com##[class^='banner']
 gaykorea.net,yoboyobo.kr##.cu_gallery-item, .main-slider, .md_ad, .product_viewpage-latest, div[class^="m-b-"]:has(> div > p.powered)
 diningcode.com,chuchu.gg,platum.kr##.ad-container
+fmkorea.com,sbs.co.kr##[class$='_ad']
 hani.co.kr,i-boss.co.kr,spin-spin.com##[class*="AdWrap"]
 hungryapp.co.kr,hungapp.com##.fixed-top
 hungryapp.co.kr,hungapp.com##[aria-label="헝그리앱 배너"]
@@ -127,7 +128,6 @@ encar.com##[class*="Banner_wrap"]
 encar.com##li > a[class*="RecommendQuick_link_quick__"][href^="https://automotive.encar.com/RealMedia/ads/"][target="_blank"]
 ez2pattern.kr##.sticky
 fc-info.com##div[class^='Venatus_']
-fmkorea.com,sbs.co.kr##[class$='_ad']
 fnnews.com##[data-widget_id]
 fnnews.com##div[style*="height:"]:has(iframe, script, ins), div[style*="text-align: center"]:has(> iframe)
 gall.dcinside.com##.gnb_list.clear > li:has(> [onclick])
