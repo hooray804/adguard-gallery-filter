@@ -99,6 +99,7 @@ crepe.cm##section.mx-auto.block:has(> a[href="https://takemm.com/?utm_source=web
 dak.gg###venatus-container-top
 dak.gg##.ad[id="mobile-takeover"]
 damoang.net##.dm-card:has(#gam-index-top-damoang-banner-index)
+dailypharm.com##a:has(> [src*="vodcdn.dailypharm.com/new_dailypharm/banners"])
 danawa.com##.auto_product_list:has(> .icon__ad)
 daum.net##[data-slot-type="AD_BRANDING_STATION"]
 daum.net##[data-slot-type="DAUM_AD"]
@@ -289,7 +290,6 @@ zod.kr##.app-mobile-only:has(> div > a[target] > img)
 ||storage1.ilyo.co.kr/contents/banner/images
 ||thumb.kakaocdn.net^$app=com.kakao.talk
 ||trillion.toss.im^
-||vodcdn.dailypharm.com/new_dailypharm/banners
 !
 !#if (adguard_app_ios || adguard_ext_safari) && !adguard_app_mac
 ###img_row_container
