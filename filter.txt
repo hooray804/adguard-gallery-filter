@@ -19,10 +19,8 @@
 ##[class^='happy-header']
 ##[id^='hd_pop']
 ##iframe[src*="//ad.adnmore.co.kr"]
-#@#[data-brs][data-br]
 *##+js(remove-class, topBanner--on, body)
 *##[target='_blank']:has([src*='/banner/']):not([title^='새']):not([class*='slide'] > *)
-*#$#button[data-banner-id] { mix-blend-mode: hue !important; }
 *tcid=$all
 !
 ! Common rules
@@ -58,8 +56,8 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 /vue/component/common/banner_modal.vue
 3rd.supply##.h-hori-ad
 3rd.supply##.text-center:has(sp-common-adsense)
-[$domain=/^darkg[a-z0-9]*\.com/]###side-popup, #posterWrap, a[class*="banner"]
-[$domain=/^darkg[a-z0-9]*\.com/]##+js(nano-stb, tick, 1000)
+[$domain=/^darkg[a-z0-9]*\.[a-z]{2,}/]###side-popup, #posterWrap, a[class*="banner"]
+[$domain=/^darkg[a-z0-9]*\.[a-z]{2,}/]##+js(nano-stb, tick, 1000)
 [$domain=/^fxfx[0-9]*\.com/]##.top-banner
 [$domain=/^hoohootv[0-9]*\.[a-z]{2,}/]###img_row_container
 [$domain=/^mingky[0-9]*\.[a-z]{2,}/]##a.grid-asset[target="_blank"]:has(> img[alt])
@@ -98,7 +96,7 @@ coinpan.com##li:has(ins.adsbygoogle)
 coinpan.com##p > strong > span:has-text(AD):upward(p)
 community.rememberapp.co.kr##[alt="배너 광고 이미지"]
 crepe.cm##section.mx-auto.block:has(> a[href="https://takemm.com/?utm_source=web&utm_medium=display&utm_campaign=crepe_main"])
-dailypharm.com##div[class*="_banner"]
+! incorrect blocking (pc) dailypharm.com##div[class*="_banner"]
 dak.gg###venatus-container-top
 dak.gg##.ad[id="mobile-takeover"]
 damoang.net##.dm-card:has(#gam-index-top-damoang-banner-index)
@@ -309,6 +307,7 @@ gall.dcinside.com##.dc_all
 gall.dcinside.com##.dcmedia.content_box
 gall.dcinside.com##.ltr
 gall.dcinside.com##.r_dcmedia
+gall.dcinside.com##.rtbAlarmPopup.pop_wrap.alarm
 gall.dcinside.com##tr[class='ub-content ']
 inven.co.kr##.inven-float-alarm
 m.cafe.naver.com###articleFeedList
@@ -319,6 +318,7 @@ m.cafe.naver.com##.join_layer_wrap
 m.cafe.naver.com##.popular_toast_popup
 m.cafe.naver.com##.subscribe_layer_wrap
 m.dcinside.com###light_tipbox
+m.dcinside.com##.alarm-popup.roundtype.silbe-alarm.best-a
 m.dcinside.com##.outside-search-box
 m.dcinside.com##section.grid > .md-tit-box:has(> div > .daumtxt)
 m.naver.com###MM_AI_TAB_TOOLTIP
@@ -347,12 +347,12 @@ gmarket.co.kr##+js(set, mouseRightButtonDisabled, noopFunc)
 aagag.com#$#.la { position: absolute !important; left: -3000px !important; width: 60px !important; height: 20px !important; }
 cola16.app##+js(acis, decodeURIComponent, ABCDEFGHIJKLMNOPQRSTUVWXYZ)
 damoang.net##+js(nostif, bait_hidden)
-dcinside.com###gaejukimg
-dcinside.com###moveOverlay
+gall.dcinside.com###gaejukimg
 litomi.*#%#(()=>{"use strict";let t=1;const e=new Map,n=new WeakSet;window.__REACT_DEVTOOLS_GLOBAL_HOOK__={supportsFiber:!0,renderers:e,inject:n=>{const o=t++;return e.set(o,n),o},onCommitFiberRoot:(t,e)=>{const o=t=>{if(!t)return;const e=t.memoizedProps;if(e&&!n.has(t)){if("function"==typeof e.onAdClick){n.add(t);try{e.onAdClick()}catch(t){}}if("function"==typeof e.onResult){n.add(t);try{e.onResult({success:!0,earned:10})}catch(t){}}}o(t.child),o(t.sibling)};e&&e.current&&o(e.current)},onCommitFiberUnmount:()=>{},onPostCommitFiberRoot:()=>{}}})();
 m.fmkorea.com##+js(set, _make_power_link_identifier, noopFunc)
 m.fmkorea.com##script ~ div.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):matches-css(padding: /[0-5]px/):remove()
 m.fmkorea.com##section.fmWidgetStyle2019.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):matches-css(padding: /[0-5]px/):remove()
+m.dcinside.com###moveOverlay
 namu.wiki##div:has(img[data-doc]:not([data-doc^="/jump/"]):not([data-doc^="/w/"])):not(:has([id])), div:has(> div[id]:empty:only-child)
 oraksil.cc##+js(acis, onload, showAdblockMessage)
 postshare.co.kr##+js(set-cookie, ad_unlocked_timer_final_v2, true)
@@ -402,6 +402,7 @@ $@$link[rel="manifest"]
 @@||kb*.$stealth=dpi
 @@||kfc*.$stealth=dpi
 @@||kiwoom.com^$stealth=dpi
+@@||kone.gg^$stealth=push
 @@||kr^$stealth=dpi
 @@||kt*.$stealth=dpi
 @@||lg*.$stealth=dpi
