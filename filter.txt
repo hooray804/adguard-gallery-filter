@@ -129,8 +129,6 @@ encar.com##[class*="Banner_wrap"]
 encar.com##li > a[class*="RecommendQuick_link_quick__"][href^="https://automotive.encar.com/RealMedia/ads/"][target="_blank"]
 ez2pattern.kr##.sticky
 fc-info.com##div[class^='Venatus_']
-fnnews.com##[data-widget_id]
-fnnews.com##div[style*="height:"]:has(iframe, script, ins), div[style*="text-align: center"]:has(> iframe)
 gall.dcinside.com##.gnb_list.clear > li:has(> [onclick])
 gall.dcinside.com##li[id^="reply_li_"]:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.5 !important;)
 gangmom.kr##.banner-wrapper
@@ -205,9 +203,10 @@ mule.co.kr##[class*='-ad-']
 munhwa.com###bottom-sticky
 munhwa.com##.top-banner-area
 musinsa.com##[href$="/main/musinsa/brand_ad"]
+musinsa.com##div[class^="TabItem__DefaultCombinationWrap-"]:has(> a.gtm-click-content[href="/main/musinsa/brand_ad"])
 namu.news##li:has(div[style*="min-height:100px"]):has(> div > div[id*="article-a"])
 naver.com###sb-kh-shortents-wrap
-naver.com##.sa_mw.sa_empty_ad
+naver.com##.sa_empty_ad
 news.jtbc.co.kr##.MuiBox-root[radius="0"][style]:empty
 news.jtbc.co.kr##.print-hide.MuiBox-root:has(> iframe)
 news.jtbc.co.kr##.print-hide:has-text(AD)
