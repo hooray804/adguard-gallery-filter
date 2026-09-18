@@ -70,6 +70,7 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 [$domain=/^wtwt[0-9]*\.com/]##.banner
 [$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##[href*='/ad'][target='_blank']:has(img)
 [$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##div[class$='gallery'][id] [target='_blank']:upward(1)
+aflnews.co.kr###layer-popups
 algumon.com##div:has([data-tip^='파트너스'], div[style*='height'], ins):is(.card, .deal-2col)
 arca.live##div.vrow.hybrid:has(.badge.category-badge)
 asiatoday.co.kr###ad-floating-wrapper
@@ -111,6 +112,7 @@ dispatch.co.kr##article.page-post-font.page-post-article > div:has(iframe)
 dispatch.co.kr##article.page-post-font.page-post-article > iframe
 dnews.co.kr##div[style^="text-align: center"][style*="z-index: 999"]
 doctornow.co.kr##div.flex.w-full:has(> div.relative, > ins.adsbygoogle)
+donga.com##div.right_wingad
 dschool.co.kr###modal-banner
 dschool.co.kr##[id="lean_overlay"]
 dt.co.kr##.horizon-ad
@@ -258,7 +260,6 @@ uppity.co.kr##.adrop-outer
 veritas-a.com##article.grid.body > div.clearfix:has(.ad-template)
 viva100.com##.banner_box
 wadiz.kr##[class^="MultiBoardAdBannerDisplay-"]
-weekly.donga.com##div.right_wingad
 welfarehello.com##[style^="--ad-frame-width-"]
 wooriilbo.com##div[style$="width:360px;height:320px;"]
 xtoon365.com##[class$='-ad']
