@@ -68,7 +68,6 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 [$domain=/^tvwiki[0-9]*\.net/]###bannerList, #viewCover, img[src*="/banner/"]
 [$domain=/^wftoon[0-9]*\.com/]##.top-banner
 [$domain=/^wtwt[0-9]*\.com/]##.banner
-[$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##[href*='/ad'][target='_blank']:has(img)
 [$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##div[class$='gallery'][id] [target='_blank']:upward(1)
 aflnews.co.kr###layer-popups
 algumon.com##div:has([data-tip^='파트너스'], div[style*='height'], ins):is(.card, .deal-2col)
@@ -92,6 +91,7 @@ biz.chosun.com##aside > div.flex-chain-wrapper:has(> section > div > .raw-html >
 bobaedream.co.kr##div.content.community > div[style$="height:100px;"]:has([id^="div-gpt-ad"])
 boutique.chosun.com###bo_main_modalWrap
 bunjang.co.kr##div[class*="ProductExternalAdsstyle"]:has(h3:has-text(비슷한 새 상품 보기))
+chzzk.naver.com##div[class*='is_scrolled'][data-nlog-area='home_top_skin'][style]:has(> [target] > strong)
 coinpan.com##li:has(> span.wgp_ad)
 coinpan.com##li:has(ins.adsbygoogle)
 coinpan.com##p > strong > span:has-text(AD):upward(p)
