@@ -203,7 +203,6 @@ mule.co.kr##[class*='-ad-']
 munhwa.com###bottom-sticky
 munhwa.com##.top-banner-area
 musinsa.com##[href$="/main/musinsa/brand_ad"]
-musinsa.com##div[class^="TabItem__DefaultCombinationWrap-"]:has(> a.gtm-click-content[href="/main/musinsa/brand_ad"])
 namu.news##li:has(div[style*="min-height:100px"]):has(> div > div[id*="article-a"])
 naver.com###sb-kh-shortents-wrap
 naver.com##.sa_empty_ad
@@ -250,6 +249,7 @@ teamblind.com##.topic-list.best > div.article:has(> [href^='https://link.coupang
 teamblind.com##[href^='https://link.coupang.com/re/AFFSDP']
 teamblind.com##div.border-b:has(> div.flex > div[id^="infeed-home-"])
 teamblind.com##div.comment_area.wrap-comment[style='cursor: pointer;']
+teamblind.com##ul.tag-actions:has(> li > a[href^="https://link.coupang.com/a/"])
 terms.naver.com##div.ad-banner-area
 thinkpool.com##.banner_box
 tiendeo.co.kr##section.justify-center:has([id^="div-gpt-ad-web"])
