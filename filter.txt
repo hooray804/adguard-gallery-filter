@@ -204,7 +204,6 @@ munhwa.com###bottom-sticky
 munhwa.com##.top-banner-area
 musinsa.com##[href$="/main/musinsa/brand_ad"]
 namu.news##li:has(div[style*="min-height:100px"]):has(> div > div[id*="article-a"])
-naver.com###sb-kh-shortents-wrap
 naver.com##.sa_empty_ad
 news.jtbc.co.kr##.MuiBox-root[radius="0"][style]:empty
 news.jtbc.co.kr##.print-hide.MuiBox-root:has(> iframe)
@@ -329,12 +328,11 @@ m.naver.com###MM_AI_TAB_TOOLTIP
 m.naver.com###MM_homefeed_react_container > .grid1_wrap.brick-house > .brick-vowel > div:not(:first-child)
 m.naver.com##.chf_feed_wrap > .type_square.cc_clip_list
 m.naver.com##script#MM_search_disaster ~*
-! m.search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) + div
-! m.search.naver.com##.api_subject_bx div:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) + div + div
+m.search.naver.com##.fds-aib-expandable-container:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) .fds-aib-input-dock
 mlbpark.donga.com##.the_hottest
 namu.wiki##div[class]:matches-css(position: sticky)
 namu.wiki##li:has(a > time):not(:has([href*='/raw/'])):upward(2)
-naver.com##div.sds-comps-vertical-layout.fds-shortents-compact-block[data-template-id="layout"]
+naver.com###sb-kh-shortents-wrap
 phdkim.net##.app-smart-banner
 quasarzone.com##.best-official-news, .new-official-news, .best-official-news-container, .new-official-news-container, .new-partner-saleinfo-container
 search.dcinside.com##.right_content
