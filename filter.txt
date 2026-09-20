@@ -47,8 +47,8 @@ rgr.kr,rgrong.net,te31.com##div[style='position:relative;z-index:11;']
 ruliweb.com,fmkorea.com#@#[alt$='광고']
 ruliweb.com,ppomppu.co.kr,naver.com,daum.net,etoland.co.kr##[id$='_ad']
 seoul.co.kr,mule.co.kr,hiromi.fans##[class*='Ad']
-thinkpool.com,econovill.com,viva100.com##.banner_box
 tdgall.com,hygall.com##.admanager-row
+thinkpool.com,econovill.com,viva100.com##.banner_box
 windowsforum.kr,seoul.co.kr,xportsnews.com,yonhapnewstv.co.kr,goodgag.net,dailycar.co.kr##.ad
 wowtv.co.kr,cafe.naver.com##[class*='Banner']
 !
