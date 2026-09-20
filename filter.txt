@@ -243,6 +243,7 @@ ssalmuk.com##+js(json-prune, data.[-].popupCode)
 svrforum.com$$ins[class="adsbygoogle"]
 te31.com##table:has(td > script)
 teamblind.com##.coupang_gnb
+teamblind.com##.progtop-band:has(> div[id^="div-gpt-ad"]:empty:only-child)
 teamblind.com##.top_banner
 teamblind.com##.topic-list.best > div.article:has(> [href^='https://link.coupang.com/re/'])
 teamblind.com##[href^='https://link.coupang.com/re/AFFSDP']
