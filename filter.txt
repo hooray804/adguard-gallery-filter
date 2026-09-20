@@ -377,7 +377,7 @@ $@$link[rel="manifest"]
 @@*sb.com^$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:bank|stock|invest|coin|pay|mobile|card|post|logi|financ)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:eon|buk|busan|seo|won|nam|traff|ung|ong|sam)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
-@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:hyu|gok)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:hyu|gok|chat|mae|hae|bus|trav|account)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:market|mart|han|insure|direct|soft|point|cash|time|info)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:screen|size|monitor|pdf|tech|udi|scan|dae|sound|ang)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:savings|cruit|event|talent|energy|test|check|speed|song|work|dev)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
@@ -387,6 +387,7 @@ $@$link[rel="manifest"]
 @@||ad-creative.pstatic.net^$app=com.nhn.android.search
 @@||ad-img.gmarket.com^$image,domain=m.gmarket.co.kr|auction.co.kr|www.gmarket.co.kr
 @@||ad.co.kr^$ghide
+@@||adot.ai^stealth=dpi
 @@||adtouch.*
 @@||arca.live^$ghide
 @@||arca.live^$stealth=push
@@ -417,11 +418,11 @@ $@$link[rel="manifest"]
 @@||kt*.$stealth=dpi
 @@||lg*.$stealth=dpi
 @@||log1.toup.net^$app=com.nhn.android.search
-@@||lotte*.$stealth=dpi
+@@||lott*.$stealth=dpi
 @@||miraeasset.com^$stealth=dpi
 @@||mobis.com^$stealth=dpi
 @@||monimo.com^$stealth=dpi
-@@||mykt.com^$stealth=dpi
+@@||my*.com^$stealth=dpi
 @@||nc.com^$stealth=dpi
 @@||nexon.com^$stealth=dpi
 @@||nonghyup.com^$stealth=dpi
