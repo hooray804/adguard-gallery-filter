@@ -47,6 +47,7 @@ rgr.kr,rgrong.net,te31.com##div[style='position:relative;z-index:11;']
 ruliweb.com,fmkorea.com#@#[alt$='광고']
 ruliweb.com,ppomppu.co.kr,naver.com,daum.net,etoland.co.kr##[id$='_ad']
 seoul.co.kr,mule.co.kr,hiromi.fans##[class*='Ad']
+thinkpool.com,econovill.com,viva100.com##.banner_box
 tdgall.com,hygall.com##.admanager-row
 windowsforum.kr,seoul.co.kr,xportsnews.com,yonhapnewstv.co.kr,goodgag.net,dailycar.co.kr##.ad
 wowtv.co.kr,cafe.naver.com##[class*='Banner']
@@ -122,7 +123,6 @@ dvdprime.com##[id^='ad_mobile']
 dvdprime.com##[id^='slot']
 ebs.co.kr##.ji_adban
 economist.co.kr##[class*="_ad"]
-econovill.com##div.banner_box
 edu.chosun.com##a:has(> [src*="edu.chosun.com/images/bn/"])
 edu.chosun.com##section:has(> [id^="AD_Main_"])
 encar.com##[class*="Banner_wrap"]
@@ -250,13 +250,11 @@ teamblind.com##div.border-b:has(> div.flex > div[id^="infeed-home-"])
 teamblind.com##div.comment_area.wrap-comment[style='cursor: pointer;']
 teamblind.com##ul.tag-actions:has(> li > a[href^="https://link.coupang.com/a/"])
 terms.naver.com##div.ad-banner-area
-thinkpool.com##.banner_box
 tiendeo.co.kr##section.justify-center:has([id^="div-gpt-ad-web"])
 tvseoul.kr##div[style*="width:360px"][style*="height:300px"]
 umrb.co.kr##ul.main_slider_area
 uppity.co.kr##.adrop-outer
 veritas-a.com##article.grid.body > div.clearfix:has(.ad-template)
-viva100.com##.banner_box
 wadiz.kr##[class^="MultiBoardAdBannerDisplay-"]
 welfarehello.com##[style^="--ad-frame-width-"]
 wooriilbo.com##div[style$="width:360px;height:320px;"]
@@ -370,16 +368,18 @@ shipdago.com,ez2pattern.kr,quizbubble.kr##+js(no-fetch-if, adsbygoogle.js)
 $@$link[rel="manifest"]
 @@*capital.$stealth=dpi
 @@*fire.$stealth=dpi
+@@*info.$stealth=dpi
 @@*ins.$stealth=dpi
 @@*mbc.com^$stealth=dpi
 @@*sb.com^$stealth=dpi
+@@*store.com^$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:bank|stock|invest|coin|pay|mobile|card|post|logi|financ)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
-@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:eon|buk|busan|seo|won|nam|traff|ung|sam)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
-@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:hyu|gok|chat|mae|hae|bus|account)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
-@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:market|mart|han|insure|direct|soft|point|cash|time|info)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
-@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:screen|size|monitor|pdf|tech|udi|scan|dae|sound)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
-@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:savings|cruit|event|talent|energy|test|check|speed|song|work|dev)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
-@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:tele|news|pass|econom|biz|member|shop|mall|store|univ)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:hyu|ung|account|udi|busan|speed)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:market|mart|hana|insure|direct|soft|point|cash|time)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:pdf|phone|info|tech|monitor)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:savings|cruit|event|talent|energy|test|check|scan)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:tele|news|pass|econom|biz|member|shop|mall|univ|mae)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*ssg[a-z]*\.com(?:[\/?#]|$)/$stealth=dpi
 @@||192.168.$stealth=dpi
 @@||a*.smlog.co.kr^$app=com.nhn.android.search
 @@||ad-creative.pstatic.net^$app=com.nhn.android.search
@@ -400,6 +400,7 @@ $@$link[rel="manifest"]
 @@||danawa.com^$stealth=dpi
 @@||dcinside.com^$stealth=dpi|push
 @@||donga.com^$stealth=dpi
+@@||finnq.com^$stealth=dpi
 @@||giggleus.com^$stealth=dpi
 @@||google*.$stealth=dpi|push
 @@||gs*.com^$stealth=dpi
@@ -431,7 +432,6 @@ $@$link[rel="manifest"]
 @@||slrclub.com/rss/today_photo.slr
 @@||smartstore.naver.com^$stealth
 @@||sofrano.com^$stealth=dpi
-@@||ssg*.com^$stealth=dpi
 @@||termeden.com^$stealth=dpi
 @@||ticket*.$stealth
 @@||tivan.naver.com^$app=com.nhn.android.search
