@@ -92,7 +92,7 @@ biz.chosun.com##aside > div.flex-chain-wrapper:has(> section > div > .raw-html >
 bobaedream.co.kr##div.content.community > div[style$="height:100px;"]:has([id^="div-gpt-ad"])
 boutique.chosun.com###bo_main_modalWrap
 bunjang.co.kr##div[class*="ProductExternalAdsstyle"]:has(h3:has-text(비슷한 새 상품 보기))
-chzzk.naver.com##div[class*='is_scrolled'][data-nlog-area='home_top_skin'][style]:has(> [target] > strong)
+chzzk.naver.com##div[class*='is_scrolled'][data-nlog-area='home_top_skin']
 coinpan.com##li:has(> span.wgp_ad)
 coinpan.com##li:has(ins.adsbygoogle)
 coinpan.com##p > strong > span:has-text(AD):upward(p)
@@ -315,10 +315,10 @@ inven.co.kr##.inven-float-alarm
 m.cafe.naver.com###articleFeedList
 m.cafe.naver.com##.CardWrap.home_popular_articles
 m.cafe.naver.com##.FloatingJoinButton
-m.cafe.naver.com##.HomeFeedItem
 m.cafe.naver.com##.join_layer_wrap
 m.cafe.naver.com##.popular_toast_popup
 m.cafe.naver.com##.subscribe_layer_wrap
+m.cafe.naver.com##[data-testid='home-feed']
 m.dcinside.com###light_tipbox
 m.dcinside.com##.alarm-popup.roundtype.silbe-alarm
 m.dcinside.com##.outside-search-box
@@ -367,6 +367,7 @@ shipdago.com,ez2pattern.kr,quizbubble.kr##+js(no-fetch-if, adsbygoogle.js)
 ! Incorrect blocking
 !#safari_cb_affinity(general,custom)
 $@$link[rel="manifest"]
+@@*$app=com.kt.ktauth,stealth=dpi
 @@*capital.$stealth=dpi
 @@*fire.$stealth=dpi
 @@*info.$stealth=dpi
