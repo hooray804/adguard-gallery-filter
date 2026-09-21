@@ -28,7 +28,7 @@ https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/ma
 https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/Gallery%20Extension.user.js
 ```
 
-* **디시인사이드 엑스퍼트 익스텐션 (Dcinside Expert Extension)**
+* **디시인사이드 엑스퍼트 익스텐션 (Dcinside Expert Extension) - 사용 비권장**
 ```
 https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js
 ```
@@ -52,7 +52,7 @@ https://gall.dcinside.com/mgallery/board/view/?id=adguard&no=7935
 
 https://gall.dcinside.com/mgallery/board/view/?id=adguard&no=2348
 
-### 디시인사이드 엑스퍼트
+### 디시인사이드 엑스퍼트 - 사용을 권장하지 않음
 
 * **무한 스크롤**: 페이지 하단 도달 시 다음 페이지 자동 로드
 * **사진 블러 및 테마 변경**: 게시글 내 이미지 블러 및 자동 다크 모드, 그린 테마 적용
