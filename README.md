@@ -28,7 +28,7 @@ https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/ma
 https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/Gallery%20Extension.user.js
 ```
 
-* **디시인사이드 엑스퍼트 익스텐션 (Dcinside Expert Extension) - 사용 비권장**
+* **디시인사이드 엑스퍼트 익스텐션 (Dcinside Expert Extension) - 사용 비권장 (비정상 작동 유발)**
 ```
 https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/dc.user.js
 ```
