@@ -461,6 +461,12 @@ www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
 ||ssl.pstatic.net/t.static.blog/nmobile/versioning//common/lib/ntm/ntm-blog-web-*.js$badfilter
 ||tnkfactory.com^$badfilter
 !#safari_cb_affinity
+! NOT TESTED
+@@/^https:\/\/(.*\.)?(inicis|kcp|nicepay|tosspayments|kakaopay|payco|paypal|iamport|portone|signgate|yessign|kisa|tsign|dcert|crosscert|cert)\.(com|co\.kr).*$/$stealth
+@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:billing|smart|vertif|cloud|remote|motor|mobility|think|fine|here)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:soop)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*sk[a-z]*\.com(?:[\/?#]|$)/$stealth=dpi
+@@||m.$stealth=dpi
 
 ! Malware & Spam
 *$websocket,domain=bunny-frame.online
