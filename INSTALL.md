@@ -40,7 +40,7 @@
 아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
 1. `대시보드` 열기
 2. `필터 목록` 탭 선택
-3. 하단 스크롤 및 `불러오기` 펼치기
+3. 하단 스크롤 및 `가져오기` 펼치기
 4. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력
 5. 상단 `변경사항 적용` 버튼 클릭
 
@@ -180,7 +180,7 @@
 1. 하단 탭 바에서 첫번째 아이콘 `필터` 탭 열기
 2. 상단 `+` 버튼 클릭
 3. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력 및 우측 상단 버튼을 통해 URL 추가
-4. 왼쪽 상단의 `적용` 버튼 차례로 클릭
+4. 오른쪽 상단의 `적용` 버튼 차례로 클릭
 
 아래의 방법으로 유저스크립트를 추가합니다.
 1. 하단 탭 바에서 두번째 아이콘 `유저스크립트` 탭 열기
