@@ -76,8 +76,8 @@ arca.live##div.vrow.hybrid:has(.badge.category-badge)
 asiatoday.co.kr###ad-floating-wrapper
 asiatoday.co.kr##.ad_banner3
 asiatoday.co.kr##.ad_view_top
-asked.kr##div[class^="index_"] div[class^="banner_"]
-asked.kr##div[class^="kad_"]
+asked.kr##div.bg-surface.relative.z-1.grid.place-items-center.overflow-hidden:style(display: none !important;)
+asked.kr##div.relative div.py-5:has(> div.bg-surface):remove()
 avdbs.com##.ad-btn[class*='tp']
 avsee.is###at-main > a[rel]
 avsee.is##+js(acis, decodeURI, split)
@@ -277,6 +277,7 @@ zod.kr##.app-mobile-only:has(> div > a[target] > img)
 ||ader.naver.com/v1/$all
 ||adraction.co.kr^
 ||api.hobos.studio/v1/ads$domain=xn--v69ak0xskm.com
+||asked-front.pages.dev/kakaoad
 ||bokuennews.com/data/banner
 ||clink.kakao.com/sp/$all
 ||dvdprime.com/file/*/banner
