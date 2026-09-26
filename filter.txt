@@ -338,6 +338,7 @@ naver.com###sb-kh-shortents-wrap
 phdkim.net##.app-smart-banner
 quasarzone.com##.best-official-news, .new-official-news, .best-official-news-container, .new-official-news-container, .new-partner-saleinfo-container
 search.dcinside.com##.right_content
+search.naver.com##.ban_whale_wrap
 
 ! Annoyances
 cafe.naver.com##+js(remove-class, disable-select, #ct)
