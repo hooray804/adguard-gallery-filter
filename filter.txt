@@ -175,8 +175,7 @@ m.dcinside.com##.layer-bottom-popup
 m.dcinside.com##.menu-scroll-lst.swiper-wrapper > li.swiper-slide:nth-of-type(n+5)
 m.dcinside.com##.survey
 m.dcinside.com##.view-btm-con
-m.dcinside.com##li:not(.notice):has(> .
-detail-top-lnk)
+m.dcinside.com##li:not(.notice):has(> .detail-top-lnk)
 m.nate.com###myarea_ad
 m.nate.com##a[href^="https://cyad1.nate.com/click.kti/mnate/"]
 m.pann.nate.com##section > div[style^="width: 100%; min-height: 100px;"]:has(> iframe[title="광고"])
