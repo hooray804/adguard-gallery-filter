@@ -23,7 +23,7 @@ https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/ma
 
 ### 유저스크립트
 
-* **에펨코리아 익스텐션 (Gallery Extension)**
+* **에펨코리아 익스텐션 (Gallery Extension) - 업데이트 중단**
 ```
 https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/Gallery%20Extension.user.js
 ```
@@ -41,7 +41,7 @@ https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/ma
 
 설치 방법에 대한 자세한 설명은 [설치 가이드](./INSTALL.md)를 참고하세요.
 
-### 에펨코리아 갤러리 확장
+### 에펨코리아 갤러리 확장 - 업데이트 중단
 
 * **광고 및 제휴 제거**: 파워링크 제거 및 핫딜 제휴 링크를 일반 링크로 복구
 * **댓글 이미지 임베딩**: 댓글에 있는 이미지/동영상 링크를 클릭 없이 바로 표시
