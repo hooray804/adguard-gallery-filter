@@ -206,6 +206,7 @@ munhwa.com###bottom-sticky
 munhwa.com##.top-banner-area
 musinsa.com##[href$="/main/musinsa/brand_ad"]
 namu.news##li:has(div[style*="min-height:100px"]):has(> div > div[id*="article-a"])
+nate.com##div.AdIbl
 nate.com##ul.type_thumb > li.commercial
 naver.com##.sa_empty_ad
 news.jtbc.co.kr##.MuiBox-root[radius="0"][style]:empty
