@@ -102,7 +102,6 @@ dailypharm.com##a:has(> [src*="vodcdn.dailypharm.com/new_dailypharm/banners"])
 dak.gg###venatus-container-top
 dak.gg##.ad[id="mobile-takeover"]
 damoang.net##.dm-card:has(#gam-index-top-damoang-banner-index)
-danawa.com##.auto_product_list:has(> .icon__ad)
 daum.net##[data-slot-type="AD_BRANDING_STATION"]
 daum.net##[data-slot-type="DAUM_AD"]
 daum.net##div.inner_article div.ad_sch
