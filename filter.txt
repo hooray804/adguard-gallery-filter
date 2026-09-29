@@ -283,6 +283,7 @@ zod.kr##.app-mobile-only:has(> div > a[target] > img)
 ||api.hobos.studio/v1/ads$domain=xn--v69ak0xskm.com
 ||asked-front.pages.dev/kakaoad
 ||bokuennews.com/data/banner
+||checkplus.co.kr/images/banner/service/AD
 ||clink.kakao.com/sp/$all
 ||dvdprime.com/file/*/banner
 ||img.etoday.co.kr/web/eto_ad
