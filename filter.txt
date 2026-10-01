@@ -499,12 +499,15 @@ www.google.com##.MjjYud:has(span[role="text"]:has-text(/^https:\/\/[a-zA-Z0-9.-]
 
 ! Tweaks
 arca.live#%#(()=>{const N="nrx",S='a.notice[href*="/b/"] .vcol.col-ad>.badge.text-bg-success,a.notice[href*="/b/"] .vcol.col-id>b';document.documentElement.appendChild(Object.assign(document.createElement("style"),{textContent:`${S}{visibility:hidden;animation:${N} 1ms}@keyframes ${N}{to{}}`}));addEventListener("animationstart",e=>{if(e.animationName!==N)return;const g=/\/b\/([^/]+)/.exec(e.target.closest("a.notice").pathname)?.[1];if(g){e.target.textContent=g;e.target.style.visibility="visible"}},true)})();
-dcinside.com#%#//scriptlet('trusted-create-element', 'head', 'meta', 'name="theme-color" content="#2b367d"')
+dcinside.com##.imgwrap > .num:style(opacity: 0.6 !important;)
 dmm.co.jp#%#//scriptlet('trusted-set-cookie-reload', 'ckcy_remedied_check', 'ec_mrnhbtk', '1year', '/', '.dmm.co.jp')
 gall.dcinside.com##+js(aeld, contextmenu, , elements, video)
 gall.dcinside.com##+js(remove-attr, controlslist, video, stay)
 gall.dcinside.com##.img_area button.btn:style(opacity: 0.4 !important;)
-gall.dcinside.com#$#.btn_imgcmtopen { opacity: 0.4 !important; transform: translate(8px, 7px) !important; }
+gall.dcinside.com#$#.imgwrap > .btn.btn_imgcmt { opacity: 0.6 !important;  transform: translate(19px, -10px) scale(0.8) !important; }
+gall.dcinside.com#$#.imgwrap > .mngbtn_wrap > button { opacity: 0.6 !important;  transform: translate(21px, -25px) scale(0.8) !important; }
+gall.dcinside.com#$#.imgwrap > .sunseon.sp_btnimg.btn { opacity: 0.6 !important; transform: translate(19px, -18px) scale(0.8) !important; }
+gall.dcinside.com#$#button.btn_imgcmtopen { opacity: 0.6 !important; transform: translate(17px, 10px) scale(0.8) !important; }
 gall.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview_head:has(em.icon_write_app) > div.gall_writer > div.fl', 'span', '', 'ㅤAPP')
 gall.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview_head:has(em.icon_write_mbl) > div.gall_writer > div.fl', 'span', '', 'ㅤMOBILE')
 gall.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview_head:not(:has(em.icon_write_mbl)):not(:has(em.icon_write_app)) > div.gall_writer > div.fl', 'span', '', 'ㅤPC')
