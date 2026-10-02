@@ -358,7 +358,6 @@ gmarket.co.kr##+js(set, mouseRightButtonDisabled, noopFunc)
 ! Anti-adblock
 !#safari_cb_affinity(general,custom)
 @@||piku.co.kr^$ghide
-@@||avsee.is/player/advertisement.js^$script
 @@||avsee.is^$ghide
 !#safari_cb_affinity
 0db.co.kr###adblock_notice
