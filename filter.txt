@@ -494,10 +494,10 @@ www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
 ||tnkfactory.com^$badfilter
 !#safari_cb_affinity
 
-
 ! Malware & Spam
 *$websocket,domain=bunny-frame.online
-www.google.com##.MjjYud:has(cite:contains(/(https?:\/\/)?([a-z]{12})\.(baby|cam|fit|link|live|my|shop|site|store|today|wiki)[\s\/›]+[a-z]{20,}/)):has([data-snhf])
+www.google.com##.MjjYud:has(a:matches-attr("href"="/^https?:\/\/[a-z]{12}\.(?!(?:ai|com|org|net|edu|dev|app)\b)[a-z]{2,7}\/[a-z]{20,}/")):has([data-snhf])
+www.google.com##.MjjYud:has(cite:contains(/(https?:\/\/)?([a-z]{12})\.(?!(?:ai|com|org|net|edu|dev|app)\b)[a-z]{2,7}[\s\/›]+[a-z]{20,}/)):has([data-snhf])
 www.google.com##.MjjYud:has(cite:has-text(/^https:\/\/[a-zA-Z0-9.-]+\.hu/)):has([data-snhf])
 www.google.com##.MjjYud:has(span[role="text"]:has-text(/^https:\/\/[a-zA-Z0-9.-]+\.hu/)):has([data-snhf])
 ||player.bunny-frame.online/js/ad_fetcher.js
