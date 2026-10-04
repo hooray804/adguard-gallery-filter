@@ -91,7 +91,6 @@ bbs.ruliweb.com##tr:has(.nick[style^='display: inline-block'])
 biz.chosun.com##aside > div.flex-chain-wrapper:has(> section > div > .raw-html > iframe[width="300"])
 bobaedream.co.kr##div.content.community > div[style$="height:100px;"]:has([id^="div-gpt-ad"])
 boutique.chosun.com###bo_main_modalWrap
-bunjang.co.kr##div[class*="ProductExternalAdsstyle"]:has(h3:has-text(비슷한 새 상품 보기))
 chzzk.naver.com##div[class*='is_scrolled'][data-nlog-area='home_top_skin']
 coinpan.com##li:has(> span.wgp_ad)
 coinpan.com##li:has(ins.adsbygoogle)
@@ -310,6 +309,7 @@ hitomi.la##+js(nowoif, !hitomi.la)
 hitomi.la##div:has(> [id^="__clb-spot"])
 namu.wiki#%#!function(){const e=document.createElement("style");e.textContent=".agf-h{display:none!important}",document.documentElement.appendChild(e);const n=()=>{t.disconnect();const e=document.evaluate("//div[descendant::div and not(descendant-or-self::*[not(self::div)]) and normalize-space() = '' and not(descendant-or-self::*/@*[not(name()='class' or name()='id' or starts-with(name(), 'data-v-') or (name()='style' and normalize-space()=''))])]",document,null,7,null),n=new Set;for(let t=0;t<e.snapshotLength;t++)n.add(e.snapshotItem(t));document.querySelectorAll(".agf-h").forEach(e=>n.has(e)||e.classList.remove("agf-h")),n.forEach(e=>e.classList.contains("agf-h")||e.classList.add("agf-h")),t.observe(document.documentElement,{childList:!0,subtree:!0})},t=new MutationObserver(n);n()}();
 namu.wiki#%#!function(){const e=document.createElement("style");e.textContent=".agf-p{display:none!important}",document.documentElement.appendChild(e);const isRealText=(e,t)=>{const n=e.trim();if(!n)return!1;if(n.includes(" "))return!0;let r=t;for(;r&&r!==document.body;){if(r.classList&&r.classList.contains(n))return!1;r=r.parentElement}return!0},hasRealContent=e=>{if(1===e.nodeType){if(e.matches("a[href], img[src]")||e.querySelector("a[href], img[src]"))return!0;const t=document.createTreeWalker(e,NodeFilter.SHOW_TEXT,null);let n;for(;n=t.nextNode();)if(isRealText(n.textContent,n.parentElement))return!0}else if(3===e.nodeType&&isRealText(e.textContent,e.parentElement))return!0;return!1},hasExternalRealContent=(e,t)=>{for(let n=0;n<e.childNodes.length;n++){const r=e.childNodes[n];if(r!==t&&hasRealContent(r))return!0}return!1},run=()=>{obs.disconnect();const e=new Set,t=Array.from(document.querySelectorAll("a[title]:not([href])")).filter(e=>!e.textContent.trim());t.forEach(t=>{let n=t.closest("div"),r=null;for(;n&&n.parentElement&&n.parentElement!==document.body&&n.parentElement!==document.documentElement;){const e=n.parentElement;if(hasExternalRealContent(e,n)){r=n;break}n=e}r&&"DIV"===r.tagName&&e.add(r)}),document.querySelectorAll(".agf-p").forEach(t=>e.has(t)||t.classList.remove("agf-p")),e.forEach(e=>e.classList.contains("agf-p")||e.classList.add("agf-p")),obs.observe(document.documentElement,{childList:!0,subtree:!0})},obs=new MutationObserver(run);run()}();
+newneek.co#%#(function(){try{const proto=Document.prototype;const d=Object.getOwnPropertyDescriptor(proto,'cookie');if(!d||!d.set)return;const oS=d.set,oG=d.get;Object.defineProperty(proto,'cookie',{get:function(){return oG.call(this);},set:function(v){if(typeof v==='string'&&/^\s*article_read_count\s*=/i.test(v))return;return oS.call(this,v);},configurable:true});}catch(e){}})();
 !#else
 /^https:\/\/[0-9a-z]{6,12}\.in\/[a-z.]{2,10}(\/[a-z]{2,10})?(\/[a-z]{2,10})?(\?[^ ]+)?$/$media,script,third-party,match-case
 !#endif
@@ -344,6 +344,9 @@ mlbpark.donga.com##.the_hottest
 namu.wiki##div[class]:matches-css(position: sticky)
 namu.wiki##li:has(a > time):not(:has([href*='/raw/'])):upward(2)
 naver.com###sb-kh-shortents-wrap
+newneek.co##div[aria-label="뉴닉 뉴스레터 구독하기"]
+newneek.co#$#div.sticky:has(> [aria-label="앱 배너 닫기"]) { display: none !important; }
+newneek.co#$#header.sticky { top: 0 !important; }
 phdkim.net##.app-smart-banner
 quasarzone.com##.best-official-news, .new-official-news, .best-official-news-container, .new-official-news-container, .new-partner-saleinfo-container
 search.dcinside.com##.right_content
