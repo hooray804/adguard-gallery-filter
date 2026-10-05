@@ -90,6 +90,7 @@ bbs.ruliweb.com##tr:has(.nick[style^='display: inline-block'])
 biz.chosun.com##aside > div.flex-chain-wrapper:has(> section > div > .raw-html > iframe[width="300"])
 bobaedream.co.kr##div.content.community > div[style$="height:100px;"]:has([id^="div-gpt-ad"])
 boutique.chosun.com###bo_main_modalWrap
+bunny-frame.online##+js(set, TVP_CONFIG.banner, undefined)
 coinpan.com##li:has(> span.wgp_ad)
 coinpan.com##li:has(ins.adsbygoogle)
 coinpan.com##p > strong > span:has-text(AD):upward(p)
@@ -499,7 +500,6 @@ www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
 ! Malware & Spam
 *$websocket,domain=/anilife[0-9]+\.[a-z]+/
 *$websocket,domain=bunny-frame.online
-bunny-frame.online##+js(set, TVP_CONFIG.banner, undefined)
 www.google.com##.MjjYud:has(a:matches-attr("href"="/^https?:\/\/[a-z]{12}\.(?!(?:ai|com|org|net|edu|dev|app)\b)[a-z]{2,7}\/[a-z]{20,}/")):has([data-snhf])
 www.google.com##.MjjYud:has(cite:contains(/(https?:\/\/)?([a-z]{12})\.(?!(?:ai|com|org|net|edu|dev|app)\b)[a-z]{2,7}[\s\/›]+[a-z]{20,}/)):has([data-snhf])
 www.google.com##.MjjYud:has(cite:has-text(/^https:\/\/[a-zA-Z0-9.-]+\.hu/)):has([data-snhf])
