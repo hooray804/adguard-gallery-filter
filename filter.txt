@@ -62,14 +62,13 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 [$domain=/^fxfx[0-9]*\.com/]##.top-banner
 [$domain=/^hoohootv[0-9]*\.[a-z]{2,}/]###img_row_container
 [$domain=/^mingky[0-9]*\.[a-z]{2,}/]##a.grid-asset[target="_blank"]:has(> img[alt])
-[$domain=/^sbxh[0-9]*\.com/]##.vw-swipe-hint, [data-pm-ov]
-[$domain=/^toki[0-9]*\.com/]##.vw-swipe-hint, [data-pm-ov]
+[$domain=/^sbxh[0-9]*\.com/]##.vw-swipe-hint, [data-pm-ov], [data-banner-id]
+[$domain=/^toki[0-9]*\.com/]##.vw-swipe-hint, [data-pm-ov], [data-banner-id]
 [$domain=/^tvmon[0-9]*\.[a-z]{2,}/]##.banner_wrap2
 [$domain=/^tvroom[0-9]*\.org/]##a[href*="/banner/"][target="_blank"]
 [$domain=/^tvwiki[0-9]*\.net/]###bannerList, #viewCover, img[src*="/banner/"]
 [$domain=/^wftoon[0-9]*\.com/]##.top-banner
 [$domain=/^wtwt[0-9]*\.com/]##.banner
-[$domain=/torrent[a-z0-9]*\.[a-z]{2,}/]##div[class$='gallery'][id] [target='_blank']:upward(1)
 aflnews.co.kr###layer-popups
 algumon.com##div:has([data-tip^='파트너스'], div[style*='height'], ins):is(.card, .deal-2col)
 arca.live##div.vrow.hybrid:has(.badge.category-badge)
@@ -91,7 +90,6 @@ bbs.ruliweb.com##tr:has(.nick[style^='display: inline-block'])
 biz.chosun.com##aside > div.flex-chain-wrapper:has(> section > div > .raw-html > iframe[width="300"])
 bobaedream.co.kr##div.content.community > div[style$="height:100px;"]:has([id^="div-gpt-ad"])
 boutique.chosun.com###bo_main_modalWrap
-chzzk.naver.com##div[class*='is_scrolled'][data-nlog-area='home_top_skin']
 coinpan.com##li:has(> span.wgp_ad)
 coinpan.com##li:has(ins.adsbygoogle)
 coinpan.com##p > strong > span:has-text(AD):upward(p)
@@ -129,7 +127,7 @@ eduyonhap.com##div.banner_con
 encar.com##[class*="Banner_wrap"]
 encar.com##li > a[class*="RecommendQuick_link_quick__"][href^="https://automotive.encar.com/RealMedia/ads/"][target="_blank"]
 ez2pattern.kr##.sticky
-fc-info.com##.android-app-download-banner
+fc-info.com##[class$='app-download-banner']
 fc-info.com##div[class^='Venatus']
 gall.dcinside.com##.gnb_list.clear > li:has(> [onclick])
 gall.dcinside.com##li[id^="reply_li_"]:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.5 !important;)
@@ -253,10 +251,10 @@ teamblind.com##.coupang_gnb
 teamblind.com##.progtop-band:has(> div[id^="div-gpt-ad"]:empty:only-child)
 teamblind.com##.top_banner
 teamblind.com##.topic-list.best > div.article:has(> [href^='https://link.coupang.com/re/'])
-teamblind.com##[href^='https://link.coupang.com/re/AFFSDP']
+teamblind.com##[href^='https://link.coupang.com/re/']
 teamblind.com##div.border-b:has(> div.flex > div[id^="infeed-home-"])
 teamblind.com##div.comment_area.wrap-comment[style='cursor: pointer;']
-teamblind.com##ul.tag-actions:has(> li > a[href^="https://link.coupang.com/a/"])
+teamblind.com##ul.tag-actions
 terms.naver.com##div.ad-banner-area
 tiendeo.co.kr##section.justify-center:has([id^="div-gpt-ad-web"])
 tvseoul.kr##div[style*="width:360px"][style*="height:300px"]
@@ -445,6 +443,7 @@ $@$link[rel="manifest"]
 @@||kr^$stealth=dpi
 @@||kt*.$stealth=dpi
 @@||lg*.$stealth=dpi
+@@||live.com^$stealth=dpi
 @@||log1.toup.net^$app=com.nhn.android.search
 @@||lott*.$stealth=dpi
 @@||m.$stealth=dpi
@@ -498,6 +497,7 @@ www.gmarket.co.kr#@#.section__main-inner > .box__promotion .box__item > *
 !#safari_cb_affinity
 
 ! Malware & Spam
+*$websocket,domain=/anilife[0-9]+\.[a-z]+/
 *$websocket,domain=bunny-frame.online
 www.google.com##.MjjYud:has(a:matches-attr("href"="/^https?:\/\/[a-z]{12}\.(?!(?:ai|com|org|net|edu|dev|app)\b)[a-z]{2,7}\/[a-z]{20,}/")):has([data-snhf])
 www.google.com##.MjjYud:has(cite:contains(/(https?:\/\/)?([a-z]{12})\.(?!(?:ai|com|org|net|edu|dev|app)\b)[a-z]{2,7}[\s\/›]+[a-z]{20,}/)):has([data-snhf])
