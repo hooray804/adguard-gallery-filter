@@ -147,6 +147,7 @@ iloa.gg##div.justify-center[class*="min-h-"]:has(> div.items-center:empty):not(:
 inews24.com##.inews-www-ad
 instiz.net##.view_top
 instiz.net##div[class^='hot_u']
+insurance.pay.naver.com##div[class^="InsuranceHomeAdBanner-module-scss-module"]
 inven.co.kr##div[style="width: 100%; height: 250px"]:has(.ad-right2)
 jjtv.kr##div[style^="text-align: center"]:has(> iframe[src*="//ad.adnmore.co.kr/"])
 joongdo.co.kr##div.right_content > div[style^="text-align:center;padding-bottom:50px;min-height"]:has(> script[src])
