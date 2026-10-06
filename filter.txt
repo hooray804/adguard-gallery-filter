@@ -187,7 +187,7 @@ m.ruliweb.com##aside.native_timeline_ad
 m.ruliweb.com##tr:has(.nbp_container)
 m.tf.co.kr##div[style*="height"]:has([id^="ADFRAME"])
 m.wowtv.co.kr##.container > div[style]
-maplescouter.com##div.justify-center:has([alt="boomback ad"])
+maplescouter.com##div.justify-center:has([alt$=" ad"])
 mbong.kr##.ink_slide
 mbong.kr##.right_banne
 mbong.kr##div:has(> a > img[alt$="배너"])
