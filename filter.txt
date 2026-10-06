@@ -152,7 +152,9 @@ inven.co.kr##div[style="width: 100%; height: 250px"]:has(.ad-right2)
 jjtv.kr##div[style^="text-align: center"]:has(> iframe[src*="//ad.adnmore.co.kr/"])
 joongdo.co.kr##div.right_content > div[style^="text-align:center;padding-bottom:50px;min-height"]:has(> script[src])
 joongdo.co.kr##div.view-news-wrap div[style*="min-height:"]:has(> script[src])
-k-hentai.org##div[class]:has(> [style*="ad-background"])
+k-hentai.org###khReaderAdTag
+k-hentai.org##div.d-flex.justify-content-center[style*="100vh"]:has(> #khReaderAdParentTag)
+k-hentai.org##div[class]:has(> [style*="ad-background"]):not(:has(i))
 kgirls.net##.layout_pc_banner
 kgnews.co.kr##div[itemprop="articleBody"] > div[style^="clear:both;margin:0 auto;margin-bottom:"]
 khan.co.kr##[class^="ad-art-"]
@@ -360,8 +362,8 @@ gmarket.co.kr##+js(set, mouseRightButtonDisabled, noopFunc)
 
 ! Anti-adblock
 !#safari_cb_affinity(general,custom)
-@@||piku.co.kr^$ghide
 @@||avsee.is^$ghide
+@@||piku.co.kr^$ghide
 !#safari_cb_affinity
 0db.co.kr###adblock_notice
 aagag.com#$#.la { position: absolute !important; left: -3000px !important; width: 60px !important; height: 20px !important; }
