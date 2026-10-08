@@ -70,7 +70,10 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 [$domain=/^wftoon[0-9]*\.com/]##.top-banner
 [$domain=/^wtwt[0-9]*\.com/]##.banner
 aflnews.co.kr###layer-popups
-algumon.com##div:has([data-tip^='파트너스'], div[style*='height'], ins):is(.card, .deal-2col)
+algumon.com##div.deal-row:has(> div.card > div.card-body > div > div > div > div[data-tip^="파트너스"])
+algumon.com##div.py-2.px-2:has(> div.placement-space > div.placement-frame > ins.adsbygoogle)
+algumon.com##aside[aria-label="slot"]:has(> div.placement-space > div.placement-frame > ins.adsbygoogle)
+algumon.com##div[data-virtual-row-id]:has(> div.deal-feed-card > div.card-body span:has-text(작성자광고))
 arca.live##div.vrow.hybrid:has(.badge.category-badge)
 asiatoday.co.kr###ad-floating-wrapper
 asiatoday.co.kr##.ad_banner3
