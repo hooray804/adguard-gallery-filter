@@ -288,6 +288,7 @@ zod.kr##.app-mobile-only:has(> div > a[target] > img)
 ||bokuennews.com/data/banner
 ||checkplus.co.kr/images/banner/service/AD
 ||clink.kakao.com/sp/$all
+||coupang.com/mlp-api/v1/newtab/trafficSplit*subid=dynamicda$all
 ||dvdprime.com/file/*/banner
 ||img.etoday.co.kr/web/eto_ad
 ||kamp.kakao.com^$app=com.kakao.talk
