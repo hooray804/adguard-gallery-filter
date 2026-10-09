@@ -64,6 +64,7 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 [$domain=/^mingky[0-9]*\.[a-z]{2,}/]##a.grid-asset[target="_blank"]:has(> img[alt])
 [$domain=/^sbxh[0-9]*\.com/]##.vw-swipe-hint, [data-pm-ov], [data-banner-id]
 [$domain=/^toki[0-9]*\.com/]##.vw-swipe-hint, [data-pm-ov], [data-banner-id]
+[$domain=/^toonkor[0-9]*\.org/]##[target="_blank"]:has(img[src^="/bann"]), div.bn, div.main_top_bann
 [$domain=/^tvmon[0-9]*\.[a-z]{2,}/]##.banner_wrap2
 [$domain=/^tvroom[0-9]*\.org/]##a[href*="/banner/"][target="_blank"]
 [$domain=/^tvwiki[0-9]*\.net/]###bannerList, #viewCover, img[src*="/banner/"]
