@@ -1,6 +1,16 @@
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/53853103-c745-4078-9a13-b5b822306a69">
+  <img alt="AdGuard Gallery Filter" src="https://github.com/user-attachments/assets/3c4fe693-1fb5-46ab-8e6c-165976aaac69" width="40%">
+</picture>
+
 # AdGuard Gallery Filter for Korean
 
 본 애드가드 갤러리 필터와 유저스크립트는 AdGuard와 uBlock Origin 한국어 필터의 부족한 점을 보완하고, 광고 차단 및 커뮤니티 이용 환경을 개선하기 위해 제작되었습니다.
+
+</div>
+
 
 > [!IMPORTANT]
 > 사용자 정의 필터, DNS 전용 필터, 유저스크립트는 기능과 등록하는 메뉴가 완전히 다르며 잘못된 설치는 오작동을 유발할 수 있습니다. 차이점에 대해 정확히 인지하고 있지 않으시면 [설치 가이드](./INSTALL.md)를 읽어주세요.
