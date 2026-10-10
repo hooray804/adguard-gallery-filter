@@ -9,7 +9,9 @@
 ### Windows
 
 <details>
-<summary><b>AdGuard</b></summary>
+<summary><b>Windows용 AdGuard</b></summary>
+
+> AdGuard 광고 차단 확장 프로그램이 아님에 유의하세요. 만약 브라우저 확장 프로그램을 이용 중이라면 AdGuard 광고 차단 확장 프로그램 섹션을 참고하세요.
 
 아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
 1. 좌측 바에서 두번째 `보호` 탭 열기
@@ -29,6 +31,20 @@
 5. `URL로 필터 추가` 버튼 클릭
 6. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/DNS.txt` 입력
 7. `추가`, `추가` 버튼 차례로 클릭
+
+</details>
+
+<details>
+<summary><b>AdGuard 광고 차단 확장 프로그램</b></summary>
+
+> Windows용 AdGuard가 아님에 유의하세요. 만약 브라우저 확장 프로그램을 이용 중이지 않다면, 즉 별도의 exe 프로그램을 설치했다면 Windows용 AdGuard 섹션을 참고하세요.
+
+아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
+1. 좌측 바에서 두번째 `필터` 탭 열기
+2. `사용자 정의 필터` 메뉴 선택
+3. `사용자 정의 필터 추가` 버튼 클릭
+4. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력
+5. `신뢰함` 체크 후 하단 `추가` 버튼 클릭
 
 </details>
 
