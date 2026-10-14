@@ -407,7 +407,7 @@ $@$link[rel="manifest"]
 @@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:bank|stock|invest|coin|pay|mobile|card|post|logi|financ)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:hyu|ung|account|udi|busan|speed|convert|tool|auth|login)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:market|mart|han|insure|direct|soft|point|cash|time)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
-@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:pdf|phone|info|tech|monitor|office)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:pdf|phone|info|tech|monitor|office|text|style)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:savings|cruit|event|talent|energy|test|check|scan)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:smart|vertif|cloud|remote|motor|mobility|think|fine|here)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:tele|news|pass|econom|biz|member|shop|mall|univ|mae)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
@@ -436,6 +436,7 @@ $@$link[rel="manifest"]
 @@||dcinside.com^$stealth=dpi|push
 @@||deobseog.com^$stealth=push
 @@||donga.com^$stealth=dpi
+@@||eden-chat.com^$stealth=push
 @@||facebook.com^$stealth=push
 @@||finnq.com^$stealth=dpi
 @@||giggleus.com^$stealth=dpi
@@ -530,6 +531,7 @@ gall.dcinside.com#$#button.btn_imgcmtopen { opacity: 0.6 !important; transform: 
 gall.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview_head:has(em.icon_write_app) > div.gall_writer > div.fl', 'span', '', 'ㅤAPP')
 gall.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview_head:has(em.icon_write_mbl) > div.gall_writer > div.fl', 'span', '', 'ㅤMOBILE')
 gall.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview_head:not(:has(em.icon_write_mbl)):not(:has(em.icon_write_app)) > div.gall_writer > div.fl', 'span', '', 'ㅤPC')
+m.dcinside.com#$##fab { opacity: 0.4 !important; transform:scale(0.8) !important; }
 m.dcinside.com#$#button.btn-imgcomment { transform: scale(0.7) translate(21.5px, 15.3px) !important; opacity: 0.6 !important; }
 m.dcinside.com#%#//scriptlet('trusted-create-element', '.video-info-area .info-sub .rt:not(:has(.sp-download))', 'button', 'type="button" class="sp-download" onclick="movieDown(document.querySelector(\'#video_tag source\').src)"', '다운')
 m.dcinside.com#%#//scriptlet('trusted-create-element', 'section.grid > .gallview-tit-box:has(span.sp-app) > div > ul.ginfo2', 'li', '', 'APP')
