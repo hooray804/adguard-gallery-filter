@@ -370,7 +370,6 @@ gmarket.co.kr##+js(set, mouseRightButtonDisabled, noopFunc)
 ! Anti-adblock
 !#safari_cb_affinity(general,custom)
 @@||avsee.is^$ghide
-@@||m.humoruniv.com/board/list.html?table=*&mode=ajax*$xmlhttprequest
 @@||piku.co.kr^$ghide
 !#safari_cb_affinity
 0db.co.kr###adblock_notice
