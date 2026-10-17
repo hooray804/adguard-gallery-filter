@@ -300,6 +300,7 @@ zod.kr##.app-mobile-only:has(> div > a[target] > img)
 ||kamp.kakao.com^$app=com.kakao.talk
 ||link.coupang.com/re/AFFHOME*subid=pointlink$all
 ||link.coupang.com/re/AFFSDP*subid=dynamicda$all
+||newxtoon*.com/build/assets/home-ad-popups
 ||pandalive.co.kr^$document,domain=heye.kr
 ||red52.kr/ads
 ||shortformstats.kakao.com^$app=com.kakao.talk
