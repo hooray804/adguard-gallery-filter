@@ -181,7 +181,6 @@ m.anewsa.com##div[style*="width:300px"]
 m.bobaedream.co.kr##div.cyber-ad-wrapper
 m.bobaedream.co.kr##div[style$='height:50px;']
 m.dcinside.com##.layer-bottom-popup
-m.dcinside.com##.menu-scroll-lst.swiper-wrapper > li.swiper-slide:nth-of-type(n+5)
 m.dcinside.com##.survey
 m.dcinside.com##.view-btm-con
 m.dcinside.com##li:not(.notice):has(> .detail-top-lnk)
