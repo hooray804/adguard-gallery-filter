@@ -274,6 +274,7 @@ wadiz.kr##[class^="MultiBoardAdBannerDisplay-"]
 welfarehello.com##[style^="--ad-frame-width-"]
 wooriilbo.com##div[style$="width:360px;height:320px;"]
 xtoon365.com##[class$='-ad']
+yna.co.kr###container > div.aside-top-bnr01
 yonhapnewstv.co.kr##.main-banner-area
 yonhapnewstv.co.kr##.view-ad-center
 yonhapnewstv.co.kr##section[class^="popular"]
