@@ -350,7 +350,6 @@ m.naver.com##.chf_feed_wrap > .type_square.cc_clip_list
 m.naver.com##script#MM_search_disaster ~*
 m.search.naver.com##.fds-aib-expandable-container:has(.fds-aib-answer-expand-button-wrapper:not([style*="none"])) .fds-aib-input-dock
 mlbpark.donga.com##.the_hottest
-namu.wiki##div[class]:matches-css(position: sticky)
 namu.wiki##li:has(a > time):not(:has([href*='/raw/'])):upward(2)
 naver.com###sb-kh-shortents-wrap
 newneek.co##div[aria-label="뉴닉 뉴스레터 구독하기"]
