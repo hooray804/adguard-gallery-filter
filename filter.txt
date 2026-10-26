@@ -328,7 +328,6 @@ arca.live##a:has(img[src*="/static/assets/images/karisuma-point"])
 avsee.is###hd_pop
 gall.dcinside.com##.dc_all
 gall.dcinside.com##.dcmedia.content_box
-gall.dcinside.com##.ltr
 gall.dcinside.com##.r_dcmedia
 gall.dcinside.com##.rtbAlarmPopup.pop_wrap.alarm
 gall.dcinside.com##tr[class='ub-content ']
