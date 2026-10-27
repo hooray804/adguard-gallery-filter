@@ -161,6 +161,7 @@ joongdo.co.kr##div.view-news-wrap div[style*="min-height:"]:has(> script[src])
 k-hentai.org###khReaderAdTag
 k-hentai.org##div.d-flex.justify-content-center[style*="100vh"]:has(> #khReaderAdParentTag)
 k-hentai.org##div[class]:has(> [style*="ad-background"]):not(:has(i))
+kgfnews.com##div.news_txt div[style*="height:250px;"]
 kgirls.net##.layout_pc_banner
 kgnews.co.kr##div[itemprop="articleBody"] > div[style^="clear:both;margin:0 auto;margin-bottom:"]
 khan.co.kr##[class^="ad-art-"]
