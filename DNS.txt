@@ -16,7 +16,6 @@
 ||exlogcollector.sooplive.com^$badfilter
 ||sdk.airbridge.io^$badfilter
 ||searchad-phinf.pstatic.net^$badfilter
-||tivan.naver.com^$badfilter
 ||tnkfactory.com^$badfilter
 
 ! Ads
