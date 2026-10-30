@@ -23,12 +23,12 @@
 
 * **AdGuard/uBlock용 필터**
 ```
-https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt
+https://cdn.jsdelivr.net/gh/hooray804/adguard-gallery-filter@main/filter.txt
 ```
 
 * **DNS 필터**
 ```
-https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/DNS.txt
+https://cdn.jsdelivr.net/gh/hooray804/adguard-gallery-filter@main/DNS.txt
 ```
 
 ### 유저스크립트
