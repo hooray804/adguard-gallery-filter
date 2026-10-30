@@ -82,8 +82,8 @@ jobs:
           git commit -m "$COMMIT_MSG"
           git push origin main
 
-          echo "Waiting 10 seconds for GitHub raw sync..."
-          sleep 10
+          echo "Waiting 30 seconds for GitHub raw sync..."
+          sleep 30
 
           echo "Purging jsDelivr CDN cache..."
           PURGE_RES=$(curl -s "https://purge.jsdelivr.net/gh/$GITHUB_REPOSITORY@main/filter.txt")
