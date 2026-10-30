@@ -286,6 +286,7 @@ zod.kr##.app-header-menu__content > div > [href^='https://zod.kr/go']
 zod.kr##.app-mobile-only:has(> div > a[target] > img)
 !
 ||*nestads.*
+||ad.syncad.kr^
 ||ader.naver.com/*c=m_$all
 ||ader.naver.com/v1/$all
 ||adraction.co.kr^
