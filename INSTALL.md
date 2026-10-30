@@ -20,7 +20,7 @@
 4. `필터 편집기 열기` 버튼 클릭
 5. 목록 왼쪽 하단의 `+` 버튼 클릭
 6. `URL로 필터 추가` 버튼 클릭
-7. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력
+7. 텍스트 필드에 `https://cdn.jsdelivr.net/gh/hooray804/adguard-gallery-filter@main/filter.txt` 입력
 8. `신뢰할 수 있는 필터임` 체크 후 하단 `추가` 버튼 클릭
 
 아래의 방법으로 DNS 필터를 추가합니다.
@@ -29,7 +29,7 @@
 3. `DNS 필터` 메뉴 선택
 4. 목록 왼쪽 하단의 `+` 버튼 클릭
 5. `URL로 필터 추가` 버튼 클릭
-6. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/DNS.txt` 입력
+6. 텍스트 필드에 `https://cdn.jsdelivr.net/gh/hooray804/adguard-gallery-filter@main/DNS.txt` 입력
 7. `추가`, `추가` 버튼 차례로 클릭
 
 </details>
@@ -43,7 +43,7 @@
 1. 좌측 바에서 두번째 `필터` 탭 열기
 2. `사용자 정의 필터` 메뉴 선택
 3. `사용자 정의 필터 추가` 버튼 클릭
-4. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력
+4. 텍스트 필드에 `https://cdn.jsdelivr.net/gh/hooray804/adguard-gallery-filter@main/filter.txt` 입력
 5. `신뢰함` 체크 후 하단 `추가` 버튼 클릭
 
 </details>
@@ -57,7 +57,7 @@
 1. `대시보드` 열기
 2. `필터 목록` 탭 선택
 3. 하단 스크롤 및 `가져오기` 펼치기
-4. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력
+4. 텍스트 필드에 `https://cdn.jsdelivr.net/gh/hooray804/adguard-gallery-filter@main/filter.txt` 입력
 5. 상단 `변경사항 적용` 버튼 클릭
 
 </details>
@@ -71,7 +71,7 @@
 1. `대시보드` 열기
 2. `필터 목록` 탭 선택
 3. 하단 스크롤 및 `가져온 목록` 펼치기
-4. `필터 목록 추가` 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력
+4. `필터 목록 추가` 텍스트 필드에 `https://cdn.jsdelivr.net/gh/hooray804/adguard-gallery-filter@main/filter.txt` 입력
 5. 우측 `추가` 버튼 클릭
 
 </details>
@@ -83,7 +83,7 @@
 1. `Settings` 열기
 2. `Shields` 탭 선택
 3. `Content filtering` 탭 선택
-4. `Create custom filters`에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력 및 추가
+4. `Create custom filters`에 `https://cdn.jsdelivr.net/gh/hooray804/adguard-gallery-filter@main/filter.txt` 입력 및 추가
 
 </details>
 
@@ -98,7 +98,7 @@
 1. 상단 바에서 `⚙️` 버튼 클릭
 2. `필터 구독` 메뉴 선택
 3. 목록 왼쪽 하단의 `+` 버튼 클릭
-4. `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 필터 추가하기
+4. `https://cdn.jsdelivr.net/gh/hooray804/adguard-gallery-filter@main/filter.txt` 필터 추가하기
 5. `✏️` 버튼 클릭 후 `신뢰할 수 있는 필터임` 체크
 
 아래의 방법으로 DNS 필터를 추가합니다.
@@ -106,7 +106,7 @@
 2. `DNS` 메뉴 선택
 3. `필터` 클릭
 4. 하단 `+` 버튼 클릭
-5. `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/DNS.txt` 필터 추가하기
+5. `https://cdn.jsdelivr.net/gh/hooray804/adguard-gallery-filter@main/DNS.txt` 필터 추가하기
 
 </details>
 
@@ -117,7 +117,7 @@
 1. `Settings` 열기
 2. `Shields` 탭 선택
 3. `Content filtering` 탭 선택
-4. `Create custom filters`에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력 및 추가
+4. `Create custom filters`에 `https://cdn.jsdelivr.net/gh/hooray804/adguard-gallery-filter@main/filter.txt` 입력 및 추가
 
 </details>
 
@@ -134,7 +134,7 @@
 3. `필터` 메뉴 선택
 4. `사용자 정의 필터` 버튼 클릭
 5. `필터 추가` 버튼 클릭
-6. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력
+6. 텍스트 필드에 `https://cdn.jsdelivr.net/gh/hooray804/adguard-gallery-filter@main/filter.txt` 입력
 7. 하단 `추가` 버튼 클릭
 
 아래의 방법으로 DNS 필터를 추가합니다.
@@ -143,7 +143,7 @@
 3. `DNS 필터` 클릭
 4. 상단 `DNS 필터 추가` 버튼 선택
 5. `URL로 필터 추가` 버튼 클릭
-6. `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/DNS.txt` 입력
+6. `https://cdn.jsdelivr.net/gh/hooray804/adguard-gallery-filter@main/DNS.txt` 입력
 7. `추가` 버튼 클릭
 
 </details>
@@ -155,7 +155,7 @@
 1. `Settings` 열기
 2. `Brave Shields & privacy` 탭 선택
 3. `Content filtering` 탭 선택
-4. `Create custom filters`에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력 및 추가
+4. `Create custom filters`에 `https://cdn.jsdelivr.net/gh/hooray804/adguard-gallery-filter@main/filter.txt` 입력 및 추가
 
 </details>
 
@@ -172,7 +172,7 @@
 3. 첫번째에 위치한 `필터` 열기
 4. `Custom` 메뉴 선택
 5. 상단 `필터 추가` 버튼 클릭
-6. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력
+6. 텍스트 필드에 `https://cdn.jsdelivr.net/gh/hooray804/adguard-gallery-filter@main/filter.txt` 입력
 7. `다음`, `추가` 버튼 차례로 클릭
 
 아래의 방법으로 DNS 필터를 추가합니다.
@@ -181,7 +181,7 @@
 3. 네번째에 위치한 `DNS 필터링` 열기
 4. 상단 `DNS 필터` 버튼 클릭
 5. 상단 `필터 추가` 버튼 클릭
-6. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/DNS.txt` 입력
+6. 텍스트 필드에 `https://cdn.jsdelivr.net/gh/hooray804/adguard-gallery-filter@main/DNS.txt` 입력
 7. `다음`, `추가` 버튼 차례로 클릭
 
 </details>
@@ -195,7 +195,7 @@
 아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
 1. 하단 탭 바에서 첫번째 아이콘 `필터` 탭 열기
 2. 상단 `+` 버튼 클릭
-3. 텍스트 필드에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력 및 우측 상단 버튼을 통해 URL 추가
+3. 텍스트 필드에 `https://cdn.jsdelivr.net/gh/hooray804/adguard-gallery-filter@main/filter.txt` 입력 및 우측 상단 버튼을 통해 URL 추가
 4. 오른쪽 상단의 `적용` 버튼 차례로 클릭
 
 아래의 방법으로 유저스크립트를 추가합니다.
@@ -211,7 +211,7 @@
 1. `Settings` 열기
 2. `Shields & Privacy` 탭 선택
 3. `Content filtering` 탭 선택
-4. `Custom Filters`에 `https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/refs/heads/main/filter.txt` 입력 및 추가
+4. `Custom Filters`에 `https://cdn.jsdelivr.net/gh/hooray804/adguard-gallery-filter@main/filter.txt` 입력 및 추가
 
 </details>
 
