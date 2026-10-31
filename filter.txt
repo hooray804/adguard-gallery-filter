@@ -107,7 +107,6 @@ damoang.net##.dm-ad-row
 damoang.net##.dm-card:has(> ad-slot-empty)
 daum.net##[data-slot-type="AD_BRANDING_STATION"]
 daum.net##[data-slot-type="DAUM_AD"]
-daum.net##div.article_middle_ad
 daum.net##div.inner_article div.ad_sch
 daum.net##slot-ad-sa
 dcinside.com##li:has(> [href*='https://ads.dcinside.com/'])
