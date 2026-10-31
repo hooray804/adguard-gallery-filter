@@ -252,6 +252,7 @@ shopping.naver.com##ul[class^="horizontalScrollListResponsive_set_list_"] > li[c
 snxbest.naver.com##li[class^="productCardResponsive_product_card_responsive__"]:has(> div[class*="productCardResponsive_inner"] > [href^="https://ader.naver.com/"])
 soccerline.kr##[class*='Bann']
 soccerline.kr##div[style$="513px; position: absolute; text-align: center; top: 242px; width: 160px; height: 600px; background-color: transparent;"][class]
+slrclub.com##iframe[src*="//ad.syncad.kr"]
 ssalmuk.com##+js(json-prune, data.[-].popupCode)
 svrforum.com$$ins[class="adsbygoogle"]
 te31.com##table:has(td > script)
