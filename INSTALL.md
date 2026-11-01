@@ -126,7 +126,7 @@
 <details>
 <summary><b>AdGuard</b></summary>
 
-> AdGuard 콘텐츠 차단기가 아님에 유의하세요.
+> AdGuard Mini가 아님에 유의하세요.
 
 아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
 1. 하단 바에서 다섯번째 `설정` 탭 열기
