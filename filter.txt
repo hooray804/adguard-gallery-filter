@@ -103,6 +103,7 @@ dacgle.com##div.promotion_bn
 dailypharm.com##a:has(> [src*="vodcdn.dailypharm.com/new_dailypharm/banners"])
 dak.gg###venatus-container-top
 dak.gg##.ad[id="mobile-takeover"]
+dak.gg##.normalAd-wrapper
 damoang.net##.dm-ad-row
 damoang.net##.dm-card:has(> ad-slot-empty)
 daum.net##[data-slot-type="AD_BRANDING_STATION"]
