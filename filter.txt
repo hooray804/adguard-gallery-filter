@@ -54,7 +54,6 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 !
 ! Specific rules
 !
-/vue/component/common/banner_modal.vue
 3rd.supply##.h-hori-ad
 3rd.supply##.text-center:has(sp-common-adsense)
 [$domain=/^darkg[a-z0-9]*\.com/]###side-popup, #posterWrap, a[class*="banner"]
@@ -250,10 +249,10 @@ shopping.naver.com##div[class^="_carouselProductList_mobile_carousel_product_lis
 shopping.naver.com##div[id*="ADVERTISE"][class*="contentModuleWrapper_news_ad__"]
 shopping.naver.com##li[class*="brandCRMProductList_item__"]:has(> div[class*="miniProductCard_mini_product_card__"] > [href^="https://ader.naver.com/"])
 shopping.naver.com##ul[class^="horizontalScrollListResponsive_set_list_"] > li[class^="horizontalScrollListResponsive_list_item_"]:has(> div > div[class*="productCard-module_product_card_"] a[class*="adButton-module_"])
+slrclub.com##iframe[src*="//ad.syncad.kr"]
 snxbest.naver.com##li[class^="productCardResponsive_product_card_responsive__"]:has(> div[class*="productCardResponsive_inner"] > [href^="https://ader.naver.com/"])
 soccerline.kr##[class*='Bann']
 soccerline.kr##div[style$="513px; position: absolute; text-align: center; top: 242px; width: 160px; height: 600px; background-color: transparent;"][class]
-slrclub.com##iframe[src*="//ad.syncad.kr"]
 ssalmuk.com##+js(json-prune, data.[-].popupCode)
 svrforum.com$$ins[class="adsbygoogle"]
 te31.com##table:has(td > script)
@@ -286,6 +285,7 @@ zod.kr##.app-footer > div > nav[style*='height']
 zod.kr##.app-header-menu__content > div > [href^='https://zod.kr/go']
 zod.kr##.app-mobile-only:has(> div > a[target] > img)
 !
+/vue/component/common/banner_modal.vue
 ||*nestads.*
 ||ad.syncad.kr^
 ||ader.naver.com/*c=m_$all
