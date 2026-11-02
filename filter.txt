@@ -303,7 +303,7 @@ yozm.wishket.com##[data-testid^="advertisement-"]
 ||storage1.ilyo.co.kr/contents/banner/images
 ||thumb.kakaocdn.net^$app=com.kakao.talk
 ||trillion.toss.im^
-||tw.mfcc.co.kr/grd.jsp$all,reason=Android콜게이트제휴광고리다이렉트
+||tw.mfcc.co.kr^$all,reason=Android콜게이트제휴광고리다이렉트
 !
 !#if (adguard_app_ios || adguard_ext_safari) && !adguard_app_mac
 ###img_row_container
@@ -511,6 +511,7 @@ www.google.com##.MjjYud:has(cite:has-text(/^https:\/\/[a-zA-Z0-9.-]+\.hu/)):has(
 www.google.com##.MjjYud:has(span[role="text"]:has-text(/^https:\/\/[a-zA-Z0-9.-]+\.hu/)):has([data-snhf])
 ||peertrk.com/api/live/report$domain=bunny-frame.online
 ||player.bunny-frame.online/js/ad_fetcher.js
+||toss-eventmall.com^$all,reason=피싱링크임시
 ||toss-eventmall.com^$all
 
 ! Tweaks
