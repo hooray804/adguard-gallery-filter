@@ -1,7 +1,7 @@
 ! Title: 애드가드 갤러리 필터
 ! Version: 2026.11.02.0
 ! TimeUpdated: 2026-11-02T01:20:01+00:00
-! Description: AdGuard, uBlock Origin, Unicorn Pro, wBlock, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
+! Description: AdGuard, uBlock Origin, wBlock, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결하는 실전압축 필터입니다.
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
 
@@ -110,7 +110,7 @@ daum.net##[data-slot-type="DAUM_AD"]
 daum.net##div.inner_article div.ad_sch
 daum.net##slot-ad-sa
 dcinside.com##li:has(> [href*='https://ads.dcinside.com/'])
-! dcinside.com##li[id^='comment_']:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.5 !important;)
+dcinside.com##li[id^='comment_']:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.5 !important;)
 ddaltube.com##+js(remove-attr, data-a, #dtube-player)
 ddaltube.com##.dtube-banner-grid, .vjs-video-ad-click-overlay, .player-banner-overlay > a.block
 diningcode.com##li:has(.PoiAdsSpacerList)
@@ -136,7 +136,7 @@ encar.com##li > a[class*="RecommendQuick_link_quick__"][href^="https://automotiv
 ez2pattern.kr##.sticky
 fc-info.com##[class$='-banner']
 fc-info.com##div[class^='Venatus']
-! gall.dcinside.com##li[id^="reply_li_"]:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.5 !important;)
+gall.dcinside.com##li[id^="reply_li_"]:has(p[class*='txt']:has-text(/^(https?:\/\/)[A-Za-z0-9]{2,10}(\.[a-z]{2,7}|\.co\.kr)(\/(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]{5,9})$/):not(:has-text(/git|g2sh|img|tebin|sendanywhe|twitter|rentry|x\.com|youtu|ibb\.co|archive\.md|t\.me|streamable|dev/i))):style(opacity: 0.5 !important;)
 gangmom.kr##.banner-wrapper
 gmarket.co.kr##.js-impressionable.box__head-ad
 health.chosun.com##.ad-main-top
@@ -212,7 +212,6 @@ mule.co.kr##[class*='-ad-']
 munhwa.com###bottom-sticky
 munhwa.com##.top-banner-area
 musinsa.com##[href$="/main/musinsa/brand_ad"]
-namu.news##li:has(div[style*="min-height:100px"]):has(> div > div[id*="article-a"])
 nate.com##div.AdIbl
 nate.com##ul.type_thumb > li.commercial
 naver.com##.sa_empty_ad
@@ -254,7 +253,6 @@ snxbest.naver.com##li[class^="productCardResponsive_product_card_responsive__"]:
 soccerline.kr##[class*='Bann']
 soccerline.kr##div[style$="513px; position: absolute; text-align: center; top: 242px; width: 160px; height: 600px; background-color: transparent;"][class]
 ssalmuk.com##+js(json-prune, data.[-].popupCode)
-svrforum.com$$ins[class="adsbygoogle"]
 te31.com##table:has(td > script)
 teamblind.com##.coupang_gnb
 teamblind.com##.progtop-band:has(> div[id^="div-gpt-ad"]:empty:only-child)
@@ -281,9 +279,6 @@ yonhapnewstv.co.kr##section[class^="popular"]
 youthassembly.kr##.coupang-box
 yozm.wishket.com##[data-testid="top-banner"]
 yozm.wishket.com##[data-testid^="advertisement-"]
-zod.kr##.app-footer > div > nav[style*='height']
-zod.kr##.app-header-menu__content > div > [href^='https://zod.kr/go']
-zod.kr##.app-mobile-only:has(> div > a[target] > img)
 !
 /vue/component/common/banner_modal.vue
 ||*nestads.*
@@ -308,6 +303,7 @@ zod.kr##.app-mobile-only:has(> div > a[target] > img)
 ||storage1.ilyo.co.kr/contents/banner/images
 ||thumb.kakaocdn.net^$app=com.kakao.talk
 ||trillion.toss.im^
+||tw.mfcc.co.kr/grd.jsp$all,reason=Android콜게이트제휴광고리다이렉트
 !
 !#if (adguard_app_ios || adguard_ext_safari) && !adguard_app_mac
 ###img_row_container
@@ -449,6 +445,7 @@ $@$link[rel="manifest"]
 @@||kfc*.$stealth=dpi
 @@||kiwoom.com^$stealth=dpi
 @@||korcham.net^$stealth=dpi
+@@||korea*.com^$stealth=dpi
 @@||kr^$stealth=dpi
 @@||kt*.$stealth=dpi
 @@||lg*.$stealth=dpi
@@ -514,6 +511,7 @@ www.google.com##.MjjYud:has(cite:has-text(/^https:\/\/[a-zA-Z0-9.-]+\.hu/)):has(
 www.google.com##.MjjYud:has(span[role="text"]:has-text(/^https:\/\/[a-zA-Z0-9.-]+\.hu/)):has([data-snhf])
 ||peertrk.com/api/live/report$domain=bunny-frame.online
 ||player.bunny-frame.online/js/ad_fetcher.js
+||toss-eventmall.com^$all
 
 ! Tweaks
 arca.live#%#(()=>{const N="nrx",S='a.notice[href*="/b/"] .vcol.col-ad>.badge.text-bg-success,a.notice[href*="/b/"] .vcol.col-id>b';document.documentElement.appendChild(Object.assign(document.createElement("style"),{textContent:`${S}{visibility:hidden;animation:${N} 1ms}@keyframes ${N}{to{}}`}));addEventListener("animationstart",e=>{if(e.animationName!==N)return;const g=/\/b\/([^/]+)/.exec(e.target.closest("a.notice").pathname)?.[1];if(g){e.target.textContent=g;e.target.style.visibility="visible"}},true)})();
@@ -528,7 +526,7 @@ gall.dcinside.com#$#button.btn_imgcmtopen { opacity: 0.6 !important; transform: 
 gall.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview_head:has(em.icon_write_app) > div.gall_writer > div.fl', 'span', '', 'ㅤAPP')
 gall.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview_head:has(em.icon_write_mbl) > div.gall_writer > div.fl', 'span', '', 'ㅤMOBILE')
 gall.dcinside.com#%#//scriptlet('trusted-create-element', 'div.gallview_head:not(:has(em.icon_write_mbl)):not(:has(em.icon_write_app)) > div.gall_writer > div.fl', 'span', '', 'ㅤPC')
-m.dcinside.com#$##fab { opacity: 0.5 !important; transform:scale(0.9) !important; }
+m.dcinside.com#$##fab { opacity: 0.6 !important; transform:scale(0.9) !important; }
 m.dcinside.com#$#button.btn-imgcomment { transform: scale(0.7) translate(21.5px, 15.3px) !important; opacity: 0.6 !important; }
 m.dcinside.com#%#//scriptlet('trusted-create-element', '.video-info-area .info-sub .rt:not(:has(.sp-download))', 'button', 'type="button" class="sp-download" onclick="movieDown(document.querySelector(\'#video_tag source\').src)"', '다운')
 m.dcinside.com#%#//scriptlet('trusted-create-element', 'section.grid > .gallview-tit-box:has(span.sp-app) > div > ul.ginfo2', 'li', '', 'APP')
