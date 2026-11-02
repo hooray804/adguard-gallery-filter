@@ -416,7 +416,7 @@ $@$link[rel="manifest"]
 @@||ad-creative.pstatic.net^$app=com.nhn.android.search
 @@||ad-img.gmarket.com^$image,domain=m.gmarket.co.kr|auction.co.kr|www.gmarket.co.kr
 @@||ad.co.kr^$ghide
-@@||adot.ai^stealth=dpi
+@@||adot.ai^$stealth=dpi
 @@||adtouch.*
 @@||algumon.com^$stealth=push
 @@||arca.live^$ghide
