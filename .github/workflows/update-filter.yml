@@ -7,6 +7,10 @@ on:
     paths:
       - 'filter.txt'
 
+concurrency:
+  group: update-header-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   update-header:
     runs-on: ubuntu-latest
@@ -75,8 +79,8 @@ jobs:
             sed -i "/^! Version:/a ! TimeUpdated: $UTC_TIME" "$FILE"
           fi
 
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
           git add "$FILE"
           git commit -m "$COMMIT_MSG"
