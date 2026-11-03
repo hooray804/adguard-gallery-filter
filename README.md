@@ -1,7 +1,7 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/logo-dark.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
   <img alt="AdGuard Gallery Filter" src="assets/logo-light.svg" width="40%">
 </picture>
 
