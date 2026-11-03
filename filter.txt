@@ -212,7 +212,6 @@ munhwa.com###bottom-sticky
 munhwa.com##.top-banner-area
 musinsa.com##[href$="/main/musinsa/brand_ad"]
 nate.com##div.AdIbl
-nate.com##ul.type_thumb > li.commercial
 naver.com##.sa_empty_ad
 news.jtbc.co.kr##.MuiBox-root[radius="0"][style]:empty
 news.jtbc.co.kr##.print-hide.MuiBox-root:has(> iframe)
