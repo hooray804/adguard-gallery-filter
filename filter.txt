@@ -218,6 +218,7 @@ news.jtbc.co.kr##.print-hide.MuiBox-root:has(> iframe)
 news.jtbc.co.kr##.print-hide:has-text(AD)
 news2day.co.kr##.article-ad-wrapper
 newspim.com##[style*="width:100%; height:250px; margin:10px"]
+nongmin.com##div.news_txt > iframe[src*="awesomeclick.co.kr"]
 okky.kr##div.relative.mt-16:has(> div > div > div > a[target="_blank"][href^="https://ad.doubleclick.net"]):has(> footer.border-t.bg-background)
 orbi.kr##.label-banner
 orbi.kr##.listAd
@@ -284,6 +285,7 @@ yozm.wishket.com##[data-testid^="advertisement-"]
 ||ader.naver.com/*c=m_$all
 ||ader.naver.com/v1/$all
 ||adraction.co.kr^
+||api.craken.co.kr^
 ||api.hobos.studio/v1/ads$domain=xn--v69ak0xskm.com
 ||asked-front.pages.dev/kakaoad
 ||bokuennews.com/data/banner
