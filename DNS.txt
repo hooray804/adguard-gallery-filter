@@ -1,5 +1,5 @@
 ! Title: 애드가드 갤러리 DNS 필터
-! Version: 2026.11.04
+! Version: 2026.11.05
 ! Description: AdGuard DNS 필터의 오차단을 해제하고 누락된 광고를 차단합니다.
 ! Homepage: https://gallog.dcinside.com/cent8649
 
@@ -19,6 +19,9 @@
 ||tnkfactory.com^$badfilter
 
 ! Ads
+||ad.syncad.kr^
+||adraction.co.kr^
+||api.craken.co.kr^
 ||get*ads-*-du.a.run.app^
 ||kamp.kakao.com^
 ||shortformstats.kakao.com^
