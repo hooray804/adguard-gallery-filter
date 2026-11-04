@@ -301,7 +301,6 @@ yozm.wishket.com##[data-testid^="advertisement-"]
 ||storage1.ilyo.co.kr/contents/banner/images
 ||thumb.kakaocdn.net^$app=com.kakao.talk
 ||trillion.toss.im^
-||tw.mfcc.co.kr^$all,reason=Android콜게이트제휴광고리다이렉트
 !
 !#if (adguard_app_ios || adguard_ext_safari) && !adguard_app_mac
 ###img_row_container
@@ -507,10 +506,12 @@ www.google.com##.MjjYud:has(a:matches-attr("href"="/^https?:\/\/[a-z]{12}\.(?!(?
 www.google.com##.MjjYud:has(cite:contains(/(https?:\/\/)?([a-z]{12})\.(?!(?:ai|com|org|net|edu|dev|app)\b)[a-z]{2,7}[\s\/›]+[a-z]{20,}/)):has([data-snhf])
 www.google.com##.MjjYud:has(cite:has-text(/^https:\/\/[a-zA-Z0-9.-]+\.hu/)):has([data-snhf])
 www.google.com##.MjjYud:has(span[role="text"]:has-text(/^https:\/\/[a-zA-Z0-9.-]+\.hu/)):has([data-snhf])
+||insightjs.com^$all
 ||peertrk.com/api/live/report$domain=bunny-frame.online
 ||player.bunny-frame.online/js/ad_fetcher.js
 ||toss-eventmall.com^$all,reason=피싱링크임시
 ||toss-eventmall.com^$all
+||tw.mfcc.co.kr^$all,reason=Android콜게이트제휴광고리다이렉트
 
 ! Tweaks
 arca.live#%#(()=>{const N="nrx",S='a.notice[href*="/b/"] .vcol.col-ad>.badge.text-bg-success,a.notice[href*="/b/"] .vcol.col-id>b';document.documentElement.appendChild(Object.assign(document.createElement("style"),{textContent:`${S}{visibility:hidden;animation:${N} 1ms}@keyframes ${N}{to{}}`}));addEventListener("animationstart",e=>{if(e.animationName!==N)return;const g=/\/b\/([^/]+)/.exec(e.target.closest("a.notice").pathname)?.[1];if(g){e.target.textContent=g;e.target.style.visibility="visible"}},true)})();
