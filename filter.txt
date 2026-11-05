@@ -479,6 +479,8 @@ $@$link[rel="manifest"]
 @@||wcs.naver.net^$domain=seorinexpress.com|naver.com
 @@||x.com^$stealth=push
 @@||yes24.com^$stealth=dpi
+bbs.ruliweb.com##.right_side_wrapper.scrolled-down .right_best_list:style(height: auto !important;)
+bbs.ruliweb.com##.right_side_wrapper.scrolled-down .hit_list:style(height: auto !important;)
 ktmmobile.com#@%#//scriptlet('set-constant', 'mainBottomBanner', 'noopFunc')
 m.fmkorea.com#@$?#*.bd.bd_mobile:not(:has(#bd_capture ~ #comment)):has(form[action="./"]:matches-css(height: auto)) { remove: true; }
 m.gmarket.co.kr#@#.ReactVirtualized__Grid__innerScrollContainer .box__banner-wrap > .box__banner--today
