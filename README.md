@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
-  <img alt="AdGuard Gallery Filter" src="assets/logo-light.svg" width="40%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/main/assets/logo-dark.svg">
+  <img alt="AdGuard Gallery Filter" src="https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/main/assets/logo-light.svg" width="40%">
 </picture>
 
 # AdGuard Gallery Filter for Korean
