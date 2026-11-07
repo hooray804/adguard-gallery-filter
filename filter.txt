@@ -400,7 +400,7 @@ $@$link[rel="manifest"]
 @@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:bank|stock|invest|coin|pay|mobile|card|post|logi|financ)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:hyu|ung|account|udi|busan|convert|tool|auth|login|screen)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:market|mart|han|insure|direct|soft|point|cash|time)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
-@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:pdf|phone|info|tech|monitor|office|text|style)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
+@@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:pdf|phone|info|tech|monitor|office|text|style|issue)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:savings|cruit|event|talent|energy|test|check|scan)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:smart|vertif|cloud|remote|motor|mobility|think|fine|here)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
 @@/^https?:\/\/(?:[a-z]+\.)*[a-z]*(?:tele|news|pass|econom|biz|member|shop|mall|univ|mae)[a-z]*(?:\.[a-z]+)+(?:[\/?#]|$)/$stealth=dpi
@@ -456,7 +456,7 @@ $@$link[rel="manifest"]
 @@||miraeasset*.com^$stealth=dpi
 @@||mobis.com^$stealth=dpi
 @@||monimo.com^$stealth=dpi
-@@||my*.com^$stealth=dpi
+@@||my*.$stealth=dpi
 @@||naver.com^$stealth=push
 @@||nc.com^$stealth=dpi
 @@||nexon.com^$stealth=dpi
@@ -465,6 +465,7 @@ $@$link[rel="manifest"]
 @@||plaync.com^$stealth=dpi
 @@||postype.com^$stealth=push
 @@||reddit.com^$stealth=push
+@@||sarangbang.com^$stealth=dpi
 @@||searchad-phinf.pstatic.net^$app=com.nhn.android.search
 @@||shin*.com^$stealth=dpi
 @@||shopping.naver.com^$stealth
@@ -511,7 +512,6 @@ www.google.com##.MjjYud:has(a:matches-attr("href"="/^https?:\/\/[a-z]{12}\.(?!(?
 www.google.com##.MjjYud:has(cite:contains(/(https?:\/\/)?([a-z]{12})\.(?!(?:ai|com|org|net|edu|dev|app)\b)[a-z]{2,7}[\s\/›]+[a-z]{20,}/)):has([data-snhf])
 www.google.com##.MjjYud:has(cite:has-text(/^https:\/\/[a-zA-Z0-9.-]+\.hu/)):has([data-snhf])
 www.google.com##.MjjYud:has(span[role="text"]:has-text(/^https:\/\/[a-zA-Z0-9.-]+\.hu/)):has([data-snhf])
-||89.127.233.127^$all
 ||insightjs.com^$all
 ||peertrk.com/api/live/report$domain=bunny-frame.online
 ||player.bunny-frame.online/js/ad_fetcher.js
