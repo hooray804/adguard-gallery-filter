@@ -513,7 +513,7 @@ www.google.com##.MjjYud:has(cite:contains(/(https?:\/\/)?([a-z]{12})\.(?!(?:ai|c
 www.google.com##.MjjYud:has(cite:has-text(/^https:\/\/[a-zA-Z0-9.-]+\.hu/)):has([data-snhf])
 www.google.com##.MjjYud:has(span[role="text"]:has-text(/^https:\/\/[a-zA-Z0-9.-]+\.hu/)):has([data-snhf])
 ||insightjs.com^$all
-||peertrk.com/api/live/report$domain=bunny-video.com
+||tracker.bunny-frame.online/c$domain=bunny-video.com
 ||bunny-video.com/js/ad_fetcher.js
 ||toss-eventmall.com^$all,reason=피싱링크임시
 ||toss-eventmall.com^$all
