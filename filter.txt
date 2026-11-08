@@ -60,7 +60,7 @@ wowtv.co.kr,cafe.naver.com##[class*='Banner']
 [$domain=/^darkg[a-z0-9]*\.com/]##+js(nano-stb, tick, 1000)
 [$domain=/^fxfx[0-9]*\.com/]##.top-banner
 [$domain=/^hoohootv[0-9]*\.[a-z]{2,}/]###img_row_container
-[$domain=/^mingky[0-9]*\.[a-z]{2,}/]##a.grid-asset[target="_blank"]:has(> img[alt])
+[$domain=/^mingky[0-9]*\.com/]##a.grid-asset[target="_blank"]:has(> img[alt])
 [$domain=/^sbxh[0-9]*\.com/]##.vw-swipe-hint, [data-pm-ov], [data-banner-id]
 [$domain=/^toki[0-9]*\.com/]##.vw-swipe-hint, [data-pm-ov], [data-banner-id]
 [$domain=/^toonkor[0-9]*\.org/]##[target="_blank"]:has(img[src^="/bann"]), div.bn, div.main_top_bann
@@ -172,7 +172,7 @@ kyeongin.com##.horizon-ad
 lawtimes.co.kr###top-banner
 linkareer.com##[role="advertisement"]:not([class^="card-item"])
 linkareer.com##ins.adsbygoogle:upward(div[style*="min-height"])
-litomi.*##[data-juicy-ads-slot]
+litomi.cc##[data-juicy-ads-slot]
 loawa.com##[aria-label="광고 팝업"]
 loawa.com##[data-ad-placement]
 m.10000recipe.com##li:has(div.rcp_list2022_new_cont > div:has-text(AD))
@@ -372,7 +372,7 @@ avsee.is##+js(json-prune, adsEnabled, adsEnabled)
 cola16.app##+js(acis, decodeURIComponent, ABCDEFGHIJKLMNOPQRSTUVWXYZ)
 damoang.net##+js(nostif, bait_hidden)
 gall.dcinside.com###gaejukimg
-litomi.*#%#(()=>{"use strict";let t=1;const e=new Map,n=new WeakSet;window.__REACT_DEVTOOLS_GLOBAL_HOOK__={supportsFiber:!0,renderers:e,inject:n=>{const o=t++;return e.set(o,n),o},onCommitFiberRoot:(t,e)=>{const o=t=>{if(!t)return;const e=t.memoizedProps;if(e&&!n.has(t)){if("function"==typeof e.onAdClick){n.add(t);try{e.onAdClick()}catch(t){}}if("function"==typeof e.onResult){n.add(t);try{e.onResult({success:!0,earned:10})}catch(t){}}}o(t.child),o(t.sibling)};e&&e.current&&o(e.current)},onCommitFiberUnmount:()=>{},onPostCommitFiberRoot:()=>{}}})();
+litomi.cc#%#(()=>{"use strict";let t=1;const e=new Map,n=new WeakSet;window.__REACT_DEVTOOLS_GLOBAL_HOOK__={supportsFiber:!0,renderers:e,inject:n=>{const o=t++;return e.set(o,n),o},onCommitFiberRoot:(t,e)=>{const o=t=>{if(!t)return;const e=t.memoizedProps;if(e&&!n.has(t)){if("function"==typeof e.onAdClick){n.add(t);try{e.onAdClick()}catch(t){}}if("function"==typeof e.onResult){n.add(t);try{e.onResult({success:!0,earned:10})}catch(t){}}}o(t.child),o(t.sibling)};e&&e.current&&o(e.current)},onCommitFiberUnmount:()=>{},onPostCommitFiberRoot:()=>{}}})();
 m.dcinside.com###moveOverlay
 m.fmkorea.com##+js(set, _make_power_link_identifier, noopFunc)
 m.fmkorea.com##script ~ div.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):matches-css(padding: /[0-5]px/):remove()
