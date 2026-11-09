@@ -216,9 +216,6 @@ munhwa.com##.top-banner-area
 musinsa.com##[href$="/main/musinsa/brand_ad"]
 nate.com##div.AdIbl
 naver.com##.sa_empty_ad
-news.jtbc.co.kr##.MuiBox-root[radius="0"][style]:empty
-news.jtbc.co.kr##.print-hide.MuiBox-root:has(> iframe)
-news.jtbc.co.kr##.print-hide:has-text(AD)
 news2day.co.kr##.article-ad-wrapper
 newspim.com##[style*="width:100%; height:250px; margin:10px"]
 nongmin.com##div.news_txt > iframe[src*="awesomeclick.co.kr"]
