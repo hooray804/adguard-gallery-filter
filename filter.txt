@@ -214,9 +214,9 @@ mule.co.kr##[class*='-ad-']
 munhwa.com###bottom-sticky
 munhwa.com##.top-banner-area
 musinsa.com##[href$="/main/musinsa/brand_ad"]
+nate.com###bottomAdRect
 nate.com##div.AdIbl
 nate.com##div.pageAd_top
-nate.com###bottomAdRect
 naver.com##.sa_empty_ad
 naver.com##[class^="Home_comp_feed_ad_"]
 news2day.co.kr##.article-ad-wrapper
