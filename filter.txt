@@ -215,7 +215,10 @@ munhwa.com###bottom-sticky
 munhwa.com##.top-banner-area
 musinsa.com##[href$="/main/musinsa/brand_ad"]
 nate.com##div.AdIbl
+nate.com##div.pageAd_top
+nate.com###bottomAdRect
 naver.com##.sa_empty_ad
+naver.com##[class^="Home_comp_feed_ad_"]
 news2day.co.kr##.article-ad-wrapper
 newspim.com##[style*="width:100%; height:250px; margin:10px"]
 nongmin.com##div.news_txt > iframe[src*="awesomeclick.co.kr"]
@@ -238,6 +241,7 @@ ppomppu.co.kr##.bottom > div[style]
 ppomppu.co.kr##tr[id*="_list_ad_"]
 ppomppu.co.kr$$tr:has-text(AD)
 red52.kr##.notice-box-area, .banner-pc, .banner-m
+sbs.co.kr##.wing_ad_right
 sbs.co.kr##[class$="-ad"]
 search.danawa.com##li[data-itemtype='adsmart']
 sedaily.com##.common-bottom-ad
