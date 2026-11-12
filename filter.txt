@@ -149,6 +149,7 @@ i-boss.co.kr##[class$="-bn"]:has(a[target="_blank"])
 ibric.org##.top-banner-wrap
 ikbc.co.kr##.banner
 iloa.gg##div.justify-center[class*="min-h-"]:has(> div.items-center:empty):not(:has(a))
+imaeil.com##iframe[src*="//adguru.kr"]
 inews24.com##.inews-www-ad
 instiz.net##.view_top
 instiz.net##div[class^='hot_u']
