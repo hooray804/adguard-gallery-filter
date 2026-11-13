@@ -253,7 +253,6 @@ shopping.naver.com##div[class^="_carouselProductList_mobile_carousel_product_lis
 shopping.naver.com##div[id*="ADVERTISE"][class*="contentModuleWrapper_news_ad__"]
 shopping.naver.com##li[class*="brandCRMProductList_item__"]:has(> div[class*="miniProductCard_mini_product_card__"] > [href^="https://ader.naver.com/"])
 shopping.naver.com##ul[class^="horizontalScrollListResponsive_set_list_"] > li[class^="horizontalScrollListResponsive_list_item_"]:has(> div > div[class*="productCard-module_product_card_"] a[class*="adButton-module_"])
-slrclub.com##iframe[src*="//ad.syncad.kr"]
 snxbest.naver.com##li[class^="productCardResponsive_product_card_responsive__"]:has(> div[class*="productCardResponsive_inner"] > [href^="https://ader.naver.com/"])
 soccerline.kr##[class*='Bann']
 soccerline.kr##div[style$="513px; position: absolute; text-align: center; top: 242px; width: 160px; height: 600px; background-color: transparent;"][class]
@@ -287,7 +286,6 @@ yozm.wishket.com##[data-testid^="advertisement-"]
 !
 /vue/component/common/banner_modal.vue
 ||*nestads.*
-||ad.syncad.kr^
 ||ader.naver.com/*c=m_$all
 ||ader.naver.com/v1/$all
 ||adraction.co.kr^
