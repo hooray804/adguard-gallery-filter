@@ -76,8 +76,8 @@ algumon.com##[data-virtual-row-id*='-ad']
 algumon.com##div:has([data-tip^='파트너스'], ins):is(.card, .deal-2col)
 arca.live##div.vrow.hybrid:has(.badge.category-badge)
 asiatoday.co.kr###ad-floating-wrapper
-asiatoday.co.kr##[class^="ad_banner"]
 asiatoday.co.kr##.ad_view_top
+asiatoday.co.kr##[class^="ad_banner"]
 asked.kr##div.bg-surface.relative.z-1.grid.place-items-center.overflow-hidden:style(display: none !important;)
 asked.kr##div.relative div.py-5:has(> div.bg-surface):remove()
 avdbs.com##.ad-btn[class*='tp']
