@@ -302,6 +302,7 @@ wellife.co.kr##button.btn_easy_login:has(img[src="https://cdn.wellife.co.kr/cont
 wmpoplus.com##button.simple:has(> span.ad)
 wooriilbo.com##div[style$="width:360px;height:320px;"]
 xtoon365.com##[class$='-ad']
+yakup.com##[class*="_banner_con"]:has([href*="clickBanner"])
 yna.co.kr###container > div.aside-top-bnr01
 yonhapnewstv.co.kr##.main-banner-area
 yonhapnewstv.co.kr##.view-ad-center
