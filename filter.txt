@@ -80,6 +80,7 @@ asiatoday.co.kr##.ad_view_top
 asiatoday.co.kr##[class^="ad_banner"]
 asked.kr##div.bg-surface.relative.z-1.grid.place-items-center.overflow-hidden:style(display: none !important;)
 asked.kr##div.relative div.py-5:has(> div.bg-surface):remove()
+auth.myrealtrip.com##button[shape="rectangle"]:has(> div > span > div > svg > path[d="M7 23c-.55 0-1.02-.196-1.412-.587A1.926 1.926 0 0 1 5 21V3c0-.55.196-1.02.588-1.413A1.926 1.926 0 0 1 7 1h10c.55 0 1.02.196 1.413.587C18.803 1.98 19 2.45 19 3v18c0 .55-.196 1.02-.587 1.413A1.926 1.926 0 0 1 17 23H7Zm0-5h10V6H7v12Z"]
 avdbs.com##.ad-btn[class*='tp']
 avsee.is###at-main > a[rel]
 avsee.is##+js(acis, decodeURI, split)
@@ -91,6 +92,8 @@ battlepage.com##div[style$="min-height:200px;"]
 bbs.ruliweb.com##div.clear:has([style*='overflow-x'])
 bbs.ruliweb.com##tr:has(.nick[style^='display: inline-block'])
 biz.chosun.com##aside > div.flex-chain-wrapper:has(> section > div > .raw-html > iframe[width="300"])
+boardlife.co.kr##a.detail-promo[rel*="sponsored"]
+boardlife.co.kr##div.sponsor-banner-wrap
 bobaedream.co.kr##div.content.community > div[style$="height:100px;"]:has([id^="div-gpt-ad"])
 boutique.chosun.com###bo_main_modalWrap
 bunny-video.com##+js(set, TVP_CONFIG.banner, undefined)
@@ -137,6 +140,8 @@ edu.chosun.com##section:has(> [id^="AD_Main_"])
 eduyonhap.com##div.banner_con
 encar.com##[class*="Banner_wrap"]
 encar.com##li > a[class*="RecommendQuick_link_quick__"][href^="https://automotive.encar.com/RealMedia/ads/"][target="_blank"]
+enuri.com###nestads-band-banner
+eyejokerdb.com##div[aria-label$="광고"][data-banner-height]
 ez2pattern.kr##.sticky
 fc-info.com##[class$='-banner']
 fc-info.com##div[class^='Venatus']
@@ -159,6 +164,7 @@ instiz.net##.view_top
 instiz.net##div[class^='hot_u']
 insurance.pay.naver.com##div[class^="InsuranceHomeAdBanner"]
 inven.co.kr##div[style="width: 100%; height: 250px"]:has(.ad-right2)
+isplus.com##div.center_banner
 jejuair.net##div.button-wrap.advertise
 jinair.com##button.phone:has(> span.ad)
 jjtv.kr##div[style^="text-align: center"]:has(> iframe[src*="//ad.adnmore.co.kr/"])
@@ -176,6 +182,9 @@ kissjav.*##+js(nowoif, !kissjav)
 kitpa.org##div.h-70:has(> ins.adsbygoogle)
 kloa.gg##div[class*="min-h-"]:has(> div[id]:empty):not(:has(a))
 korea.com##div[class*="banner"]
+koreatimes.com###wrapper > div.s-popup
+koreatimes.com##div.banner-box
+koreatimes.com##div.banner-wrap
 kshop.co.kr##div[class^="LoginPage_simpleLogin"]:has(> span[class^="LoginPage_advertising"])
 kyeongin.com##.horizon-ad
 lawtimes.co.kr###top-banner
@@ -210,6 +219,7 @@ mbong.kr##.ink_slide
 mbong.kr##.right_banne
 mbong.kr##div:has(> a > img[alt$="배너"])
 mbong.kr##div:has(> div[id^="ad-"])
+medijob.cc##div.right:has(> [href^="https://sepay.org"])
 mimint.co.kr###anchor-layer:has(.anchor-slot)
 mimint.co.kr##.ads-container
 mimint.co.kr##.banner-split-reveal
@@ -245,6 +255,7 @@ paxnet.co.kr##.stock-ad
 paxnet.co.kr##[class^="dv-com-m"]
 pay.naver.com##div[class^='BottomAds_article']
 pixiv.net##div.banner-ad-footer-scale
+pizzaalvolo.co.kr##div[style="width: 100%; max-width: 340px; height: 55px; min-height: 55px; margin: auto; background-color: rgb(249, 66, 58); flex-direction: row; justify-content: center; gap: 10px; align-items: center; border-radius: 30px;"]
 postshare.co.kr##div:has(> a > img[src*="/images/banner/"])
 postype.com##div.MuiBox-root:has(> [data-sentry-component="RecommendFeedGoogleAd"])
 postype.com##div[data-sentry-component="FeedGoogleAd"]
@@ -280,6 +291,7 @@ terms.naver.com##div.ad-banner-area
 tiendeo.co.kr##section.justify-center:has([id^="div-gpt-ad-web"])
 tvseoul.kr##div[style*="width:360px"][style*="height:300px"]
 umrb.co.kr##ul.main_slider_area
+url.kr##div.hv2-ads
 uppity.co.kr##.adrop-outer
 veritas-a.com##article.grid.body > div.clearfix:has(.ad-template)
 wadiz.kr##[class^="MultiBoardAdBannerDisplay-"]
@@ -304,6 +316,7 @@ yozm.wishket.com##[data-testid^="advertisement-"]
 ||api.craken.co.kr^
 ||api.hobos.studio/v1/ads$domain=xn--v69ak0xskm.com
 ||asked-front.pages.dev/kakaoad
+||boardlife.co.kr/js/ad
 ||bokuennews.com/data/banner
 ||checkplus.co.kr/images/banner/service/AD
 ||dvdprime.com/file/*/banner
@@ -388,6 +401,7 @@ damoang.net##+js(nostif, bait_hidden)
 gall.dcinside.com###gaejukimg
 k-hentai.org#%#//scriptlet('trusted-set-local-storage-item', 'antiAdBlockerTime', '$now$')
 litomi.cc#%#(()=>{"use strict";let t=1;const e=new Map,n=new WeakSet;window.__REACT_DEVTOOLS_GLOBAL_HOOK__={supportsFiber:!0,renderers:e,inject:n=>{const o=t++;return e.set(o,n),o},onCommitFiberRoot:(t,e)=>{const o=t=>{if(!t)return;const e=t.memoizedProps;if(e&&!n.has(t)){if("function"==typeof e.onAdClick){n.add(t);try{e.onAdClick()}catch(t){}}if("function"==typeof e.onResult){n.add(t);try{e.onResult({success:!0,earned:10})}catch(t){}}}o(t.child),o(t.sibling)};e&&e.current&&o(e.current)},onCommitFiberUnmount:()=>{},onPostCommitFiberRoot:()=>{}}})();
+koreatimes.com##+js(set, _adBlockAlertShown, true)
 m.dcinside.com###moveOverlay
 m.fmkorea.com##+js(set, _make_power_link_identifier, noopFunc)
 m.fmkorea.com##script ~ div.bd_mobile.bd:matches-css(margin: /[0-5]px [0-5]px/):matches-css(padding: /[0-5]px/):remove()
