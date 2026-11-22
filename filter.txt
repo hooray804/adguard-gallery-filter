@@ -1,7 +1,7 @@
 ! Title: 애드가드 갤러리 필터
 ! Description: AdGuard, uBlock Origin, wBlock, Unicorn Pro, Brave Shields의 오차단 및 남은 광고와 안티 애드블록을 해결합니다.
-! Version: 2026.11.22.1
-! TimeUpdated: 2026-11-21T20:09:17+00:00
+! Version: 2026.11.22.2
+! TimeUpdated: 2026-11-22T03:59:35+00:00
 ! Expires: 6 hours (update frequency)
 ! Homepage: https://m.dcinside.com/gallog/cent8649
 
