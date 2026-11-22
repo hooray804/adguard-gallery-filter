@@ -80,7 +80,7 @@ asiatoday.co.kr##.ad_view_top
 asiatoday.co.kr##[class^="ad_banner"]
 asked.kr##div.bg-surface.relative.z-1.grid.place-items-center.overflow-hidden:style(display: none !important;)
 asked.kr##div.relative div.py-5:has(> div.bg-surface):remove()
-auth.myrealtrip.com##button[shape="rectangle"]:has(> div > span > div > svg > path[d="M7 23c-.55 0-1.02-.196-1.412-.587A1.926 1.926 0 0 1 5 21V3c0-.55.196-1.02.588-1.413A1.926 1.926 0 0 1 7 1h10c.55 0 1.02.196 1.413.587C18.803 1.98 19 2.45 19 3v18c0 .55-.196 1.02-.587 1.413A1.926 1.926 0 0 1 17 23H7Zm0-5h10V6H7v12Z"]
+auth.myrealtrip.com##button[shape="rectangle"]:has(> div > span > div > svg > path[d="M7 23c-.55 0-1.02-.196-1.412-.587A1.926 1.926 0 0 1 5 21V3c0-.55.196-1.02.588-1.413A1.926 1.926 0 0 1 7 1h10c.55 0 1.02.196 1.413.587C18.803 1.98 19 2.45 19 3v18c0 .55-.196 1.02-.587 1.413A1.926 1.926 0 0 1 17 23H7Zm0-5h10V6H7v12Z"])
 avdbs.com##.ad-btn[class*='tp']
 avsee.is###at-main > a[rel]
 avsee.is##+js(acis, decodeURI, split)
