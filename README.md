@@ -13,7 +13,7 @@
 
 <p>
   <a href="https://www.jsdelivr.com/package/gh/hooray804/adguard-gallery-filter"><img src="https://data.jsdelivr.com/v1/package/gh/hooray804/adguard-gallery-filter/badge?style=rounded" alt="jsDelivr Hits"></a>
-  <a href="https://github.com/hooray804/adguard-gallery-filter/actions"><img src="https://img.shields.io/github/actions/workflow/status/hooray804/adguard-gallery-filter/publish-filter.yml?branch=main&label=Publish%20Filter" alt="Publish Filter Status"></a>
+  <a href="https://github.com/hooray804/adguard-gallery-filter/actions"><img src="https://github.com/hooray804/adguard-gallery-filter/actions/workflows/publish-filter.yml/badge.svg?branch=main" alt="Publish Filter Status"></a>
   <a href="https://github.com/hooray804/adguard-gallery-filter/blob/main/LICENSE"><img src="https://img.shields.io/github/license/hooray804/adguard-gallery-filter?label=License" alt="License"></a>
 </p>
 
