@@ -12,7 +12,7 @@
 본 애드가드 갤러리 필터와 유저스크립트는 AdGuard와 uBlock Origin 한국어 필터의 부족한 점을 보완하고, 광고 차단 및 커뮤니티 이용 환경을 개선하기 위해 제작되었습니다.
 
 <p>
-  <a href="https://www.jsdelivr.com/package/gh/hooray804/adguard-gallery-filter"><img src="https://data.jsdelivr.com/v1/package/gh/hooray804/adguard-gallery-filter/badge" alt="jsDelivr Hits"></a>
+  <a href="https://www.jsdelivr.com/package/gh/hooray804/adguard-gallery-filter"><img src="https://data.jsdelivr.com/v1/package/gh/hooray804/adguard-gallery-filter/badge?style=rounded" alt="jsDelivr Hits"></a>
   <a href="https://github.com/hooray804/adguard-gallery-filter/actions"><img src="https://img.shields.io/github/actions/workflow/status/hooray804/adguard-gallery-filter/publish-filter.yml?branch=main&label=Publish%20Filter" alt="Publish Filter Status"></a>
   <a href="https://github.com/hooray804/adguard-gallery-filter/blob/main/LICENSE"><img src="https://img.shields.io/github/license/hooray804/adguard-gallery-filter?label=License" alt="License"></a>
 </p>
