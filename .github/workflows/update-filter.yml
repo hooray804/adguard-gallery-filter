@@ -1,4 +1,4 @@
-name: Update Filter Header
+name: Publish Filter
 
 on:
   push:
@@ -8,11 +8,11 @@ on:
       - 'filter.txt'
 
 concurrency:
-  group: update-header-${{ github.ref }}
+  group: publish-filter-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  update-header:
+  publish-filter:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -41,7 +41,7 @@ jobs:
           fi
 
           CURR_VER_LINE=$(grep "^! Version:" "$FILE" | head -n 1)
-          
+
           if git rev-parse HEAD~1 >/dev/null 2>&1; then
             PREV_VER_LINE=$(git show HEAD~1:"$FILE" | grep "^! Version:" | head -n 1)
           else
@@ -50,12 +50,12 @@ jobs:
 
           if [ "$CURR_VER_LINE" = "$PREV_VER_LINE" ] || [ -z "$PREV_VER_LINE" ]; then
             CURRENT_VERSION=$(echo "$CURR_VER_LINE" | awk '{print $3}')
-            
+
             if [ -n "$CURRENT_VERSION" ]; then
               PREV_DATE=$(echo "$CURRENT_VERSION" | cut -d'.' -f1-3)
               PREV_NUM=$(echo "$CURRENT_VERSION" | cut -d'.' -f4)
               [ -z "$PREV_NUM" ] && PREV_NUM=0
-              
+
               if [ "$KST_DATE" = "$PREV_DATE" ]; then
                 NEW_NUM=$((PREV_NUM + 1))
                 NEW_VERSION="$KST_DATE.$NEW_NUM"
@@ -86,6 +86,8 @@ jobs:
           git commit -m "$COMMIT_MSG"
           git push origin main
 
+      - name: Purge jsDelivr Cache
+        run: |
           echo "Waiting 240 seconds for GitHub raw sync..."
           sleep 240
 
