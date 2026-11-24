@@ -189,7 +189,6 @@
 <details>
 <summary><b>wBlock</b></summary>
 
-> 다른 OS용 버전과 달리 AdGuard에 내장 유저스크립트 관리자 기능이 없기에 예외적으로 제공되는 가이드입니다.
 > AdGuard의 Safari 보호와 wBlock의 콘텐츠 차단기 기능을 동시에 사용하지 마세요.
 
 아래의 방법으로 AdGuard/uBlock용 필터를 추가합니다.
