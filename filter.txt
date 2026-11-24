@@ -293,7 +293,6 @@ ssalmuk.com##+js(json-prune, data.[-].popupCode)
 ssgdfs.com##div.easyLoginOption:has(> [data-param1="LOG_AD"])
 te31.com##div:has(> link[rel="dns-prefetch"][href="//media.by.camp"])
 te31.com##div[style*="aspect-ratio: 300"]:has(> ins.adsbygoogle)
-te31.com##table:has(td > script)
 teamblind.com##.coupang_gnb
 teamblind.com##.progtop-band:has(> div[id^="div-gpt-ad"]:empty:only-child)
 teamblind.com##.top_banner
