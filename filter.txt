@@ -270,6 +270,8 @@ pizzaalvolo.co.kr##div[style="width: 100%; max-width: 340px; height: 55px; min-h
 postshare.co.kr##div:has(> a > img[src*="/images/banner/"])
 postype.com##div.MuiBox-root:has(> [data-sentry-component="RecommendFeedGoogleAd"])
 postype.com##div[data-sentry-component="FeedGoogleAd"]
+pping.kr##div.curation_box > div.adv
+pping.kr##div:has(> iframe[src^="https://ad.pping.kr/"]:only-child)
 ppomppu.co.kr##.bottom > div[style]
 ppomppu.co.kr##.js-main-bbs-list-ad
 ppomppu.co.kr##tr[id*="_list_ad_"]
