@@ -30,6 +30,8 @@ auction.co.kr,gmarket.co.kr##.plcc_banner
 blog.naver.com,comic.naver.com##[class*='banner_area']
 danawa.com,m.cafe.naver.com,hungryapp.co.kr,hungapp.com##[class^='banner']
 diningcode.com,chuchu.gg,platum.kr##.ad-container
+dt.co.kr,kyeongin.com##.horizon-ad
+dt.co.kr,munhwa.com##.top-banner-area
 fmkorea.com,sbs.co.kr##[class$='_ad']
 gaykorea.net,yoboyobo.kr##.cu_gallery-item, .main-slider, .md_ad, .product_viewpage-latest, div[class^="m-b-"]:has(> div > p.powered)
 hani.co.kr,i-boss.co.kr,spin-spin.com##[class*="AdWrap"]
@@ -47,6 +49,7 @@ rgr.kr,rgrong.net,te31.com###foot:style(height: 150px !important;)
 rgr.kr,rgrong.net,te31.com##div[style='position:relative;z-index:11;']
 ruliweb.com,fmkorea.com#@#[alt$='광고']
 ruliweb.com,ppomppu.co.kr,naver.com,daum.net,etoland.co.kr##[id$='_ad']
+sbs.co.kr,xtoon365.com##[class$="-ad"]
 seoul.co.kr,mule.co.kr,hiromi.fans##[class*='Ad']
 tdgall.com,hygall.com##.admanager-row
 thinkpool.com,econovill.com,viva100.com##.banner_box
@@ -92,6 +95,7 @@ battlepage.com##div[style$="min-height:200px;"]
 bbs.ruliweb.com##div.clear:has([style*='overflow-x'])
 bbs.ruliweb.com##tr:has(.nick[style^='display: inline-block'])
 biz.chosun.com##aside > div.flex-chain-wrapper:has(> section > div > .raw-html > iframe[width="300"])
+boannews.com##.view-top-banner
 boardlife.co.kr##a.detail-promo[rel*="sponsored"]
 boardlife.co.kr##div.sponsor-banner-wrap
 bobaedream.co.kr##div.content.community > div[style$="height:100px;"]:has([id^="div-gpt-ad"])
@@ -131,8 +135,6 @@ donga.com###article_body > div.view_center
 donga.com##div.right_wingad
 dschool.co.kr###modal-banner
 dschool.co.kr##[id="lean_overlay"]
-dt.co.kr##.horizon-ad
-dt.co.kr##.top-banner-area
 dvdprime.com###ad_view_right1
 dvdprime.com##[id$='top_banner']
 dvdprime.com##[id^='ad_mobile']
@@ -195,7 +197,6 @@ koreatimes.com##div.banner-box
 koreatimes.com##div.banner-wrap
 kpanews.co.kr##iframe[title="광고"][src^="https://svc.kpanews.co.kr/banner/embed"]
 kshop.co.kr##div[class^="LoginPage_simpleLogin"]:has(> span[class^="LoginPage_advertising"])
-kyeongin.com##.horizon-ad
 lawtimes.co.kr###top-banner
 linkareer.com##[role="advertisement"]:not([class^="card-item"])
 linkareer.com##ins.adsbygoogle:upward(div[style*="min-height"])
@@ -243,7 +244,6 @@ mlbpark.donga.com##[class*='naver_place'], [class^='coupang']
 mlbpark.donga.com##ul.sub_lists_today.lists > li.items:nth-of-type(6)::before
 mule.co.kr##[class*='-ad-']
 munhwa.com###bottom-sticky
-munhwa.com##.top-banner-area
 musinsa.com##[href$="/main/musinsa/brand_ad"]
 nate.com###bottomAdRect
 nate.com##div.AdIbl
@@ -278,7 +278,6 @@ ppomppu.co.kr##tr[id*="_list_ad_"]
 ppomppu.co.kr$$tr:has-text(AD)
 red52.kr##.notice-box-area, .banner-pc, .banner-m
 sbs.co.kr##.wing_ad_right
-sbs.co.kr##[class$="-ad"]
 search.danawa.com##li[data-itemtype='adsmart']
 sedaily.com##.common-bottom-ad
 seoul.co.kr###bottomScrollBox
@@ -316,7 +315,6 @@ welfarehello.com##[style^="--ad-frame-width-"]
 wellife.co.kr##button.btn_easy_login:has(img[src="https://cdn.wellife.co.kr/content/images/icon/ico_cellphone.svg"])
 wmpoplus.com##button.simple:has(> span.ad)
 wooriilbo.com##div[style$="width:360px;height:320px;"]
-xtoon365.com##[class$='-ad']
 yakup.com##[class*="_banner_con"]:has([href*="clickBanner"])
 yes24.com##a.btn_social.adOn
 yna.co.kr###container > div.aside-top-bnr01
