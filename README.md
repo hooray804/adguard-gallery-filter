@@ -3,7 +3,7 @@
 <p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/main/assets/logo-dark.svg">
-    <img alt="AdGuard Gallery Filter" src="https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/main/assets/logo-light.svg" width="35%">
+    <img alt="AdGuard Gallery Filter" src="https://raw.githubusercontent.com/hooray804/adguard-gallery-filter/main/assets/logo-light.svg" width="40%">
   </picture>
 </p>
 
